@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PackageId>CustomComponentTestApp</PackageId>
+    <Authors>富士フィルム医療ソリューションズ株式会社</Authors>
+    <Company>富士フィルム医療ソリューションズ株式会社</Company>
+    <Copyright>富士フィルム医療ソリューションズ株式会社</Copyright>
+    <Product>RADISTA CustomComponentTestApp</Product>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="CustomControlSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UIComponent" Version="0.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<None Update="log4net.config">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+  </ItemGroup>
+
+	<ItemGroup>
+		<ImageFiles Include="image\**\*.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="image\" />
+	</ItemGroup>
+	<Target Name="CopyImageFiles" AfterTargets="Build">
+		<Copy SourceFiles="@(ImageFiles)" DestinationFolder="$(OutDir)image\%(RecursiveDir)" />
+	</Target>
+</Project>

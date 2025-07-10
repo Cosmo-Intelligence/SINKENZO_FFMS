@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting key="FontType" value="Meiryo UI" />
+    <setting key="FontSize" value="12" />
+    <setting key="FontColor" value="#C3C3C3" />
+    <setting key="BackColor" value="#393939" />
+    <setting key="InactiveColor" value="#323232" />
+    <setting key="InputBackColor" value="#000000" />
+    <setting key="InputEdgeColor" value="#C3C3C3" />
+    <setting key="ComponentEdgeColor" value="#010101" />
+</settings>
