@@ -66,6 +66,18 @@ namespace RADISTA.UIComponent.CustomControl
         /// カラーコード入力判定エラー
         /// </summary>
         public const string ERROR_COLOR_CODE = "無効なカラーコードです。";
+        /// <summary>
+        /// ウォーターマークのフォント色
+        /// </summary>
+        public const string WATERMARK_FONT_COLOR = "#c0c0c0";
+        /// <summary>
+        /// プログレスバー（進捗バー色）
+        /// </summary>
+        public const string PROGRESS_COLOR = "#00c400";
+        /// <summary>
+        /// プログレスバー（進捗バー背景色）
+        /// </summary>
+        public const string PROGRESS_BACK_COLOR = "#dcdcdc";
         #endregion
     }
 }

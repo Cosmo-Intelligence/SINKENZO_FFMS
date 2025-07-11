@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="UIComponent" Version="0.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
 	<None Update="log4net.config">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
@@ -36,6 +32,10 @@
 
 	<ItemGroup>
 		<Folder Include="image\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="UIComponent" Version="0.0.2" />
 	</ItemGroup>
 	<Target Name="CopyImageFiles" AfterTargets="Build">
 		<Copy SourceFiles="@(ImageFiles)" DestinationFolder="$(OutDir)image\%(RecursiveDir)" />

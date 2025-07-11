@@ -67,17 +67,20 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtTextBox_Click(object sender, EventArgs e)
         {
-
+            Form_RdtTextBox form = new Form_RdtTextBox();
+            form.Show();
         }
 
         private void button_RdtMaskTextBox_Click(object sender, EventArgs e)
         {
-
+            Form_RdtMaskTextBox form = new Form_RdtMaskTextBox();
+            form.Show();
         }
 
         private void button_RdtRichTextBox_Click(object sender, EventArgs e)
         {
-
+            Form_RdtRichTextBox form = new Form_RdtRichTextBox();
+            form.Show();
         }
 
         private void button_RdtRadioButton_Click(object sender, EventArgs e)
@@ -102,17 +105,20 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtTrackBar_Click(object sender, EventArgs e)
         {
-
+            Form_RdtTrackBar form = new Form_RdtTrackBar();
+            form.Show();
         }
 
         private void button_RdtProgressBar_Click(object sender, EventArgs e)
         {
-
+            Form_RdtProgressBar form = new Form_RdtProgressBar();
+            form.Show();
         }
 
         private void button_RdtSpinBox_Click(object sender, EventArgs e)
         {
-
+            Form_RdtSpinBox form = new Form_RdtSpinBox();
+            form.Show();
         }
 
         private void button_RdtThumbnailView_Click(object sender, EventArgs e)
