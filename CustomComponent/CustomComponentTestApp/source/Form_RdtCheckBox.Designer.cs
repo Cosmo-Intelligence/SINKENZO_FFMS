@@ -1,4 +1,4 @@
-﻿namespace CustomComponentTestApp
+﻿namespace RADISTA.CustomComponentTestApp
 {
     partial class Form_RdtCheckBox
     {

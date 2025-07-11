@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CustomComponentTestApp
+namespace RADISTA.CustomComponentTestApp
 {
     public partial class Form_RdtButton : Form
     {

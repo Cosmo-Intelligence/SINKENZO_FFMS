@@ -1,4 +1,4 @@
-using CustomComponentTestApp;
+using RADISTA.CustomComponentTestApp;
 using log4net;
 using log4net.Config;
 using RADISTA.UIComponent.CustomControl;

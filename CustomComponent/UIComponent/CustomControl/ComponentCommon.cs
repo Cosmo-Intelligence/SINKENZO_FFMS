@@ -3,6 +3,7 @@
 //    Copyright (C) 2025 FUJIFILM Medical Solutions Corporation.
 // </copyright>
 //-----------------------------------------------------------------------
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
@@ -104,6 +105,24 @@ namespace RADISTA.UIComponent.CustomControl
             {
                 throw new IOException("Image load failed due to an IO issue.", ex);
             }
+        }
+
+        /// <summary>
+        /// コーナーカーブパターン描画パスの取得
+        /// </summary>
+        /// <param name="rect">矩形</param>
+        /// <param name="radius">半径</param>
+        /// <returns>パス</returns>
+        public static GraphicsPath GetRoundRectanglePath(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int d = radius * 2;
+            path.AddArc(rect.X, rect.Y, d, d, 180, 90);
+            path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
+            path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90);
+            path.CloseFigure();
+            return path;
         }
 
         /// <summary>

@@ -327,7 +327,7 @@ namespace RADISTA.UIComponent.CustomControl
                     fillRect.Height -= int.Max(this.mBorderThick - 1, 1);
 
                     // ボーダーの内側を背景色で塗りつぶす
-                    using (GraphicsPath path = this.GetRoundRectanglePath(fillRect, this.mCornerRadius))
+                    using (GraphicsPath path = ComponentCommon.GetRoundRectanglePath(fillRect, this.mCornerRadius))
                     {
                         pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                         pevent.Graphics.FillPath(brush, path);
@@ -865,7 +865,7 @@ namespace RADISTA.UIComponent.CustomControl
             //内枠から描画する
             using (Pen pen = new Pen(ColorTranslator.FromHtml(this.mInnerBorderColor), this.mBorderThick * 2))
             {
-                using (GraphicsPath path = this.GetRoundRectanglePath(innerRect, this.mCornerRadius))
+                using (GraphicsPath path = ComponentCommon.GetRoundRectanglePath(innerRect, this.mCornerRadius))
                 {
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     e.Graphics.DrawPath(pen, path);
@@ -874,29 +874,12 @@ namespace RADISTA.UIComponent.CustomControl
 
             using (Pen pen = new Pen(ColorTranslator.FromHtml(this.mOuterBorderColor), this.mBorderThick))
             {
-                using (GraphicsPath path = this.GetRoundRectanglePath(outerRect, this.CornerRadius))
+                using (GraphicsPath path = ComponentCommon.GetRoundRectanglePath(outerRect, this.CornerRadius))
                 {
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     e.Graphics.DrawPath(pen, path);
                 }
             }
-        }
-
-        /// <summary>
-        /// コーナーカーブパターン描画パスの取得
-        /// </summary>
-        /// <param name="rect">矩形</param>
-        /// <param name="radius">半径</param>
-        private GraphicsPath GetRoundRectanglePath(Rectangle rect, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            int d = radius * 2;
-            path.AddArc(rect.X, rect.Y, d, d, 180, 90);
-            path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
-            path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90);
-            path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90);
-            path.CloseFigure();
-            return path;
         }
 
         /// <summary>

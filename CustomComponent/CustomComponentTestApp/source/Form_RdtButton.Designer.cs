@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace CustomComponentTestApp
+namespace RADISTA.CustomComponentTestApp
 {
     partial class Form_RdtButton
     {

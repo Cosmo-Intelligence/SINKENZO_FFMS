@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace CustomComponentTestApp
+namespace RADISTA.CustomComponentTestApp
 {
     public partial class Form_RdtCheckBox : Form
     {
