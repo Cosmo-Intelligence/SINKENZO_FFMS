@@ -189,7 +189,7 @@
             Check_UseCustomImage_true.CheckedImagePath = "..\\..\\..\\..\\Image\\Checked.png";
             Check_UseCustomImage_true.Font = new Font("Meiryo UI", 12F);
             Check_UseCustomImage_true.ForeColor = Color.FromArgb(195, 195, 195);
-            Check_UseCustomImage_true.IndeterminateImagePath = "image\\Indeterminate.png";
+            Check_UseCustomImage_true.IndeterminateImagePath = "..\\..\\..\\..\\Image\\Indeterminate.png";
             Check_UseCustomImage_true.Location = new Point(27, 253);
             Check_UseCustomImage_true.MouseClickColor = "#00FF00";
             Check_UseCustomImage_true.MouseHoverColor = "#FF0000";
@@ -205,10 +205,10 @@
             // 
             Check_UseCustomImage_false.AutoSize = true;
             Check_UseCustomImage_false.BackColor = Color.FromArgb(57, 57, 57);
-            Check_UseCustomImage_false.CheckedImagePath = "image\\Checked.png";
+            Check_UseCustomImage_false.CheckedImagePath = "..\\..\\..\\..\\Image\\Checked.png";
             Check_UseCustomImage_false.Font = new Font("Meiryo UI", 12F);
             Check_UseCustomImage_false.ForeColor = Color.FromArgb(195, 195, 195);
-            Check_UseCustomImage_false.IndeterminateImagePath = "image\\Indeterminate.png";
+            Check_UseCustomImage_false.IndeterminateImagePath = "..\\..\\..\\..\\Image\\Indeterminate.png";
             Check_UseCustomImage_false.Location = new Point(207, 253);
             Check_UseCustomImage_false.MouseClickColor = "#00FF00";
             Check_UseCustomImage_false.MouseHoverColor = "#FF0000";
@@ -216,7 +216,7 @@
             Check_UseCustomImage_false.Size = new Size(83, 29);
             Check_UseCustomImage_false.TabIndex = 16;
             Check_UseCustomImage_false.Text = "False";
-            Check_UseCustomImage_false.UncheckedImagePath = "image\\UnChecked.png";
+            Check_UseCustomImage_false.UncheckedImagePath = "..\\..\\..\\..\\Image\\UnChecked.png";
             Check_UseCustomImage_false.UseCustomImage = false;
             Check_UseCustomImage_false.UseVisualStyleBackColor = false;
             // 
@@ -300,10 +300,10 @@
             // 
             Check_ImageFilePath_NotFound.AutoSize = true;
             Check_ImageFilePath_NotFound.BackColor = Color.FromArgb(57, 57, 57);
-            Check_ImageFilePath_NotFound.CheckedImagePath = "image\\Checked.png";
+            Check_ImageFilePath_NotFound.CheckedImagePath = "..\\..\\..\\..\\Image\\Checked.png";
             Check_ImageFilePath_NotFound.Font = new Font("Meiryo UI", 12F);
             Check_ImageFilePath_NotFound.ForeColor = Color.FromArgb(195, 195, 195);
-            Check_ImageFilePath_NotFound.IndeterminateImagePath = "image\\Indeterminate.png";
+            Check_ImageFilePath_NotFound.IndeterminateImagePath = "..\\..\\..\\..\\Image\\Indeterminate.png";
             Check_ImageFilePath_NotFound.Location = new Point(220, 341);
             Check_ImageFilePath_NotFound.MouseClickColor = "#00FF00";
             Check_ImageFilePath_NotFound.MouseHoverColor = "#FF0000";

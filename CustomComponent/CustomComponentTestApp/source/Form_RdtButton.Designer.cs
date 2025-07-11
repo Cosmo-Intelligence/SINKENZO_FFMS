@@ -1310,7 +1310,7 @@ namespace RADISTA.CustomComponentTestApp
             Button_Image_Found.Font = new Font("Meiryo UI", 12F);
             Button_Image_Found.ForeColor = Color.FromArgb(195, 195, 195);
             Button_Image_Found.ImageAlign = ContentAlignment.MiddleLeft;
-            Button_Image_Found.ImageFilePath = "Image\\Checked.png";
+            Button_Image_Found.ImageFilePath = "..\\..\\..\\..\\Image\\Checked.png";
             Button_Image_Found.InnerBorderColor = "#808080";
             Button_Image_Found.Location = new Point(37, 711);
             Button_Image_Found.MouseClickColor = "#00FF00";

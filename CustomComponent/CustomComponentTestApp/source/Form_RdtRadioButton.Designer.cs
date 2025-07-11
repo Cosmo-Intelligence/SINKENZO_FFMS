@@ -202,7 +202,7 @@
             // 
             Radio_UseCustomImage_false.AutoSize = true;
             Radio_UseCustomImage_false.BackColor = Color.FromArgb(57, 57, 57);
-            Radio_UseCustomImage_false.CheckedImagePath = "C:\\Users\\n_uehara\\Downloads\\CustomComponentTestApp\\CustomComponentTestApp\\Image\\Checked.png";
+            Radio_UseCustomImage_false.CheckedImagePath = "..\\..\\..\\..\\Image\\Checked.png";
             Radio_UseCustomImage_false.Font = new Font("Meiryo UI", 12F);
             Radio_UseCustomImage_false.ForeColor = Color.FromArgb(195, 195, 195);
             Radio_UseCustomImage_false.Location = new Point(268, 253);
@@ -213,7 +213,7 @@
             Radio_UseCustomImage_false.TabIndex = 16;
             Radio_UseCustomImage_false.TabStop = true;
             Radio_UseCustomImage_false.Text = "False";
-            Radio_UseCustomImage_false.UncheckedImagePath = "C:\\Users\\n_uehara\\Downloads\\CustomComponentTestApp\\CustomComponentTestApp\\Image\\UnChecked.png";
+            Radio_UseCustomImage_false.UncheckedImagePath = "..\\..\\..\\..\\Image\\UnChecked.png";
             Radio_UseCustomImage_false.UseCustomImage = false;
             Radio_UseCustomImage_false.UseVisualStyleBackColor = false;
             // 
