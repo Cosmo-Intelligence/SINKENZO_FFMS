@@ -337,8 +337,6 @@ namespace RADISTA.UIComponent.CustomControl
 
             try
             {
-                // 既存の画像がある場合は解放
-                this.mToggleButton.Image?.Dispose();
                 // 新しい画像をセット
                 this.mToggleButton.Image = this.thisImage;
             }
