@@ -31,7 +31,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="image\" />
+		<Folder Include="image\ThumbnailView\" />
 	</ItemGroup>
 
 	<ItemGroup>

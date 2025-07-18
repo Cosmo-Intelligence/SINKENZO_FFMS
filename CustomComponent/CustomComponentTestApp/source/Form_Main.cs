@@ -4,6 +4,7 @@ using log4net.Config;
 using RADISTA.UIComponent.CustomControl;
 using System.Diagnostics.Metrics;
 using System.Drawing;
+using CustomComponentTestApp.source;
 
 namespace RADISTA.CustomComponentTestApp
 {
@@ -128,7 +129,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtThumbnailView_Click(object sender, EventArgs e)
         {
-
+            Form_RdtThumbnailView form = new Form_RdtThumbnailView();
+            form.Show();
         }
 
         private void button_RdtContextMenuStrip_Click(object sender, EventArgs e)
