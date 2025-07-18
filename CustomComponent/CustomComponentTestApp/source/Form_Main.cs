@@ -1,8 +1,10 @@
+using RADISTA.CustomComponentTestApp;
 using log4net;
 using log4net.Config;
 using RADISTA.UIComponent.CustomControl;
 using System.Diagnostics.Metrics;
 using System.Drawing;
+using CustomComponentTestApp.source;
 
 namespace RADISTA.CustomComponentTestApp
 {
@@ -57,7 +59,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtButton_Click(object sender, EventArgs e)
         {
-
+            Form_RdtButton form = new Form_RdtButton();
+            form.Show();
         }
 
         private void button_RdtListButton_Click(object sender, EventArgs e)
@@ -85,17 +88,20 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtRadioButton_Click(object sender, EventArgs e)
         {
-
+            Form_RdtRadioButton form = new Form_RdtRadioButton();
+            form.Show();
         }
 
         private void button_RdtCheckBox_Click(object sender, EventArgs e)
         {
-
+            Form_RdtCheckBox form = new Form_RdtCheckBox();
+            form.Show();   
         }
 
         private void button_RdtToggleButton_Click(object sender, EventArgs e)
         {
-
+            Form_RdtToggleButton form = new Form_RdtToggleButton();
+            form.Show();
         }
 
         private void button_RdtCalendar_Click(object sender, EventArgs e)
@@ -123,7 +129,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtThumbnailView_Click(object sender, EventArgs e)
         {
-
+            Form_RdtThumbnailView form = new Form_RdtThumbnailView();
+            form.Show();
         }
 
         private void button_RdtContextMenuStrip_Click(object sender, EventArgs e)

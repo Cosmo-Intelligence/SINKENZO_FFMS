@@ -297,7 +297,7 @@ namespace RADISTA.UIComponent.CustomControl
                         {
                             radius = this.Height / 2;
                         }
-                        using (GraphicsPath path = this.GetRoundRectanglePath(rect, radius))
+                        using (GraphicsPath path = ComponentCommon.GetRoundRectanglePath(rect, radius))
                         {
                             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                             e.Graphics.DrawPath(pen, path);
@@ -332,24 +332,6 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         private void DisposeCustomSetting()
         {
-        }
-
-        /// <summary>
-        /// コーナーカーブパターン描画パスの取得
-        /// </summary>
-        /// <param name="rect">矩形</param>
-        /// <param name="radius">半径</param>
-        /// <returns>パス</returns>
-        private GraphicsPath GetRoundRectanglePath(Rectangle rect, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            int d = radius * 2;
-            path.AddArc(rect.X, rect.Y, d, d, 180, 90);
-            path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
-            path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90);
-            path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90);
-            path.CloseFigure();
-            return path;
         }
 
         /// <summary>

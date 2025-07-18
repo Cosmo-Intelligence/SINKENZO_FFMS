@@ -371,9 +371,19 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         private void DisposeCustomSetting()
         {
+            // スライダー画像
             if (this.mSlider != null)
             {
                 this.mSlider.Dispose();
+            }
+            // インクリメントボタン
+            if (this.mPlusImage != null)
+            {
+                this.mPlusImage.Dispose();
+            }
+            if (this.mMinusImage != null)
+            {
+                this.mMinusImage.Dispose();
             }
         }
 
