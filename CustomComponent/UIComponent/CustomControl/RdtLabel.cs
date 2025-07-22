@@ -332,6 +332,10 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         private void DisposeCustomSetting()
         {
+            if (this.mIsBlink)
+            {
+                this.mBlinkTimer.Tick -= this.BlinkTimer_Tick;
+            }
         }
 
         /// <summary>
