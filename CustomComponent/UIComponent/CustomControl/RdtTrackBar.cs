@@ -375,15 +375,18 @@ namespace RADISTA.UIComponent.CustomControl
             if (this.mSlider != null)
             {
                 this.mSlider.Dispose();
+                this.mSlider = null;
             }
             // インクリメントボタン
             if (this.mPlusImage != null)
             {
                 this.mPlusImage.Dispose();
+                this.mPlusImage = null;
             }
             if (this.mMinusImage != null)
             {
                 this.mMinusImage.Dispose();
+                this.mMinusImage = null;
             }
         }
 
@@ -444,12 +447,17 @@ namespace RADISTA.UIComponent.CustomControl
         private void DrawTicks(Graphics g)
         {
             // スライダーの最小値から最大値までの目盛りの数を計算
-            int tickCount = (this.Maximum - this.Minimum) / this.mTickStep;
+            int iTickIdx = (this.Maximum - this.Minimum) / this.mTickStep;
+            // 目盛りが無い場合は描画しない
+            if (iTickIdx <= 0)
+            {
+                return;
+            }
 
-            for (int i = 0; i <= tickCount; i++)
+            for (int i = 0; i <= iTickIdx; i++)
             {
                 // スライダー全体の幅に対する現在の目盛り位置の割合を求める
-                float percent = (float)i / tickCount;
+                float percent = (float)i / iTickIdx;
                 // 目盛りのX座標を計算
                 int x = this.GetTickXPosition(percent);
                 // 目盛りの上端と下端のY座標を設定
