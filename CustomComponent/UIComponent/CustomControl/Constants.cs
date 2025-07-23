@@ -78,6 +78,18 @@ namespace RADISTA.UIComponent.CustomControl
         /// プログレスバー（進捗バー背景色）
         /// </summary>
         public const string PROGRESS_BACK_COLOR = "#dcdcdc";
+        /// <summary>
+        /// リストビュー_交互背景色
+        /// </summary>
+        public const string BACKGROUND_ROW_COLOR = "#dcdcdc";
+        /// <summary>
+        /// フォームタイトル_背景色
+        /// </summary>
+        public const string FORM_TITLE_BACK_COLOR = "#008000";
+        /// <summary>
+        /// フォームタイトル_前景色
+        /// </summary>
+        public const string FORM_TITLE_FONT_COLOR = "#f5f5f5";
         #endregion
     }
 }
