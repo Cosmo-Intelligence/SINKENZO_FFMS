@@ -17,11 +17,11 @@ namespace RADISTA.UIComponent.CustomControl
 {
     public partial class RdtThumbnailView : FlowLayoutPanel
     {
-        #region 構造体
+        #region "列挙型"
         /// <summary>
         /// オーバーレイのアイコン位置
         /// </summary>
-        public enum IconPlacementS
+        public enum IconPlacementT
         {
             /// <summary>
             /// 左上
@@ -46,13 +46,14 @@ namespace RADISTA.UIComponent.CustomControl
         }
         #endregion
 
-        #region 定数
+        #region "定数"
         private const string IMAGE = "イメージ";
         private const string IMAGE_SIZE = "イメージサイズ";
+        private const string COLOR = "カラー";
         #endregion
 
-        #region メンバ変数
-        private static readonly ILog mLog = LogManager.GetLogger(typeof(RdtThumbnailView));
+        #region "メンバ変数"
+        private static readonly ILog mLog = LogManager.GetLogger(typeof(RdtButton));
 
         //ドラッグアンドドロップや複数選択用
         private string mBeforeSelectedPanel = string.Empty;
@@ -60,14 +61,18 @@ namespace RADISTA.UIComponent.CustomControl
         private List<Panel> mSelectedPanels = new List<Panel>();
         private Point mDragStartPoint;
 
+        //色関連
+        private string mPanelBackColor = Constants.DEFAULT_BACK_COLOR;
+        private string mSelectedBackColor = "#00FFFF";
+
         //画像関連
         private Point mImageMargin = new Point(0, 0);
         private Image? mDeleteImage = null;
         private Image? mMultiFrameImage = null;
         private Image? mLargeDeleteImage = null;
         private Image? mLargeMultiFrameImage = null;
-        private IconPlacementS mDeleteIconPlacement = IconPlacementS.LEFT_TOP;
-        private IconPlacementS mMultiIconPlacement = IconPlacementS.LEFT_TOP;
+        private IconPlacementT mDeleteIconPlacement = IconPlacementT.LEFT_TOP;
+        private IconPlacementT mMultiIconPlacement = IconPlacementT.LEFT_TOP;
         private bool mUseLargeIcon = false;
 
         //画像サイズ関係
@@ -84,12 +89,12 @@ namespace RADISTA.UIComponent.CustomControl
         private string mLargeMultiFrameFilePath = string.Empty;
         #endregion
 
-        #region プロパティ
+        #region "プロパティ"
         /// <summary>
         /// オーバーレイアイコンの場所
         /// </summary>
         [Category(IMAGE)]
-        public IconPlacementS DeleteIconPlacement
+        public IconPlacementT DeleteIconPlacement
         {
             get => this.mDeleteIconPlacement;
             set
@@ -103,7 +108,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// オーバーレイアイコンの場所
         /// </summary>
         [Category(IMAGE)]
-        public IconPlacementS MultiIconPlacement
+        public IconPlacementT MultiIconPlacement
         {
             get => this.mMultiIconPlacement;
             set
@@ -228,16 +233,36 @@ namespace RADISTA.UIComponent.CustomControl
             set => this.mOverlayImageSize = value;
         }
 
+        /// <summary>
+        /// サムネイルのバックカラー
+        /// </summary>
+        [Category(COLOR)]
+        public string PanelBackColor
+        {
+            get => this.mPanelBackColor;
+            set => this.mPanelBackColor = value;
+        }
+
+        /// <summary>
+        /// 選択時背景色
+        /// </summary>
+        [Category(COLOR)]
+        public string SelectedBackColor
+        {
+            get => this.mSelectedBackColor;
+            set => this.mSelectedBackColor = value;
+        }
+
         #endregion
 
-        #region パブリックメソッド
+        #region "パブリックメソッド"
         /// <summary>
         /// Initialize
         /// </summary>
         public RdtThumbnailView()
         {
             this.InitializeComponent();
-            this.InitializeCustomUI();
+            this.InitializeCustomSetting();
         }
 
         /// <summary>
@@ -249,7 +274,7 @@ namespace RADISTA.UIComponent.CustomControl
             container.Add(this);
 
             this.InitializeComponent();
-            this.InitializeCustomUI();
+            this.InitializeCustomSetting();
         }
 
         /// <summary>
@@ -288,6 +313,7 @@ namespace RADISTA.UIComponent.CustomControl
                     continue;
                 }
                 imagePanel.Name = panelCount.ToString();
+                imagePanel.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
                 this.Controls.Add(imagePanel);
                 panelCount++;
             }
@@ -339,75 +365,54 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         public void ShowDeleteOverlay()
         {
-            if (this.UseLargeIcon == true)
+            Image? image = this.mUseLargeIcon ? this.mLargeDeleteImage : this.mDeleteImage;
+            if (image == null)
             {
-                if (this.mLargeDeleteImage == null)
-                {
-                    mLog.Debug("mLargeDeleteImage is null");
-                    return;
-                }
-            }
-            else
-            {
-                if (this.mDeleteImage == null)
-                {
-                    mLog.Debug("mDeleteImage is null");
-                    return;
-                }
+                mLog.Debug(this.mUseLargeIcon ? "mLargeDeleteImage is null" : "mDeleteImage is null");
+                return;
             }
 
-            //オーバーレイパネルを追加
             foreach (var mainPanel in this.mSelectedPanels)
             {
-                if (mainPanel.Controls.Count == 0)
+                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                if (mainPic == null)
                 {
                     continue;
                 }
 
-                Control? mainPic = null;
+                //すでに存在していた場合は削除
+                var existing = mainPic.Controls.Find("DeleteOverlay", false).FirstOrDefault();
+                if (existing != null)
+                {
+                    mainPic.Controls.Remove(existing);
+                    //イベントハンドラの解除
+                    this.DetachEvents(existing);
 
-                if (mainPanel.Controls.Find("mainPic", false).Length > 0)
-                {
-                    mainPic = mainPanel.Controls.Find("mainPic", false).First();
-                }
-                else
-                {
-                    continue;
-                }
-
-                if (mainPic.Controls.Find("DeleteOverlay", false).Length > 0)
-                {
-                    //コントロールを削除する
-                    mainPic.Controls.Remove(mainPic.Controls.Find("DeleteOverlay", false).First());
+                    existing.Dispose();
                 }
 
-                Size boxSize = new Size();
-
-                boxSize.Width = this.mUseLargeIcon == true ? this.mLargeDeleteImage!.Width : this.mDeleteImage!.Width;
-                boxSize.Height = this.mUseLargeIcon == true ? this.mLargeDeleteImage!.Height : this.mDeleteImage!.Height;
-
-                PictureBox overlay = new PictureBox
+                var overlay = new PictureBox
                 {
                     Name = "DeleteOverlay",
-                    Size = boxSize,
-                    Location = this.GetOverlayLocation(mainPic, boxSize, this.mDeleteIconPlacement),
+                    Size = image.Size,
+                    Location = this.GetOverlayLocation(mainPic, image.Size, this.mDeleteIconPlacement),
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     BackColor = Color.Transparent,
-                    Image = this.mUseLargeIcon == true ? this.mLargeDeleteImage : this.mDeleteImage,
+                    Image = image,
+                    AllowDrop = true,
                 };
+
+                this.AttachEvents(overlay);
 
                 mainPic.Controls.Add(overlay);
 
-                var multi = mainPic.Controls.Find("MultiOverlay", false);
-                if (multi.Length > 0)
+                // MultiOverlay と同位置なら非表示にする
+                var multi = mainPic.Controls.Find("MultiOverlay", false).FirstOrDefault();
+                if (multi != null && this.mMultiIconPlacement == this.mDeleteIconPlacement)
                 {
-                    if (this.mMultiIconPlacement == this.mDeleteIconPlacement)
-                    {
-                        multi.First().Visible = false;
-                    }
+                    multi.Visible = false;
                 }
             }
-            return;
         }
 
         /// <summary>
@@ -415,133 +420,79 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         public void ShowMultiFrameOverlay()
         {
-            if (this.UseLargeIcon == true)
+            Image? image = this.mUseLargeIcon ? this.mLargeMultiFrameImage : this.mMultiFrameImage;
+            if (image == null)
             {
-                if (this.mLargeMultiFrameImage == null)
-                {
-                    mLog.Debug("mLargeMultiFrameImage is null");
-                    return;
-                }
-            }
-            else
-            {
-                if (this.mMultiFrameImage == null)
-                {
-                    mLog.Debug("mMultiFrameImage is null");
-                    return;
-                }
+                mLog.Debug(this.mUseLargeIcon ? "mLargeMultiFrameImage is null" : "mMultiFrameImage is null");
+                return;
             }
 
-            //オーバーレイパネルを追加
             foreach (var mainPanel in this.mSelectedPanels)
             {
-                if (mainPanel.Controls.Count == 0)
+                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                if (mainPic == null)
                 {
                     continue;
                 }
 
-                Control? mainPic = null;
-
-                if (mainPanel.Controls.Find("mainPic", false).Length > 0)
+                // 既存オーバーレイ削除
+                var existingOverlay = mainPic.Controls.Find("MultiOverlay", false).FirstOrDefault();
+                if (existingOverlay != null)
                 {
-                    mainPic = mainPanel.Controls.Find("mainPic", false).First();
-                }
-                else
-                {
-                    continue;
+                    mainPic.Controls.Remove(existingOverlay);
+                    existingOverlay.Dispose();
                 }
 
-                if (mainPic.Controls.Find("MultiOverlay", false).Length > 0)
-                {
-                    //コントロールを削除する
-                    mainPic.Controls.Remove(mainPic.Controls.Find("MultiOverlay", false).First());
-                }
+                // 表示する画像とサイズ
+                var boxSize = image.Size;
 
-                Size boxSize = new Size();
-
-                boxSize.Width = this.mUseLargeIcon == true ? this.mLargeMultiFrameImage!.Width : this.mMultiFrameImage!.Width;
-                boxSize.Height = this.mUseLargeIcon == true ? this.mLargeMultiFrameImage!.Height : this.mMultiFrameImage!.Height;
-
-                PictureBox overlay = new PictureBox
+                // オーバーレイ作成
+                var overlay = new PictureBox
                 {
                     Name = "MultiOverlay",
                     Size = boxSize,
                     Location = this.GetOverlayLocation(mainPic, boxSize, this.mMultiIconPlacement),
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     BackColor = Color.Transparent,
-                    Image = this.mUseLargeIcon == true ? this.mLargeMultiFrameImage : this.mMultiFrameImage,
+                    Image = image,
+                    AllowDrop = true,
                 };
+
+                // イベント登録
+                this.AttachEvents(overlay);
 
                 mainPic.Controls.Add(overlay);
 
-                //同じポジションにDeleteのオーバーレイがあったら表示しない
-                if (mainPic.Controls.Find("DeleteOverlay", false).Length > 0 && this.mDeleteIconPlacement == this.mMultiIconPlacement)
+                // DeleteOverlay と位置が重複していたら非表示
+                bool hasDelete = mainPic.Controls.Find("DeleteOverlay", false).Any();
+                if (hasDelete && this.mDeleteIconPlacement == this.mMultiIconPlacement)
                 {
                     overlay.Visible = false;
                 }
             }
-            return;
         }
 
         /// <summary>
-        /// オーバーレイ画像を削除する
+        /// マルチフレームアイコンのオーバーレイ画像を削除する
         /// </summary>
-        public void RemoveMultiOverlay()
+        public void RemoveMultiFrameOverlay()
         {
-            foreach (var mainPanel in this.mSelectedPanels)
-            {
-                if (mainPanel == null)
-                {
-                    continue;
-                }
-
-                var mainPic = mainPanel.Controls.Find("mainPic", false).First();
-
-                if (mainPic == null)
-                {
-                    continue;
-                }
-
-                bool isAdded = mainPic.Controls.Find("MultiOverlay", false).Length > 0;
-                if (isAdded)
-                {
-                    mainPic.Controls.Remove(mainPic.Controls.Find("MultiOverlay", false).First());
-                }
-            }
+            this.RemoveOverlay("MultiOverlay");
             return;
         }
 
         /// <summary>
-        /// オーバーレイ画像を削除する
+        /// 削除アイコンのオーバーレイ画像を削除する
         /// </summary>
         public void RemoveDeleteOverlay()
         {
-            foreach (var mainPanel in this.mSelectedPanels)
-            {
-                if (mainPanel == null)
-                {
-                    continue;
-                }
-
-                var mainPic = mainPanel.Controls.Find("mainPic", false).First();
-
-                if (mainPic == null)
-                {
-                    continue;
-                }
-
-                bool isAdded = mainPic.Controls.Find("DeleteOverlay", false).Length > 0;
-                if (isAdded)
-                {
-                    mainPic.Controls.Remove(mainPic.Controls.Find("DeleteOverlay", false).First());
-                }
-            }
+            this.RemoveOverlay("DeleteOverlay");
             return;
         }
 
         #endregion
 
-        #region プロテクテッドメソッド
+        #region "プロテクテッドメソッド"
         /// <summary>
         /// OnCreateControl
         /// </summary>
@@ -551,80 +502,32 @@ namespace RADISTA.UIComponent.CustomControl
 
             if (string.IsNullOrEmpty(this.mDeleteImageFilePath) == false)
             {
-                if (File.Exists(this.mDeleteImageFilePath))
-                {
-                    Image image = Image.FromFile(this.mDeleteImageFilePath);
-                    if (this.mIsOverlayResize == true)
-                    {
-                        image = new Bitmap(image, this.mOverlayImageSize);
-                    }
-
-                    this.mDeleteImage = image;
-                }
-                else
-                {
-                    mLog.Debug("mDeleteImageFilePath load is failed.");
-                    return;
-                }
+                this.mDeleteImage = ComponentCommon.GetImageFromPath(this.mDeleteImageFilePath);
             }
 
             if (string.IsNullOrEmpty(this.mLargeDeleteImageFilePath) == false)
             {
-                if (File.Exists(this.mLargeDeleteImageFilePath))
-                {
-                    Image image = Image.FromFile(this.mLargeDeleteImageFilePath);
-
-                    this.mLargeDeleteImage = image;
-                }
-                else
-                {
-                    mLog.Debug("mLargeDeleteImageFilePath load is failed.");
-                    return;
-                }
+                this.mLargeDeleteImage = ComponentCommon.GetImageFromPath(this.mLargeDeleteImageFilePath);
             }
 
             if (string.IsNullOrEmpty(this.mMultiFrameFilePath) == false)
             {
-                if (File.Exists(this.mMultiFrameFilePath))
-                {
-                    Image image = Image.FromFile(this.mMultiFrameFilePath);
-                    if (this.mIsOverlayResize == true)
-                    {
-                        image = new Bitmap(image, this.mOverlayImageSize);
-                    }
-
-                    this.mMultiFrameImage = image;
-                }
-                else
-                {
-                    mLog.Debug("mMultiFrameFilePath load is failed.");
-                    return;
-                }
+                this.mMultiFrameImage = ComponentCommon.GetImageFromPath(this.mMultiFrameFilePath);
             }
 
             if (string.IsNullOrEmpty(this.mLargeMultiFrameFilePath) == false)
             {
-                if (File.Exists(this.mLargeMultiFrameFilePath))
-                {
-                    Image image = Image.FromFile(this.mLargeMultiFrameFilePath);
-
-                    this.mLargeMultiFrameImage = image;
-                }
-                else
-                {
-                    mLog.Debug("mLargeMultiFrameFilePath load is failed.");
-                    return;
-                }
+                this.mLargeMultiFrameImage = ComponentCommon.GetImageFromPath(this.mLargeMultiFrameFilePath);
             }
         }
         #endregion
 
-        #region プライベートメソッド
+        #region "プライベートメソッド"
 
         /// <summary>
         /// Initialize
         /// </summary>
-        private void InitializeCustomUI()
+        private void InitializeCustomSetting()
         {
             //this.Dock = DockStyle.Fill;
             this.AutoScroll = true;
@@ -639,12 +542,88 @@ namespace RADISTA.UIComponent.CustomControl
         /// <summary>
         /// Dispose
         /// </summary>
-        private void DisposeCustomUI()
+        /// <summary>
+        /// オーバーレイ・画像・イベントなどのリソースを解放する
+        /// </summary>
+        private void DisposeCustomSetting()
         {
+            // 使用画像のDispose
             this.mDeleteImage?.Dispose();
+            this.mDeleteImage = null;
+
             this.mMultiFrameImage?.Dispose();
+            this.mMultiFrameImage = null;
+
             this.mLargeDeleteImage?.Dispose();
+            this.mLargeDeleteImage = null;
+
             this.mLargeMultiFrameImage?.Dispose();
+            this.mLargeMultiFrameImage = null;
+
+            // パネル内部のコントロールを解放
+            foreach (Panel mainPanel in this.Controls.OfType<Panel>().ToList())
+            {
+                foreach (Control child in mainPanel.Controls.OfType<Control>().ToList())
+                {
+                    // 数字ラベルの処理
+                    if (child is Label lblNumber)
+                    {
+                        this.DetachEvents(lblNumber);
+                        mainPanel.Controls.Remove(lblNumber);
+                        lblNumber.Dispose();
+                    }
+
+                    // メイン画像とそのオーバーレイの処理
+                    else if (child is PictureBox mainPic)
+                    {
+                        // オーバーレイを解放
+                        foreach (var overlay in mainPic.Controls.OfType<PictureBox>().ToList())
+                        {
+                            this.DetachEvents(overlay);
+                            overlay.Image?.Dispose();
+                            overlay.Image = null;
+                            mainPic.Controls.Remove(overlay);
+                            overlay.Dispose();
+                        }
+
+                        // mainPic自体の解放
+                        this.DetachEvents(mainPic);
+                        mainPic.Image?.Dispose();
+                        mainPic.Image = null;
+                        mainPanel.Controls.Remove(mainPic);
+                        mainPic.Dispose();
+                    }
+                }
+
+                // パネル自体の解放
+                this.DetachEvents(mainPanel);
+                this.Controls.Remove(mainPanel);
+                mainPanel.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// イベントを追加する
+        /// </summary>
+        private void AttachEvents(Control control)
+        {
+            control.Click += this.Panel_Click;
+            control.MouseDown += this.Panel_MouseDown;
+            control.MouseMove += this.Panel_MouseMove;
+            control.DragEnter += this.Panel_DragEnter;
+            control.DragDrop += this.Panel_DragDrop;
+        }
+
+        /// <summary>
+        /// イベントを削除する
+        /// </summary>
+        private void DetachEvents(Control control)
+        {
+            control.Click -= this.Panel_Click;
+            control.MouseDown -= this.Panel_MouseDown;
+            control.MouseMove -= this.Panel_MouseMove;
+            control.DragEnter -= this.Panel_DragEnter;
+            control.DragDrop -= this.Panel_DragDrop;
         }
 
         /// <summary>
@@ -657,12 +636,11 @@ namespace RADISTA.UIComponent.CustomControl
         /// <returns>サムネイルをまとめたパネル</returns>
         private Panel? CreateImagePanel(string imagePath, int marginX, int marginY, int number)
         {
-            if (!File.Exists(imagePath))
+            Image? image = ComponentCommon.GetImageFromPath(imagePath);
+            if (image == null)
             {
                 return null;
             }
-
-            Image image = Image.FromFile(imagePath);
             if (this.mIsResize == true)
             {
                 image = new Bitmap(image, this.mBaseImageSize);
@@ -697,29 +675,9 @@ namespace RADISTA.UIComponent.CustomControl
             };
 
             // クリック選択イベント
-            mainPanel.Click += this.Panel_Click;
-            mainPic.Click += this.Panel_Click;
-            lblNumber.Click += this.Panel_Click;
-
-            mainPic.MouseDown += this.Panel_MouseDown;
-            lblNumber.MouseDown += this.Panel_MouseDown;
-            mainPanel.MouseDown += this.Panel_MouseDown;
-
-            mainPic.MouseMove += this.Panel_MouseMove;
-            lblNumber.MouseMove += this.Panel_MouseMove;
-            mainPanel.MouseMove += this.Panel_MouseMove;
-
-            mainPic.DragDrop += this.Panel_DragDrop;
-            lblNumber.DragDrop += this.Panel_DragDrop;
-            mainPanel.AllowDrop = true;
-
-            mainPic.DragEnter += this.Panel_DragEnter;
-            lblNumber.DragEnter += this.Panel_DragEnter;
-            mainPanel.DragEnter += this.Panel_DragEnter;
-
-            mainPic.DragDrop += this.Panel_DragDrop;
-            lblNumber.DragDrop += this.Panel_DragDrop;
-            mainPanel.DragDrop += this.Panel_DragDrop;
+            this.AttachEvents(mainPanel);
+            this.AttachEvents(mainPic);
+            this.AttachEvents(lblNumber);
 
             mainPanel.Controls.Add(mainPic);
             mainPanel.Controls.Add(lblNumber);
@@ -734,37 +692,37 @@ namespace RADISTA.UIComponent.CustomControl
         /// <param name="imageSize">画像サイズ</param>
         /// <param name="placement">アイコンの場所</param>
         /// <returns>アイコンの座標</returns>
-        private Point GetOverlayLocation(Control mainPic, Size imageSize, IconPlacementS placement)
+        private Point GetOverlayLocation(Control mainPic, Size imageSize, IconPlacementT placement)
         {
             Point location = new Point(0, 0);
 
             switch (placement)
             {
-                case IconPlacementS.LEFT_TOP:
+                case IconPlacementT.LEFT_TOP:
                     {
                         location.X = 2;
                         location.Y = 2;
                         break;
                     }
-                case IconPlacementS.RIGHT_TOP:
+                case IconPlacementT.RIGHT_TOP:
                     {
                         location.X = mainPic.Width - imageSize.Width - 2;
                         location.Y = 2;
                         break;
                     }
-                case IconPlacementS.LEFT_BOTTOM:
+                case IconPlacementT.LEFT_BOTTOM:
                     {
                         location.X = 2;
                         location.Y = mainPic.Height - imageSize.Height - 2;
                         break;
                     }
-                case IconPlacementS.RIGHT_BOTTOM:
+                case IconPlacementT.RIGHT_BOTTOM:
                     {
                         location.X = mainPic.Width - imageSize.Width - 2;
                         location.Y = mainPic.Height - imageSize.Height - 2;
                         break;
                     }
-                case IconPlacementS.CENTER:
+                case IconPlacementT.CENTER:
                     {
                         location.X = (mainPic.Width - imageSize.Width) / 2;
                         location.Y = (mainPic.Height - imageSize.Height) / 2;
@@ -788,36 +746,60 @@ namespace RADISTA.UIComponent.CustomControl
         {
             foreach (Panel mainPanel in this.Controls)
             {
-                var mainPic = mainPanel.Controls.Find("mainPic", false);
-                if (mainPic != null)
+                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                if (mainPic == null)
                 {
-                    var delete = mainPic.First().Controls.Find("DeleteOverlay", false);
-                    if (delete.Length > 0)
-                    {
-                        PictureBox overlay = (PictureBox)delete.First();
-                        Point location = this.GetOverlayLocation(mainPic.First(), overlay.Image.Size, this.mDeleteIconPlacement);
+                    continue;
+                }
 
-                        overlay.Location = location;
-                    }
-                    var multi = mainPic.First().Controls.Find("MultiOverlay", false);
-                    if (multi.Length > 0)
-                    {
-                        PictureBox overlay = (PictureBox)multi.First();
-                        Point location = this.GetOverlayLocation(mainPic.First(), overlay.Image.Size, this.mMultiIconPlacement);
+                var deleteOverlay = mainPic.Controls.Find("DeleteOverlay", false).FirstOrDefault() as PictureBox;
+                var multiOverlay = mainPic.Controls.Find("MultiOverlay", false).FirstOrDefault() as PictureBox;
 
-                        overlay.Location = location;
-                        if (delete.Length > 0 && this.mMultiIconPlacement == this.mDeleteIconPlacement)
-                        {
-                            overlay.Visible = false;
-                        }
-                        else
-                        {
-                            overlay.Visible = true;
-                        }
-                    }
+                if (deleteOverlay != null)
+                {
+                    deleteOverlay.Location = this.GetOverlayLocation(mainPic, deleteOverlay.Image.Size, this.mDeleteIconPlacement);
+                }
+
+                if (multiOverlay != null)
+                {
+                    multiOverlay.Location = this.GetOverlayLocation(mainPic, multiOverlay.Image.Size, this.mMultiIconPlacement);
+
+                    multiOverlay.Visible = !(deleteOverlay != null && this.mMultiIconPlacement == this.mDeleteIconPlacement);
                 }
             }
-            return;
+        }
+
+        /// <summary>
+        /// 指定された名前のオーバーレイを削除する
+        /// </summary>
+        private void RemoveOverlay(string overlayName)
+        {
+            foreach (var mainPanel in this.mSelectedPanels)
+            {
+                if (mainPanel == null)
+                {
+                    continue;
+                }
+
+                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                if (mainPic == null)
+                {
+                    continue;
+                }
+
+                var overlay = mainPic.Controls.Find(overlayName, false).FirstOrDefault();
+                if (overlay == null)
+                {
+                    continue;
+                }
+
+                mainPic.Controls.Remove(overlay);
+
+                // イベントハンドラの解除
+                this.DetachEvents(overlay);
+
+                overlay.Dispose();
+            }
         }
 
         /// <summary>
@@ -847,12 +829,12 @@ namespace RADISTA.UIComponent.CustomControl
             {
                 if (this.mSelectedPanels.Contains(clickedPanel))
                 {
-                    clickedPanel.BackColor = Color.Transparent;
+                    clickedPanel.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
                     this.mSelectedPanels.Remove(clickedPanel);
                 }
                 else
                 {
-                    clickedPanel.BackColor = Color.Cyan;
+                    clickedPanel.BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
                     this.mSelectedPanels.Add(clickedPanel);
                 }
 
@@ -880,7 +862,7 @@ namespace RADISTA.UIComponent.CustomControl
                     {
                         foreach (Panel p in this.mSelectedPanels)
                         {
-                            p.BackColor = Color.Transparent;
+                            p.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
                         }
 
                         this.mSelectedPanels.Clear();
@@ -892,7 +874,7 @@ namespace RADISTA.UIComponent.CustomControl
                         {
                             if (num >= start && num <= end)
                             {
-                                panel.BackColor = Color.Cyan;
+                                panel.BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
                                 if (!this.mSelectedPanels.Contains(panel))
                                 {
                                     this.mSelectedPanels.Add(panel);
@@ -908,12 +890,12 @@ namespace RADISTA.UIComponent.CustomControl
             {
                 foreach (var panel in this.mSelectedPanels)
                 {
-                    panel.BackColor = Color.Transparent;
+                    panel.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
                 }
 
                 this.mSelectedPanels.Clear();
 
-                clickedPanel.BackColor = Color.Cyan;
+                clickedPanel.BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
                 this.mSelectedPanels.Add(clickedPanel);
 
                 this.mBeforeSelectedPanel = clickedPanel.Name;

@@ -15,7 +15,7 @@
         {
             if (disposing && (components != null))
             {
-                this.DisposeCustomUI();
+                this.DisposeCustomSetting();
                 components.Dispose();
             }
             base.Dispose(disposing);
