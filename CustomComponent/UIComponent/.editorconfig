@@ -107,6 +107,9 @@ dotnet_diagnostic.SA1516.severity = error
 # SA1306: Field names should begin with lower-case letter
 dotnet_diagnostic.SA1306.severity = none
 
+# SA1011: Closing square bracket should be followed by a space を無効化
+dotnet_diagnostic.SA1011.severity = none
+
 #Microsoft.CodeAnalysis.NetAnalyzers
 
 # CA1200: cref タグをプレフィックスと共に使用しない
