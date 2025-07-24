@@ -129,15 +129,22 @@ namespace RADISTA.UIComponent.CustomControl
                 Rectangle rect = this.ClientRectangle;
 
                 // 背景の描画
-                e.Graphics.FillRectangle(new SolidBrush(ColorTranslator.FromHtml(this.mBackgroundColor)), rect);
+                using (SolidBrush backBrush = new SolidBrush(ColorTranslator.FromHtml(this.mBackgroundColor)))
+                {
+                    e.Graphics.FillRectangle(backBrush, rect);
+                }
 
                 // プログレスの割合を計算
-                float percentage = (float)(this.Value - this.Minimum) / (this.Maximum - this.Minimum);
+                // ゼロ除算対策
+                float percentage = (this.Maximum == this.Minimum) ? 0f : (float)(this.Value - this.Minimum) / (this.Maximum - this.Minimum);
                 int width = (int)(rect.Width * percentage);
                 Rectangle progressRect = new Rectangle(0, 0, width, rect.Height);
 
                 // プログレス部分を指定色で塗りつぶす
-                e.Graphics.FillRectangle(new SolidBrush(ColorTranslator.FromHtml(this.mProgressColor)), progressRect);
+                using (SolidBrush progressBrush = new SolidBrush(ColorTranslator.FromHtml(this.mProgressColor)))
+                {
+                    e.Graphics.FillRectangle(progressBrush, progressRect);
+                }
 
                 // 枠線を描画
                 e.Graphics.DrawRectangle(Pens.Gray, 0, 0, rect.Width - 1, rect.Height - 1);
@@ -145,10 +152,8 @@ namespace RADISTA.UIComponent.CustomControl
                 // テキスト表示の場合
                 if (this.mShowText)
                 {
-                    {
-                        string displayText = $"{(int)(percentage * 100)}%";
-                        TextRenderer.DrawText(e.Graphics, displayText, this.Font, this.ClientRectangle, SystemColors.ControlText, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.SingleLine);
-                    }
+                    string displayText = $"{(int)(percentage * 100)}%";
+                    TextRenderer.DrawText(e.Graphics, displayText, this.Font, this.ClientRectangle, SystemColors.ControlText, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.SingleLine);
                 }
             }
             catch (Exception ex)

@@ -271,17 +271,23 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         private void DisposeCustomSetting()
         {
+            this.mToggleButton.Click -= this.ToggleButton_Click;
+            this.mToggleButton.Paint -= this.ToggleButton_Paint;
+
             if (this.mShowImage != null)
             {
                 this.mShowImage.Dispose();
+                this.mShowImage = null;
             }
             if (this.mHideImage != null)
             {
                 this.mHideImage.Dispose();
+                this.mHideImage = null;
             }
             if (this.thisImage != null)
             {
                 this.thisImage.Dispose();
+                this.thisImage = null;
             }
         }
 
