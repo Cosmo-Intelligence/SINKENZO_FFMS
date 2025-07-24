@@ -351,76 +351,7 @@ namespace RADISTA.UIComponent.CustomControl
                 this.Owner = Form.ActiveForm;
             }
         }
-
-        /// <summary>
-        /// 画面表示位置を設定
-        /// </summary>
-        private void UpdateMessageBoxLocation()
-        {
-            if (!this.IsInDesignMode())
-            {
-                if (this.Owner != null)
-                {
-                    var ownerRect = this.Owner.Bounds;
-
-                    switch (this.mPositionMode)
-                    {
-                        // 組み合わせで指定の場合
-                        case PositionModeT.Combination:
-                            {
-                                int x = ownerRect.Left;
-                                int y = ownerRect.Top;
-
-                                // 横位置
-                                switch (this.mHorizontalAlign)
-                                {
-                                    case HorizontalAlign.Left:
-                                        x += this.MessageOffset.X;
-                                        break;
-                                    case HorizontalAlign.Center:
-                                        x += ((ownerRect.Width - this.Width) / 2) + this.MessageOffset.X;
-                                        break;
-                                    case HorizontalAlign.Right:
-                                        x += ownerRect.Width - this.Width + this.MessageOffset.X;
-                                        break;
-                                }
-
-                                // 縦位置
-                                switch (this.mVerticalAlign)
-                                {
-                                    case VerticalAlign.Top:
-                                        y += this.MessageOffset.Y;
-                                        break;
-                                    case VerticalAlign.Center:
-                                        y += ((ownerRect.Height - this.Height) / 2) + this.MessageOffset.Y;
-                                        break;
-                                    case VerticalAlign.Bottom:
-                                        y += ownerRect.Height - this.Height + this.MessageOffset.Y;
-                                        break;
-                                }
-                                // 座標確定
-                                this.Location = new Point(x, y);
-                                break;
-                            }
-
-                        // 絶対座標で指定の場合
-                        case PositionModeT.Absolute:
-                            this.Location = this.MessagePosition_Absolute;
-                            break;
-
-                        // 相対座標で指定の場合
-                        case PositionModeT.Relative:
-                            this.Location = new Point(
-                                ownerRect.Left + this.MessagePosition_Relative.X,
-                                ownerRect.Top + this.MessagePosition_Relative.Y);
-                            break;
-                    }
-                }
-                // 自動クローズ処理
-                this.StartAutoCloseTimer();
-            }
-        }
-
+        
         /// <summary>
         /// OnShown
         /// </summary>
@@ -611,6 +542,75 @@ namespace RADISTA.UIComponent.CustomControl
                 case ButtonTypeT.None:
                 default:
                     break;
+            }
+        }
+
+        /// <summary>
+        /// 画面表示位置を設定
+        /// </summary>
+        private void UpdateMessageBoxLocation()
+        {
+            if (!this.IsInDesignMode())
+            {
+                if (this.Owner != null)
+                {
+                    var ownerRect = this.Owner.Bounds;
+
+                    switch (this.mPositionMode)
+                    {
+                        // 組み合わせで指定の場合
+                        case PositionModeT.Combination:
+                            {
+                                int x = ownerRect.Left;
+                                int y = ownerRect.Top;
+
+                                // 横位置
+                                switch (this.mHorizontalAlign)
+                                {
+                                    case HorizontalAlign.Left:
+                                        x += this.MessageOffset.X;
+                                        break;
+                                    case HorizontalAlign.Center:
+                                        x += ((ownerRect.Width - this.Width) / 2) + this.MessageOffset.X;
+                                        break;
+                                    case HorizontalAlign.Right:
+                                        x += ownerRect.Width - this.Width + this.MessageOffset.X;
+                                        break;
+                                }
+
+                                // 縦位置
+                                switch (this.mVerticalAlign)
+                                {
+                                    case VerticalAlign.Top:
+                                        y += this.MessageOffset.Y;
+                                        break;
+                                    case VerticalAlign.Center:
+                                        y += ((ownerRect.Height - this.Height) / 2) + this.MessageOffset.Y;
+                                        break;
+                                    case VerticalAlign.Bottom:
+                                        y += ownerRect.Height - this.Height + this.MessageOffset.Y;
+                                        break;
+                                }
+                                // 座標確定
+                                this.Location = new Point(x, y);
+                                break;
+                            }
+
+                        // 絶対座標で指定の場合
+                        case PositionModeT.Absolute:
+                            this.Location = this.MessagePosition_Absolute;
+                            break;
+
+                        // 相対座標で指定の場合
+                        case PositionModeT.Relative:
+                            this.Location = new Point(
+                                ownerRect.Left + this.MessagePosition_Relative.X,
+                                ownerRect.Top + this.MessagePosition_Relative.Y);
+                            break;
+                    }
+                }
+                // 自動クローズ処理
+                this.StartAutoCloseTimer();
             }
         }
 

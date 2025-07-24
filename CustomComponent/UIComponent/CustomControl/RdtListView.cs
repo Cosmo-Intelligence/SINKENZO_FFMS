@@ -258,7 +258,7 @@ namespace RADISTA.UIComponent.CustomControl
         private void ListView_DrawItem(object? sender, DrawListViewItemEventArgs e)
         {
             // 偶数行の場合
-            if (this.mIsBackgroundColor && e.ItemIndex % 2 == 0)
+            if (this.mIsBackgroundColor && e.ItemIndex % 2 != 0)
             {
                 // 背景色を変更
                 Color evenColor = ColorTranslator.FromHtml(this.mBackgroundRowColor);
