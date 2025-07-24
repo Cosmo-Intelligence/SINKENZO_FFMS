@@ -31,11 +31,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="image\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="UIComponent" Version="0.0.1" />
+	  <PackageReference Include="UIComponent" Version="1.0.3" />
 	</ItemGroup>
 	<Target Name="CopyImageFiles" AfterTargets="Build">
 		<Copy SourceFiles="@(ImageFiles)" DestinationFolder="$(OutDir)image\%(RecursiveDir)" />

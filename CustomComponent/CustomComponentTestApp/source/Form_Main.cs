@@ -1,6 +1,7 @@
-using RADISTA.CustomComponentTestApp;
 using log4net;
 using log4net.Config;
+using RADISTA.CustomComponentTestApp;
+using RADISTA.CustomComponentTestApp.source;
 using RADISTA.UIComponent.CustomControl;
 using System.Diagnostics.Metrics;
 using System.Drawing;
@@ -94,7 +95,7 @@ namespace RADISTA.CustomComponentTestApp
         private void button_RdtCheckBox_Click(object sender, EventArgs e)
         {
             Form_RdtCheckBox form = new Form_RdtCheckBox();
-            form.Show();   
+            form.Show();
         }
 
         private void button_RdtToggleButton_Click(object sender, EventArgs e)
@@ -144,7 +145,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtListView_Click(object sender, EventArgs e)
         {
-
+            Form_RdtListView form = new Form_RdtListView();
+            form.Show();
         }
 
         private void button_RdtTabControl_Click(object sender, EventArgs e)
@@ -160,7 +162,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtForm_Click(object sender, EventArgs e)
         {
-
+            Form_RdtForm form = new Form_RdtForm();
+            form.Show();
         }
 
         private void button_RdtGadget_Click(object sender, EventArgs e)
@@ -170,12 +173,14 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtDialog_Click(object sender, EventArgs e)
         {
-
+            Form_RdtDialog form = new Form_RdtDialog();
+            form.Show();
         }
 
         private void button_RdtMessageBox_Click(object sender, EventArgs e)
         {
-
+            Form_RdtMessageBox form = new Form_RdtMessageBox();
+            form.Show();
         }
 
         private void button_RdtPanel_Click(object sender, EventArgs e)
