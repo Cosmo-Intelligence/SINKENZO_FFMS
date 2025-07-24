@@ -402,6 +402,7 @@ namespace RADISTA.UIComponent.CustomControl
                     AllowDrop = true,
                 };
 
+                this.DetachEvents(overlay);
                 this.AttachEvents(overlay);
 
                 mainPic.Controls.Add(overlay);
@@ -459,6 +460,7 @@ namespace RADISTA.UIComponent.CustomControl
                 };
 
                 // イベント登録
+                this.DetachEvents(overlay);
                 this.AttachEvents(overlay);
 
                 mainPic.Controls.Add(overlay);
@@ -500,24 +502,44 @@ namespace RADISTA.UIComponent.CustomControl
         {
             base.OnCreateControl();
 
-            if (string.IsNullOrEmpty(this.mDeleteImageFilePath) == false)
+            try
             {
                 this.mDeleteImage = ComponentCommon.GetImageFromPath(this.mDeleteImageFilePath);
             }
+            catch (Exception ex)
+            {
+                mLog.Error("mDeleteImageFilePath load is failed");
+                mLog.Error(ex);
+            }
 
-            if (string.IsNullOrEmpty(this.mLargeDeleteImageFilePath) == false)
+            try
             {
                 this.mLargeDeleteImage = ComponentCommon.GetImageFromPath(this.mLargeDeleteImageFilePath);
             }
+            catch (Exception ex)
+            {
+                mLog.Error("mLargeDeleteImageFilePath load is failed");
+                mLog.Error(ex);
+            }
 
-            if (string.IsNullOrEmpty(this.mMultiFrameFilePath) == false)
+            try
             {
                 this.mMultiFrameImage = ComponentCommon.GetImageFromPath(this.mMultiFrameFilePath);
             }
+            catch (Exception ex)
+            {
+                mLog.Error("mMultiFrameFilePath load is failed");
+                mLog.Error(ex);
+            }
 
-            if (string.IsNullOrEmpty(this.mLargeMultiFrameFilePath) == false)
+            try
             {
                 this.mLargeMultiFrameImage = ComponentCommon.GetImageFromPath(this.mLargeMultiFrameFilePath);
+            }
+            catch (Exception ex)
+            {
+                mLog.Error("mLargeMultiFrameFilePath load is failed");
+                mLog.Error(ex);
             }
         }
         #endregion
@@ -636,7 +658,18 @@ namespace RADISTA.UIComponent.CustomControl
         /// <returns>サムネイルをまとめたパネル</returns>
         private Panel? CreateImagePanel(string imagePath, int marginX, int marginY, int number)
         {
-            Image? image = ComponentCommon.GetImageFromPath(imagePath);
+            Image? image = null;
+
+            try
+            {
+                image = ComponentCommon.GetImageFromPath(imagePath);
+            }
+            catch (Exception ex)
+            {
+                mLog.Error("mDeleteImageFilePath load is failed");
+                mLog.Error(ex);
+            }
+
             if (image == null)
             {
                 return null;
@@ -675,12 +708,23 @@ namespace RADISTA.UIComponent.CustomControl
             };
 
             // クリック選択イベント
+            this.DetachEvents(mainPanel);
             this.AttachEvents(mainPanel);
+
+            this.DetachEvents(mainPic);
             this.AttachEvents(mainPic);
+
+            this.DetachEvents(lblNumber);
             this.AttachEvents(lblNumber);
 
             mainPanel.Controls.Add(mainPic);
             mainPanel.Controls.Add(lblNumber);
+
+            if (image != null)
+            {
+                image.Dispose();
+                image = null;
+            }
 
             return mainPanel;
         }
