@@ -318,6 +318,10 @@ namespace RADISTA.UIComponent.CustomControl
         #endregion
 
         #region プライベートメソッド
+        
+        /// <summary>
+        /// 初期化処理
+        /// </summary>
         private void InitializeCustomSetting()
         {
             // デフォルト設定
@@ -331,6 +335,30 @@ namespace RADISTA.UIComponent.CustomControl
 
             //イベントの設定
             this.AttachEvents();
+        }
+
+        /// <summary>
+        /// Dispose処理
+        /// </summary>
+        private void DisposeCustomSetting()
+        {
+            if (this.mCheckedImage != null)
+            {
+                this.mCheckedImage.Dispose();
+                this.mCheckedImage = null;
+            }
+            if (this.mUncheckedImage != null)
+            {
+                this.mUncheckedImage.Dispose();
+                this.mUncheckedImage = null;
+            }
+            if (this.mIndeterminateImage != null)
+            {
+                this.mIndeterminateImage.Dispose();
+                this.mIndeterminateImage = null;
+            }
+
+            this.DetachEvents();
         }
 
         /// <summary>
@@ -407,27 +435,6 @@ namespace RADISTA.UIComponent.CustomControl
             Color backColor = this.BackColor;
             string colorCode = $"#{backColor.R:X2}{backColor.G:X2}{backColor.B:X2}";
             this.mBackColor = colorCode;
-        }
-
-        private void DisposeCustomSetting()
-        {
-            if (this.mCheckedImage != null)
-            {
-                this.mCheckedImage.Dispose();
-                this.mCheckedImage = null;
-            }
-            if (this.mUncheckedImage != null)
-            {
-                this.mUncheckedImage.Dispose();
-                this.mUncheckedImage = null;
-            }
-            if (this.mIndeterminateImage != null)
-            {
-                this.mIndeterminateImage.Dispose();
-                this.mIndeterminateImage = null;
-            }
-
-            this.DetachEvents();
         }
 
         #endregion

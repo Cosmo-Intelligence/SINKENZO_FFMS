@@ -823,6 +823,9 @@ namespace RADISTA.UIComponent.CustomControl
             this.AttachEvents();
         }
 
+        /// <summary>
+        /// Dispose処理
+        /// </summary>
         private void DisposeCustomSetting()
         {
             if (this.Image != null)

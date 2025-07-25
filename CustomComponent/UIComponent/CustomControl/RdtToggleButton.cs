@@ -232,6 +232,10 @@ namespace RADISTA.UIComponent.CustomControl
         #endregion
 
         #region プライベートメソッド
+        
+        /// <summary>
+        /// 初期化処理 
+        /// </summary>
         private void InitializeCustomSetting()
         {
             // デフォルト設定
@@ -249,11 +253,17 @@ namespace RADISTA.UIComponent.CustomControl
             this.AttachEvents();
         }
 
+        /// <summary>
+        /// Dispose処理
+        /// </summary>
         private void DisposeCustomSetting()
         {
             this.DetachEvents();
         }
 
+        /// <summary>
+        /// イベントを削除する
+        /// </summary>
         private void DetachEvents()
         {
             this.MouseDown -= this.RdtButton_MouseDown;
@@ -262,6 +272,9 @@ namespace RADISTA.UIComponent.CustomControl
             this.MouseLeave -= this.RdtButton_MouseLeave;
         }
 
+        /// <summary>
+        /// イベントを追加する
+        /// </summary>
         private void AttachEvents()
         {
             this.DetachEvents();

@@ -259,6 +259,10 @@ namespace RADISTA.UIComponent.CustomControl
         #endregion
 
         #region プライベートメソッド
+
+        /// <summary>
+        /// 初期化処理
+        /// </summary>
         private void InitializeCustomSetting()
         {
             // デフォルト設定
@@ -274,6 +278,9 @@ namespace RADISTA.UIComponent.CustomControl
             this.AttachEvents();
         }
 
+        /// <summary>
+        /// Dispose処理
+        /// </summary>
         private void DisposeCustomSetting()
         {
             if (this.mCheckedImage != null)
