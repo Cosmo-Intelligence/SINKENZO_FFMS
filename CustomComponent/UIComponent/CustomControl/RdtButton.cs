@@ -27,7 +27,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// <summary>
         /// 均等割り付けパターン
         /// </summary>
-        public enum TextJustifyS
+        public enum TextJustifyT
         {
             /// <summary>
             /// 均等割り付け無し
@@ -46,7 +46,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// <summary>
         /// ボタン文字の描画方法
         /// </summary>
-        public enum TextOrientationS
+        public enum TextOrientationT
         {
             /// <summary>
             /// 横書き
@@ -128,8 +128,8 @@ namespace RADISTA.UIComponent.CustomControl
         private string mOuterBorderColor = Constants.BORDER_COLOR;
         private string mImageFilePath = string.Empty;
         private int mBorderThick = 1;
-        private TextJustifyS mTextJustify = TextJustifyS.NONE;
-        private TextOrientationS mTextOrientation = TextOrientationS.HORIZONTAL;
+        private TextJustifyT mTextJustify = TextJustifyT.NONE;
+        private TextOrientationT mTextOrientation = TextOrientationT.HORIZONTAL;
         private string mBackColor = Constants.DEFAULT_BACK_COLOR;
 
         private int mCornerRadius = CORNER_RADIUS;
@@ -239,7 +239,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// テキストの均等割り付け
         /// </summary>
         [Category(DISPLAY)]
-        public TextJustifyS TextJustify
+        public TextJustifyT TextJustify
         {
             get => this.mTextJustify;
             set => this.mTextJustify = value;
@@ -249,7 +249,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// ボタンテキストの向き
         /// </summary>
         [Category(DISPLAY)]
-        public TextOrientationS TextOrientation
+        public TextOrientationT TextOrientation
         {
             get => this.mTextOrientation;
             set => this.mTextOrientation = value;
@@ -344,22 +344,22 @@ namespace RADISTA.UIComponent.CustomControl
                 //ボタンテキストの描画
                 switch (this.mTextOrientation)
                 {
-                    case TextOrientationS.HORIZONTAL:
+                    case TextOrientationT.HORIZONTAL:
                         {
                             this.ButtonTextHorizontalDraw(pevent);
                             break;
                         }
-                    case TextOrientationS.DOWN_WORD:
+                    case TextOrientationT.DOWN_WORD:
                         {
                             this.ButtonTextRotationDraw(90, pevent);
                             break;
                         }
-                    case TextOrientationS.UP_WORD:
+                    case TextOrientationT.UP_WORD:
                         {
                             this.ButtonTextRotationDraw(-90, pevent);
                             break;
                         }
-                    case TextOrientationS.VERTICAL:
+                    case TextOrientationT.VERTICAL:
                         {
                             this.ButtonTextVertiaclDraw(pevent);
                             break;
@@ -416,12 +416,12 @@ namespace RADISTA.UIComponent.CustomControl
                 return;
             }
 
-            if (this.mTextJustify != TextJustifyS.NONE)
+            if (this.mTextJustify != TextJustifyT.NONE)
             {
                 using (Brush brush = new SolidBrush(this.ForeColor))
                 {
                     string drawText = string.Empty;
-                    if (this.mTextJustify == TextJustifyS.JUSTIFY_WITH_SPACE)
+                    if (this.mTextJustify == TextJustifyT.JUSTIFY_WITH_SPACE)
                     {
                         drawText = " " + this.Text + " ";
                     }
@@ -541,7 +541,7 @@ namespace RADISTA.UIComponent.CustomControl
             }
 
             string drawText = string.Empty;
-            if (this.mTextJustify == TextJustifyS.JUSTIFY_WITH_SPACE)
+            if (this.mTextJustify == TextJustifyT.JUSTIFY_WITH_SPACE)
             {
                 drawText = " " + this.Text + " ";
             }
@@ -552,7 +552,7 @@ namespace RADISTA.UIComponent.CustomControl
 
             int charCount = drawText.Length;
 
-            if (this.mTextJustify != TextJustifyS.NONE)
+            if (this.mTextJustify != TextJustifyT.NONE)
             {
                 // 描画領域初期値
                 int borderMargin = this.mBorderThick * 2;
@@ -715,7 +715,7 @@ namespace RADISTA.UIComponent.CustomControl
             using (Brush brush = new SolidBrush(this.ForeColor))
             {
                 string drawText = string.Empty;
-                if (this.mTextJustify == TextJustifyS.JUSTIFY_WITH_SPACE)
+                if (this.mTextJustify == TextJustifyT.JUSTIFY_WITH_SPACE)
                 {
                     drawText = " " + this.Text + " ";
                 }
@@ -754,7 +754,7 @@ namespace RADISTA.UIComponent.CustomControl
                 int charCount = drawText.Length;
 
                 //1文字だった場合中央に描画する
-                if (this.mTextJustify != TextJustifyS.NONE && charCount > 1)
+                if (this.mTextJustify != TextJustifyT.NONE && charCount > 1)
                 {
                     float charHeight = this.Font.GetHeight(e.Graphics);
                     spacing = (textHeight - charHeight) / (charCount - 1);
@@ -820,28 +820,47 @@ namespace RADISTA.UIComponent.CustomControl
             this.UpdateStyles();
 
             //イベントの設定
-            this.MouseEnter -= this.RdtButton_MouseEnter;
-            this.MouseEnter += this.RdtButton_MouseEnter;
-
-            this.MouseUp -= this.RdtButton_MouseUp;
-            this.MouseUp += this.RdtButton_MouseUp;
-
-            this.MouseDown -= this.RdtButton_MouseDown;
-            this.MouseDown += this.RdtButton_MouseDown;
-
-            this.MouseLeave -= this.RdtButton_MouseLeave;
-            this.MouseLeave += this.RdtButton_MouseLeave;
-
-            this.BackColorChanged -= this.RdtButton_BackColorChanged;
-            this.BackColorChanged += this.RdtButton_BackColorChanged;
+            this.AttachEvents();
         }
 
+        /// <summary>
+        /// Dispose処理
+        /// </summary>
         private void DisposeCustomSetting()
         {
             if (this.Image != null)
             {
                 this.Image.Dispose();
+                this.Image = null;
             }
+
+            this.DetachEvents();
+        }
+
+        /// <summary>
+        /// イベントを削除する
+        /// </summary>
+        private void DetachEvents()
+        {
+            this.MouseEnter -= this.RdtButton_MouseEnter;
+            this.MouseUp -= this.RdtButton_MouseUp;
+            this.MouseDown -= this.RdtButton_MouseDown;
+            this.MouseLeave -= this.RdtButton_MouseLeave;
+            this.BackColorChanged -= this.RdtButton_BackColorChanged;
+        }
+
+        /// <summary>
+        /// イベントを追加する
+        /// </summary>
+        private void AttachEvents()
+        {
+            this.DetachEvents();
+
+            this.MouseEnter += this.RdtButton_MouseEnter;
+            this.MouseUp += this.RdtButton_MouseUp;
+            this.MouseDown += this.RdtButton_MouseDown;
+            this.MouseLeave += this.RdtButton_MouseLeave;
+            this.BackColorChanged += this.RdtButton_BackColorChanged;
         }
 
         #region 現在調査中

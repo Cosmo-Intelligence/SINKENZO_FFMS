@@ -159,8 +159,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Default.Size = new Size(94, 29);
             Button_Default.TabIndex = 3;
             Button_Default.Text = "Default";
-            Button_Default.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Default.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Default.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Default.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Default.UseVisualStyleBackColor = false;
             // 
             // Button_Inactive
@@ -183,8 +183,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Inactive.Size = new Size(94, 29);
             Button_Inactive.TabIndex = 4;
             Button_Inactive.Text = "Inactive";
-            Button_Inactive.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Inactive.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Inactive.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Inactive.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Inactive.UseVisualStyleBackColor = false;
             // 
             // Label_FontType
@@ -279,8 +279,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Border_FF00FF.Size = new Size(116, 29);
             Button_Border_FF00FF.TabIndex = 13;
             Button_Border_FF00FF.Text = "#FF00FF";
-            Button_Border_FF00FF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Border_FF00FF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Border_FF00FF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Border_FF00FF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Border_FF00FF.UseVisualStyleBackColor = false;
             // 
             // Label_Border_FF00FF
@@ -311,8 +311,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_BorderThick_1.Size = new Size(116, 29);
             Button_BorderThick_1.TabIndex = 18;
             Button_BorderThick_1.Text = "Thick=1";
-            Button_BorderThick_1.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_BorderThick_1.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_BorderThick_1.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_BorderThick_1.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_BorderThick_1.UseVisualStyleBackColor = false;
             // 
             // Button_Border_00FFFF
@@ -334,8 +334,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Border_00FFFF.Size = new Size(116, 29);
             Button_Border_00FFFF.TabIndex = 20;
             Button_Border_00FFFF.Text = "#00FFFF";
-            Button_Border_00FFFF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Border_00FFFF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Border_00FFFF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Border_00FFFF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Border_00FFFF.UseVisualStyleBackColor = false;
             // 
             // Label_Border_00FFFF
@@ -393,8 +393,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_BorderThick_3.Size = new Size(116, 29);
             Button_BorderThick_3.TabIndex = 25;
             Button_BorderThick_3.Text = "Thick=3";
-            Button_BorderThick_3.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_BorderThick_3.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_BorderThick_3.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_BorderThick_3.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_BorderThick_3.UseVisualStyleBackColor = false;
             // 
             // Button_InnerBorder_00FFFF
@@ -416,8 +416,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_InnerBorder_00FFFF.Size = new Size(116, 29);
             Button_InnerBorder_00FFFF.TabIndex = 33;
             Button_InnerBorder_00FFFF.Text = "#00FFFF";
-            Button_InnerBorder_00FFFF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_InnerBorder_00FFFF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_InnerBorder_00FFFF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_InnerBorder_00FFFF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_InnerBorder_00FFFF.UseVisualStyleBackColor = false;
             // 
             // Label_InnerBorder_00FFFF
@@ -457,8 +457,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_InnerBorder_FF00FF.Size = new Size(116, 29);
             Button_InnerBorder_FF00FF.TabIndex = 28;
             Button_InnerBorder_FF00FF.Text = "#FF00FF";
-            Button_InnerBorder_FF00FF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_InnerBorder_FF00FF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_InnerBorder_FF00FF.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_InnerBorder_FF00FF.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_InnerBorder_FF00FF.UseVisualStyleBackColor = false;
             // 
             // Label_InnerBorderColor
@@ -498,8 +498,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_CornerRadius_12.Size = new Size(116, 29);
             Button_CornerRadius_12.TabIndex = 39;
             Button_CornerRadius_12.Text = "Radius=12";
-            Button_CornerRadius_12.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_CornerRadius_12.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_CornerRadius_12.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_CornerRadius_12.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_CornerRadius_12.UseVisualStyleBackColor = false;
             // 
             // Label_BorderRadius_1
@@ -539,8 +539,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_CornerRadius_1.Size = new Size(116, 29);
             Button_CornerRadius_1.TabIndex = 34;
             Button_CornerRadius_1.Text = "Radius=1";
-            Button_CornerRadius_1.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_CornerRadius_1.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_CornerRadius_1.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_CornerRadius_1.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_CornerRadius_1.UseVisualStyleBackColor = false;
             // 
             // Button_Orientation_Horizontal_NoImage
@@ -562,8 +562,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_Horizontal_NoImage.Size = new Size(116, 29);
             Button_Orientation_Horizontal_NoImage.TabIndex = 59;
             Button_Orientation_Horizontal_NoImage.Text = "Horizontal";
-            Button_Orientation_Horizontal_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_Horizontal_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Orientation_Horizontal_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_Horizontal_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Orientation_Horizontal_NoImage.UseVisualStyleBackColor = false;
             // 
             // Label_TextOrientation
@@ -604,8 +604,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_Horizontal_Left.Size = new Size(128, 29);
             Button_Orientation_Horizontal_Left.TabIndex = 61;
             Button_Orientation_Horizontal_Left.Text = "Horizontal";
-            Button_Orientation_Horizontal_Left.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_Horizontal_Left.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Orientation_Horizontal_Left.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_Horizontal_Left.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Orientation_Horizontal_Left.UseVisualStyleBackColor = false;
             // 
             // Button_Orientation_Horizontal_Right
@@ -628,8 +628,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_Horizontal_Right.Size = new Size(128, 29);
             Button_Orientation_Horizontal_Right.TabIndex = 63;
             Button_Orientation_Horizontal_Right.Text = "Horizontal";
-            Button_Orientation_Horizontal_Right.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_Horizontal_Right.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Orientation_Horizontal_Right.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_Horizontal_Right.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Orientation_Horizontal_Right.UseVisualStyleBackColor = false;
             // 
             // Line_2
@@ -659,8 +659,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_DownWord_NoImage.Size = new Size(30, 146);
             Button_Orientation_DownWord_NoImage.TabIndex = 66;
             Button_Orientation_DownWord_NoImage.Text = "DownWord";
-            Button_Orientation_DownWord_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_DownWord_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.DOWN_WORD;
+            Button_Orientation_DownWord_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_DownWord_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.DOWN_WORD;
             Button_Orientation_DownWord_NoImage.UseVisualStyleBackColor = false;
             // 
             // Button_Orientation_DownWord_Up
@@ -683,8 +683,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_DownWord_Up.Size = new Size(30, 146);
             Button_Orientation_DownWord_Up.TabIndex = 67;
             Button_Orientation_DownWord_Up.Text = "DownWord";
-            Button_Orientation_DownWord_Up.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_DownWord_Up.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.DOWN_WORD;
+            Button_Orientation_DownWord_Up.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_DownWord_Up.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.DOWN_WORD;
             Button_Orientation_DownWord_Up.UseVisualStyleBackColor = false;
             // 
             // Button_Orientation_DownWord_Down
@@ -707,8 +707,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_DownWord_Down.Size = new Size(30, 146);
             Button_Orientation_DownWord_Down.TabIndex = 68;
             Button_Orientation_DownWord_Down.Text = "DownWord";
-            Button_Orientation_DownWord_Down.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_DownWord_Down.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.DOWN_WORD;
+            Button_Orientation_DownWord_Down.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_DownWord_Down.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.DOWN_WORD;
             Button_Orientation_DownWord_Down.UseVisualStyleBackColor = false;
             // 
             // Label_Orientation_DownWord
@@ -749,8 +749,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_UpWord_Down.Size = new Size(30, 144);
             Button_Orientation_UpWord_Down.TabIndex = 72;
             Button_Orientation_UpWord_Down.Text = "UpWord";
-            Button_Orientation_UpWord_Down.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_UpWord_Down.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.UP_WORD;
+            Button_Orientation_UpWord_Down.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_UpWord_Down.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.UP_WORD;
             Button_Orientation_UpWord_Down.UseVisualStyleBackColor = false;
             // 
             // Button_Orientation_UpWord_Up
@@ -773,8 +773,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_UpWord_Up.Size = new Size(30, 146);
             Button_Orientation_UpWord_Up.TabIndex = 71;
             Button_Orientation_UpWord_Up.Text = "UpWord";
-            Button_Orientation_UpWord_Up.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_UpWord_Up.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.UP_WORD;
+            Button_Orientation_UpWord_Up.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_UpWord_Up.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.UP_WORD;
             Button_Orientation_UpWord_Up.UseVisualStyleBackColor = false;
             // 
             // Button_Orientation_UpWord_NoImage
@@ -796,8 +796,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_UpWord_NoImage.Size = new Size(30, 144);
             Button_Orientation_UpWord_NoImage.TabIndex = 70;
             Button_Orientation_UpWord_NoImage.Text = "UpWord";
-            Button_Orientation_UpWord_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_UpWord_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.UP_WORD;
+            Button_Orientation_UpWord_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_UpWord_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.UP_WORD;
             Button_Orientation_UpWord_NoImage.UseVisualStyleBackColor = false;
             // 
             // Label_Orientation_Vertical
@@ -829,8 +829,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_Vertical_Down.Size = new Size(30, 236);
             Button_Orientation_Vertical_Down.TabIndex = 76;
             Button_Orientation_Vertical_Down.Text = "Vertical";
-            Button_Orientation_Vertical_Down.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_Vertical_Down.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.VERTICAL;
+            Button_Orientation_Vertical_Down.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_Vertical_Down.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.VERTICAL;
             Button_Orientation_Vertical_Down.UseVisualStyleBackColor = false;
             // 
             // Button_Orientation_Vertical_Up
@@ -853,8 +853,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Orientation_Vertical_Up.Size = new Size(30, 236);
             Button_Orientation_Vertical_Up.TabIndex = 75;
             Button_Orientation_Vertical_Up.Text = "Vertical";
-            Button_Orientation_Vertical_Up.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Orientation_Vertical_Up.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.VERTICAL;
+            Button_Orientation_Vertical_Up.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Orientation_Vertical_Up.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.VERTICAL;
             Button_Orientation_Vertical_Up.UseVisualStyleBackColor = false;
             // 
             // Button_Vertical_NoImage
@@ -876,8 +876,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Vertical_NoImage.Size = new Size(30, 236);
             Button_Vertical_NoImage.TabIndex = 74;
             Button_Vertical_NoImage.Text = "Vertical";
-            Button_Vertical_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Vertical_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.VERTICAL;
+            Button_Vertical_NoImage.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Vertical_NoImage.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.VERTICAL;
             Button_Vertical_NoImage.UseVisualStyleBackColor = false;
             // 
             // Line
@@ -936,8 +936,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Image_NotFound.Size = new Size(116, 29);
             Button_Image_NotFound.TabIndex = 99;
             Button_Image_NotFound.Text = "NotFound";
-            Button_Image_NotFound.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Image_NotFound.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Image_NotFound.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Image_NotFound.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Image_NotFound.UseVisualStyleBackColor = false;
             // 
             // Label_Image_Title
@@ -978,8 +978,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justify_U_Justify.Size = new Size(30, 184);
             Button_Justify_U_Justify.TabIndex = 112;
             Button_Justify_U_Justify.Text = "UpWord";
-            Button_Justify_U_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY;
-            Button_Justify_U_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.UP_WORD;
+            Button_Justify_U_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY;
+            Button_Justify_U_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.UP_WORD;
             Button_Justify_U_Justify.UseVisualStyleBackColor = false;
             // 
             // Button_Justift_U_WithSpace
@@ -1002,8 +1002,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justift_U_WithSpace.Size = new Size(30, 184);
             Button_Justift_U_WithSpace.TabIndex = 111;
             Button_Justift_U_WithSpace.Text = "UpWord";
-            Button_Justift_U_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY_WITH_SPACE;
-            Button_Justift_U_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.UP_WORD;
+            Button_Justift_U_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY_WITH_SPACE;
+            Button_Justift_U_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.UP_WORD;
             Button_Justift_U_WithSpace.UseVisualStyleBackColor = false;
             // 
             // Button_Justift_D_WithSpace
@@ -1026,8 +1026,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justift_D_WithSpace.Size = new Size(30, 184);
             Button_Justift_D_WithSpace.TabIndex = 110;
             Button_Justift_D_WithSpace.Text = "DownWord";
-            Button_Justift_D_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY_WITH_SPACE;
-            Button_Justift_D_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.DOWN_WORD;
+            Button_Justift_D_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY_WITH_SPACE;
+            Button_Justift_D_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.DOWN_WORD;
             Button_Justift_D_WithSpace.UseVisualStyleBackColor = false;
             // 
             // Button_Justify_D_Justify
@@ -1050,8 +1050,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justify_D_Justify.Size = new Size(30, 184);
             Button_Justify_D_Justify.TabIndex = 109;
             Button_Justify_D_Justify.Text = "DownWord";
-            Button_Justify_D_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY;
-            Button_Justify_D_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.DOWN_WORD;
+            Button_Justify_D_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY;
+            Button_Justify_D_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.DOWN_WORD;
             Button_Justify_D_Justify.UseVisualStyleBackColor = false;
             // 
             // Label_TextJustify_V_Justify
@@ -1083,8 +1083,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justift_V_WithSpace.Size = new Size(30, 184);
             Button_Justift_V_WithSpace.TabIndex = 107;
             Button_Justift_V_WithSpace.Text = "Vertical";
-            Button_Justift_V_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY_WITH_SPACE;
-            Button_Justift_V_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.VERTICAL;
+            Button_Justift_V_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY_WITH_SPACE;
+            Button_Justift_V_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.VERTICAL;
             Button_Justift_V_WithSpace.UseVisualStyleBackColor = false;
             // 
             // Button_Justify_V_Justify
@@ -1107,8 +1107,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justify_V_Justify.Size = new Size(30, 184);
             Button_Justify_V_Justify.TabIndex = 106;
             Button_Justify_V_Justify.Text = "Vertical";
-            Button_Justify_V_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY;
-            Button_Justify_V_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.VERTICAL;
+            Button_Justify_V_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY;
+            Button_Justify_V_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.VERTICAL;
             Button_Justify_V_Justify.UseVisualStyleBackColor = false;
             // 
             // Label_TextJustify_H_WithSpace
@@ -1149,8 +1149,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_TextJustify_H_WithSpace.Size = new Size(145, 29);
             Button_TextJustify_H_WithSpace.TabIndex = 103;
             Button_TextJustify_H_WithSpace.Text = "Horizontal";
-            Button_TextJustify_H_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY_WITH_SPACE;
-            Button_TextJustify_H_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_TextJustify_H_WithSpace.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY_WITH_SPACE;
+            Button_TextJustify_H_WithSpace.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_TextJustify_H_WithSpace.UseVisualStyleBackColor = false;
             // 
             // Button_TextJustify_H_Justify
@@ -1173,8 +1173,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_TextJustify_H_Justify.Size = new Size(145, 29);
             Button_TextJustify_H_Justify.TabIndex = 102;
             Button_TextJustify_H_Justify.Text = "Horizontal";
-            Button_TextJustify_H_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.JUSTIFY;
-            Button_TextJustify_H_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_TextJustify_H_Justify.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.JUSTIFY;
+            Button_TextJustify_H_Justify.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_TextJustify_H_Justify.UseVisualStyleBackColor = false;
             // 
             // Label_TextJustify
@@ -1215,8 +1215,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_TextJustify_H_None.Size = new Size(145, 29);
             Button_TextJustify_H_None.TabIndex = 114;
             Button_TextJustify_H_None.Text = "Horizontal";
-            Button_TextJustify_H_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_TextJustify_H_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_TextJustify_H_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_TextJustify_H_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_TextJustify_H_None.UseVisualStyleBackColor = false;
             // 
             // Button_Justify_U_None
@@ -1239,8 +1239,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justify_U_None.Size = new Size(30, 184);
             Button_Justify_U_None.TabIndex = 119;
             Button_Justify_U_None.Text = "UpWord";
-            Button_Justify_U_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Justify_U_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.UP_WORD;
+            Button_Justify_U_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Justify_U_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.UP_WORD;
             Button_Justify_U_None.UseVisualStyleBackColor = false;
             // 
             // Button_Justify_D_None
@@ -1263,8 +1263,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justify_D_None.Size = new Size(30, 184);
             Button_Justify_D_None.TabIndex = 118;
             Button_Justify_D_None.Text = "DownWord";
-            Button_Justify_D_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Justify_D_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.DOWN_WORD;
+            Button_Justify_D_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Justify_D_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.DOWN_WORD;
             Button_Justify_D_None.UseVisualStyleBackColor = false;
             // 
             // Label_TextJustify_V_None
@@ -1296,8 +1296,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Justify_V_None.Size = new Size(30, 184);
             Button_Justify_V_None.TabIndex = 116;
             Button_Justify_V_None.Text = "Vertical";
-            Button_Justify_V_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Justify_V_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.VERTICAL;
+            Button_Justify_V_None.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Justify_V_None.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.VERTICAL;
             Button_Justify_V_None.UseVisualStyleBackColor = false;
             // 
             // Button_Image_Found
@@ -1320,8 +1320,8 @@ namespace RADISTA.CustomComponentTestApp
             Button_Image_Found.Size = new Size(116, 29);
             Button_Image_Found.TabIndex = 120;
             Button_Image_Found.Text = "Found";
-            Button_Image_Found.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyS.NONE;
-            Button_Image_Found.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationS.HORIZONTAL;
+            Button_Image_Found.TextJustify = RADISTA.UIComponent.CustomControl.RdtButton.TextJustifyT.NONE;
+            Button_Image_Found.TextOrientation = RADISTA.UIComponent.CustomControl.RdtButton.TextOrientationT.HORIZONTAL;
             Button_Image_Found.UseVisualStyleBackColor = false;
             // 
             // Label_Image_Found
