@@ -249,9 +249,11 @@ namespace RADISTA.UIComponent.CustomControl
             this.AttachEvents();
         }
 
-        /// <summary>
-        /// イベントを削除する
-        /// </summary>
+        private void DisposeCustomSetting()
+        {
+            this.DetachEvents();
+        }
+
         private void DetachEvents()
         {
             this.MouseDown -= this.RdtButton_MouseDown;
@@ -260,9 +262,6 @@ namespace RADISTA.UIComponent.CustomControl
             this.MouseLeave -= this.RdtButton_MouseLeave;
         }
 
-        /// <summary>
-        /// イベントを追加する
-        /// </summary>
         private void AttachEvents()
         {
             this.DetachEvents();
