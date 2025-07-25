@@ -246,16 +246,29 @@ namespace RADISTA.UIComponent.CustomControl
             this.AutoSize = true;
 
             //イベントの設定
+            this.AttachEvents();
+        }
+
+        /// <summary>
+        /// イベントを削除する
+        /// </summary>
+        private void DetachEvents()
+        {
             this.MouseDown -= this.RdtButton_MouseDown;
-            this.MouseDown += this.RdtButton_MouseDown;
-
             this.MouseUp -= this.RdtButton_MouseUp;
-            this.MouseUp += this.RdtButton_MouseUp;
-
             this.MouseEnter -= this.RdtButton_MouseEnter;
-            this.MouseEnter += this.RdtButton_MouseEnter;
-
             this.MouseLeave -= this.RdtButton_MouseLeave;
+        }
+
+        /// <summary>
+        /// イベントを追加する
+        /// </summary>
+        private void AttachEvents()
+        {
+            this.DetachEvents();
+            this.MouseDown += this.RdtButton_MouseDown;
+            this.MouseUp += this.RdtButton_MouseUp;
+            this.MouseEnter += this.RdtButton_MouseEnter;
             this.MouseLeave += this.RdtButton_MouseLeave;
         }
 
