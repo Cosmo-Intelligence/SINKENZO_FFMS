@@ -1,7 +1,5 @@
 using log4net;
 using log4net.Config;
-using RADISTA.CustomComponentTestApp;
-using RADISTA.CustomComponentTestApp.source;
 using RADISTA.UIComponent.CustomControl;
 using System.Diagnostics.Metrics;
 using System.Drawing;
@@ -170,7 +168,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtGadget_Click(object sender, EventArgs e)
         {
-
+            Form_RdtGadget form = new Form_RdtGadget();
+            form.Show();
         }
 
         private void button_RdtDialog_Click(object sender, EventArgs e)

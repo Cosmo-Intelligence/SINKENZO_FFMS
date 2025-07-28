@@ -1,4 +1,4 @@
-﻿namespace RADISTA.CustomComponentTestApp.source
+﻿namespace RADISTA.CustomComponentTestApp
 {
     partial class Form_RdtListView
     {

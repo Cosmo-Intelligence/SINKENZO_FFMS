@@ -1,16 +1,7 @@
 ﻿using log4net;
 using RADISTA.UIComponent.CustomControl;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace RADISTA.CustomComponentTestApp.source
+namespace RADISTA.CustomComponentTestApp
 {
     public partial class Form_RdtListView : Form
     {
