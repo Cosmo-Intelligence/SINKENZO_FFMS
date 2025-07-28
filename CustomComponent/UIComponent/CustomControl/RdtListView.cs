@@ -99,6 +99,8 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         [Category(IMAGE)]
         [Description("ListView に表示する画像ファイルのパスの配列")]
+        // 配列を使いたいため、限定的にstylecopを無効化
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "Designer needs array")]
         public string[]? IconPathList
         {
             get => this.mIconPath;
