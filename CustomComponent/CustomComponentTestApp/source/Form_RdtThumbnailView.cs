@@ -85,7 +85,7 @@ namespace CustomComponentTestApp.source
 
         private void Button_RemoveMulti_Click(object sender, EventArgs e)
         {
-            this.Thumbnail_SmallIcon.RemoveMultiOverlay();
+            this.Thumbnail_SmallIcon.RemoveMultiFrameOverlay();
         }
 
         private void Button_DeleteMove_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_SmallIcon.DeleteIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_SmallIcon.DeleteIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_SmallIcon.DeleteIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
             this.Label_SmallIcon_Delete.Text = "DeleteIconPlacement = " + this.Thumbnail_SmallIcon.DeleteIconPlacement.ToString();
         }
 
@@ -102,7 +102,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_SmallIcon.MultiIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_SmallIcon.MultiIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_SmallIcon.MultiIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
             this.Label_SmallIcon_Multi.Text = "MultiIconPlacement = " + this.Thumbnail_SmallIcon.MultiIconPlacement.ToString();
         }
 
@@ -123,7 +123,7 @@ namespace CustomComponentTestApp.source
 
         private void Button_RemoveMulti_L_Click(object sender, EventArgs e)
         {
-            this.Thumbnail_LargeIcon.RemoveMultiOverlay();
+            this.Thumbnail_LargeIcon.RemoveMultiFrameOverlay();
         }
 
         private void Button_MoveDelete_L_Click(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_LargeIcon.DeleteIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_LargeIcon.DeleteIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_LargeIcon.DeleteIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
             this.Label_DeleteMove_L.Text = "DeleteIconPlacement = " + this.Thumbnail_LargeIcon.DeleteIconPlacement.ToString();
         }
 
@@ -140,7 +140,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_LargeIcon.MultiIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_LargeIcon.MultiIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_LargeIcon.MultiIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
             this.Label_MultiMove_L.Text = "MultiIconPlacement = " + this.Thumbnail_LargeIcon.MultiIconPlacement.ToString();
         }
 
@@ -161,7 +161,7 @@ namespace CustomComponentTestApp.source
 
         private void Button_RemoveMulti_Resize_True_Click(object sender, EventArgs e)
         {
-            this.Thumbnail_Resize_True.RemoveMultiOverlay();
+            this.Thumbnail_Resize_True.RemoveMultiFrameOverlay();
         }
 
         private void Button_MoveDelete_Resize_True_Click(object sender, EventArgs e)
@@ -169,7 +169,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_Resize_True.DeleteIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_Resize_True.DeleteIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_Resize_True.DeleteIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
         }
 
         private void Button_MoveMulti_Resize_True_Click(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_Resize_True.MultiIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_Resize_True.MultiIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_Resize_True.MultiIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
         }
 
         private void Button_ShowDelete_Resize_False_Click(object sender, EventArgs e)
@@ -197,7 +197,7 @@ namespace CustomComponentTestApp.source
 
         private void Button_RemoveMulti_Resize_False_Click(object sender, EventArgs e)
         {
-            this.Thumbnail_Resize_False.RemoveMultiOverlay();
+            this.Thumbnail_Resize_False.RemoveMultiFrameOverlay();
         }
 
         private void Button_MoveDelete_Resize_False_Click(object sender, EventArgs e)
@@ -205,7 +205,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_Resize_False.DeleteIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_Resize_False.DeleteIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_Resize_False.DeleteIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
         }
 
         private void Button_MoveMulti_Resize_False_Click(object sender, EventArgs e)
@@ -213,7 +213,7 @@ namespace CustomComponentTestApp.source
             int placement = (int)this.Thumbnail_Resize_False.MultiIconPlacement;
             placement = placement % 5;
             placement++;
-            this.Thumbnail_Resize_False.MultiIconPlacement = (RdtThumbnailView.IconPlacementS)placement;
+            this.Thumbnail_Resize_False.MultiIconPlacement = (RdtThumbnailView.IconPlacementT)placement;
         }
 
         private void Button_Test_Click(object sender, EventArgs e)
