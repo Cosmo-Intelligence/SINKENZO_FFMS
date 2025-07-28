@@ -447,17 +447,17 @@ namespace RADISTA.UIComponent.CustomControl
         private void DrawTicks(Graphics g)
         {
             // スライダーの最小値から最大値までの目盛りの数を計算
-            int iTickIdx = (this.Maximum - this.Minimum) / this.mTickStep;
+            int iStepIdx = (this.Maximum - this.Minimum) / this.mTickStep;
             // 目盛りが無い場合は描画しない
-            if (iTickIdx <= 0)
+            if (iStepIdx <= 0)
             {
                 return;
             }
 
-            for (int i = 0; i <= iTickIdx; i++)
+            for (int i = 0; i <= iStepIdx; i++)
             {
                 // スライダー全体の幅に対する現在の目盛り位置の割合を求める
-                float percent = (float)i / iTickIdx;
+                float percent = (float)i / iStepIdx;
                 // 目盛りのX座標を計算
                 int x = this.GetTickXPosition(percent);
                 // 目盛りの上端と下端のY座標を設定
