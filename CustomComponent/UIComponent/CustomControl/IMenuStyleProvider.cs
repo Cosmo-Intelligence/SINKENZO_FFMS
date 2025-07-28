@@ -3,11 +3,6 @@
 // Copyright (C) 2025 FUJIFILM Medical Solutions Corporation.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RADISTA.UIComponent.CustomControl
 {
@@ -40,7 +35,7 @@ namespace RADISTA.UIComponent.CustomControl
         public string MenuSelectedForeColor { get; }
 
         /// <summary>
-        /// 選択行の閉経色
+        /// 選択行の背景色
         /// </summary>
         public string MenuSelectedBackColor { get; }
         #endregion

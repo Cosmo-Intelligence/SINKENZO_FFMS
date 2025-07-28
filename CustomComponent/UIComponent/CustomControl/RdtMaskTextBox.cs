@@ -52,6 +52,7 @@ namespace RADISTA.UIComponent.CustomControl
             get => this.mBorderColor;
             set
             {
+                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
                 if (!ComponentCommon.IsColorCode(value))
                 {
                     throw new ArgumentException(Constants.ERROR_COLOR_CODE);
