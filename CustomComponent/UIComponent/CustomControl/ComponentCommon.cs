@@ -79,6 +79,7 @@ namespace RADISTA.UIComponent.CustomControl
 
         /// <summary>
         /// パスからイメージを取得する
+        /// 注意：呼び出し元は必ずtry-catchを使う
         /// </summary>
         /// <param name="path">パス</param>
         /// <returns>image</returns>

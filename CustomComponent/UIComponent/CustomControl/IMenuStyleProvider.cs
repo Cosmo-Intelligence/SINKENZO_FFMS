@@ -40,7 +40,7 @@ namespace RADISTA.UIComponent.CustomControl
         public string MenuSelectedForeColor { get; }
 
         /// <summary>
-        /// 選択行の閉経色
+        /// 選択行の背景色
         /// </summary>
         public string MenuSelectedBackColor { get; }
         #endregion

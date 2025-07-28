@@ -101,6 +101,7 @@ namespace RADISTA.UIComponent.CustomControl
             get => this.mMouseHoverColor;
             set
             {
+                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
                 if (ComponentCommon.IsColorCode(value))
                 {
                     this.mMouseHoverColor = value;
@@ -123,6 +124,7 @@ namespace RADISTA.UIComponent.CustomControl
             get => this.mMouseClickColor;
             set
             {
+                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
                 if (ComponentCommon.IsColorCode(value))
                 {
                     this.mMouseClickColor = value;
