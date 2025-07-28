@@ -93,7 +93,7 @@
             // 
             Thumbnail_SmallIcon.AutoScroll = true;
             Thumbnail_SmallIcon.BaseImageSize = new Size(0, 0);
-            Thumbnail_SmallIcon.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_SmallIcon.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_SmallIcon.DeleteImageFilePath = "..\\..\\..\\..\\Image\\ThumbnailView\\Delete.png";
             Thumbnail_SmallIcon.ImageMargin = new Point(0, 0);
             Thumbnail_SmallIcon.IsOverlayResize = false;
@@ -102,7 +102,7 @@
             Thumbnail_SmallIcon.LargeMultiFrameFilePath = "";
             Thumbnail_SmallIcon.Location = new Point(12, 27);
             Thumbnail_SmallIcon.MultiFrameFilePath = "..\\..\\..\\..\\Image\\ThumbnailView\\MultiFrame.png";
-            Thumbnail_SmallIcon.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_SmallIcon.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_SmallIcon.Name = "Thumbnail_SmallIcon";
             Thumbnail_SmallIcon.OverlayImageSize = new Size(0, 0);
             Thumbnail_SmallIcon.Padding = new Padding(10);
@@ -192,7 +192,7 @@
             // 
             Thumbnail_LargeIcon.AutoScroll = true;
             Thumbnail_LargeIcon.BaseImageSize = new Size(0, 0);
-            Thumbnail_LargeIcon.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_LargeIcon.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_LargeIcon.DeleteImageFilePath = "";
             Thumbnail_LargeIcon.ImageMargin = new Point(0, 0);
             Thumbnail_LargeIcon.IsOverlayResize = false;
@@ -201,7 +201,7 @@
             Thumbnail_LargeIcon.LargeMultiFrameFilePath = "..\\..\\..\\..\\Image\\ThumbnailView\\LargeMultiFrame.png";
             Thumbnail_LargeIcon.Location = new Point(10, 341);
             Thumbnail_LargeIcon.MultiFrameFilePath = "";
-            Thumbnail_LargeIcon.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_LargeIcon.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_LargeIcon.Name = "Thumbnail_LargeIcon";
             Thumbnail_LargeIcon.OverlayImageSize = new Size(0, 0);
             Thumbnail_LargeIcon.Padding = new Padding(10);
@@ -309,7 +309,7 @@
             // 
             Thumbnail_ImageMargin.AutoScroll = true;
             Thumbnail_ImageMargin.BaseImageSize = new Size(0, 0);
-            Thumbnail_ImageMargin.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_ImageMargin.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_ImageMargin.DeleteImageFilePath = "";
             Thumbnail_ImageMargin.ImageMargin = new Point(8, 8);
             Thumbnail_ImageMargin.IsOverlayResize = false;
@@ -318,7 +318,7 @@
             Thumbnail_ImageMargin.LargeMultiFrameFilePath = "";
             Thumbnail_ImageMargin.Location = new Point(12, 637);
             Thumbnail_ImageMargin.MultiFrameFilePath = "";
-            Thumbnail_ImageMargin.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_ImageMargin.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_ImageMargin.Name = "Thumbnail_ImageMargin";
             Thumbnail_ImageMargin.OverlayImageSize = new Size(0, 0);
             Thumbnail_ImageMargin.Padding = new Padding(10);
@@ -339,7 +339,7 @@
             // 
             Thumbnail_Resize_True.AutoScroll = true;
             Thumbnail_Resize_True.BaseImageSize = new Size(48, 48);
-            Thumbnail_Resize_True.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_Resize_True.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_Resize_True.DeleteImageFilePath = "..\\..\\..\\..\\Image\\ThumbnailView\\Delete.png";
             Thumbnail_Resize_True.ImageMargin = new Point(0, 0);
             Thumbnail_Resize_True.IsOverlayResize = true;
@@ -348,7 +348,7 @@
             Thumbnail_Resize_True.LargeMultiFrameFilePath = "";
             Thumbnail_Resize_True.Location = new Point(468, 27);
             Thumbnail_Resize_True.MultiFrameFilePath = "..\\..\\..\\..\\Image\\ThumbnailView\\MultiFrame.png";
-            Thumbnail_Resize_True.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_Resize_True.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_Resize_True.Name = "Thumbnail_Resize_True";
             Thumbnail_Resize_True.OverlayImageSize = new Size(8, 8);
             Thumbnail_Resize_True.Padding = new Padding(10);
@@ -465,7 +465,7 @@
             // 
             Thumbnail_Resize_False.AutoScroll = true;
             Thumbnail_Resize_False.BaseImageSize = new Size(48, 48);
-            Thumbnail_Resize_False.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_Resize_False.DeleteIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_Resize_False.DeleteImageFilePath = "..\\..\\..\\..\\Image\\ThumbnailView\\Delete.png";
             Thumbnail_Resize_False.ImageMargin = new Point(0, 0);
             Thumbnail_Resize_False.IsOverlayResize = false;
@@ -474,7 +474,7 @@
             Thumbnail_Resize_False.LargeMultiFrameFilePath = "";
             Thumbnail_Resize_False.Location = new Point(469, 341);
             Thumbnail_Resize_False.MultiFrameFilePath = "..\\..\\..\\..\\Image\\ThumbnailView\\MultiFrame.png";
-            Thumbnail_Resize_False.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementS.LEFT_TOP;
+            Thumbnail_Resize_False.MultiIconPlacement = RADISTA.UIComponent.CustomControl.RdtThumbnailView.IconPlacementT.LEFT_TOP;
             Thumbnail_Resize_False.Name = "Thumbnail_Resize_False";
             Thumbnail_Resize_False.OverlayImageSize = new Size(8, 8);
             Thumbnail_Resize_False.Padding = new Padding(10);
