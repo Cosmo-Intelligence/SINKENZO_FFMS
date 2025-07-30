@@ -30,6 +30,7 @@
   <ItemGroup>
     <PackageReference Include="DockPanelSuite" Version="3.1.1" />
     <PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.1" />
+    <PackageReference Include="GrapeCity.Spread.WinForms.ja" Version="17.2.0" />
     <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>

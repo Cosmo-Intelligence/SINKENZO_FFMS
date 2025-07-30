@@ -78,6 +78,43 @@ namespace RADISTA.SPREAD.CustomControl
         /// プログレスバー（進捗バー背景色）
         /// </summary>
         public const string PROGRESS_BACK_COLOR = "#dcdcdc";
+        /// <summary>
+        /// リストビュー・リストボックスのデフォルトフォントカラー
+        /// </summary>
+        public const string DEFAULT_LIST_FONT_COLOR = "#C4C4C4";
+        /// <summary>
+        /// リストビュー・リストボックスのデフォルト背景色
+        /// </summary>
+        public const string DEFAULT_LIST_BACK_COLOR = "#363636";
+        /// <summary>
+        /// リストビュー・リストボックスのデフォルトエッジカラー
+        /// </summary>
+        public const string DEFAULT_LIST_EDGE_COLOR = "#3E3E3E";
+        /// <summary>
+        /// リストビュー・リストボックスのホバー時背景色
+        /// </summary>
+        public const string HOVERED_LIST_BACK_COLOR = "#464646";
+        /// <summary>
+        /// リストビュー・リストボックスのホバー時エッジカラー
+        /// </summary>
+        public const string HOVERED_LIST_EDGE_COLOR = "#5A5A5A";
+        /// <summary>
+        /// リストビュー・リストボックスの無効化時フォントカラー
+        /// </summary>
+        public const string DISABLE_LIST_FONT_COLOR = "#555555";
+        /// <summary>
+        /// リストビュー・リストボックスの無効化時背景色
+        /// </summary>
+        public const string DISABLE_LIST_BACK_COLOR = "#262626";
+        /// <summary>
+        /// リストビュー・リストボックスのフラットスタイルの背景色
+        /// </summary>
+        public const string FLAT_LIST_BACK_COLOR = "#262626";
+        /// <summary>
+        /// リストビュー・リストボックスのセルの背景交互色
+        /// </summary>
+        public const string DEFAULT_LIST_ALTERNATE_COLOR = "#123456";
+
         #endregion
     }
 }
