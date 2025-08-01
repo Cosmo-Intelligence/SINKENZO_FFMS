@@ -1,8 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
+    <!-- フォント -->
     <setting key="FontType" value="Meiryo UI" />
     <setting key="FontSize" value="12" />
-    <setting key="FontColor" value="#C3C3C3" />
+    <setting key="FontColor" value="#C4C4C4" />
+    <setting key="FontDisableColor" value="#555555" />
+    <setting key="FontFocusColor" value="#C4C4C4" />
+    <setting key="FontReadOnlyColor" value="#C4C4C4" />
+    <!-- Form, Dialog -->
+    <!-- Default -->
+    <setting key="FormDefaultFontColor" value="#C4C4C4" />
+    <setting key="FormDefaultBackColor" value="#000000" />
+    <setting key="FormTitlebarFontColor" value="#C4C4C4" />
+    <setting key="FormTitlebarBackColor" value="#000000" />
+    <!-- Label -->
+    <!-- Default -->
+    <setting key="LabelDefaultFontColor" value="#C4C4C4" />
+    <setting key="LabelDefaultBackColor" value="#262626" />
+    <setting key="LabelDefaultEdgeColor" value="#464646" />
+    <!-- TextBox, ComboBox -->
+    <!-- Default -->
+    <setting key="TextDefaultFontColor" value="#C4C4C4" />
+    <setting key="TextDefaultBackColor" value="#191919" />
+    <setting key="TextDefaultEdgeColor" value="#4F4F4F" />
+    <!-- Disable -->
+    <setting key="TextDisableFontColor" value="#555555" />
+    <setting key="TextDisableBackColor" value="#222222" />
+    <setting key="TextDisableEdgeColor" value="#3E3E3E" />
+    <!-- Focus -->
+    <setting key="TextFocusFontColor" value="#C4C4C4" />
+    <setting key="TextFocusBackColor" value="#191919" />
+    <setting key="TextFocusEdgeColor" value="#439977" />
+    <!-- ReadOnly -->
+    <setting key="TextReadOnlyFontColor" value="#C4C4C4" />
+    <setting key="TextReadOnlyBackColor" value="#232323" />
+    <setting key="TextReadOnlyEdgeColor" value="#232323" />
+    <!-- WaterMark -->
+    <setting key="TextWaterMarkFontColor" value="#5A5A5A" />
+    <!-- ListView, ListBox -->
+    <!-- Default_Standard -->
+    <setting key="ListDefaultStandardFontColor" value="#C4C4C4" />
+    <setting key="ListDefaultStandardBackColor" value="#363636" />
+    <setting key="ListDefaultStandardEdgeColor" value="#3E3E3E" />
+    <!-- Default_Flat -->
+    <setting key="ListDefaultFlatFontColor" value="#C4C4C4" />
+    <setting key="ListDefaultFlatBackColor" value="#262626" />
+    <setting key="ListDefaultFlatEdgeColor" value="#262626" />
+    <!-- Hover_Standard -->
+    <setting key="ListHoverStandardFontColor" value="#C4C4C4" />
+    <setting key="ListHoverStandardBackColor" value="#464646" />
+    <setting key="ListHoverStandardEdgeColor" value="#5A5A5A" />
+    <!-- Hover_Flat -->
+    <setting key="ListHoverFlatFontColor" value="#C4C4C4" />
+    <setting key="ListHoverFlatBackColor" value="#464646" />
+    <setting key="ListHoverFlatEdgeColor" value="#464646" />
+    <!-- Disable_Standard -->
+    <setting key="ListDisableStandardFontColor" value="#555555" />
+    <setting key="ListDisableStandardBackColor" value="#262626" />
+    <setting key="ListDisableStandardEdgeColor" value="#262626" />
+    <!-- Disable_Flat -->
+    <setting key="ListDisableFlatFontColor" value="#555555" />
+    <setting key="ListDisableFlatBackColor" value="#262626" />
+    <setting key="ListDisableFlatEdgeColor" value="#262626" />
+    <!-- ContextMenuStrip -->
+    <!-- Default -->
+    <setting key="ContextDefaultFontColor" value="#C4C4C4" />
+    <setting key="ContextDefaultBackColor" value="#363636" />
+    <setting key="ContextDefaultEdgeColor" value="#4F4F4F" />
+    <!-- Hover -->
+    <setting key="ContextHoverFontColor" value="#C4C4C4" />
+    <setting key="ContextHoverBackColor" value="#464646" />
+    <setting key="ContextHoverEdgeColor" value="#4F4F4F" />
+    <!-- Selected -->
+    <setting key="ContextSelectedFontColor" value="#C4C4C4" />
+    <setting key="ContextSelectedBackColor" value="#363636" />
+    <setting key="ContextSelectedEdgeColor" value="#4F4F4F" />
+    <!-- SelectedHover -->
+    <setting key="ContextSelectedHoverFontColor" value="#C4C4C4" />
+    <setting key="ContextSelectedHoverBackColor" value="#464646" />
+    <setting key="ContextSelectedHoverEdgeColor" value="#4F4F4F" />
+    <!-- Disable -->
+    <setting key="ContextDisableFontColor" value="#5A5A5A" />
+    <setting key="ContextDisableBackColor" value="#363636" />
+    <setting key="ContextDisableEdgeColor" value="#4F4F4F" />
+    <!-- MenuStrip -->
+    <!-- Default -->
+    <setting key="MenuDefaultFontColor" value="#C4C4C4" />
+    <setting key="MenuDefaultBackColor" value="#363636" />
+    <!-- Hover -->
+    <setting key="MenuHoverFontColor" value="#C4C4C4" />
+    <setting key="MenuHoverBackColor" value="#464646" />
+    <!-- Disable -->
+    <setting key="MenuDisableFontColor" value="#5A5A5A" />
+    <setting key="MenuDisableBackColor" value="#363636" />
+    <!-- Button -->
+    <!-- Default_Primary -->
+    <setting key="ButtonDefaultPrimaryFontColor" value="#D7D7D7" />
+    <setting key="ButtonDefaultPrimaryBackColor" value="#397B61" />
+    <setting key="ButtonDefaultPrimaryEdgeColor" value="#464646" />
+    <!-- Default_Tonal -->
+    <setting key="ButtonDefaultTonalFontColor" value="#C4C4C4" />
+    <setting key="ButtonDefaultTonalBackColor" value="#363636" />
+    <setting key="ButtonDefaultTonalEdgeColor" value="#464646" />
+    <!-- Default_Outlined -->
+    <setting key="ButtonDefaultOutlinedFontColor" value="#C4C4C4" />
+    <setting key="ButtonDefaultOutlinedBackColor" value="#252525" />
+    <setting key="ButtonDefaultOutlinedEdgeColor" value="#464646" />
+    <!-- Default_Text -->
+    <setting key="ButtonDefaultTextFontColor" value="#C4C4C4" />
+    <setting key="ButtonDefaultTextBackColor" value="#252525" />
+    <setting key="ButtonDefaultTextEdgeColor" value="#252525" />
+    <!-- Hover_Primary -->
+    <setting key="ButtonHoverPrimaryFontColor" value="#D7D7D7" />
+    <setting key="ButtonHoverPrimaryBackColor" value="#439977" />
+    <setting key="ButtonHoverPrimaryEdgeColor" value="#464646" />
+    <!-- Hover_Tonal -->
+    <setting key="ButtonHoverTonalFontColor" value="#C4C4C4" />
+    <setting key="ButtonHoverTonalBackColor" value="#3A3A3A" />
+    <setting key="ButtonHoverTonalEdgeColor" value="#464646" />
+    <!-- Hover_Outlined -->
+    <setting key="ButtonHoverOutlinedFontColor" value="#C4C4C4" />
+    <setting key="ButtonHoverOutlinedBackColor" value="#3A3A3A" />
+    <setting key="ButtonHoverOutlinedEdgeColor" value="#464646" />
+    <!-- Hover_Text -->
+    <setting key="ButtonHoverTextFontColor" value="#C4C4C4" />
+    <setting key="ButtonHoverTextBackColor" value="#3A3A3A" />
+    <setting key="ButtonHoverTextEdgeColor" value="#3A3A3A" />
+    <!-- Pressed_Primary -->
+    <setting key="ButtonPressedPrimaryFontColor" value="#D7D7D7" />
+    <setting key="ButtonPressedPrimaryBackColor" value="#325447" />
+    <setting key="ButtonPressedPrimaryEdgeColor" value="#464646" />
+    <!-- Pressed_Tonal -->
+    <setting key="ButtonPressedTonalFontColor" value="#C4C4C4" />
+    <setting key="ButtonPressedTonalBackColor" value="#191919" />
+    <setting key="ButtonPressedTonalEdgeColor" value="#191919" />
+    <!-- Pressed_Outlined -->
+    <setting key="ButtonPressedOutlinedFontColor" value="#C4C4C4" />
+    <setting key="ButtonPressedOutlinedBackColor" value="#191919" />
+    <setting key="ButtonPressedOutlinedEdgeColor" value="#191919" />
+    <!-- Pressed_Text -->
+    <setting key="ButtonPressedTextFontColor" value="#C4C4C4" />
+    <setting key="ButtonPressedTextBackColor" value="#191919" />
+    <setting key="ButtonPressedTextEdgeColor" value="#191919" />
+    <!-- Disable_Primary -->
+    <setting key="ButtonDisablePrimaryFontColor" value="#5A5A5A" />
+    <setting key="ButtonDisablePrimaryBackColor" value="#2B3F37" />
+    <setting key="ButtonDisablePrimaryEdgeColor" value="#2F2F2F" />
+    <!-- Disable_Tonal -->
+    <setting key="ButtonDisableTonalFontColor" value="#545454" />
+    <setting key="ButtonDisableTonalBackColor" value="#2A2A2A" />
+    <setting key="ButtonDisableTonalEdgeColor" value="#2F2F2F" />
+    <!-- Disable_Outlined -->
+    <setting key="ButtonDisableOutlinedFontColor" value="#2F2F2F" />
+    <setting key="ButtonDisableOutlinedBackColor" value="#252525" />
+    <setting key="ButtonDisableOutlinedEdgeColor" value="#545454" />
+    <!-- Disable_Text -->
+    <setting key="ButtonDisableTextFontColor" value="#555555" />
+    <setting key="ButtonDisableTextBackColor" value="#252525" />
+    <setting key="ButtonDisableTextEdgeColor" value="#252525" />
+    <!-- ToggleButton -->
+    <!-- On_Tonal -->
+    <setting key="ToggleOnTonalFontColor" value="#12C296" />
+    <setting key="ToggleOnTonalBackColor" value="#1E4038" />
+    <setting key="ToggleOnTonalEdgeColor" value="#464646" />
+    <!-- On_Outlined -->
+    <setting key="ToggleOnOutlinedFontColor" value="#12C296" />
+    <setting key="ToggleOnOutlinedBackColor" value="#1E4038" />
+    <setting key="ToggleOnOutlinedEdgeColor" value="#464646" />
+    <!-- On_Text -->
+    <setting key="ToggleOnTextFontColor" value="#12C296" />
+    <setting key="ToggleOnTextBackColor" value="#1E4038" />
+    <setting key="ToggleOnTextEdgeColor" value="#1E4038" />
+    <!-- Off_Tonal -->
+    <setting key="ToggleOffTonalFontColor" value="#454545" />
+    <setting key="ToggleOffTonalBackColor" value="#454545" />
+    <setting key="ToggleOffTonalEdgeColor" value="#C4C4C4" />
+    <!-- Off_Outlined -->
+    <setting key="ToggleOffOutlinedFontColor" value="#454545" />
+    <setting key="ToggleOffOutlinedBackColor" value="#454545" />
+    <setting key="ToggleOffOutlinedEdgeColor" value="#C4C4C4" />
+    <!-- Off_Text -->
+    <setting key="ToggleOffTextFontColor" value="#C4C4C4" />
+    <setting key="ToggleOffTextBackColor" value="#454545" />
+    <setting key="ToggleOffTextEdgeColor" value="#454545" />
+    <!-- Calendar -->
+    <!-- Default -->
+    <setting key="CalendarDefaultFontColor" value="#C4C4C4" />
+    <setting key="CalendarDefaultBackColor" value="#191919" />
+    <setting key="CalendarDefaultTitleFontColor" value="#C4C4C4" />
+    <setting key="CalendarDefaultTitleBackColor" value="#3A3A3A" />
+    <setting key="CalendarDefaultTrailingFontColor" value="#555555" />
+    <!-- ProgressBar -->
+    <!-- Default -->
+    <setting key="ProgressDefaultFontColor" value="#397B61" />
+    <setting key="ProgressDefaultBackColor" value="#1B1B1B" />
+    
+    <!-- TODO：以下のうち不要なものは消す -->
     <setting key="BackColor" value="#393939" />
     <setting key="InactiveColor" value="#323232" />
     <setting key="InputBackColor" value="#000000" />
