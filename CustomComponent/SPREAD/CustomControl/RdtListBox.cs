@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 using System.ComponentModel;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 
 using FarPoint.Win;
 using FarPoint.Win.Spread;
@@ -50,13 +51,13 @@ namespace SPREAD.CustomControl
         /// </summary>
         private const string RADIUS = "コーナー";
         /// <summary>
-        /// ボーダーの太さの最大値
+        /// カテゴリ名
         /// </summary>
-        private const int BORDER_TICK_MAX = 30;
+        private const string BORDER = "ボーダー";
         /// <summary>
         /// ボーダーの太さの最大値
         /// </summary>
-        private const int BORDER_THICKNESS_MAX = 30;
+        private const int BORDER_TICK_MAX = 30;
         /// <summary>
         /// ボーダーの太さの最小値
         /// </summary>
@@ -113,7 +114,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// ボーダーの色
         /// </summary>
-        [Category(COLOR)]
+        [Category(BORDER)]
         public string BorderColor
         {
             get => this.mBorderColor;
@@ -132,7 +133,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// ボーダーの太さ 
         /// </summary>
-        [Category(STYLE)]
+        [Category(BORDER)]
         public int BorderThick
         {
             get => this.mBorderThick;
@@ -146,7 +147,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// ホバー時のボーダーカラー
         /// </summary>
-        [Category(COLOR)]
+        [Category(BORDER)]
         public string HoverBorderColor
         {
             get => this.mHoverBorderColor;
@@ -159,6 +160,25 @@ namespace SPREAD.CustomControl
                 }
 
                 this.mHoverBorderColor = value;
+            }
+        }
+
+        /// <summary>
+        /// 文字の色を設定する
+        /// </summary>
+        [Category(COLOR)]
+        public string FontColor
+        {
+            get => mForeColor;
+            set
+            {
+                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
+                if (!ComponentCommon.IsColorCode(value))
+                {
+                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
+                }
+
+                this.mForeColor = value;
             }
         }
 
@@ -239,6 +259,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// セルの背景色
         /// </summary>
+        [Category(COLOR)]
         public string CellBackColor
         {
             get => this.mCellBackColor;
@@ -316,7 +337,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// 左上のコーナー角度を指定する
         /// </summary>
-        [Category(STYLE)]
+        [Category(RADIUS)]
         public int LeftTopCornerRadius
         {
             get => this.mLeftTopCornerRadius;
@@ -330,7 +351,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// 右上のコーナー角度を指定する
         /// </summary>
-        [Category(STYLE)]
+        [Category(RADIUS)]
         public int RightTopCornerRadius
         {
             get => this.mRightTopCornerRadius;
@@ -344,7 +365,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// 左下のコーナー角度を指定する
         /// </summary>
-        [Category(STYLE)]
+        [Category(RADIUS)]
         public int LeftBottomCornerRadius
         {
             get => this.mLeftBottomCornerRadius;
@@ -358,7 +379,7 @@ namespace SPREAD.CustomControl
         /// <summary>
         /// 右下のコーナー角度を指定する
         /// </summary>
-        [Category(STYLE)]
+        [Category(RADIUS)]
         public int RightBottomCornerRadius
         {
             get => this.mRightBottomCornerRadius;
@@ -489,6 +510,8 @@ namespace SPREAD.CustomControl
                 }
                 else
                 {
+                    string backColor = this.DrawStyle == DrawStyleT.Standard ? this.mCellBackColor : this.mFlatBackColor;
+                    this.mSheet.Cells[rowIndex, 0].BackColor = ColorTranslator.FromHtml(backColor);
                     this.mSheet.Cells[rowIndex, 0].Border = this.mCellBorder;
                 }
             }
@@ -497,6 +520,8 @@ namespace SPREAD.CustomControl
                 this.mSheet.Cells[rowIndex, 0].BackColor = ColorTranslator.FromHtml(this.mDisableBackColor);
                 this.mSheet.Cells[rowIndex, 0].Border = this.mCellBorder;
             }
+
+            this.mSheet.Columns[0].ForeColor = ColorTranslator.FromHtml(this.Enabled ? this.mForeColor : this.mDisableForeColor);
 
             // 再描画を強制
             this.Refresh();
@@ -512,6 +537,15 @@ namespace SPREAD.CustomControl
             {
                 this.AddItem(item);
             }
+        }
+
+        /// <summary>
+        /// フォントを取得する
+        /// </summary>
+        /// <returns>シートのフォント</returns>
+        public Font GetSheetFont()
+        {
+            return this.mFpSpread.Font;
         }
 
         #endregion
@@ -571,7 +605,11 @@ namespace SPREAD.CustomControl
             //スタイル設定
             this.mSheet.Columns[0].ForeColor = ColorTranslator.FromHtml(this.Enabled ? this.mForeColor : this.mDisableForeColor);
             this.mSheet.Columns[0].BackColor = ColorTranslator.FromHtml(this.Enabled ? this.mCellBackColor : this.DisableBackColor);
-            this.mSheet.DefaultStyle.Font = new Font("Meiryo UI", 10);
+
+            //フォント設定
+            string fontType = ComponentCommon.GetFontType();
+            int fontSize = ComponentCommon.GetFontSize();
+            this.mSheet.DefaultStyle.Font = new Font(fontType, fontSize);
 
             // 選択イベント
             this.mFpSpread.SelectionChanged += (s, e) =>

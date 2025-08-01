@@ -77,6 +77,7 @@
             button_image1 = new Button();
             button_image2 = new Button();
             button_image3 = new Button();
+            button_RdtListBox = new Button();
             SuspendLayout();
             // 
             // label_ComponentEdgeColor
@@ -540,11 +541,22 @@
             button_image3.UseVisualStyleBackColor = true;
             button_image3.Click += button_image3_Click;
             // 
+            // button_RdtListBox
+            // 
+            button_RdtListBox.Location = new Point(978, 244);
+            button_RdtListBox.Name = "button_RdtListBox";
+            button_RdtListBox.Size = new Size(164, 29);
+            button_RdtListBox.TabIndex = 48;
+            button_RdtListBox.Text = "RdtListBox";
+            button_RdtListBox.UseVisualStyleBackColor = true;
+            button_RdtListBox.Click += button_RdtListBox_Click;
+            // 
             // Form_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 673);
+            Controls.Add(button_RdtListBox);
             Controls.Add(button_image3);
             Controls.Add(button_image2);
             Controls.Add(button_image1);
@@ -649,5 +661,6 @@
         private Button button_image1;
         private Button button_image2;
         private Button button_image3;
+        private Button button_RdtListBox;
     }
 }

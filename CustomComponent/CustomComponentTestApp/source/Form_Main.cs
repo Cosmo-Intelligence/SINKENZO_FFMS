@@ -237,5 +237,11 @@ namespace RADISTA.CustomComponentTestApp
                 mLog.Error(ex);
             }
         }
+
+        private void button_RdtListBox_Click(object sender, EventArgs e)
+        {
+            Form_RdtListBox form = new Form_RdtListBox();
+            form.Show();
+        }
     }
 }
