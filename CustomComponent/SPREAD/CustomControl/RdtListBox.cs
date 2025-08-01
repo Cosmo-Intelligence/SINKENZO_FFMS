@@ -70,6 +70,7 @@ namespace SPREAD.CustomControl
         /// コーナー角度の最小値
         /// </summary>
         private const int CORNER_RADIUS_MIN = 0;
+        private const string LIST_DEFAULT_ALTERNATE_COLOR = "#123456";
 
         #endregion
 
@@ -84,18 +85,18 @@ namespace SPREAD.CustomControl
         private bool mUseAlternateColor = false;
 
         //カラー関連
-        private string mForeColor = Constants.DEFAULT_LIST_FONT_COLOR;
-        private string mCellBackColor = Constants.DEFAULT_LIST_BACK_COLOR;
-        private string mAlternateColor = Constants.DEFAULT_LIST_ALTERNATE_COLOR;
-        private string mHoverBackColor = Constants.HOVERED_LIST_BACK_COLOR;
-        private string mHoverBorderColor = Constants.HOVERED_LIST_EDGE_COLOR;
-        private string mDisableForeColor = Constants.DISABLE_LIST_FONT_COLOR;
-        private string mDisableBackColor = Constants.DISABLE_LIST_BACK_COLOR;
-        private string mFlatBackColor = Constants.FLAT_LIST_BACK_COLOR;
+        private string mForeColor = Constants.LIST_DEFAULT_STANDARD_FONT_COLOR;
+        private string mCellBackColor = Constants.LIST_DEFAULT_STANDARD_BACK_COLOR;
+        private string mAlternateColor = LIST_DEFAULT_ALTERNATE_COLOR;
+        private string mHoverBackColor = Constants.LIST_HOVER_STANDARD_BACK_COLOR;
+        private string mHoverBorderColor = Constants.LIST_HOVER_STANDARD_EDGE_COLOR;
+        private string mDisableForeColor = Constants.LIST_DISABLE_STANDARD_FONT_COLOR;
+        private string mDisableBackColor = Constants.LIST_DISABLE_STANDARD_BACK_COLOR;
+        private string mFlatBackColor = Constants.LIST_DEFAULT_FLAT_BACK_COLOR;
 
         //ボーダー
         private int mBorderThick = 1;
-        private string mBorderColor = Constants.DEFAULT_LIST_EDGE_COLOR;
+        private string mBorderColor = Constants.LIST_DEFAULT_FLAT_EDGE_COLOR;
         private int mLeftTopCornerRadius = 8;
         private int mRightTopCornerRadius = 8;
         private int mLeftBottomCornerRadius = 8;
@@ -169,7 +170,7 @@ namespace SPREAD.CustomControl
         [Category(COLOR)]
         public string FontColor
         {
-            get => mForeColor;
+            get => this.mForeColor;
             set
             {
                 // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
