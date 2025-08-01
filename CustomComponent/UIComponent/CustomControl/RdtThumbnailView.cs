@@ -3,14 +3,8 @@
 // Copyright (C) 2025 FUJIFILM Medical Solutions Corporation.
 // </copyright>
 // -----------------------------------------------------------------------
-// using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+using System.ComponentModel;
 using log4net;
 
 namespace RADISTA.UIComponent.CustomControl
@@ -50,19 +44,26 @@ namespace RADISTA.UIComponent.CustomControl
         private const string IMAGE = "イメージ";
         private const string IMAGE_SIZE = "イメージサイズ";
         private const string COLOR = "カラー";
+
+        //パネル名
+        private const string MAIN_PANEL = "mainPanel";
+        private const string MAIN_PICTURE_BOX = "mainPic";
+        private const string DELETE_OVERLAY = "deleteOverlay";
+        private const string MULTI_FRAME_OVERLAY = "multiOverlay";
         #endregion
 
         #region "メンバ変数"
         private static readonly ILog mLog = LogManager.GetLogger(typeof(RdtButton));
 
         //ドラッグアンドドロップや複数選択用
-        private string mBeforeSelectedPanel = string.Empty;
+        private Panel? mBeforeSelectedPanel = null;
         private bool mIsBeforeCtrl;
         private List<Panel> mSelectedPanels = new List<Panel>();
         private Point mDragStartPoint;
 
         //色関連
-        private string mPanelBackColor = Constants.DEFAULT_BACK_COLOR;
+        private string mPanelBackColor = "#363636";
+        private string mPanelHoverColor = "#FF00FF";
         private string mSelectedBackColor = "#00FFFF";
 
         //画像関連
@@ -240,7 +241,33 @@ namespace RADISTA.UIComponent.CustomControl
         public string PanelBackColor
         {
             get => this.mPanelBackColor;
-            set => this.mPanelBackColor = value;
+            set
+            {
+                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
+                if (!ComponentCommon.IsColorCode(value))
+                {
+                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
+                }
+                this.mPanelBackColor = value;
+            }
+        }
+
+        /// <summary>
+        /// ホバーカラー
+        /// </summary>
+        [Category(COLOR)]
+        public string PanelHoverColor
+        {
+            get => this.mPanelHoverColor;
+            set
+            {
+                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
+                if (!ComponentCommon.IsColorCode(value))
+                {
+                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
+                }
+                this.mPanelHoverColor = value;
+            }
         }
 
         /// <summary>
@@ -250,7 +277,15 @@ namespace RADISTA.UIComponent.CustomControl
         public string SelectedBackColor
         {
             get => this.mSelectedBackColor;
-            set => this.mSelectedBackColor = value;
+            set
+            {
+                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
+                if (!ComponentCommon.IsColorCode(value))
+                {
+                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
+                }
+                this.mSelectedBackColor = value;
+            }
         }
 
         #endregion
@@ -374,14 +409,14 @@ namespace RADISTA.UIComponent.CustomControl
 
             foreach (var mainPanel in this.mSelectedPanels)
             {
-                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                var mainPic = mainPanel.Controls.Find(MAIN_PICTURE_BOX, false).FirstOrDefault();
                 if (mainPic == null)
                 {
                     continue;
                 }
 
                 //すでに存在していた場合は削除
-                var existing = mainPic.Controls.Find("DeleteOverlay", false).FirstOrDefault();
+                var existing = mainPic.Controls.Find(DELETE_OVERLAY, false).FirstOrDefault();
                 if (existing != null)
                 {
                     mainPic.Controls.Remove(existing);
@@ -393,7 +428,7 @@ namespace RADISTA.UIComponent.CustomControl
 
                 var overlay = new PictureBox
                 {
-                    Name = "DeleteOverlay",
+                    Name = DELETE_OVERLAY,
                     Size = image.Size,
                     Location = this.GetOverlayLocation(mainPic, image.Size, this.mDeleteIconPlacement),
                     SizeMode = PictureBoxSizeMode.StretchImage,
@@ -402,13 +437,12 @@ namespace RADISTA.UIComponent.CustomControl
                     AllowDrop = true,
                 };
 
-                this.DetachEvents(overlay);
                 this.AttachEvents(overlay);
 
                 mainPic.Controls.Add(overlay);
 
                 // MultiOverlay と同位置なら非表示にする
-                var multi = mainPic.Controls.Find("MultiOverlay", false).FirstOrDefault();
+                var multi = mainPic.Controls.Find(MULTI_FRAME_OVERLAY, false).FirstOrDefault();
                 if (multi != null && this.mMultiIconPlacement == this.mDeleteIconPlacement)
                 {
                     multi.Visible = false;
@@ -430,14 +464,14 @@ namespace RADISTA.UIComponent.CustomControl
 
             foreach (var mainPanel in this.mSelectedPanels)
             {
-                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                var mainPic = mainPanel.Controls.Find(MAIN_PICTURE_BOX, false).FirstOrDefault();
                 if (mainPic == null)
                 {
                     continue;
                 }
 
                 // 既存オーバーレイ削除
-                var existingOverlay = mainPic.Controls.Find("MultiOverlay", false).FirstOrDefault();
+                var existingOverlay = mainPic.Controls.Find(MULTI_FRAME_OVERLAY, false).FirstOrDefault();
                 if (existingOverlay != null)
                 {
                     mainPic.Controls.Remove(existingOverlay);
@@ -450,7 +484,7 @@ namespace RADISTA.UIComponent.CustomControl
                 // オーバーレイ作成
                 var overlay = new PictureBox
                 {
-                    Name = "MultiOverlay",
+                    Name = MULTI_FRAME_OVERLAY,
                     Size = boxSize,
                     Location = this.GetOverlayLocation(mainPic, boxSize, this.mMultiIconPlacement),
                     SizeMode = PictureBoxSizeMode.StretchImage,
@@ -466,7 +500,7 @@ namespace RADISTA.UIComponent.CustomControl
                 mainPic.Controls.Add(overlay);
 
                 // DeleteOverlay と位置が重複していたら非表示
-                bool hasDelete = mainPic.Controls.Find("DeleteOverlay", false).Any();
+                bool hasDelete = mainPic.Controls.Find(DELETE_OVERLAY, false).Any();
                 if (hasDelete && this.mDeleteIconPlacement == this.mMultiIconPlacement)
                 {
                     overlay.Visible = false;
@@ -479,7 +513,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         public void RemoveMultiFrameOverlay()
         {
-            this.RemoveOverlay("MultiOverlay");
+            this.RemoveOverlay(MULTI_FRAME_OVERLAY);
             return;
         }
 
@@ -488,7 +522,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         public void RemoveDeleteOverlay()
         {
-            this.RemoveOverlay("DeleteOverlay");
+            this.RemoveOverlay(DELETE_OVERLAY);
             return;
         }
 
@@ -504,7 +538,10 @@ namespace RADISTA.UIComponent.CustomControl
 
             try
             {
-                this.mDeleteImage = ComponentCommon.GetImageFromPath(this.mDeleteImageFilePath);
+                if (string.IsNullOrEmpty(this.mDeleteImageFilePath) == false)
+                {
+                    this.mDeleteImage = ComponentCommon.GetImageFromPath(this.mDeleteImageFilePath);
+                }
             }
             catch (Exception ex)
             {
@@ -514,7 +551,10 @@ namespace RADISTA.UIComponent.CustomControl
 
             try
             {
-                this.mLargeDeleteImage = ComponentCommon.GetImageFromPath(this.mLargeDeleteImageFilePath);
+                if (string.IsNullOrEmpty(this.mLargeDeleteImageFilePath) == false)
+                {
+                    this.mLargeDeleteImage = ComponentCommon.GetImageFromPath(this.mLargeDeleteImageFilePath);
+                }
             }
             catch (Exception ex)
             {
@@ -524,7 +564,10 @@ namespace RADISTA.UIComponent.CustomControl
 
             try
             {
-                this.mMultiFrameImage = ComponentCommon.GetImageFromPath(this.mMultiFrameFilePath);
+                if (string.IsNullOrEmpty(this.mMultiFrameFilePath) == false)
+                {
+                    this.mMultiFrameImage = ComponentCommon.GetImageFromPath(this.mMultiFrameFilePath);
+                }
             }
             catch (Exception ex)
             {
@@ -534,7 +577,10 @@ namespace RADISTA.UIComponent.CustomControl
 
             try
             {
-                this.mLargeMultiFrameImage = ComponentCommon.GetImageFromPath(this.mLargeMultiFrameFilePath);
+                if (string.IsNullOrEmpty(this.mLargeMultiFrameFilePath) == false)
+                {
+                    this.mLargeMultiFrameImage = ComponentCommon.GetImageFromPath(this.mLargeMultiFrameFilePath);
+                }
             }
             catch (Exception ex)
             {
@@ -556,8 +602,9 @@ namespace RADISTA.UIComponent.CustomControl
             this.Padding = new Padding(10);
             this.WrapContents = true;
             this.FlowDirection = FlowDirection.LeftToRight;
+            this.AllowDrop = true;
 
-            this.mBeforeSelectedPanel = "-1";
+            this.mBeforeSelectedPanel = null;
             this.mIsBeforeCtrl = false;
         }
 
@@ -625,27 +672,79 @@ namespace RADISTA.UIComponent.CustomControl
         }
 
         /// <summary>
-        /// イベントを追加する
-        /// </summary>
-        private void AttachEvents(Control control)
-        {
-            control.Click += this.Panel_Click;
-            control.MouseDown += this.Panel_MouseDown;
-            control.MouseMove += this.Panel_MouseMove;
-            control.DragEnter += this.Panel_DragEnter;
-            control.DragDrop += this.Panel_DragDrop;
-        }
-
-        /// <summary>
         /// イベントを削除する
         /// </summary>
         private void DetachEvents(Control control)
         {
-            control.Click -= this.Panel_Click;
-            control.MouseDown -= this.Panel_MouseDown;
-            control.MouseMove -= this.Panel_MouseMove;
-            control.DragEnter -= this.Panel_DragEnter;
-            control.DragDrop -= this.Panel_DragDrop;
+            control.Click -= this.Control_Click;
+            control.MouseDown -= this.Contorl_MouseDown;
+            control.MouseMove -= this.Control_MouseMove;
+            control.MouseHover -= this.Control_MouseHover;
+            control.MouseLeave -= this.Control_MouseLeave;
+            control.DragEnter -= this.Control_DragEnter;
+            control.DragDrop -= this.Control_DragDrop;
+        }
+
+        /// <summary>
+        /// イベントを追加する
+        /// </summary>
+        private void AttachEvents(Control control)
+        {
+            this.DetachEvents(control);
+
+            control.Click += this.Control_Click;
+            control.MouseDown += this.Contorl_MouseDown;
+            control.MouseMove += this.Control_MouseMove;
+            control.MouseHover += this.Control_MouseHover;
+            control.MouseLeave += this.Control_MouseLeave;
+            control.DragEnter += this.Control_DragEnter;
+            control.DragDrop += this.Control_DragDrop;
+        }
+
+        private void Control_MouseLeave(object? sender, EventArgs e)
+        {
+            if (sender == null)
+            {
+                return;
+            }
+
+            Control clicked = (Control)sender;
+
+            Panel? clickedPanel = clicked as Panel ?? clicked?.Parent as Panel;
+            if (clickedPanel == null)
+            {
+                return;
+            }
+
+            if (this.mSelectedPanels.Find(r => r.Name == clickedPanel.Name) != null)
+            {
+                return;
+            }
+
+            clickedPanel.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
+        }
+
+        private void Control_MouseHover(object? sender, EventArgs e)
+        {
+            if (sender == null)
+            {
+                return;
+            }
+
+            Control clicked = (Control)sender;
+
+            Panel? clickedPanel = clicked as Panel ?? clicked?.Parent as Panel;
+            if (clickedPanel == null)
+            {
+                return;
+            }
+
+            if (this.mSelectedPanels.Find(r => r.Name == clickedPanel.Name) != null)
+            {
+                return;
+            }
+
+            clickedPanel.BackColor = ColorTranslator.FromHtml(this.mPanelHoverColor);
         }
 
         /// <summary>
@@ -662,7 +761,10 @@ namespace RADISTA.UIComponent.CustomControl
 
             try
             {
-                image = ComponentCommon.GetImageFromPath(imagePath);
+                if (string.IsNullOrEmpty(imagePath) == false)
+                {
+                    image = ComponentCommon.GetImageFromPath(imagePath);
+                }
             }
             catch (Exception ex)
             {
@@ -681,12 +783,12 @@ namespace RADISTA.UIComponent.CustomControl
 
             PictureBox mainPic = new PictureBox
             {
-                Name = "mainPic",
+                Name = MAIN_PICTURE_BOX,
                 Size = new Size(image.Width, image.Height),
                 Location = new Point(2, 2),
                 Image = image,
                 SizeMode = PictureBoxSizeMode.StretchImage,
-                BackColor = Color.White,
+                BackColor = Color.Transparent,
             };
 
             Label lblNumber = new Label
@@ -700,12 +802,15 @@ namespace RADISTA.UIComponent.CustomControl
 
             Panel mainPanel = new Panel
             {
-                Name = "mainPanel",
+                Name = MAIN_PANEL,
                 Size = new Size(mainPic.Size.Width + 4, mainPic.Size.Height + lblNumber.Size.Height + 2),
                 Margin = new Padding(2, 2, marginX, marginY),
                 BackColor = Color.Transparent,
                 Tag = number,
             };
+
+            mainPanel.AllowDrop = true;
+            lblNumber.AllowDrop = true;
 
             // クリック選択イベント
             this.DetachEvents(mainPanel);
@@ -719,12 +824,6 @@ namespace RADISTA.UIComponent.CustomControl
 
             mainPanel.Controls.Add(mainPic);
             mainPanel.Controls.Add(lblNumber);
-
-            if (image != null)
-            {
-                image.Dispose();
-                image = null;
-            }
 
             return mainPanel;
         }
@@ -790,14 +889,14 @@ namespace RADISTA.UIComponent.CustomControl
         {
             foreach (Panel mainPanel in this.Controls)
             {
-                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                var mainPic = mainPanel.Controls.Find(MAIN_PICTURE_BOX, false).FirstOrDefault();
                 if (mainPic == null)
                 {
                     continue;
                 }
 
-                var deleteOverlay = mainPic.Controls.Find("DeleteOverlay", false).FirstOrDefault() as PictureBox;
-                var multiOverlay = mainPic.Controls.Find("MultiOverlay", false).FirstOrDefault() as PictureBox;
+                var deleteOverlay = mainPic.Controls.Find(DELETE_OVERLAY, false).FirstOrDefault() as PictureBox;
+                var multiOverlay = mainPic.Controls.Find(MULTI_FRAME_OVERLAY, false).FirstOrDefault() as PictureBox;
 
                 if (deleteOverlay != null)
                 {
@@ -825,7 +924,7 @@ namespace RADISTA.UIComponent.CustomControl
                     continue;
                 }
 
-                var mainPic = mainPanel.Controls.Find("mainPic", false).FirstOrDefault();
+                var mainPic = mainPanel.Controls.Find(MAIN_PICTURE_BOX, false).FirstOrDefault();
                 if (mainPic == null)
                 {
                     continue;
@@ -851,100 +950,95 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">Event</param>
-        private void Panel_Click(object? sender, EventArgs e)
+        private void Control_Click(object? sender, EventArgs e)
         {
-            if (sender == null)
+            if (sender is not Control clicked)
             {
                 return;
             }
 
-            Control clicked = (Control)sender;
-
-            Panel? clickedPanel = clicked as Panel ?? clicked?.Parent as Panel;
+            Panel? clickedPanel = clicked as Panel ?? clicked.Parent as Panel;
             if (clickedPanel == null)
             {
                 return;
             }
 
-            bool isCtrlPressed = (ModifierKeys & Keys.Control) == Keys.Control;
-            bool isShiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
+            bool isCtrl = (ModifierKeys & Keys.Control) == Keys.Control;
+            bool isShift = (ModifierKeys & Keys.Shift) == Keys.Shift;
 
-            if (isCtrlPressed && !isShiftPressed)
+            // Ctrlのみ押下
+            if (isCtrl && !isShift)
             {
-                if (this.mSelectedPanels.Contains(clickedPanel))
+                bool isSelected = this.mSelectedPanels.Contains(clickedPanel);
+                clickedPanel.BackColor = ColorTranslator.FromHtml(isSelected ? this.mPanelBackColor : this.mSelectedBackColor);
+
+                if (isSelected)
                 {
-                    clickedPanel.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
                     this.mSelectedPanels.Remove(clickedPanel);
                 }
                 else
                 {
-                    clickedPanel.BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
                     this.mSelectedPanels.Add(clickedPanel);
                 }
 
-                this.mBeforeSelectedPanel = clickedPanel.Name;
+                this.mBeforeSelectedPanel = clickedPanel;
                 this.mIsBeforeCtrl = true;
+                return;
             }
-            else if (isShiftPressed && !isCtrlPressed)
+
+            // Shiftのみ押下
+            if (isShift && !isCtrl)
             {
-                if (!int.TryParse(clickedPanel.Name, out int selectedNum))
+                //前回選択したパネルが無ければreturn
+                if (this.mBeforeSelectedPanel == null)
                 {
                     return;
                 }
 
-                if (!int.TryParse(this.mBeforeSelectedPanel, out int beforeSelectedNum))
-                {
-                    return;
-                }
+                //パネルのインデックス取得
+                int clickedIndex = this.Controls.GetChildIndex(clickedPanel);
+                int beforeClickedIndex = this.Controls.GetChildIndex(this.mBeforeSelectedPanel);
 
-                if (beforeSelectedNum != -1)
-                {
-                    int start = Math.Min(selectedNum, beforeSelectedNum);
-                    int end = Math.Max(selectedNum, beforeSelectedNum);
+                int start = Math.Min(clickedIndex, beforeClickedIndex);
+                int end = Math.Max(clickedIndex, beforeClickedIndex);
 
-                    if (!this.mIsBeforeCtrl)
+                //前回がCtrlで選択していない場合一度全ての選択を解除
+                if (!this.mIsBeforeCtrl)
+                {
+                    foreach (var p in this.mSelectedPanels)
                     {
-                        foreach (Panel p in this.mSelectedPanels)
-                        {
-                            p.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
-                        }
-
-                        this.mSelectedPanels.Clear();
+                        p.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
                     }
-
-                    foreach (Control ctrl in this.Controls)
-                    {
-                        if (ctrl is Panel panel && int.TryParse(panel.Name, out int num))
-                        {
-                            if (num >= start && num <= end)
-                            {
-                                panel.BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
-                                if (!this.mSelectedPanels.Contains(panel))
-                                {
-                                    this.mSelectedPanels.Add(panel);
-                                }
-                            }
-                        }
-                    }
-
-                    this.mIsBeforeCtrl = false;
+                    this.mSelectedPanels.Clear();
                 }
-            }
-            else
-            {
-                foreach (var panel in this.mSelectedPanels)
+
+                //選択範囲にあるパネルを全て選択状態にする
+                for (int panelIndex = start; panelIndex <= end; panelIndex++)
                 {
-                    panel.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
+                    if (this.Controls[panelIndex].GetType() == typeof(Panel))
+                    {
+                        Panel panel = (Panel)this.Controls[panelIndex];
+                        this.Controls[panelIndex].BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
+                        this.mSelectedPanels.Add(panel);
+                    }
                 }
 
-                this.mSelectedPanels.Clear();
-
-                clickedPanel.BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
-                this.mSelectedPanels.Add(clickedPanel);
-
-                this.mBeforeSelectedPanel = clickedPanel.Name;
                 this.mIsBeforeCtrl = false;
+                return;
             }
+
+            // Ctrl/Shiftどちらも押していない場合
+            foreach (var panel in this.mSelectedPanels)
+            {
+                panel.BackColor = ColorTranslator.FromHtml(this.mPanelBackColor);
+            }
+
+            this.mSelectedPanels.Clear();
+
+            clickedPanel.BackColor = ColorTranslator.FromHtml(this.mSelectedBackColor);
+            this.mSelectedPanels.Add(clickedPanel);
+            this.mBeforeSelectedPanel = clickedPanel;
+            this.mIsBeforeCtrl = false;
         }
 
         /// <summary>
@@ -952,7 +1046,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">Event</param>
-        private void Panel_MouseDown(object? sender, MouseEventArgs e)
+        private void Contorl_MouseDown(object? sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -965,7 +1059,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">Event</param>
-        private void Panel_MouseMove(object? sender, MouseEventArgs e)
+        private void Control_MouseMove(object? sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left &&
                 (Math.Abs(e.X - this.mDragStartPoint.X) >= SystemInformation.DragSize.Width ||
@@ -983,7 +1077,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">Event</param>
-        private void Panel_DragEnter(object? sender, DragEventArgs e)
+        private void Control_DragEnter(object? sender, DragEventArgs e)
         {
             if (e == null || e.Data == null)
             {
@@ -1000,7 +1094,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">Event</param>
-        private void Panel_DragDrop(object? sender, DragEventArgs e)
+        private void Control_DragDrop(object? sender, DragEventArgs e)
         {
             if (e == null || e.Data == null)
             {
@@ -1012,8 +1106,8 @@ namespace RADISTA.UIComponent.CustomControl
                 return;
             }
 
-            Panel? targetPanel = sender as Panel;
-            if (targetPanel == null)
+            Panel? dropTarget = sender as Panel;
+            if (dropTarget == null)
             {
                 return;
             }
@@ -1024,18 +1118,70 @@ namespace RADISTA.UIComponent.CustomControl
                 return;
             }
 
-            int targetIndex = this.Controls.GetChildIndex(targetPanel);
-
-            foreach (Panel panel in draggedPanels)
+            // ドロップ先がドラッグ対象に含まれていたら中止
+            if (draggedPanels.Contains(dropTarget))
             {
-                this.Controls.Remove(panel);
+                return;
             }
 
-            draggedPanels.Reverse();
+            var controls = this.Controls;
+
+            int dropIndex = controls.GetChildIndex(dropTarget);
+            int minDragIndex = this.Controls.Count;
+
+            //一番左にあるコントロールのインデックスを取得
             foreach (Panel panel in draggedPanels)
             {
-                this.Controls.Add(panel);
-                this.Controls.SetChildIndex(panel, targetIndex);
+                minDragIndex = Math.Min(controls.GetChildIndex(panel), minDragIndex);
+            }
+
+            if (dropIndex > minDragIndex)
+            {
+                draggedPanels = draggedPanels
+                .OrderByDescending(p => this.Controls.GetChildIndex(p)).ToList();
+            }
+
+            // 入れ替え処理
+            foreach (Panel panel in draggedPanels)
+            {
+                int dragIndex = controls.GetChildIndex(panel);
+
+                int relativeIndex = dragIndex - minDragIndex;
+
+                int targetIndex = dropIndex + relativeIndex;
+
+                Control tempDrag = controls[dragIndex];
+
+                //もし入れ替え先が配列範囲外だった場合、最後尾へ移動する
+                if (targetIndex >= controls.Count)
+                {
+                    controls.RemoveAt(dragIndex);
+                    controls.Add(tempDrag);
+
+                    continue;
+                }
+
+                Control tempDrop = this.Controls[targetIndex];
+
+                // 順序のズレを避けるため一旦削除（高い順から）
+                if (targetIndex > dragIndex)
+                {
+                    controls.RemoveAt(targetIndex);
+                    controls.RemoveAt(dragIndex);
+                    controls.Add(tempDrop);
+                    controls.SetChildIndex(tempDrop, dragIndex);
+                    controls.Add(tempDrag);
+                    controls.SetChildIndex(tempDrag, targetIndex);
+                }
+                else
+                {
+                    controls.RemoveAt(dragIndex);
+                    controls.RemoveAt(targetIndex);
+                    controls.Add(tempDrag);
+                    controls.SetChildIndex(tempDrag, targetIndex);
+                    controls.Add(tempDrop);
+                    controls.SetChildIndex(tempDrop, dragIndex);
+                }
             }
         }
         #endregion

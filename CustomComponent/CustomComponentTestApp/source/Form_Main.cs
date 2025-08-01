@@ -22,15 +22,167 @@ namespace RADISTA.CustomComponentTestApp
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
-            #region XML
+            #region XMLì«Ç›çûÇ›
+            #region ÉtÉHÉìÉg
             label_FontType.Text = ComponentCommon.GetFontType();
             label_FontSize.Text = ComponentCommon.GetFontSize().ToString();
             label_FontColor.Text = ComponentCommon.GetFontColor();
-            label_BackColor.Text = ComponentCommon.GetBackColor();
-            label_InactiveColor.Text = ComponentCommon.GetInactiveColor();
-            label_InputBackColor.Text = ComponentCommon.GetInputBackColor();
-            label_InputEdgeColor.Text = ComponentCommon.GetInputEdgeColor();
-            label_ComponentEdgeColor.Text = ComponentCommon.GetComponentEdgeColor();
+            label_FontDisableColor.Text = ComponentCommon.GetFontDisableColor();
+            label_FontFocusColor.Text = ComponentCommon.GetFontFocusColor();
+            label_FontReadOnlyColor.Text = ComponentCommon.GetFontReadOnlyColor();
+            #endregion
+            #region  Form, Dialog 
+            label_FormDefaultFontColor.Text = ComponentCommon.GetFormDefaultFontColor();
+            label_FormDefaultBackColor.Text = ComponentCommon.GetFormDefaultBackColor();
+            label_FormTitlebarFontColor.Text = ComponentCommon.GetFormTitlebarFontColor();
+            label_FormTitlebarBackColor.Text = ComponentCommon.GetFormTitlebarBackColor();
+            #endregion
+            #region Label
+            label_LabelDefaultFontColor.Text = ComponentCommon.GetLabelDefaultFontColor();
+            label_LabelDefaultBackColor.Text = ComponentCommon.GetLabelDefaultBackColor();
+            label_LabelDefaultEdgeColor.Text = ComponentCommon.GetLabelDefaultEdgeColor();
+            #endregion
+            #region TextBox, ComboBox
+            label_TextDefaultFontColor.Text = ComponentCommon.GetTextDefaultFontColor();
+            label_TextDefaultBackColor.Text = ComponentCommon.GetTextDefaultBackColor();
+            label_TextDefaultEdgeColor.Text = ComponentCommon.GetTextDefaultEdgeColor();
+            label_TextDisableFontColor.Text = ComponentCommon.GetTextDisableFontColor();
+            label_TextDisableBackColor.Text = ComponentCommon.GetTextDisableBackColor();
+            label_TextDisableEdgeColor.Text = ComponentCommon.GetTextDisableEdgeColor();
+            label_TextFocusFontColor.Text = ComponentCommon.GetTextFocusFontColor();
+            label_TextFocusBackColor.Text = ComponentCommon.GetTextFocusBackColor();
+            label_TextFocusEdgeColor.Text = ComponentCommon.GetTextFocusEdgeColor();
+            label_TextReadOnlyFontColor.Text = ComponentCommon.GetTextReadOnlyFontColor();
+            label_TextReadOnlyBackColor.Text = ComponentCommon.GetTextReadOnlyBackColor();
+            label_TextReadOnlyEdgeColor.Text = ComponentCommon.GetTextReadOnlyEdgeColor();
+            label_TextWaterMarkFontColor.Text = ComponentCommon.GetTextWaterMarkFontColor();
+            #endregion
+            #region ListView, ListBox
+            label_ListDefaultStandardFontColor.Text = ComponentCommon.GetListDefaultStandardFontColor();
+            label_ListDefaultStandardBackColor.Text = ComponentCommon.GetListDefaultStandardBackColor();
+            label_ListDefaultStandardEdgeColor.Text = ComponentCommon.GetListDefaultStandardEdgeColor();
+            label_ListDefaultFlatFontColor.Text = ComponentCommon.GetListDefaultFlatFontColor();
+            label_ListDefaultFlatBackColor.Text = ComponentCommon.GetListDefaultFlatBackColor();
+            label_ListDefaultFlatEdgeColor.Text = ComponentCommon.GetListDefaultFlatEdgeColor();
+            label_ListHoverStandardFontColor.Text = ComponentCommon.GetListHoverStandardFontColor();
+            label_ListHoverStandardBackColor.Text = ComponentCommon.GetListHoverStandardBackColor();
+            label_ListHoverStandardEdgeColor.Text = ComponentCommon.GetListHoverStandardEdgeColor();
+            label_ListHoverFlatFontColor.Text = ComponentCommon.GetListHoverFlatFontColor();
+            label_ListHoverFlatBackColor.Text = ComponentCommon.GetListHoverFlatBackColor();
+            label_ListHoverFlatEdgeColor.Text = ComponentCommon.GetListHoverFlatEdgeColor();
+            label_ListDisableStandardFontColor.Text = ComponentCommon.GetListDisableStandardFontColor();
+            label_ListDisableStandardBackColor.Text = ComponentCommon.GetListDisableStandardBackColor();
+            label_ListDisableStandardEdgeColor.Text = ComponentCommon.GetListDisableStandardEdgeColor();
+            label_ListDisableFlatFontColor.Text = ComponentCommon.GetListDisableFlatFontColor();
+            label_ListDisableFlatBackColor.Text = ComponentCommon.GetListDisableFlatBackColor();
+            label_ListDisableFlatEdgeColor.Text = ComponentCommon.GetListDisableFlatEdgeColor();
+            #endregion
+            #region ContextMenuStrip
+            label_ContextDefaultFontColor.Text = ComponentCommon.GetContextDefaultFontColor();
+            label_ContextDefaultBackColor.Text = ComponentCommon.GetContextDefaultBackColor();
+            label_ContextDefaultEdgeColor.Text = ComponentCommon.GetContextDefaultEdgeColor();
+            label_ContextHoverFontColor.Text = ComponentCommon.GetContextHoverFontColor();
+            label_ContextHoverBackColor.Text = ComponentCommon.GetContextHoverBackColor();
+            label_ContextHoverEdgeColor.Text = ComponentCommon.GetContextHoverEdgeColor();
+            label_ContextSelectedFontColor.Text = ComponentCommon.GetContextSelectedFontColor();
+            label_ContextSelectedBackColor.Text = ComponentCommon.GetContextSelectedBackColor();
+            label_ContextSelectedEdgeColor.Text = ComponentCommon.GetContextSelectedEdgeColor();
+            label_ContextSelectedHoverFontColor.Text = ComponentCommon.GetContextSelectedHoverFontColor();
+            label_ContextSelectedHoverBackColor.Text = ComponentCommon.GetContextSelectedHoverBackColor();
+            label_ContextSelectedHoverEdgeColor.Text = ComponentCommon.GetContextSelectedHoverEdgeColor();
+            label_ContextDisableFontColor.Text = ComponentCommon.GetContextDisableFontColor();
+            label_ContextDisableBackColor.Text = ComponentCommon.GetContextDisableBackColor();
+            label_ContextDisableEdgeColor.Text = ComponentCommon.GetContextDisableEdgeColor();
+            #endregion
+            #region MenuStrip
+            label_MenuDefaultFontColor.Text = ComponentCommon.GetMenuDefaultFontColor();
+            label_MenuDefaultBackColor.Text = ComponentCommon.GetMenuDefaultBackColor();
+            label_MenuHoverFontColor.Text = ComponentCommon.GetMenuHoverFontColor();
+            label_MenuHoverBackColor.Text = ComponentCommon.GetMenuHoverBackColor();
+            label_MenuDisableFontColor.Text = ComponentCommon.GetMenuDisableFontColor();
+            label_MenuDisableBackColor.Text = ComponentCommon.GetMenuDisableBackColor();
+            #endregion
+            #region Button
+            label_ButtonDefaultPrimaryFontColor.Text = ComponentCommon.GetButtonDefaultPrimaryFontColor();
+            label_ButtonDefaultPrimaryBackColor.Text = ComponentCommon.GetButtonDefaultPrimaryBackColor();
+            label_ButtonDefaultPrimaryEdgeColor.Text = ComponentCommon.GetButtonDefaultPrimaryEdgeColor();
+            label_ButtonDefaultTonalFontColor.Text = ComponentCommon.GetButtonDefaultTonalFontColor();
+            label_ButtonDefaultTonalBackColor.Text = ComponentCommon.GetButtonDefaultTonalBackColor();
+            label_ButtonDefaultTonalEdgeColor.Text = ComponentCommon.GetButtonDefaultTonalEdgeColor();
+            label_ButtonDefaultOutlinedFontColor.Text = ComponentCommon.GetButtonDefaultOutlinedFontColor();
+            label_ButtonDefaultOutlinedBackColor.Text = ComponentCommon.GetButtonDefaultOutlinedBackColor();
+            label_ButtonDefaultOutlinedEdgeColor.Text = ComponentCommon.GetButtonDefaultOutlinedEdgeColor();
+            label_ButtonDefaultTextFontColor.Text = ComponentCommon.GetButtonDefaultTextFontColor();
+            label_ButtonDefaultTextBackColor.Text = ComponentCommon.GetButtonDefaultTextBackColor();
+            label_ButtonDefaultTextEdgeColor.Text = ComponentCommon.GetButtonDefaultTextEdgeColor();
+            label_ButtonHoverPrimaryFontColor.Text = ComponentCommon.GetButtonHoverPrimaryFontColor();
+            label_ButtonHoverPrimaryBackColor.Text = ComponentCommon.GetButtonHoverPrimaryBackColor();
+            label_ButtonHoverPrimaryEdgeColor.Text = ComponentCommon.GetButtonHoverPrimaryEdgeColor();
+            label_ButtonHoverTonalFontColor.Text = ComponentCommon.GetButtonHoverTonalFontColor();
+            label_ButtonHoverTonalBackColor.Text = ComponentCommon.GetButtonHoverTonalBackColor();
+            label_ButtonHoverTonalEdgeColor.Text = ComponentCommon.GetButtonHoverTonalEdgeColor();
+            label_ButtonHoverOutlinedFontColor.Text = ComponentCommon.GetButtonHoverOutlinedFontColor();
+            label_ButtonHoverOutlinedBackColor.Text = ComponentCommon.GetButtonHoverOutlinedBackColor();
+            label_ButtonHoverOutlinedEdgeColor.Text = ComponentCommon.GetButtonHoverOutlinedEdgeColor();
+            label_ButtonHoverTextFontColor.Text = ComponentCommon.GetButtonHoverTextFontColor();
+            label_ButtonHoverTextBackColor.Text = ComponentCommon.GetButtonHoverTextBackColor();
+            label_ButtonHoverTextEdgeColor.Text = ComponentCommon.GetButtonHoverTextEdgeColor();
+            label_ButtonPressedPrimaryFontColor.Text = ComponentCommon.GetButtonPressedPrimaryFontColor();
+            label_ButtonPressedPrimaryBackColor.Text = ComponentCommon.GetButtonPressedPrimaryBackColor();
+            label_ButtonPressedPrimaryEdgeColor.Text = ComponentCommon.GetButtonPressedPrimaryEdgeColor();
+            label_ButtonPressedTonalFontColor.Text = ComponentCommon.GetButtonPressedTonalFontColor();
+            label_ButtonPressedTonalBackColor.Text = ComponentCommon.GetButtonPressedTonalBackColor();
+            label_ButtonPressedTonalEdgeColor.Text = ComponentCommon.GetButtonPressedTonalEdgeColor();
+            label_ButtonPressedOutlinedFontColor.Text = ComponentCommon.GetButtonPressedOutlinedFontColor();
+            label_ButtonPressedOutlinedBackColor.Text = ComponentCommon.GetButtonPressedOutlinedBackColor();
+            label_ButtonPressedOutlinedEdgeColor.Text = ComponentCommon.GetButtonPressedOutlinedEdgeColor();
+            label_ButtonPressedTextFontColor.Text = ComponentCommon.GetButtonPressedTextFontColor();
+            label_ButtonPressedTextBackColor.Text = ComponentCommon.GetButtonPressedTextBackColor();
+            label_ButtonPressedTextEdgeColor.Text = ComponentCommon.GetButtonPressedTextEdgeColor();
+            label_ButtonDisablePrimaryFontColor.Text = ComponentCommon.GetButtonDisablePrimaryFontColor();
+            label_ButtonDisablePrimaryBackColor.Text = ComponentCommon.GetButtonDisablePrimaryBackColor();
+            label_ButtonDisablePrimaryEdgeColor.Text = ComponentCommon.GetButtonDisablePrimaryEdgeColor();
+            label_ButtonDisableTonalFontColor.Text = ComponentCommon.GetButtonDisableTonalFontColor();
+            label_ButtonDisableTonalBackColor.Text = ComponentCommon.GetButtonDisableTonalBackColor();
+            label_ButtonDisableTonalEdgeColor.Text = ComponentCommon.GetButtonDisableTonalEdgeColor();
+            label_ButtonDisableOutlinedFontColor.Text = ComponentCommon.GetButtonDisableOutlinedFontColor();
+            label_ButtonDisableOutlinedBackColor.Text = ComponentCommon.GetButtonDisableOutlinedBackColor();
+            label_ButtonDisableOutlinedEdgeColor.Text = ComponentCommon.GetButtonDisableOutlinedEdgeColor();
+            label_ButtonDisableTextFontColor.Text = ComponentCommon.GetButtonDisableTextFontColor();
+            label_ButtonDisableTextBackColor.Text = ComponentCommon.GetButtonDisableTextBackColor();
+            label_ButtonDisableTextEdgeColor.Text = ComponentCommon.GetButtonDisableTextEdgeColor();
+            #endregion
+            #region ToggleButton
+            label_ToggleOnTonalFontColor.Text = ComponentCommon.GetToggleOnTonalFontColor();
+            label_ToggleOnTonalBackColor.Text = ComponentCommon.GetToggleOnTonalBackColor();
+            label_ToggleOnTonalEdgeColor.Text = ComponentCommon.GetToggleOnTonalEdgeColor();
+            label_ToggleOnOutlinedFontColor.Text = ComponentCommon.GetToggleOnOutlinedFontColor();
+            label_ToggleOnOutlinedBackColor.Text = ComponentCommon.GetToggleOnOutlinedBackColor();
+            label_ToggleOnOutlinedEdgeColor.Text = ComponentCommon.GetToggleOnOutlinedEdgeColor();
+            label_ToggleOnTextFontColor.Text = ComponentCommon.GetToggleOnTextFontColor();
+            label_ToggleOnTextBackColor.Text = ComponentCommon.GetToggleOnTextBackColor();
+            label_ToggleOnTextEdgeColor.Text = ComponentCommon.GetToggleOnTextEdgeColor();
+            label_ToggleOffTonalFontColor.Text = ComponentCommon.GetToggleOffTonalFontColor();
+            label_ToggleOffTonalBackColor.Text = ComponentCommon.GetToggleOffTonalBackColor();
+            label_ToggleOffTonalEdgeColor.Text = ComponentCommon.GetToggleOffTonalEdgeColor();
+            label_ToggleOffOutlinedFontColor.Text = ComponentCommon.GetToggleOffOutlinedFontColor();
+            label_ToggleOffOutlinedBackColor.Text = ComponentCommon.GetToggleOffOutlinedBackColor();
+            label_ToggleOffOutlinedEdgeColor.Text = ComponentCommon.GetToggleOffOutlinedEdgeColor();
+            label_ToggleOffTextFontColor.Text = ComponentCommon.GetToggleOffTextFontColor();
+            label_ToggleOffTextBackColor.Text = ComponentCommon.GetToggleOffTextBackColor();
+            label_ToggleOffTextEdgeColor.Text = ComponentCommon.GetToggleOffTextEdgeColor();
+            #endregion
+            #region Calendar
+            label_CalendarDefaultFontColor.Text = ComponentCommon.GetCalendarDefaultFontColor();
+            label_CalendarDefaultBackColor.Text = ComponentCommon.GetCalendarDefaultBackColor();
+            label_CalendarDefaultTitleFontColor.Text = ComponentCommon.GetCalendarDefaultTitleFontColor();
+            label_CalendarDefaultTitleBackColor.Text = ComponentCommon.GetCalendarDefaultTitleBackColor();
+            label_CalendarDefaultTrailingFontColor.Text = ComponentCommon.GetCalendarDefaultTrailingFontColor();
+            #endregion
+            #region ProgressBar
+            label_ProgressDefaultFontColor.Text = ComponentCommon.GetProgressDefaultFontColor();
+            label_ProgressDefaultBackColor.Text = ComponentCommon.GetProgressDefaultBackColor();
+            #endregion
             #endregion
         }
 
