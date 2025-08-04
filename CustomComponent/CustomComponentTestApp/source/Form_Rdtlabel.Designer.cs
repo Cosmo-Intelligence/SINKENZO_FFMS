@@ -74,13 +74,18 @@
             rdtLabel_BlinkInterval_1 = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
             rdtLabel_IsBlink_False = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
             rdtLabel_IsBlink_True = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
-            rdtLabel_Inactive = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
-            rdtLabel_Default = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
             label2 = new Label();
             label1 = new Label();
             button_StopBlink = new Button();
             button_StartBlink = new Button();
             label25 = new Label();
+            rdtLabel_Default = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
+            label_BorderColor_Default = new Label();
+            label6 = new Label();
+            rdtLabel_BorderColor_Default = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
+            rdtLabel_Inactive = new RADISTA.UIComponent.CustomControl.RdtLabel(components);
+            button_Inactive = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label_Count
@@ -104,7 +109,7 @@
             // label_BorderColor_1
             // 
             label_BorderColor_1.AutoSize = true;
-            label_BorderColor_1.Location = new Point(155, 714);
+            label_BorderColor_1.Location = new Point(501, 714);
             label_BorderColor_1.Name = "label_BorderColor_1";
             label_BorderColor_1.Size = new Size(55, 20);
             label_BorderColor_1.TabIndex = 136;
@@ -113,7 +118,7 @@
             // label31
             // 
             label31.AutoSize = true;
-            label31.Location = new Point(94, 714);
+            label31.Location = new Point(440, 714);
             label31.Name = "label31";
             label31.Size = new Size(55, 20);
             label31.TabIndex = 135;
@@ -176,15 +181,15 @@
             // 
             // rdtLabel_BorderThick_30
             // 
-            rdtLabel_BorderThick_30.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BorderThick_30.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BorderThick_30.BlinkBackColor = "#000000";
             rdtLabel_BorderThick_30.BlinkFontColor = "#000000";
             rdtLabel_BorderThick_30.BlinkInterval = 1;
             rdtLabel_BorderThick_30.BorderColor = "#C3C3C3";
             rdtLabel_BorderThick_30.BorderThick = 30;
-            rdtLabel_BorderThick_30.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BorderThick_30.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BorderThick_30.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BorderThick_30.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BorderThick_30.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BorderThick_30.IsBlink = false;
             rdtLabel_BorderThick_30.Location = new Point(899, 781);
             rdtLabel_BorderThick_30.Name = "rdtLabel_BorderThick_30";
@@ -195,15 +200,15 @@
             // 
             // rdtLabel_BorderThick_1
             // 
-            rdtLabel_BorderThick_1.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BorderThick_1.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BorderThick_1.BlinkBackColor = "#000000";
             rdtLabel_BorderThick_1.BlinkFontColor = "#000000";
             rdtLabel_BorderThick_1.BlinkInterval = 1;
             rdtLabel_BorderThick_1.BorderColor = "#C3C3C3";
             rdtLabel_BorderThick_1.BorderThick = 1;
-            rdtLabel_BorderThick_1.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BorderThick_1.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BorderThick_1.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BorderThick_1.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BorderThick_1.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BorderThick_1.IsBlink = false;
             rdtLabel_BorderThick_1.Location = new Point(420, 781);
             rdtLabel_BorderThick_1.Name = "rdtLabel_BorderThick_1";
@@ -214,15 +219,15 @@
             // 
             // rdtLabel_BlinkThick_0
             // 
-            rdtLabel_BlinkThick_0.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BlinkThick_0.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BlinkThick_0.BlinkBackColor = "#000000";
             rdtLabel_BlinkThick_0.BlinkFontColor = "#000000";
             rdtLabel_BlinkThick_0.BlinkInterval = 1;
             rdtLabel_BlinkThick_0.BorderColor = "#C3C3C3";
             rdtLabel_BlinkThick_0.BorderThick = 0;
-            rdtLabel_BlinkThick_0.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BlinkThick_0.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BlinkThick_0.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BlinkThick_0.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BlinkThick_0.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BlinkThick_0.IsBlink = false;
             rdtLabel_BlinkThick_0.Location = new Point(74, 781);
             rdtLabel_BlinkThick_0.Name = "rdtLabel_BlinkThick_0";
@@ -243,17 +248,17 @@
             // rdtLabel_BorderColor_FF0000
             // 
             rdtLabel_BorderColor_FF0000.AutoSize = true;
-            rdtLabel_BorderColor_FF0000.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BorderColor_FF0000.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BorderColor_FF0000.BlinkBackColor = "#000000";
             rdtLabel_BorderColor_FF0000.BlinkFontColor = "#000000";
             rdtLabel_BorderColor_FF0000.BlinkInterval = 1;
             rdtLabel_BorderColor_FF0000.BorderColor = "#FF0000";
             rdtLabel_BorderColor_FF0000.BorderThick = 1;
-            rdtLabel_BorderColor_FF0000.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BorderColor_FF0000.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BorderColor_FF0000.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BorderColor_FF0000.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BorderColor_FF0000.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BorderColor_FF0000.IsBlink = false;
-            rdtLabel_BorderColor_FF0000.Location = new Point(74, 684);
+            rdtLabel_BorderColor_FF0000.Location = new Point(420, 684);
             rdtLabel_BorderColor_FF0000.Name = "rdtLabel_BorderColor_FF0000";
             rdtLabel_BorderColor_FF0000.Size = new Size(229, 25);
             rdtLabel_BorderColor_FF0000.TabIndex = 120;
@@ -280,15 +285,15 @@
             // rdtLabel_CornerCurvePattern_CIRCLE
             // 
             rdtLabel_CornerCurvePattern_CIRCLE.AutoSize = true;
-            rdtLabel_CornerCurvePattern_CIRCLE.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_CornerCurvePattern_CIRCLE.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_CornerCurvePattern_CIRCLE.BlinkBackColor = "#000000";
             rdtLabel_CornerCurvePattern_CIRCLE.BlinkFontColor = "#000000";
             rdtLabel_CornerCurvePattern_CIRCLE.BlinkInterval = 1;
             rdtLabel_CornerCurvePattern_CIRCLE.BorderColor = "#C3C3C3";
             rdtLabel_CornerCurvePattern_CIRCLE.BorderThick = 1;
-            rdtLabel_CornerCurvePattern_CIRCLE.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Circle;
+            rdtLabel_CornerCurvePattern_CIRCLE.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Circle;
             rdtLabel_CornerCurvePattern_CIRCLE.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_CornerCurvePattern_CIRCLE.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_CornerCurvePattern_CIRCLE.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_CornerCurvePattern_CIRCLE.IsBlink = false;
             rdtLabel_CornerCurvePattern_CIRCLE.Location = new Point(899, 604);
             rdtLabel_CornerCurvePattern_CIRCLE.Name = "rdtLabel_CornerCurvePattern_CIRCLE";
@@ -299,15 +304,15 @@
             // rdtLabel_CornerCurvePattern_ROUND_CORNER
             // 
             rdtLabel_CornerCurvePattern_ROUND_CORNER.AutoSize = true;
-            rdtLabel_CornerCurvePattern_ROUND_CORNER.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_CornerCurvePattern_ROUND_CORNER.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_CornerCurvePattern_ROUND_CORNER.BlinkBackColor = "#000000";
             rdtLabel_CornerCurvePattern_ROUND_CORNER.BlinkFontColor = "#000000";
             rdtLabel_CornerCurvePattern_ROUND_CORNER.BlinkInterval = 1;
             rdtLabel_CornerCurvePattern_ROUND_CORNER.BorderColor = "#C3C3C3";
             rdtLabel_CornerCurvePattern_ROUND_CORNER.BorderThick = 1;
-            rdtLabel_CornerCurvePattern_ROUND_CORNER.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.RoundCorner;
+            rdtLabel_CornerCurvePattern_ROUND_CORNER.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.RoundCorner;
             rdtLabel_CornerCurvePattern_ROUND_CORNER.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_CornerCurvePattern_ROUND_CORNER.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_CornerCurvePattern_ROUND_CORNER.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_CornerCurvePattern_ROUND_CORNER.IsBlink = false;
             rdtLabel_CornerCurvePattern_ROUND_CORNER.Location = new Point(420, 604);
             rdtLabel_CornerCurvePattern_ROUND_CORNER.Name = "rdtLabel_CornerCurvePattern_ROUND_CORNER";
@@ -318,15 +323,15 @@
             // rdtLabel_CornerCurvePattern_SQUARE
             // 
             rdtLabel_CornerCurvePattern_SQUARE.AutoSize = true;
-            rdtLabel_CornerCurvePattern_SQUARE.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_CornerCurvePattern_SQUARE.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_CornerCurvePattern_SQUARE.BlinkBackColor = "#000000";
             rdtLabel_CornerCurvePattern_SQUARE.BlinkFontColor = "#000000";
             rdtLabel_CornerCurvePattern_SQUARE.BlinkInterval = 1;
             rdtLabel_CornerCurvePattern_SQUARE.BorderColor = "#C3C3C3";
             rdtLabel_CornerCurvePattern_SQUARE.BorderThick = 1;
-            rdtLabel_CornerCurvePattern_SQUARE.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_CornerCurvePattern_SQUARE.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_CornerCurvePattern_SQUARE.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_CornerCurvePattern_SQUARE.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_CornerCurvePattern_SQUARE.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_CornerCurvePattern_SQUARE.IsBlink = false;
             rdtLabel_CornerCurvePattern_SQUARE.Location = new Point(74, 604);
             rdtLabel_CornerCurvePattern_SQUARE.Name = "rdtLabel_CornerCurvePattern_SQUARE";
@@ -508,15 +513,15 @@
             // rdtLabel_BlinkBackColor_FF0000
             // 
             rdtLabel_BlinkBackColor_FF0000.AutoSize = true;
-            rdtLabel_BlinkBackColor_FF0000.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BlinkBackColor_FF0000.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BlinkBackColor_FF0000.BlinkBackColor = "#FF0000";
             rdtLabel_BlinkBackColor_FF0000.BlinkFontColor = "#000000";
             rdtLabel_BlinkBackColor_FF0000.BlinkInterval = 1;
             rdtLabel_BlinkBackColor_FF0000.BorderColor = "#C3C3C3";
             rdtLabel_BlinkBackColor_FF0000.BorderThick = 0;
-            rdtLabel_BlinkBackColor_FF0000.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BlinkBackColor_FF0000.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BlinkBackColor_FF0000.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BlinkBackColor_FF0000.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BlinkBackColor_FF0000.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BlinkBackColor_FF0000.IsBlink = true;
             rdtLabel_BlinkBackColor_FF0000.Location = new Point(74, 494);
             rdtLabel_BlinkBackColor_FF0000.Name = "rdtLabel_BlinkBackColor_FF0000";
@@ -527,15 +532,15 @@
             // rdtLabel_BlinkFontColor_FFFFFF
             // 
             rdtLabel_BlinkFontColor_FFFFFF.AutoSize = true;
-            rdtLabel_BlinkFontColor_FFFFFF.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BlinkFontColor_FFFFFF.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BlinkFontColor_FFFFFF.BlinkBackColor = "#000000";
             rdtLabel_BlinkFontColor_FFFFFF.BlinkFontColor = "#FFFFFF";
             rdtLabel_BlinkFontColor_FFFFFF.BlinkInterval = 1;
             rdtLabel_BlinkFontColor_FFFFFF.BorderColor = "#C3C3C3";
             rdtLabel_BlinkFontColor_FFFFFF.BorderThick = 0;
-            rdtLabel_BlinkFontColor_FFFFFF.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BlinkFontColor_FFFFFF.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BlinkFontColor_FFFFFF.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BlinkFontColor_FFFFFF.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BlinkFontColor_FFFFFF.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BlinkFontColor_FFFFFF.IsBlink = true;
             rdtLabel_BlinkFontColor_FFFFFF.Location = new Point(74, 409);
             rdtLabel_BlinkFontColor_FFFFFF.Name = "rdtLabel_BlinkFontColor_FFFFFF";
@@ -546,15 +551,15 @@
             // rdtLabel_BlinkInterval_5
             // 
             rdtLabel_BlinkInterval_5.AutoSize = true;
-            rdtLabel_BlinkInterval_5.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BlinkInterval_5.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BlinkInterval_5.BlinkBackColor = "#000000";
             rdtLabel_BlinkInterval_5.BlinkFontColor = "#000000";
             rdtLabel_BlinkInterval_5.BlinkInterval = 5;
             rdtLabel_BlinkInterval_5.BorderColor = "#C3C3C3";
             rdtLabel_BlinkInterval_5.BorderThick = 0;
-            rdtLabel_BlinkInterval_5.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BlinkInterval_5.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BlinkInterval_5.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BlinkInterval_5.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BlinkInterval_5.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BlinkInterval_5.IsBlink = true;
             rdtLabel_BlinkInterval_5.Location = new Point(420, 349);
             rdtLabel_BlinkInterval_5.Name = "rdtLabel_BlinkInterval_5";
@@ -565,15 +570,15 @@
             // rdtLabel_BlinkInterval_1
             // 
             rdtLabel_BlinkInterval_1.AutoSize = true;
-            rdtLabel_BlinkInterval_1.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_BlinkInterval_1.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_BlinkInterval_1.BlinkBackColor = "#000000";
             rdtLabel_BlinkInterval_1.BlinkFontColor = "#000000";
             rdtLabel_BlinkInterval_1.BlinkInterval = 1;
             rdtLabel_BlinkInterval_1.BorderColor = "#C3C3C3";
             rdtLabel_BlinkInterval_1.BorderThick = 0;
-            rdtLabel_BlinkInterval_1.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BlinkInterval_1.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_BlinkInterval_1.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_BlinkInterval_1.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_BlinkInterval_1.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_BlinkInterval_1.IsBlink = true;
             rdtLabel_BlinkInterval_1.Location = new Point(74, 349);
             rdtLabel_BlinkInterval_1.Name = "rdtLabel_BlinkInterval_1";
@@ -584,15 +589,15 @@
             // rdtLabel_IsBlink_False
             // 
             rdtLabel_IsBlink_False.AutoSize = true;
-            rdtLabel_IsBlink_False.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_IsBlink_False.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_IsBlink_False.BlinkBackColor = "#000000";
             rdtLabel_IsBlink_False.BlinkFontColor = "#000000";
             rdtLabel_IsBlink_False.BlinkInterval = 1;
             rdtLabel_IsBlink_False.BorderColor = "#C3C3C3";
             rdtLabel_IsBlink_False.BorderThick = 0;
-            rdtLabel_IsBlink_False.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_IsBlink_False.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_IsBlink_False.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_IsBlink_False.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_IsBlink_False.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_IsBlink_False.IsBlink = false;
             rdtLabel_IsBlink_False.Location = new Point(420, 289);
             rdtLabel_IsBlink_False.Name = "rdtLabel_IsBlink_False";
@@ -603,60 +608,21 @@
             // rdtLabel_IsBlink_True
             // 
             rdtLabel_IsBlink_True.AutoSize = true;
-            rdtLabel_IsBlink_True.BackColor = Color.FromArgb(57, 57, 57);
+            rdtLabel_IsBlink_True.BackColor = Color.FromArgb(38, 38, 38);
             rdtLabel_IsBlink_True.BlinkBackColor = "#000000";
             rdtLabel_IsBlink_True.BlinkFontColor = "#000000";
             rdtLabel_IsBlink_True.BlinkInterval = 1;
             rdtLabel_IsBlink_True.BorderColor = "#C3C3C3";
             rdtLabel_IsBlink_True.BorderThick = 0;
-            rdtLabel_IsBlink_True.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_IsBlink_True.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
             rdtLabel_IsBlink_True.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_IsBlink_True.ForeColor = Color.FromArgb(195, 195, 195);
+            rdtLabel_IsBlink_True.ForeColor = Color.FromArgb(196, 196, 196);
             rdtLabel_IsBlink_True.IsBlink = true;
             rdtLabel_IsBlink_True.Location = new Point(74, 289);
             rdtLabel_IsBlink_True.Name = "rdtLabel_IsBlink_True";
             rdtLabel_IsBlink_True.Size = new Size(132, 25);
             rdtLabel_IsBlink_True.TabIndex = 88;
             rdtLabel_IsBlink_True.Text = "IsBlink=true";
-            // 
-            // rdtLabel_Inactive
-            // 
-            rdtLabel_Inactive.AutoSize = true;
-            rdtLabel_Inactive.BackColor = Color.FromArgb(57, 57, 57);
-            rdtLabel_Inactive.BlinkBackColor = "#000000";
-            rdtLabel_Inactive.BlinkFontColor = "#000000";
-            rdtLabel_Inactive.BlinkInterval = 1;
-            rdtLabel_Inactive.BorderColor = "#C3C3C3";
-            rdtLabel_Inactive.BorderThick = 0;
-            rdtLabel_Inactive.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
-            rdtLabel_Inactive.Enabled = false;
-            rdtLabel_Inactive.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_Inactive.ForeColor = Color.FromArgb(195, 195, 195);
-            rdtLabel_Inactive.IsBlink = false;
-            rdtLabel_Inactive.Location = new Point(438, 64);
-            rdtLabel_Inactive.Name = "rdtLabel_Inactive";
-            rdtLabel_Inactive.Size = new Size(90, 25);
-            rdtLabel_Inactive.TabIndex = 87;
-            rdtLabel_Inactive.Text = "Inactive";
-            // 
-            // rdtLabel_Default
-            // 
-            rdtLabel_Default.AutoSize = true;
-            rdtLabel_Default.BackColor = Color.FromArgb(57, 57, 57);
-            rdtLabel_Default.BlinkBackColor = "#000000";
-            rdtLabel_Default.BlinkFontColor = "#000000";
-            rdtLabel_Default.BlinkInterval = 1;
-            rdtLabel_Default.BorderColor = "#C3C3C3";
-            rdtLabel_Default.BorderThick = 0;
-            rdtLabel_Default.CornerCurvePattern = RADISTA.UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
-            rdtLabel_Default.Font = new Font("Meiryo UI", 12F);
-            rdtLabel_Default.ForeColor = Color.FromArgb(195, 195, 195);
-            rdtLabel_Default.IsBlink = false;
-            rdtLabel_Default.Location = new Point(54, 64);
-            rdtLabel_Default.Name = "rdtLabel_Default";
-            rdtLabel_Default.Size = new Size(83, 25);
-            rdtLabel_Default.TabIndex = 86;
-            rdtLabel_Default.Text = "Default";
             // 
             // label2
             // 
@@ -705,11 +671,113 @@
             label25.TabIndex = 142;
             label25.Text = "【拡張メソッド】";
             // 
+            // rdtLabel_Default
+            // 
+            rdtLabel_Default.AutoSize = true;
+            rdtLabel_Default.BackColor = Color.FromArgb(38, 38, 38);
+            rdtLabel_Default.BlinkBackColor = "#000000";
+            rdtLabel_Default.BlinkFontColor = "#000000";
+            rdtLabel_Default.BlinkInterval = 1;
+            rdtLabel_Default.BorderColor = "#464646";
+            rdtLabel_Default.BorderThick = 0;
+            rdtLabel_Default.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_Default.Font = new Font("Meiryo UI", 12F);
+            rdtLabel_Default.ForeColor = Color.FromArgb(196, 196, 196);
+            rdtLabel_Default.IsBlink = false;
+            rdtLabel_Default.Location = new Point(74, 64);
+            rdtLabel_Default.Name = "rdtLabel_Default";
+            rdtLabel_Default.Size = new Size(83, 25);
+            rdtLabel_Default.TabIndex = 145;
+            rdtLabel_Default.Text = "Default";
+            // 
+            // label_BorderColor_Default
+            // 
+            label_BorderColor_Default.AutoSize = true;
+            label_BorderColor_Default.Location = new Point(155, 714);
+            label_BorderColor_Default.Name = "label_BorderColor_Default";
+            label_BorderColor_Default.Size = new Size(55, 20);
+            label_BorderColor_Default.TabIndex = 148;
+            label_BorderColor_Default.Text = "Color=";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(94, 714);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 20);
+            label6.TabIndex = 147;
+            label6.Text = "Color=";
+            // 
+            // rdtLabel_BorderColor_Default
+            // 
+            rdtLabel_BorderColor_Default.AutoSize = true;
+            rdtLabel_BorderColor_Default.BackColor = Color.FromArgb(38, 38, 38);
+            rdtLabel_BorderColor_Default.BlinkBackColor = "#000000";
+            rdtLabel_BorderColor_Default.BlinkFontColor = "#000000";
+            rdtLabel_BorderColor_Default.BlinkInterval = 1;
+            rdtLabel_BorderColor_Default.BorderColor = "#464646";
+            rdtLabel_BorderColor_Default.BorderThick = 1;
+            rdtLabel_BorderColor_Default.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_BorderColor_Default.Font = new Font("Meiryo UI", 12F);
+            rdtLabel_BorderColor_Default.ForeColor = Color.FromArgb(196, 196, 196);
+            rdtLabel_BorderColor_Default.IsBlink = false;
+            rdtLabel_BorderColor_Default.Location = new Point(74, 684);
+            rdtLabel_BorderColor_Default.Name = "rdtLabel_BorderColor_Default";
+            rdtLabel_BorderColor_Default.Size = new Size(214, 25);
+            rdtLabel_BorderColor_Default.TabIndex = 149;
+            rdtLabel_BorderColor_Default.Text = "BorderColor=Default";
+            // 
+            // rdtLabel_Inactive
+            // 
+            rdtLabel_Inactive.AutoSize = true;
+            rdtLabel_Inactive.BackColor = Color.FromArgb(38, 38, 38);
+            rdtLabel_Inactive.BlinkBackColor = "#000000";
+            rdtLabel_Inactive.BlinkFontColor = "#000000";
+            rdtLabel_Inactive.BlinkInterval = 1;
+            rdtLabel_Inactive.BorderColor = "#464646";
+            rdtLabel_Inactive.BorderThick = 0;
+            rdtLabel_Inactive.CornerCurvePattern = UIComponent.CustomControl.RdtLabel.CornerCurvePatternT.Square;
+            rdtLabel_Inactive.Enabled = false;
+            rdtLabel_Inactive.Font = new Font("Meiryo UI", 12F);
+            rdtLabel_Inactive.ForeColor = Color.FromArgb(196, 196, 196);
+            rdtLabel_Inactive.IsBlink = false;
+            rdtLabel_Inactive.Location = new Point(460, 64);
+            rdtLabel_Inactive.Name = "rdtLabel_Inactive";
+            rdtLabel_Inactive.Size = new Size(90, 25);
+            rdtLabel_Inactive.TabIndex = 150;
+            rdtLabel_Inactive.Text = "Inactive";
+            // 
+            // button_Inactive
+            // 
+            button_Inactive.Location = new Point(458, 119);
+            button_Inactive.Name = "button_Inactive";
+            button_Inactive.Size = new Size(142, 29);
+            button_Inactive.TabIndex = 151;
+            button_Inactive.Text = "GetInactiveColor";
+            button_Inactive.UseVisualStyleBackColor = true;
+            button_Inactive.Click += button_Inactive_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(460, 151);
+            label4.Name = "label4";
+            label4.Size = new Size(301, 20);
+            label4.TabIndex = 152;
+            label4.Text = "※Loadで取得できないためボタン押下で取得する";
+            // 
             // Form_Rdtlabel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(label4);
+            Controls.Add(button_Inactive);
+            Controls.Add(rdtLabel_Inactive);
+            Controls.Add(rdtLabel_BorderColor_Default);
+            Controls.Add(label_BorderColor_Default);
+            Controls.Add(label6);
+            Controls.Add(rdtLabel_Default);
             Controls.Add(button_StopBlink);
             Controls.Add(button_StartBlink);
             Controls.Add(label25);
@@ -758,8 +826,6 @@
             Controls.Add(rdtLabel_BlinkInterval_1);
             Controls.Add(rdtLabel_IsBlink_False);
             Controls.Add(rdtLabel_IsBlink_True);
-            Controls.Add(rdtLabel_Inactive);
-            Controls.Add(rdtLabel_Default);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form_Rdtlabel";
@@ -816,12 +882,17 @@
         private RADISTA.UIComponent.CustomControl.RdtLabel rdtLabel_BlinkInterval_1;
         private RADISTA.UIComponent.CustomControl.RdtLabel rdtLabel_IsBlink_False;
         private RADISTA.UIComponent.CustomControl.RdtLabel rdtLabel_IsBlink_True;
-        private RADISTA.UIComponent.CustomControl.RdtLabel rdtLabel_Inactive;
-        private RADISTA.UIComponent.CustomControl.RdtLabel rdtLabel_Default;
         private Label label2;
         private Label label1;
         private Button button_StopBlink;
         private Button button_StartBlink;
         private Label label25;
+        private UIComponent.CustomControl.RdtLabel rdtLabel_Default;
+        private Label label_BorderColor_Default;
+        private Label label6;
+        private UIComponent.CustomControl.RdtLabel rdtLabel_BorderColor_Default;
+        private UIComponent.CustomControl.RdtLabel rdtLabel_Inactive;
+        private Button button_Inactive;
+        private Label label4;
     }
 }
