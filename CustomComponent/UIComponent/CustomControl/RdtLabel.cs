@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 using System.ComponentModel;
 using System.Drawing.Drawing2D;
+
 using log4net;
 
 namespace RADISTA.UIComponent.CustomControl
@@ -60,7 +61,7 @@ namespace RADISTA.UIComponent.CustomControl
         private string mBlinkFontColor = Constants.BLINK_FONT_COLOR;
         private string mBlinkBackColor = Constants.BLINK_BACK_COLOR;
         private CornerCurvePatternT mCornerCurvePattern = CornerCurvePatternT.Square;
-        private string mBorderColor = Constants.BORDER_COLOR;
+        private string mBorderColor = ComponentCommon.GetLabelDefaultEdgeColor();
         private int mBorderThick = 0;
         #endregion
 
@@ -266,13 +267,13 @@ namespace RADISTA.UIComponent.CustomControl
                     }
                     else
                     {
-                        this.ForeColor = ColorTranslator.FromHtml(ComponentCommon.GetFontColor());
-                        this.BackColor = ColorTranslator.FromHtml(ComponentCommon.GetBackColor());
+                        this.ForeColor = ColorTranslator.FromHtml(ComponentCommon.GetLabelDefaultFontColor());
+                        this.BackColor = ColorTranslator.FromHtml(ComponentCommon.GetLabelDefaultBackColor());
                     }
                 }
                 else
                 {
-                    this.ForeColor = ColorTranslator.FromHtml(ComponentCommon.GetInactiveColor());
+                    this.ForeColor = ColorTranslator.FromHtml(ComponentCommon.GetFontDisableColor());
                 }
 
                 // コーナーカーブパターン描画
@@ -289,7 +290,7 @@ namespace RADISTA.UIComponent.CustomControl
                     {
                         e.Graphics.DrawRectangle(pen, rect);
                     }
-                    else 
+                    else
                     {
                         int radius = 1;
                         if (this.mCornerCurvePattern == CornerCurvePatternT.RoundCorner)

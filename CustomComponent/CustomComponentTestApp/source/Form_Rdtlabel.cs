@@ -32,6 +32,7 @@ namespace RADISTA.CustomComponentTestApp
             label_InactiveColor.Text = $"#{rdtLabel_Inactive.ForeColor.R:X2}{rdtLabel_Inactive.ForeColor.G:X2}{rdtLabel_Inactive.ForeColor.B:X2}";
             label_BlinkFontColor_1.Text = rdtLabel_BlinkFontColor_FFFFFF.BlinkFontColor;
             label_BlinkBackColor_1.Text = rdtLabel_BlinkBackColor_FF0000.BlinkBackColor;
+            label_BorderColor_Default.Text = rdtLabel_BorderColor_Default.BorderColor;
             label_BorderColor_1.Text = rdtLabel_BorderColor_FF0000.BorderColor;
         }
 
@@ -66,6 +67,11 @@ namespace RADISTA.CustomComponentTestApp
 
             mCounter++;
             label_Count.Text = mCounter.ToString();
+        }
+
+        private void button_Inactive_Click(object sender, EventArgs e)
+        {
+            label_InactiveColor.Text = $"#{rdtLabel_Inactive.ForeColor.R:X2}{rdtLabel_Inactive.ForeColor.G:X2}{rdtLabel_Inactive.ForeColor.B:X2}";
         }
     }
 }
