@@ -696,3 +696,4 @@ namespace RADISTA.UIComponent.CustomControl
         #endregion
     }
 }
+//---<<END OF FILE>>-----------------------------------------------------
