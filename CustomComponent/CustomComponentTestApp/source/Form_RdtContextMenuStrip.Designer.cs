@@ -37,6 +37,7 @@
             menu2ToolStripMenuItem = new ToolStripMenuItem();
             menu21ToolStripMenuItem = new ToolStripMenuItem();
             menu3ToolStripMenuItem = new ToolStripMenuItem();
+            menu4ToolStripMenuItem = new ToolStripMenuItem();
             label_BackColor = new Label();
             label9 = new Label();
             label_FontColor = new Label();
@@ -53,6 +54,23 @@
             label1 = new Label();
             label_CountMashing = new Label();
             label6 = new Label();
+            label4 = new Label();
+            label8 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label_HoverForeColor = new Label();
+            label_HoverBackColor = new Label();
+            label_DisableForeColor = new Label();
+            label_DisableBackColor = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            label_CheckedForeColor = new Label();
+            label_CheckedBackColor = new Label();
+            label_CheckedHoverForeColor = new Label();
+            label_CheckedHoverBackColor = new Label();
+            menu5ToolStripMenuItem = new ToolStripMenuItem();
             rdtContextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,15 +78,15 @@
             // 
             rdtContextMenuStrip1.Font = new Font("Meiryo UI", 12F);
             rdtContextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            rdtContextMenuStrip1.Items.AddRange(new ToolStripItem[] { menu1ToolStripMenuItem, menu2ToolStripMenuItem, menu3ToolStripMenuItem });
+            rdtContextMenuStrip1.Items.AddRange(new ToolStripItem[] { menu1ToolStripMenuItem, menu2ToolStripMenuItem, menu3ToolStripMenuItem, menu4ToolStripMenuItem, menu5ToolStripMenuItem });
             rdtContextMenuStrip1.Name = "rdtContextMenuStrip1";
-            rdtContextMenuStrip1.Size = new Size(211, 122);
+            rdtContextMenuStrip1.Size = new Size(150, 154);
             // 
             // menu1ToolStripMenuItem
             // 
             menu1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menu11ToolStripMenuItem, menu12ToolStripMenuItem });
             menu1ToolStripMenuItem.Name = "menu1ToolStripMenuItem";
-            menu1ToolStripMenuItem.Size = new Size(210, 30);
+            menu1ToolStripMenuItem.Size = new Size(149, 30);
             menu1ToolStripMenuItem.Text = "Menu1";
             // 
             // menu11ToolStripMenuItem
@@ -94,7 +112,7 @@
             // 
             menu2ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menu21ToolStripMenuItem });
             menu2ToolStripMenuItem.Name = "menu2ToolStripMenuItem";
-            menu2ToolStripMenuItem.Size = new Size(210, 30);
+            menu2ToolStripMenuItem.Size = new Size(149, 30);
             menu2ToolStripMenuItem.Text = "Menu2";
             // 
             // menu21ToolStripMenuItem
@@ -106,9 +124,16 @@
             // menu3ToolStripMenuItem
             // 
             menu3ToolStripMenuItem.Name = "menu3ToolStripMenuItem";
-            menu3ToolStripMenuItem.Size = new Size(210, 30);
+            menu3ToolStripMenuItem.Size = new Size(149, 30);
             menu3ToolStripMenuItem.Text = "Menu3";
             menu3ToolStripMenuItem.Click += menu3ToolStripMenuItem_Click;
+            // 
+            // menu4ToolStripMenuItem
+            // 
+            menu4ToolStripMenuItem.CheckOnClick = true;
+            menu4ToolStripMenuItem.Name = "menu4ToolStripMenuItem";
+            menu4ToolStripMenuItem.Size = new Size(149, 30);
+            menu4ToolStripMenuItem.Text = "Menu4";
             // 
             // label_BackColor
             // 
@@ -255,12 +280,179 @@
             label6.TabIndex = 186;
             label6.Text = "回数=";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(32, 134);
+            label4.Name = "label4";
+            label4.Size = new Size(123, 20);
+            label4.TabIndex = 188;
+            label4.Text = "HoverForeColor=";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(32, 159);
+            label8.Name = "label8";
+            label8.Size = new Size(126, 20);
+            label8.TabIndex = 189;
+            label8.Text = "HoverBackColor=";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(32, 184);
+            label10.Name = "label10";
+            label10.Size = new Size(133, 20);
+            label10.TabIndex = 190;
+            label10.Text = "DisableForeColor=";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(32, 209);
+            label11.Name = "label11";
+            label11.Size = new Size(136, 20);
+            label11.TabIndex = 191;
+            label11.Text = "DisableBackColor=";
+            // 
+            // label_HoverForeColor
+            // 
+            label_HoverForeColor.AutoSize = true;
+            label_HoverForeColor.Location = new Point(161, 134);
+            label_HoverForeColor.Name = "label_HoverForeColor";
+            label_HoverForeColor.Size = new Size(123, 20);
+            label_HoverForeColor.TabIndex = 192;
+            label_HoverForeColor.Text = "HoverForeColor=";
+            // 
+            // label_HoverBackColor
+            // 
+            label_HoverBackColor.AutoSize = true;
+            label_HoverBackColor.Location = new Point(164, 159);
+            label_HoverBackColor.Name = "label_HoverBackColor";
+            label_HoverBackColor.Size = new Size(126, 20);
+            label_HoverBackColor.TabIndex = 193;
+            label_HoverBackColor.Text = "HoverBackColor=";
+            // 
+            // label_DisableForeColor
+            // 
+            label_DisableForeColor.AutoSize = true;
+            label_DisableForeColor.Location = new Point(171, 184);
+            label_DisableForeColor.Name = "label_DisableForeColor";
+            label_DisableForeColor.Size = new Size(133, 20);
+            label_DisableForeColor.TabIndex = 194;
+            label_DisableForeColor.Text = "DisableForeColor=";
+            // 
+            // label_DisableBackColor
+            // 
+            label_DisableBackColor.AutoSize = true;
+            label_DisableBackColor.Location = new Point(174, 209);
+            label_DisableBackColor.Name = "label_DisableBackColor";
+            label_DisableBackColor.Size = new Size(136, 20);
+            label_DisableBackColor.TabIndex = 195;
+            label_DisableBackColor.Text = "DisableBackColor=";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(32, 284);
+            label12.Name = "label12";
+            label12.Size = new Size(179, 20);
+            label12.TabIndex = 196;
+            label12.Text = "CheckedHoverForeColor=";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(32, 309);
+            label13.Name = "label13";
+            label13.Size = new Size(182, 20);
+            label13.TabIndex = 197;
+            label13.Text = "CheckedHoverBackColor=";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(32, 259);
+            label14.Name = "label14";
+            label14.Size = new Size(142, 20);
+            label14.TabIndex = 199;
+            label14.Text = "CheckedBackColor=";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(32, 234);
+            label15.Name = "label15";
+            label15.Size = new Size(139, 20);
+            label15.TabIndex = 198;
+            label15.Text = "CheckedForeColor=";
+            // 
+            // label_CheckedForeColor
+            // 
+            label_CheckedForeColor.AutoSize = true;
+            label_CheckedForeColor.Location = new Point(177, 234);
+            label_CheckedForeColor.Name = "label_CheckedForeColor";
+            label_CheckedForeColor.Size = new Size(139, 20);
+            label_CheckedForeColor.TabIndex = 200;
+            label_CheckedForeColor.Text = "CheckedForeColor=";
+            // 
+            // label_CheckedBackColor
+            // 
+            label_CheckedBackColor.AutoSize = true;
+            label_CheckedBackColor.Location = new Point(180, 259);
+            label_CheckedBackColor.Name = "label_CheckedBackColor";
+            label_CheckedBackColor.Size = new Size(142, 20);
+            label_CheckedBackColor.TabIndex = 201;
+            label_CheckedBackColor.Text = "CheckedBackColor=";
+            // 
+            // label_CheckedHoverForeColor
+            // 
+            label_CheckedHoverForeColor.AutoSize = true;
+            label_CheckedHoverForeColor.Location = new Point(217, 284);
+            label_CheckedHoverForeColor.Name = "label_CheckedHoverForeColor";
+            label_CheckedHoverForeColor.Size = new Size(179, 20);
+            label_CheckedHoverForeColor.TabIndex = 202;
+            label_CheckedHoverForeColor.Text = "CheckedHoverForeColor=";
+            // 
+            // label_CheckedHoverBackColor
+            // 
+            label_CheckedHoverBackColor.AutoSize = true;
+            label_CheckedHoverBackColor.Location = new Point(220, 309);
+            label_CheckedHoverBackColor.Name = "label_CheckedHoverBackColor";
+            label_CheckedHoverBackColor.Size = new Size(182, 20);
+            label_CheckedHoverBackColor.TabIndex = 203;
+            label_CheckedHoverBackColor.Text = "CheckedHoverBackColor=";
+            // 
+            // menu5ToolStripMenuItem
+            // 
+            menu5ToolStripMenuItem.Enabled = false;
+            menu5ToolStripMenuItem.Name = "menu5ToolStripMenuItem";
+            menu5ToolStripMenuItem.Size = new Size(149, 30);
+            menu5ToolStripMenuItem.Text = "Menu5";
+            // 
             // Form_RdtContextMenuStrip
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             ContextMenuStrip = rdtContextMenuStrip1;
+            Controls.Add(label_CheckedHoverBackColor);
+            Controls.Add(label_CheckedHoverForeColor);
+            Controls.Add(label_CheckedBackColor);
+            Controls.Add(label_CheckedForeColor);
+            Controls.Add(label14);
+            Controls.Add(label15);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label_DisableBackColor);
+            Controls.Add(label_DisableForeColor);
+            Controls.Add(label_HoverBackColor);
+            Controls.Add(label_HoverForeColor);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label8);
+            Controls.Add(label4);
             Controls.Add(label_CountMashing);
             Controls.Add(label6);
             Controls.Add(label1);
@@ -311,5 +503,23 @@
         private Label label1;
         private Label label_CountMashing;
         private Label label6;
+        private ToolStripMenuItem menu4ToolStripMenuItem;
+        private Label label4;
+        private Label label8;
+        private Label label10;
+        private Label label11;
+        private Label label_HoverForeColor;
+        private Label label_HoverBackColor;
+        private Label label_DisableForeColor;
+        private Label label_DisableBackColor;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private Label label15;
+        private Label label_CheckedForeColor;
+        private Label label_CheckedBackColor;
+        private Label label_CheckedHoverForeColor;
+        private Label label_CheckedHoverBackColor;
+        private ToolStripMenuItem menu5ToolStripMenuItem;
     }
 }

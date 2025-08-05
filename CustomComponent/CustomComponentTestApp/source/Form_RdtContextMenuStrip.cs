@@ -30,6 +30,14 @@ namespace RADISTA.CustomComponentTestApp
             label_FontSize.Text = rdtContextMenuStrip1.Font.Size.ToString();
             label_FontColor.Text = rdtContextMenuStrip1.MenuForeColor;
             label_BackColor.Text = rdtContextMenuStrip1.MenuBackColor;
+            label_HoverForeColor.Text = rdtContextMenuStrip1.MenuHoverForeColor;
+            label_HoverBackColor.Text = rdtContextMenuStrip1.MenuHoverBackColor;
+            label_DisableForeColor.Text = rdtContextMenuStrip1.MenuDisableForeColor;
+            label_DisableBackColor.Text = rdtContextMenuStrip1.MenuDisableBackColor;
+            label_CheckedForeColor.Text = rdtContextMenuStrip1.MenuCheckedForeColor;
+            label_CheckedBackColor.Text = rdtContextMenuStrip1.MenuCheckedBackColor;
+            label_CheckedHoverForeColor.Text = rdtContextMenuStrip1.MenuCheckedHoverForeColor;
+            label_CheckedHoverBackColor.Text = rdtContextMenuStrip1.MenuCheckedHoverBackColor;
         }
 
         private void button_New_Delete_Click(object sender, EventArgs e)

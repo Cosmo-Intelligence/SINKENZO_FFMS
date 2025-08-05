@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IMenuStyleProvider.cs" company="FUJIFILM Medical Solutions Corporation">
+// <copyright file="IContextMenuStyleProvider.cs" company="FUJIFILM Medical Solutions Corporation">
 // Copyright (C) 2025 FUJIFILM Medical Solutions Corporation.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -7,8 +7,8 @@
 namespace RADISTA.UIComponent.CustomControl
 {
     /// <summary>
-    /// IMenuStyleProviderインタフェース
-    /// RdtMenuStrip用のインタフェース
+    /// IContextMenuStyleProviderインタフェース
+    /// RdtContextMenuStrip用のインタフェース
     /// </summary>
     /// <remarks>
     /// 
@@ -16,7 +16,7 @@ namespace RADISTA.UIComponent.CustomControl
     /// V1.00.00    : 2025.05.01    : 株式会社コスモ・インテリジェンス / 藤原崇文   : original
     ///
     /// </remarks>
-    public interface IMenuStyleProvider
+    public interface IContextMenuStyleProvider
     {
         #region "プロパティ"
         /// <summary>
@@ -48,6 +48,26 @@ namespace RADISTA.UIComponent.CustomControl
         /// 無効時の背景色
         /// </summary>
         public string MenuDisableBackColor { get; }
+
+        /// <summary>
+        /// チェック時の前景色
+        /// </summary>
+        string MenuCheckedForeColor { get; }
+
+        /// <summary>
+        /// チェック時の背景色
+        /// </summary>
+        string MenuCheckedBackColor { get; }
+
+        /// <summary>
+        /// チェック時かつ選択時の前景色
+        /// </summary>
+        string MenuCheckedHoverForeColor { get; }
+
+        /// <summary>
+        /// チェック時かつ選択時の背景色
+        /// </summary>
+        string MenuCheckedHoverBackColor { get; }
         #endregion
     }
 }
