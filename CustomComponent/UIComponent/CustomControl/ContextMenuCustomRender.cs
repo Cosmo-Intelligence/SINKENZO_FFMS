@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MenuCustomRender.cs" company="FUJIFILM Medical Solutions Corporation">
+// <copyright file="ContextMenuCustomRender.cs" company="FUJIFILM Medical Solutions Corporation">
 // Copyright (C) 2025 FUJIFILM Medical Solutions Corporation.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -7,8 +7,8 @@
 namespace RADISTA.UIComponent.CustomControl
 {
     /// <summary>
-    /// MenuCustomRenderクラス
-    /// RdtContextMenuStrip、RdtMenuStrip用のカスタムRender
+    /// ContextMenuCustomRenderクラス
+    /// RdtContextMenuStrip用のカスタムRender
     /// </summary>
     /// <remarks>
     /// 
@@ -16,10 +16,10 @@ namespace RADISTA.UIComponent.CustomControl
     /// V1.00.00    : 2025.05.01    : 株式会社コスモ・インテリジェンス / 藤原崇文   : original
     ///
     /// </remarks>
-    internal class MenuCustomRender : ToolStripProfessionalRenderer
+    internal class ContextMenuCustomRender : ToolStripProfessionalRenderer
     {
         #region "クラス変数"
-        private readonly IMenuStyleProvider mOwner;
+        private readonly IContextMenuStyleProvider mOwner;
         #endregion
 
         #region "パブリックメソッド"
@@ -27,7 +27,7 @@ namespace RADISTA.UIComponent.CustomControl
         /// コンストラクタ
         /// </summary>
         /// <param name="owner">オーナークラス</param>
-        public MenuCustomRender(IMenuStyleProvider owner)
+        public ContextMenuCustomRender(IContextMenuStyleProvider owner)
         {
             this.mOwner = owner;
         }
@@ -41,20 +41,32 @@ namespace RADISTA.UIComponent.CustomControl
         /// <param name="e">イベント</param>
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
+            // 非アクティブ
             if (!e.Item.Enabled)
             {
                 e.TextColor = ColorTranslator.FromHtml(this.mOwner.MenuDisableForeColor);
             }
+            // チェック時かつホバー時
+            else if (e.Item is ToolStripMenuItem menuItem && menuItem.Checked && e.Item.Selected)
+            {
+                e.TextColor = ColorTranslator.FromHtml(this.mOwner.MenuCheckedHoverForeColor);
+            }
+            // チェック時
+            else if (e.Item is ToolStripMenuItem menuItem2 && menuItem2.Checked)
+            {
+                e.TextColor = ColorTranslator.FromHtml(this.mOwner.MenuCheckedForeColor);
+            }
+            // ホバー時
             else if (e.Item.Selected)
             {
                 e.TextColor = ColorTranslator.FromHtml(this.mOwner.MenuHoverForeColor);
             }
+            // 通常
             else
             {
                 e.TextColor = ColorTranslator.FromHtml(this.mOwner.MenuForeColor);
             }
 
-            // ベースの処理
             base.OnRenderItemText(e);
         }
 
@@ -67,14 +79,27 @@ namespace RADISTA.UIComponent.CustomControl
         {
             if (e.Item != null)
             {
+                // 非アクティブ
                 if (!e.Item.Enabled)
                 {
                     e.ArrowColor = ColorTranslator.FromHtml(this.mOwner.MenuDisableForeColor);
                 }
+                // チェック時かつホバー時
+                else if (e.Item is ToolStripMenuItem menuItem && menuItem.Checked && e.Item.Selected)
+                {
+                    e.ArrowColor = ColorTranslator.FromHtml(this.mOwner.MenuCheckedHoverForeColor);
+                }
+                // チェック時
+                else if (e.Item is ToolStripMenuItem menuItem2 && menuItem2.Checked)
+                {
+                    e.ArrowColor = ColorTranslator.FromHtml(this.mOwner.MenuCheckedForeColor);
+                }
+                // ホバー時
                 else if (e.Item.Selected)
                 {
                     e.ArrowColor = ColorTranslator.FromHtml(this.mOwner.MenuHoverForeColor);
                 }
+                // 通常
                 else
                 {
                     e.ArrowColor = ColorTranslator.FromHtml(this.mOwner.MenuForeColor);
@@ -94,14 +119,27 @@ namespace RADISTA.UIComponent.CustomControl
         {
             Color color;
 
+            // 非アクティブ
             if (!e.Item.Enabled)
             {
                 color = ColorTranslator.FromHtml(this.mOwner.MenuDisableBackColor);
             }
+            // チェック時かつホバー時
+            else if (e.Item is ToolStripMenuItem menuItem && menuItem.Checked && e.Item.Selected)
+            {
+                color = ColorTranslator.FromHtml(this.mOwner.MenuCheckedHoverBackColor);
+            }
+            // チェック時
+            else if (e.Item is ToolStripMenuItem menuItem2 && menuItem2.Checked)
+            {
+                color = ColorTranslator.FromHtml(this.mOwner.MenuCheckedBackColor);
+            }
+            // ホバー時
             else if (e.Item.Selected)
             {
                 color = ColorTranslator.FromHtml(this.mOwner.MenuHoverBackColor);
             }
+            // 通常
             else
             {
                 color = ColorTranslator.FromHtml(this.mOwner.MenuBackColor);
@@ -158,4 +196,3 @@ namespace RADISTA.UIComponent.CustomControl
         #endregion
     }
 }
-//---<<END OF FILE>>-----------------------------------------------------

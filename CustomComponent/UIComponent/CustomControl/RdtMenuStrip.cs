@@ -26,10 +26,12 @@ namespace RADISTA.UIComponent.CustomControl
 
         #region "クラス変数"
         private static readonly ILog mLog = LogManager.GetLogger(typeof(RdtMenuStrip));
-        private string mMenuForeColor = Constants.DEFAULT_FONT_COLOR;
-        private string mMenuBackColor = Constants.DEFAULT_BACK_COLOR;
-        private string mMenuSelectedForeColor = Constants.DEFAULT_BACK_COLOR; // 暫定
-        private string mMenuSelectedBackColor = Constants.DEFAULT_FONT_COLOR; // 暫定
+        private string mMenuForeColor = Constants.MENU_DEFAULT_FONT_COLOR;
+        private string mMenuBackColor = Constants.MENU_DEFAULT_BACK_COLOR;
+        private string mMenuHoverForeColor = Constants.MENU_HOVER_FONT_COLOR;
+        private string mMenuHoverBackColor = Constants.MENU_HOVER_BACK_COLOR;
+        private string mMenuDisableForeColor = Constants.MENU_DISABLE_FONT_COLOR;
+        private string mMenuDisableBackColor = Constants.MENU_DISABLE_BACK_COLOR;
         #endregion
 
         #region "プロパティ"
@@ -44,14 +46,24 @@ namespace RADISTA.UIComponent.CustomControl
         public string MenuBackColor => this.mMenuBackColor;
 
         /// <summary>
-        /// 選択行の前景色
+        /// ホバー時の前景色
         /// </summary>
-        public string MenuSelectedForeColor => this.mMenuSelectedForeColor;
+        public string MenuHoverForeColor => this.mMenuHoverForeColor;
 
         /// <summary>
-        /// 選択行の背景色
+        /// ホバー時の背景色
         /// </summary>
-        public string MenuSelectedBackColor => this.mMenuSelectedBackColor;
+        public string MenuHoverBackColor => this.mMenuHoverBackColor;
+
+        /// <summary>
+        /// 無効時の前景色
+        /// </summary>
+        public string MenuDisableForeColor => this.mMenuDisableForeColor;
+
+        /// <summary>
+        /// 無効時の背景色
+        /// </summary>
+        public string MenuDisableBackColor => this.mMenuDisableBackColor;
         #endregion
 
         #region "パブリックメソッド"
@@ -104,10 +116,12 @@ namespace RADISTA.UIComponent.CustomControl
             string fontType = ComponentCommon.GetFontType();
             int fontSize = ComponentCommon.GetFontSize();
             this.Font = new Font(fontType, fontSize);
-            this.mMenuForeColor = ComponentCommon.GetFontColor();
-            this.mMenuBackColor = ComponentCommon.GetBackColor();
-            //this.mMenuSelectedForeColor = "#FFFFFF"; //暫定
-            //this.mMenuSelectedBackColor = "#FFFFFF"; //暫定
+            this.mMenuForeColor = ComponentCommon.GetMenuDefaultFontColor();
+            this.mMenuBackColor = ComponentCommon.GetMenuDefaultBackColor();
+            this.mMenuHoverForeColor = ComponentCommon.GetMenuHoverFontColor();
+            this.mMenuHoverBackColor = ComponentCommon.GetMenuHoverBackColor();
+            this.mMenuDisableForeColor = ComponentCommon.GetMenuDisableFontColor();
+            this.mMenuDisableBackColor = ComponentCommon.GetMenuDisableBackColor();
 
             // renderの更新
             this.Renderer = new MenuCustomRender(this);
