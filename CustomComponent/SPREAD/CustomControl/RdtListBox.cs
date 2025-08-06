@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 using FarPoint.Win;
 using FarPoint.Win.Spread;
+using FarPoint.Win.Spread.CellType;
 
 using RADISTA.SPREAD.CustomControl;
 
@@ -428,6 +429,18 @@ namespace SPREAD.CustomControl
                 }
                 return string.Empty;
             }
+
+            set
+            {
+                for (int i = 0; i < this.mSheet.RowCount; i++)
+                {
+                    if (this.mSheet.Cells[i, 0].Text == value)
+                    {
+                        this.mSheet.SetActiveCell(i, 0);
+                        break;
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -549,6 +562,46 @@ namespace SPREAD.CustomControl
             return this.mFpSpread.Font;
         }
 
+        /// <summary>
+        /// 列幅を設定する
+        /// </summary>
+        /// <param name="colummn">カラム</param>
+        /// <param name="width">幅</param>
+        public void SetColumnsWidth(int colummn, int width)
+        {
+            this.mSheet.Columns[colummn].Width = width;
+        }
+
+        /// <summary>
+        /// 列の文字の位置を設定する
+        /// </summary>
+        /// <param name="colummn">カラム</param>
+        /// <param name="horizontal">水平位置</param>
+        /// <param name="vertical">垂直位置</param>
+        public void SetColumnsTextPosition(int colummn, CellHorizontalAlignment horizontal, CellVerticalAlignment vertical)
+        {
+            this.mSheet.Columns[colummn].HorizontalAlignment = horizontal;
+            this.mSheet.Columns[colummn].VerticalAlignment = vertical;
+        }
+
+        /// <summary>
+        /// 列のセルタイプを設定する
+        /// </summary>
+        /// <param name="colummn">カラム</param>
+        /// <param name="cellType">セルタイプ</param>
+        public void SetColumnsCellType(int colummn, TextCellType cellType)
+        {
+            this.mSheet.Columns[colummn].CellType = cellType;
+        }
+
+        /// <summary>
+        /// 垂直ぼーたーの表示を設定する
+        /// </summary>
+        /// <param name="policy">ポリシー</param>
+        public void SetVerticalScrollBarShow(ScrollBarPolicy policy)
+        {
+            this.mFpSpread.VerticalScrollBarPolicy = policy;
+        }
         #endregion
 
         #region "プロテクテッドメソッド"

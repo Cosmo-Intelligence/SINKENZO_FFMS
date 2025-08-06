@@ -4,8 +4,14 @@
 // </copyright>
 //-----------------------------------------------------------------------
 using System.ComponentModel;
+using System.Globalization;
+
+using FarPoint.Win.Spread;
+using FarPoint.Win.Spread.CellType;
 
 using log4net;
+
+using SPREAD.CustomControl;
 
 namespace RADISTA.SPREAD.CustomControl
 {
@@ -28,8 +34,8 @@ namespace RADISTA.SPREAD.CustomControl
         #region "クラス変数"
         private static readonly ILog mLog = LogManager.GetLogger(typeof(RdtCalendar));
         private Panel mYearMonthPanel = new Panel();
-        private ListBox mYearList = new ListBox();
-        private ListBox mMonthList = new ListBox();
+        private RdtListBox mYearList = new RdtListBox();
+        private RdtListBox mMonthList = new RdtListBox();
         #endregion
 
         #region "パブリックメソッド"
@@ -163,7 +169,7 @@ namespace RADISTA.SPREAD.CustomControl
         {
             // イベント削除
             this.DateSelected -= this.DateSelectedHandler;
-            this.mMonthList.SelectedIndexChanged -= this.MonthSelectionChanged;
+            this.mMonthList.SelectionChanged -= this.MonthSelectionChanged;
             // 親コントロールのイベントを削除する
             if (this.Parent != null)
             {
@@ -188,16 +194,16 @@ namespace RADISTA.SPREAD.CustomControl
 
             for (int year = this.SelectionStart.Year - 5; year <= this.SelectionStart.Year + 5; year++)
             {
-                this.mYearList.Items.Add(year);
+                this.mYearList.AddItem(year.ToString());
             }
 
             for (int month = 1; month <= 12; month++)
             {
-                this.mMonthList.Items.Add(month);
+                this.mMonthList.AddItem(month.ToString());
             }
 
-            this.mMonthList.SelectedIndexChanged -= this.MonthSelectionChanged;
-            this.mMonthList.SelectedIndexChanged += this.MonthSelectionChanged;
+            this.mMonthList.SelectionChanged -= this.MonthSelectionChanged;
+            this.mMonthList.SelectionChanged += this.MonthSelectionChanged;
 
             TableLayoutPanel table = new TableLayoutPanel
             {
@@ -217,6 +223,29 @@ namespace RADISTA.SPREAD.CustomControl
 
             this.mYearMonthPanel.Controls.Add(table);
             this.Parent?.Controls.Add(this.mYearMonthPanel);
+
+            // リストの設定
+            // コーナーの設定
+            this.mYearList.LeftTopCornerRadius = 0;
+            this.mYearList.LeftBottomCornerRadius = 0;
+            this.mYearList.RightTopCornerRadius = 0;
+            this.mYearList.RightBottomCornerRadius = 0;
+            this.mMonthList.LeftTopCornerRadius = 0;
+            this.mMonthList.LeftBottomCornerRadius = 0;
+            this.mMonthList.RightTopCornerRadius = 0;
+            this.mMonthList.RightBottomCornerRadius = 0;
+            // スクロールバー非表示
+            this.mYearList.SetVerticalScrollBarShow(ScrollBarPolicy.Never);
+            this.mMonthList.SetVerticalScrollBarShow(ScrollBarPolicy.Never);
+            // 幅設定
+            this.mYearList.SetColumnsWidth(0, this.mYearList.Size.Width);
+            this.mMonthList.SetColumnsWidth(0, this.mYearList.Size.Width);
+            // 文字位置設定
+            this.mYearList.SetColumnsTextPosition(0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            this.mMonthList.SetColumnsTextPosition(0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            // セルタイプ設定
+            this.mYearList.SetColumnsCellType(0, new TextCellType());
+            this.mMonthList.SetColumnsCellType(0, new TextCellType());
         }
 
         /// <summary>
@@ -229,8 +258,8 @@ namespace RADISTA.SPREAD.CustomControl
                 int year = this.SelectionStart.Year;
                 int month = this.SelectionStart.Month;
 
-                this.mYearList.SelectedItem = year;
-                this.mMonthList.SelectedItem = month;
+                this.mYearList.SelectedItem = year.ToString();
+                this.mMonthList.SelectedItem = month.ToString();
 
                 Point screenLoc = this.PointToScreen(new Point(0, this.Font.Height * 2));
                 Point parentLoc = this.Parent.PointToClient(screenLoc);
@@ -272,14 +301,13 @@ namespace RADISTA.SPREAD.CustomControl
         /// <param name="e">イベント</param>
         private void MonthSelectionChanged(object? sender, EventArgs e)
         {
-            if (this.mYearList.SelectedItem is int year && this.mMonthList.SelectedItem is int month)
-            {
-                var newDate = new DateTime(year, month, 1);
-                this.SetDate(newDate);
-                this.SelectionStart = newDate;
-                this.SelectionEnd = newDate;
-                this.mYearMonthPanel.Visible = false;
-            }
+            int year = int.Parse(this.mYearList.SelectedItem, NumberStyles.AllowThousands, CultureInfo.InvariantCulture);
+            int month = int.Parse(this.mMonthList.SelectedItem, NumberStyles.AllowThousands, CultureInfo.InvariantCulture);
+            var newDate = new DateTime(year, month, 1);
+            this.SetDate(newDate);
+            this.SelectionStart = newDate;
+            this.SelectionEnd = newDate;
+            this.mYearMonthPanel.Visible = false;
         }
 
         /// <summary>
