@@ -3,13 +3,7 @@
 // Copyright (C) 2025 FUJIFILM Medical Solutions Corporation.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using log4net;
 
@@ -26,9 +20,13 @@ namespace RADISTA.SPREAD.CustomControl
     /// </remarks>
     public partial class RdtCalendar : MonthCalendar
     {
+        #region "定数"
+        private const int WM_PAINT = 0x000F;
+        private const int WM_LBUTTONDOWN = 0x0201;
+        #endregion
+
         #region "クラス変数"
         private static readonly ILog mLog = LogManager.GetLogger(typeof(RdtCalendar));
-        private Control? mParentControl;
         private Panel mYearMonthPanel = new Panel();
         private ListBox mYearList = new ListBox();
         private ListBox mMonthList = new ListBox();
@@ -41,6 +39,8 @@ namespace RADISTA.SPREAD.CustomControl
         public RdtCalendar()
         {
             this.InitializeComponent();
+
+            this.InitializeCustomSetting();
         }
 
         /// <summary>
@@ -52,6 +52,8 @@ namespace RADISTA.SPREAD.CustomControl
             container.Add(this);
 
             this.InitializeComponent();
+
+            this.InitializeCustomSetting();
         }
         #endregion
 
@@ -68,10 +70,6 @@ namespace RADISTA.SPREAD.CustomControl
                 return;
             }
 
-            this.InitializeYearMonthPanel();
-
-            this.mParentControl = this.Parent;
-
             this.DateSelected -= this.DateSelectedHandler;
             this.DateSelected += this.DateSelectedHandler;
         }
@@ -83,8 +81,6 @@ namespace RADISTA.SPREAD.CustomControl
         protected override void WndProc(ref Message m)
         {
             // 左クリック
-            const int WM_LBUTTONDOWN = 0x0201;
-
             if (m.Msg == WM_LBUTTONDOWN)
             {
                 int y = (short)((m.LParam.ToInt32() >> 16) & 0xFFFF);
@@ -104,25 +100,62 @@ namespace RADISTA.SPREAD.CustomControl
             }
 
             base.WndProc(ref m);
+
+            // 描画
+            if (m.Msg == WM_PAINT)
+            {
+                IntPtr hdc = NativeMethods.GetWindowDC(this.Handle);
+                using (Graphics g = Graphics.FromHdc(hdc))
+                {
+                    // 左矢印を隠す
+                    g.FillRectangle(new SolidBrush(ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleBackColor())), new Rectangle(5, 10, 35, 25));
+
+                    // 右矢印を隠す（適切なサイズ調整が必要）
+                    g.FillRectangle(new SolidBrush(ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleBackColor())), new Rectangle(this.Width - 40, 10, 35, 25));
+                }
+                NativeMethods.ReleaseDC(this.Handle, hdc);
+            }
         }
 
         /// <summary>
-        /// OnHandleCreated
+        /// OnParentChanged
         /// </summary>
         /// <param name="e">イベント</param>
-        protected override void OnHandleCreated(EventArgs e)
+        protected override void OnParentChanged(EventArgs e)
         {
-            base.OnHandleCreated(e);
+            base.OnParentChanged(e);
 
-            if (this.mParentControl != null)
+            if (this.Parent != null)
             {
-                this.mParentControl.MouseDown -= this.ParentControl_MouseDown;
-                this.mParentControl.MouseDown += this.ParentControl_MouseDown;
+                this.Parent.MouseDown -= this.ParentControl_MouseDown;
+                this.Parent.MouseDown += this.ParentControl_MouseDown;
+
+                if (!this.Parent.Controls.Contains(this.mYearMonthPanel))
+                {
+                    this.InitializeYearMonthPanel();
+                }
             }
         }
         #endregion
 
         #region "プライベートメソッド"
+        /// <summary>
+        /// 初期化処理
+        /// </summary>
+        private void InitializeCustomSetting()
+        {
+            // クラシックスタイルを使用
+            NativeMethods.SetWindowTheme(this.Handle, string.Empty, string.Empty);
+
+            // デフォルト設定
+            this.Size = new Size(250, 200);
+            this.ForeColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultFontColor());
+            this.BackColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultBackColor());
+            this.TitleForeColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleFontColor());
+            this.TitleBackColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleBackColor());
+            this.TrailingForeColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTrailingFontColor());
+        }
+
         /// <summary>
         /// Dispose
         /// </summary>
@@ -130,12 +163,14 @@ namespace RADISTA.SPREAD.CustomControl
         {
             // イベント削除
             this.DateSelected -= this.DateSelectedHandler;
+            this.mMonthList.SelectedIndexChanged -= this.MonthSelectionChanged;
             // 親コントロールのイベントを削除する
-            if (this.mParentControl != null)
+            if (this.Parent != null)
             {
-                this.mParentControl.MouseDown -= this.ParentControl_MouseDown;
+                this.Parent.MouseDown -= this.ParentControl_MouseDown;
             }
         }
+
         /// <summary>
         /// 年月パネルの初期化
         /// </summary>
@@ -143,7 +178,7 @@ namespace RADISTA.SPREAD.CustomControl
         {
             // パネルの初期設定
             this.mYearMonthPanel.Size = new Size(this.Width, this.Height - (this.Font.Height * 2));
-            this.mYearMonthPanel.BackColor = Color.Black;
+            this.mYearMonthPanel.BackColor = ColorTranslator.FromHtml(ComponentCommon.GetListDefaultStandardBackColor());
             this.mYearMonthPanel.BorderStyle = BorderStyle.FixedSingle;
             this.mYearMonthPanel.Visible = false;
 
@@ -151,27 +186,18 @@ namespace RADISTA.SPREAD.CustomControl
             this.mYearList.Dock = DockStyle.Fill;
             this.mMonthList.Dock = DockStyle.Fill;
 
-            for (int y = this.SelectionStart.Year - 5; y <= this.SelectionStart.Year + 5; y++)
+            for (int year = this.SelectionStart.Year - 5; year <= this.SelectionStart.Year + 5; year++)
             {
-                this.mYearList.Items.Add(y);
+                this.mYearList.Items.Add(year);
             }
 
-            for (int m = 1; m <= 12; m++)
+            for (int month = 1; month <= 12; month++)
             {
-                this.mMonthList.Items.Add(m);
+                this.mMonthList.Items.Add(month);
             }
 
-            this.mMonthList.SelectedIndexChanged += (s, e) =>
-            {
-                if (this.mYearList.SelectedItem is int year && this.mMonthList.SelectedItem is int month)
-                {
-                    var newDate = new DateTime(year, month, 1);
-                    this.SetDate(newDate);
-                    this.SelectionStart = newDate;
-                    this.SelectionEnd = newDate;
-                    this.mYearMonthPanel.Visible = false;
-                }
-            };
+            this.mMonthList.SelectedIndexChanged -= this.MonthSelectionChanged;
+            this.mMonthList.SelectedIndexChanged += this.MonthSelectionChanged;
 
             TableLayoutPanel table = new TableLayoutPanel
             {
@@ -179,7 +205,7 @@ namespace RADISTA.SPREAD.CustomControl
                 ColumnCount = 2,
                 Dock = DockStyle.Fill,
                 Padding = new Padding(5),
-                BackColor = Color.Gray,
+                BackColor = ColorTranslator.FromHtml(ComponentCommon.GetBackColor()),
             };
 
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -190,7 +216,7 @@ namespace RADISTA.SPREAD.CustomControl
             table.Controls.Add(this.mMonthList, 1, 0);
 
             this.mYearMonthPanel.Controls.Add(table);
-            this.mParentControl?.Controls.Add(this.mYearMonthPanel);
+            this.Parent?.Controls.Add(this.mYearMonthPanel);
         }
 
         /// <summary>
@@ -198,7 +224,7 @@ namespace RADISTA.SPREAD.CustomControl
         /// </summary>
         private void ShowYearMonthPanel()
         {
-            if (this.mParentControl != null)
+            if (this.Parent != null)
             {
                 int year = this.SelectionStart.Year;
                 int month = this.SelectionStart.Month;
@@ -207,7 +233,7 @@ namespace RADISTA.SPREAD.CustomControl
                 this.mMonthList.SelectedItem = month;
 
                 Point screenLoc = this.PointToScreen(new Point(0, this.Font.Height * 2));
-                Point parentLoc = this.mParentControl.PointToClient(screenLoc);
+                Point parentLoc = this.Parent.PointToClient(screenLoc);
                 this.mYearMonthPanel.Location = parentLoc;
                 this.mYearMonthPanel.Visible = true;
                 this.mYearMonthPanel.BringToFront();
@@ -221,9 +247,9 @@ namespace RADISTA.SPREAD.CustomControl
         /// <param name="e">イベント</param>
         private void ParentControl_MouseDown(object? sender, MouseEventArgs e)
         {
-            if (this.mParentControl != null)
+            if (this.Parent != null)
             {
-                Point mousePos = this.mParentControl.PointToClient(Control.MousePosition);
+                Point mousePos = this.Parent.PointToClient(Control.MousePosition);
 
                 // カレンダー以外のクリック時はカレンダーを非表示
                 if (!this.Bounds.Contains(mousePos))
@@ -236,6 +262,23 @@ namespace RADISTA.SPREAD.CustomControl
                         this.mYearMonthPanel.Visible = false;
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// 月リストの選択変更時のイベント
+        /// </summary>
+        /// <param name="sender">オブジェクト</param>
+        /// <param name="e">イベント</param>
+        private void MonthSelectionChanged(object? sender, EventArgs e)
+        {
+            if (this.mYearList.SelectedItem is int year && this.mMonthList.SelectedItem is int month)
+            {
+                var newDate = new DateTime(year, month, 1);
+                this.SetDate(newDate);
+                this.SelectionStart = newDate;
+                this.SelectionEnd = newDate;
+                this.mYearMonthPanel.Visible = false;
             }
         }
 

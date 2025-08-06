@@ -257,7 +257,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtCalendar_Click(object sender, EventArgs e)
         {
-
+            Form_RdtCalendar form = new Form_RdtCalendar();
+            form.Show();
         }
 
         private void button_RdtTrackBar_Click(object sender, EventArgs e)
