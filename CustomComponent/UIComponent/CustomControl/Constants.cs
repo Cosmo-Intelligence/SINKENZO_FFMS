@@ -81,11 +81,11 @@ namespace RADISTA.UIComponent.CustomControl
         public const string LABEL_DEFAULT_EDGE_COLOR = "#464646";
         #endregion
 
-        #region "TextBox, ComboBox"
+        #region "TextBox"
         /// <summary>
         /// Defaultのフォントカラー
         /// </summary>
-        public const string TEXT_DEFAULT_FONT_COLOR = "#C4C4C4";
+        public const string TEXT_DEFAULT_FONT_COLOR = "#5A5A5A";
         /// <summary>
         /// Defaultのバックカラー
         /// </summary>
@@ -93,19 +93,19 @@ namespace RADISTA.UIComponent.CustomControl
         /// <summary>
         /// Defaultのエッジカラー
         /// </summary>
-        public const string TEXT_DEFAULT_EDGE_COLOR = "#4F4F4F";
+        public const string TEXT_DEFAULT_EDGE_COLOR = "#3E3E3E";
         /// <summary>
-        /// Disableのフォントカラー
+        /// Hoverのフォントカラー
         /// </summary>
-        public const string TEXT_DISABLE_FONT_COLOR = "#555555";
+        public const string TEXT_HOVER_FONT_COLOR = "#C4C4C4";
         /// <summary>
-        /// Disableのバックカラー
+        /// Hoverのバックカラー
         /// </summary>
-        public const string TEXT_DISABLE_BACK_COLOR = "#222222";
+        public const string TEXT_HOVER_BACK_COLOR = "#191919";
         /// <summary>
-        /// Disableのエッジカラー
+        /// Hoverのエッジカラー
         /// </summary>
-        public const string TEXT_DISABLE_EDGE_COLOR = "#3E3E3E";
+        public const string TEXT_HOVER_EDGE_COLOR = "#4F4F4F";
         /// <summary>
         /// Focusのフォントカラー
         /// </summary>
@@ -118,6 +118,30 @@ namespace RADISTA.UIComponent.CustomControl
         /// Focusのエッジカラー
         /// </summary>
         public const string TEXT_FOCUS_EDGE_COLOR = "#439977";
+        /// <summary>
+        /// Inputのフォントカラー
+        /// </summary>
+        public const string TEXT_INPUT_FONT_COLOR = "#C4C4C4";
+        /// <summary>
+        /// Inputのバックカラー
+        /// </summary>
+        public const string TEXT_INPUT_BACK_COLOR = "#191919";
+        /// <summary>
+        /// Inputのエッジカラー
+        /// </summary>
+        public const string TEXT_INPUT_EDGE_COLOR = "#3E3E3E";
+        /// <summary>
+        /// Disableのフォントカラー
+        /// </summary>
+        public const string TEXT_DISABLE_FONT_COLOR = "#555555";
+        /// <summary>
+        /// Disableのバックカラー
+        /// </summary>
+        public const string TEXT_DISABLE_BACK_COLOR = "#222222";
+        /// <summary>
+        /// Disableのエッジカラー
+        /// </summary>
+        public const string TEXT_DISABLE_EDGE_COLOR = "#2D2D2D";
         /// <summary>
         /// ReadOnlyのフォントカラー
         /// </summary>
@@ -134,6 +158,57 @@ namespace RADISTA.UIComponent.CustomControl
         /// WaterMarkのフォントカラー
         /// </summary>
         public const string TEXT_WATER_MARK_FONT_COLOR = "#5A5A5A";
+        #endregion
+
+        #region "ComboBox"
+        /// <summary>
+        /// Defaultのフォントカラー
+        /// </summary>
+        public const string COMBO_DEFAULT_FONT_COLOR = "#C4C4C4";
+        /// <summary>
+        /// Defaultのバックカラー
+        /// </summary>
+        public const string COMBO_DEFAULT_BACK_COLOR = "#191919";
+        /// <summary>
+        /// Defaultのエッジカラー
+        /// </summary>
+        public const string COMBO_DEFAULT_EDGE_COLOR = "#464646";
+        /// <summary>
+        /// Hoverのフォントカラー
+        /// </summary>
+        public const string COMBO_HOVER_FONT_COLOR = "#C4C4C4";
+        /// <summary>
+        /// Hoverのバックカラー
+        /// </summary>
+        public const string COMBO_HOVER_BACK_COLOR = "#191919";
+        /// <summary>
+        /// Hoverのエッジカラー
+        /// </summary>
+        public const string COMBO_HOVER_EDGE_COLOR = "#5A5A5A";
+        /// <summary>
+        /// Focusのフォントカラー
+        /// </summary>
+        public const string COMBO_FOCUS_FONT_COLOR = "#C4C4C4";
+        /// <summary>
+        /// Focusのバックカラー
+        /// </summary>
+        public const string COMBO_FOCUS_BACK_COLOR = "#191919";
+        /// <summary>
+        /// Focusのエッジカラー
+        /// </summary>
+        public const string COMBO_FOCUS_EDGE_COLOR = "#439977";
+        /// <summary>
+        /// Disableのフォントカラー
+        /// </summary>
+        public const string COMBO_DISABLE_FONT_COLOR = "#555555";
+        /// <summary>
+        /// Disableのバックカラー
+        /// </summary>
+        public const string COMBO_DISABLE_BACK_COLOR = "#222222";
+        /// <summary>
+        /// Disableのエッジカラー
+        /// </summary>
+        public const string COMBO_DISABLE_EDGE_COLOR = "#303030";
         #endregion
 
         #region "ListView, ListBox"

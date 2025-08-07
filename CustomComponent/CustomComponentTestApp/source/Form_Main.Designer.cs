@@ -348,6 +348,43 @@
             label290 = new Label();
             label_ProgressDefaultFontColor = new Label();
             label_ProgressDefaultBackColor = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label14 = new Label();
+            label16 = new Label();
+            label18 = new Label();
+            label21 = new Label();
+            label23 = new Label();
+            label154 = new Label();
+            label155 = new Label();
+            label156 = new Label();
+            label157 = new Label();
+            label158 = new Label();
+            label159 = new Label();
+            label160 = new Label();
+            label161 = new Label();
+            label162 = new Label();
+            label_TextHoverFontColor = new Label();
+            label_TextHoverBackColor = new Label();
+            label_TextHoverEdgeColor = new Label();
+            label_TextInputFontColor = new Label();
+            label_TextInputBackColor = new Label();
+            label_TextInputEdgeColor = new Label();
+            label_ComboDefaultFontColor = new Label();
+            label_ComboDefaultBackColor = new Label();
+            label_ComboDefaultEdgeColor = new Label();
+            label_ComboHoverFontColor = new Label();
+            label_ComboHoverBackColor = new Label();
+            label_ComboHoverEdgeColor = new Label();
+            label_ComboFocusFontColor = new Label();
+            label_ComboFocusBackColor = new Label();
+            label_ComboFocusEdgeColor = new Label();
+            label_ComboDisableFontColor = new Label();
+            label_ComboDisableBackColor = new Label();
+            label_ComboDisableEdgeColor = new Label();
             SuspendLayout();
             // 
             // label_FontColor
@@ -416,7 +453,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(1286, 293);
+            label10.Location = new Point(1364, 553);
             label10.Name = "label10";
             label10.Size = new Size(134, 20);
             label10.TabIndex = 17;
@@ -424,7 +461,7 @@
             // 
             // button_Rdtlabel
             // 
-            button_Rdtlabel.Location = new Point(1306, 318);
+            button_Rdtlabel.Location = new Point(1384, 578);
             button_Rdtlabel.Name = "button_Rdtlabel";
             button_Rdtlabel.Size = new Size(164, 29);
             button_Rdtlabel.TabIndex = 18;
@@ -434,7 +471,7 @@
             // 
             // button_RdtButton
             // 
-            button_RdtButton.Location = new Point(1306, 353);
+            button_RdtButton.Location = new Point(1384, 613);
             button_RdtButton.Name = "button_RdtButton";
             button_RdtButton.Size = new Size(164, 29);
             button_RdtButton.TabIndex = 19;
@@ -444,7 +481,7 @@
             // 
             // button_RdtListButton
             // 
-            button_RdtListButton.Location = new Point(1306, 388);
+            button_RdtListButton.Location = new Point(1384, 648);
             button_RdtListButton.Name = "button_RdtListButton";
             button_RdtListButton.Size = new Size(164, 29);
             button_RdtListButton.TabIndex = 20;
@@ -454,7 +491,7 @@
             // 
             // button_RdtTextBox
             // 
-            button_RdtTextBox.Location = new Point(1306, 423);
+            button_RdtTextBox.Location = new Point(1384, 683);
             button_RdtTextBox.Name = "button_RdtTextBox";
             button_RdtTextBox.Size = new Size(164, 29);
             button_RdtTextBox.TabIndex = 21;
@@ -464,7 +501,7 @@
             // 
             // button_RdtMaskTextBox
             // 
-            button_RdtMaskTextBox.Location = new Point(1306, 458);
+            button_RdtMaskTextBox.Location = new Point(1384, 718);
             button_RdtMaskTextBox.Name = "button_RdtMaskTextBox";
             button_RdtMaskTextBox.Size = new Size(164, 29);
             button_RdtMaskTextBox.TabIndex = 22;
@@ -474,7 +511,7 @@
             // 
             // button_RdtRichTextBox
             // 
-            button_RdtRichTextBox.Location = new Point(1306, 493);
+            button_RdtRichTextBox.Location = new Point(1384, 753);
             button_RdtRichTextBox.Name = "button_RdtRichTextBox";
             button_RdtRichTextBox.Size = new Size(164, 29);
             button_RdtRichTextBox.TabIndex = 23;
@@ -484,7 +521,7 @@
             // 
             // button_RdtRadioButton
             // 
-            button_RdtRadioButton.Location = new Point(1306, 528);
+            button_RdtRadioButton.Location = new Point(1384, 788);
             button_RdtRadioButton.Name = "button_RdtRadioButton";
             button_RdtRadioButton.Size = new Size(164, 29);
             button_RdtRadioButton.TabIndex = 24;
@@ -494,7 +531,7 @@
             // 
             // button_RdtCheckBox
             // 
-            button_RdtCheckBox.Location = new Point(1306, 563);
+            button_RdtCheckBox.Location = new Point(1384, 823);
             button_RdtCheckBox.Name = "button_RdtCheckBox";
             button_RdtCheckBox.Size = new Size(164, 29);
             button_RdtCheckBox.TabIndex = 25;
@@ -504,7 +541,7 @@
             // 
             // button_RdtToggleButton
             // 
-            button_RdtToggleButton.Location = new Point(1306, 598);
+            button_RdtToggleButton.Location = new Point(1384, 858);
             button_RdtToggleButton.Name = "button_RdtToggleButton";
             button_RdtToggleButton.Size = new Size(164, 29);
             button_RdtToggleButton.TabIndex = 26;
@@ -514,7 +551,7 @@
             // 
             // button_RdtCalendar
             // 
-            button_RdtCalendar.Location = new Point(1306, 633);
+            button_RdtCalendar.Location = new Point(1384, 893);
             button_RdtCalendar.Name = "button_RdtCalendar";
             button_RdtCalendar.Size = new Size(164, 29);
             button_RdtCalendar.TabIndex = 27;
@@ -524,7 +561,7 @@
             // 
             // button_RdtTrackBar
             // 
-            button_RdtTrackBar.Location = new Point(1476, 318);
+            button_RdtTrackBar.Location = new Point(1554, 578);
             button_RdtTrackBar.Name = "button_RdtTrackBar";
             button_RdtTrackBar.Size = new Size(164, 29);
             button_RdtTrackBar.TabIndex = 28;
@@ -534,7 +571,7 @@
             // 
             // button_RdtProgressBar
             // 
-            button_RdtProgressBar.Location = new Point(1476, 353);
+            button_RdtProgressBar.Location = new Point(1554, 613);
             button_RdtProgressBar.Name = "button_RdtProgressBar";
             button_RdtProgressBar.Size = new Size(164, 29);
             button_RdtProgressBar.TabIndex = 29;
@@ -544,7 +581,7 @@
             // 
             // button_RdtSpinBox
             // 
-            button_RdtSpinBox.Location = new Point(1476, 388);
+            button_RdtSpinBox.Location = new Point(1554, 648);
             button_RdtSpinBox.Name = "button_RdtSpinBox";
             button_RdtSpinBox.Size = new Size(164, 29);
             button_RdtSpinBox.TabIndex = 30;
@@ -554,7 +591,7 @@
             // 
             // button_RdtThumbnailView
             // 
-            button_RdtThumbnailView.Location = new Point(1476, 423);
+            button_RdtThumbnailView.Location = new Point(1554, 683);
             button_RdtThumbnailView.Name = "button_RdtThumbnailView";
             button_RdtThumbnailView.Size = new Size(164, 29);
             button_RdtThumbnailView.TabIndex = 31;
@@ -564,7 +601,7 @@
             // 
             // button_RdtContextMenuStrip
             // 
-            button_RdtContextMenuStrip.Location = new Point(1476, 458);
+            button_RdtContextMenuStrip.Location = new Point(1554, 718);
             button_RdtContextMenuStrip.Name = "button_RdtContextMenuStrip";
             button_RdtContextMenuStrip.Size = new Size(164, 29);
             button_RdtContextMenuStrip.TabIndex = 32;
@@ -574,7 +611,7 @@
             // 
             // button_RdtDataGridView
             // 
-            button_RdtDataGridView.Location = new Point(1476, 493);
+            button_RdtDataGridView.Location = new Point(1554, 753);
             button_RdtDataGridView.Name = "button_RdtDataGridView";
             button_RdtDataGridView.Size = new Size(164, 29);
             button_RdtDataGridView.TabIndex = 33;
@@ -584,7 +621,7 @@
             // 
             // button_RdtListView
             // 
-            button_RdtListView.Location = new Point(1476, 528);
+            button_RdtListView.Location = new Point(1554, 788);
             button_RdtListView.Name = "button_RdtListView";
             button_RdtListView.Size = new Size(164, 29);
             button_RdtListView.TabIndex = 34;
@@ -594,7 +631,7 @@
             // 
             // button_RdtTabControl
             // 
-            button_RdtTabControl.Location = new Point(1476, 563);
+            button_RdtTabControl.Location = new Point(1554, 823);
             button_RdtTabControl.Name = "button_RdtTabControl";
             button_RdtTabControl.Size = new Size(164, 29);
             button_RdtTabControl.TabIndex = 35;
@@ -604,7 +641,7 @@
             // 
             // button_RdtMenuStrip
             // 
-            button_RdtMenuStrip.Location = new Point(1476, 598);
+            button_RdtMenuStrip.Location = new Point(1554, 858);
             button_RdtMenuStrip.Name = "button_RdtMenuStrip";
             button_RdtMenuStrip.Size = new Size(164, 29);
             button_RdtMenuStrip.TabIndex = 36;
@@ -614,7 +651,7 @@
             // 
             // button_RdtForm
             // 
-            button_RdtForm.Location = new Point(1476, 633);
+            button_RdtForm.Location = new Point(1554, 893);
             button_RdtForm.Name = "button_RdtForm";
             button_RdtForm.Size = new Size(164, 29);
             button_RdtForm.TabIndex = 37;
@@ -624,7 +661,7 @@
             // 
             // button_RdtGadget
             // 
-            button_RdtGadget.Location = new Point(1646, 318);
+            button_RdtGadget.Location = new Point(1724, 578);
             button_RdtGadget.Name = "button_RdtGadget";
             button_RdtGadget.Size = new Size(164, 29);
             button_RdtGadget.TabIndex = 38;
@@ -634,7 +671,7 @@
             // 
             // button_RdtDialog
             // 
-            button_RdtDialog.Location = new Point(1646, 353);
+            button_RdtDialog.Location = new Point(1724, 613);
             button_RdtDialog.Name = "button_RdtDialog";
             button_RdtDialog.Size = new Size(164, 29);
             button_RdtDialog.TabIndex = 39;
@@ -644,7 +681,7 @@
             // 
             // button_RdtMessageBox
             // 
-            button_RdtMessageBox.Location = new Point(1646, 388);
+            button_RdtMessageBox.Location = new Point(1724, 648);
             button_RdtMessageBox.Name = "button_RdtMessageBox";
             button_RdtMessageBox.Size = new Size(164, 29);
             button_RdtMessageBox.TabIndex = 40;
@@ -654,7 +691,7 @@
             // 
             // button_RdtPanel
             // 
-            button_RdtPanel.Location = new Point(1646, 423);
+            button_RdtPanel.Location = new Point(1724, 683);
             button_RdtPanel.Name = "button_RdtPanel";
             button_RdtPanel.Size = new Size(164, 29);
             button_RdtPanel.TabIndex = 41;
@@ -664,7 +701,7 @@
             // 
             // button_RdtSplitter
             // 
-            button_RdtSplitter.Location = new Point(1646, 458);
+            button_RdtSplitter.Location = new Point(1724, 718);
             button_RdtSplitter.Name = "button_RdtSplitter";
             button_RdtSplitter.Size = new Size(164, 29);
             button_RdtSplitter.TabIndex = 42;
@@ -674,7 +711,7 @@
             // 
             // button_RdtSplitContainer
             // 
-            button_RdtSplitContainer.Location = new Point(1646, 493);
+            button_RdtSplitContainer.Location = new Point(1724, 753);
             button_RdtSplitContainer.Name = "button_RdtSplitContainer";
             button_RdtSplitContainer.Size = new Size(164, 29);
             button_RdtSplitContainer.TabIndex = 43;
@@ -850,16 +887,16 @@
             // label30
             // 
             label30.AutoSize = true;
-            label30.Location = new Point(32, 353);
+            label30.Location = new Point(1081, 209);
             label30.Name = "label30";
-            label30.Size = new Size(141, 20);
+            label30.Size = new Size(60, 20);
             label30.TabIndex = 66;
-            label30.Text = "TextBox, ComboBox";
+            label30.Text = "TextBox";
             // 
             // label31
             // 
             label31.AutoSize = true;
-            label31.Location = new Point(52, 373);
+            label31.Location = new Point(1101, 229);
             label31.Name = "label31";
             label31.Size = new Size(158, 20);
             label31.TabIndex = 67;
@@ -868,7 +905,7 @@
             // label32
             // 
             label32.AutoSize = true;
-            label32.Location = new Point(52, 393);
+            label32.Location = new Point(1101, 249);
             label32.Name = "label32";
             label32.Size = new Size(161, 20);
             label32.TabIndex = 68;
@@ -877,7 +914,7 @@
             // label33
             // 
             label33.AutoSize = true;
-            label33.Location = new Point(52, 413);
+            label33.Location = new Point(1101, 269);
             label33.Name = "label33";
             label33.Size = new Size(164, 20);
             label33.TabIndex = 69;
@@ -886,7 +923,7 @@
             // label34
             // 
             label34.AutoSize = true;
-            label34.Location = new Point(52, 433);
+            label34.Location = new Point(1101, 475);
             label34.Name = "label34";
             label34.Size = new Size(159, 20);
             label34.TabIndex = 70;
@@ -895,7 +932,7 @@
             // label35
             // 
             label35.AutoSize = true;
-            label35.Location = new Point(52, 453);
+            label35.Location = new Point(1101, 495);
             label35.Name = "label35";
             label35.Size = new Size(162, 20);
             label35.TabIndex = 71;
@@ -904,7 +941,7 @@
             // label36
             // 
             label36.AutoSize = true;
-            label36.Location = new Point(52, 473);
+            label36.Location = new Point(1101, 515);
             label36.Name = "label36";
             label36.Size = new Size(165, 20);
             label36.TabIndex = 72;
@@ -913,7 +950,7 @@
             // label37
             // 
             label37.AutoSize = true;
-            label37.Location = new Point(52, 493);
+            label37.Location = new Point(1101, 351);
             label37.Name = "label37";
             label37.Size = new Size(145, 20);
             label37.TabIndex = 73;
@@ -922,7 +959,7 @@
             // label38
             // 
             label38.AutoSize = true;
-            label38.Location = new Point(52, 513);
+            label38.Location = new Point(1101, 371);
             label38.Name = "label38";
             label38.Size = new Size(148, 20);
             label38.TabIndex = 74;
@@ -931,7 +968,7 @@
             // label39
             // 
             label39.AutoSize = true;
-            label39.Location = new Point(52, 533);
+            label39.Location = new Point(1101, 391);
             label39.Name = "label39";
             label39.Size = new Size(151, 20);
             label39.TabIndex = 75;
@@ -940,7 +977,7 @@
             // label40
             // 
             label40.AutoSize = true;
-            label40.Location = new Point(52, 553);
+            label40.Location = new Point(1101, 537);
             label40.Name = "label40";
             label40.Size = new Size(173, 20);
             label40.TabIndex = 76;
@@ -949,7 +986,7 @@
             // label41
             // 
             label41.AutoSize = true;
-            label41.Location = new Point(52, 573);
+            label41.Location = new Point(1101, 557);
             label41.Name = "label41";
             label41.Size = new Size(176, 20);
             label41.TabIndex = 77;
@@ -958,7 +995,7 @@
             // label42
             // 
             label42.AutoSize = true;
-            label42.Location = new Point(52, 593);
+            label42.Location = new Point(1101, 577);
             label42.Name = "label42";
             label42.Size = new Size(179, 20);
             label42.TabIndex = 78;
@@ -967,7 +1004,7 @@
             // label43
             // 
             label43.AutoSize = true;
-            label43.Location = new Point(52, 613);
+            label43.Location = new Point(1101, 597);
             label43.Name = "label43";
             label43.Size = new Size(181, 20);
             label43.TabIndex = 79;
@@ -976,7 +1013,7 @@
             // label44
             // 
             label44.AutoSize = true;
-            label44.Location = new Point(32, 633);
+            label44.Location = new Point(32, 354);
             label44.Name = "label44";
             label44.Size = new Size(116, 20);
             label44.TabIndex = 80;
@@ -985,7 +1022,7 @@
             // label45
             // 
             label45.AutoSize = true;
-            label45.Location = new Point(52, 653);
+            label45.Location = new Point(52, 374);
             label45.Name = "label45";
             label45.Size = new Size(214, 20);
             label45.TabIndex = 81;
@@ -994,7 +1031,7 @@
             // label46
             // 
             label46.AutoSize = true;
-            label46.Location = new Point(52, 673);
+            label46.Location = new Point(52, 394);
             label46.Name = "label46";
             label46.Size = new Size(217, 20);
             label46.TabIndex = 82;
@@ -1003,7 +1040,7 @@
             // label47
             // 
             label47.AutoSize = true;
-            label47.Location = new Point(52, 693);
+            label47.Location = new Point(52, 414);
             label47.Name = "label47";
             label47.Size = new Size(220, 20);
             label47.TabIndex = 83;
@@ -1012,7 +1049,7 @@
             // label48
             // 
             label48.AutoSize = true;
-            label48.Location = new Point(52, 713);
+            label48.Location = new Point(52, 434);
             label48.Name = "label48";
             label48.Size = new Size(178, 20);
             label48.TabIndex = 84;
@@ -1021,7 +1058,7 @@
             // label49
             // 
             label49.AutoSize = true;
-            label49.Location = new Point(52, 733);
+            label49.Location = new Point(52, 454);
             label49.Name = "label49";
             label49.Size = new Size(181, 20);
             label49.TabIndex = 85;
@@ -1030,7 +1067,7 @@
             // label50
             // 
             label50.AutoSize = true;
-            label50.Location = new Point(52, 753);
+            label50.Location = new Point(52, 474);
             label50.Name = "label50";
             label50.Size = new Size(184, 20);
             label50.TabIndex = 86;
@@ -1039,7 +1076,7 @@
             // label51
             // 
             label51.AutoSize = true;
-            label51.Location = new Point(52, 773);
+            label51.Location = new Point(52, 494);
             label51.Name = "label51";
             label51.Size = new Size(205, 20);
             label51.TabIndex = 87;
@@ -1048,7 +1085,7 @@
             // label52
             // 
             label52.AutoSize = true;
-            label52.Location = new Point(52, 793);
+            label52.Location = new Point(52, 514);
             label52.Name = "label52";
             label52.Size = new Size(208, 20);
             label52.TabIndex = 88;
@@ -1057,7 +1094,7 @@
             // label53
             // 
             label53.AutoSize = true;
-            label53.Location = new Point(52, 813);
+            label53.Location = new Point(52, 534);
             label53.Name = "label53";
             label53.Size = new Size(211, 20);
             label53.TabIndex = 89;
@@ -1066,7 +1103,7 @@
             // label54
             // 
             label54.AutoSize = true;
-            label54.Location = new Point(52, 833);
+            label54.Location = new Point(52, 554);
             label54.Name = "label54";
             label54.Size = new Size(169, 20);
             label54.TabIndex = 90;
@@ -1075,7 +1112,7 @@
             // label55
             // 
             label55.AutoSize = true;
-            label55.Location = new Point(52, 853);
+            label55.Location = new Point(52, 574);
             label55.Name = "label55";
             label55.Size = new Size(172, 20);
             label55.TabIndex = 91;
@@ -1084,7 +1121,7 @@
             // label56
             // 
             label56.AutoSize = true;
-            label56.Location = new Point(52, 873);
+            label56.Location = new Point(52, 594);
             label56.Name = "label56";
             label56.Size = new Size(175, 20);
             label56.TabIndex = 92;
@@ -1093,7 +1130,7 @@
             // label57
             // 
             label57.AutoSize = true;
-            label57.Location = new Point(52, 893);
+            label57.Location = new Point(52, 614);
             label57.Name = "label57";
             label57.Size = new Size(215, 20);
             label57.TabIndex = 93;
@@ -1102,7 +1139,7 @@
             // label58
             // 
             label58.AutoSize = true;
-            label58.Location = new Point(52, 913);
+            label58.Location = new Point(52, 634);
             label58.Name = "label58";
             label58.Size = new Size(218, 20);
             label58.TabIndex = 94;
@@ -1111,7 +1148,7 @@
             // label59
             // 
             label59.AutoSize = true;
-            label59.Location = new Point(52, 933);
+            label59.Location = new Point(52, 654);
             label59.Name = "label59";
             label59.Size = new Size(221, 20);
             label59.TabIndex = 95;
@@ -1120,7 +1157,7 @@
             // label60
             // 
             label60.AutoSize = true;
-            label60.Location = new Point(52, 953);
+            label60.Location = new Point(52, 674);
             label60.Name = "label60";
             label60.Size = new Size(179, 20);
             label60.TabIndex = 96;
@@ -1129,7 +1166,7 @@
             // label61
             // 
             label61.AutoSize = true;
-            label61.Location = new Point(52, 973);
+            label61.Location = new Point(52, 694);
             label61.Name = "label61";
             label61.Size = new Size(182, 20);
             label61.TabIndex = 97;
@@ -1138,7 +1175,7 @@
             // label62
             // 
             label62.AutoSize = true;
-            label62.Location = new Point(52, 993);
+            label62.Location = new Point(52, 714);
             label62.Name = "label62";
             label62.Size = new Size(185, 20);
             label62.TabIndex = 98;
@@ -1147,7 +1184,7 @@
             // label63
             // 
             label63.AutoSize = true;
-            label63.Location = new Point(382, 29);
+            label63.Location = new Point(371, 29);
             label63.Name = "label63";
             label63.Size = new Size(128, 20);
             label63.TabIndex = 99;
@@ -1156,7 +1193,7 @@
             // label64
             // 
             label64.AutoSize = true;
-            label64.Location = new Point(402, 49);
+            label64.Location = new Point(391, 49);
             label64.Name = "label64";
             label64.Size = new Size(183, 20);
             label64.TabIndex = 100;
@@ -1165,7 +1202,7 @@
             // label65
             // 
             label65.AutoSize = true;
-            label65.Location = new Point(402, 69);
+            label65.Location = new Point(391, 69);
             label65.Name = "label65";
             label65.Size = new Size(186, 20);
             label65.TabIndex = 101;
@@ -1174,7 +1211,7 @@
             // label66
             // 
             label66.AutoSize = true;
-            label66.Location = new Point(402, 89);
+            label66.Location = new Point(391, 89);
             label66.Name = "label66";
             label66.Size = new Size(189, 20);
             label66.TabIndex = 102;
@@ -1183,7 +1220,7 @@
             // label67
             // 
             label67.AutoSize = true;
-            label67.Location = new Point(402, 108);
+            label67.Location = new Point(391, 108);
             label67.Name = "label67";
             label67.Size = new Size(174, 20);
             label67.TabIndex = 103;
@@ -1192,7 +1229,7 @@
             // label68
             // 
             label68.AutoSize = true;
-            label68.Location = new Point(402, 129);
+            label68.Location = new Point(391, 129);
             label68.Name = "label68";
             label68.Size = new Size(177, 20);
             label68.TabIndex = 104;
@@ -1201,7 +1238,7 @@
             // label69
             // 
             label69.AutoSize = true;
-            label69.Location = new Point(402, 149);
+            label69.Location = new Point(391, 149);
             label69.Name = "label69";
             label69.Size = new Size(180, 20);
             label69.TabIndex = 105;
@@ -1210,7 +1247,7 @@
             // label70
             // 
             label70.AutoSize = true;
-            label70.Location = new Point(402, 169);
+            label70.Location = new Point(391, 169);
             label70.Name = "label70";
             label70.Size = new Size(191, 20);
             label70.TabIndex = 106;
@@ -1219,7 +1256,7 @@
             // label71
             // 
             label71.AutoSize = true;
-            label71.Location = new Point(402, 189);
+            label71.Location = new Point(391, 189);
             label71.Name = "label71";
             label71.Size = new Size(194, 20);
             label71.TabIndex = 107;
@@ -1228,7 +1265,7 @@
             // label72
             // 
             label72.AutoSize = true;
-            label72.Location = new Point(402, 209);
+            label72.Location = new Point(391, 209);
             label72.Name = "label72";
             label72.Size = new Size(197, 20);
             label72.TabIndex = 108;
@@ -1237,7 +1274,7 @@
             // label73
             // 
             label73.AutoSize = true;
-            label73.Location = new Point(402, 229);
+            label73.Location = new Point(391, 229);
             label73.Name = "label73";
             label73.Size = new Size(231, 20);
             label73.TabIndex = 109;
@@ -1246,7 +1283,7 @@
             // label74
             // 
             label74.AutoSize = true;
-            label74.Location = new Point(402, 250);
+            label74.Location = new Point(391, 250);
             label74.Name = "label74";
             label74.Size = new Size(234, 20);
             label74.TabIndex = 110;
@@ -1255,7 +1292,7 @@
             // label75
             // 
             label75.AutoSize = true;
-            label75.Location = new Point(402, 270);
+            label75.Location = new Point(391, 270);
             label75.Name = "label75";
             label75.Size = new Size(237, 20);
             label75.TabIndex = 111;
@@ -1264,7 +1301,7 @@
             // label76
             // 
             label76.AutoSize = true;
-            label76.Location = new Point(402, 290);
+            label76.Location = new Point(391, 290);
             label76.Name = "label76";
             label76.Size = new Size(184, 20);
             label76.TabIndex = 112;
@@ -1273,7 +1310,7 @@
             // label77
             // 
             label77.AutoSize = true;
-            label77.Location = new Point(402, 310);
+            label77.Location = new Point(391, 310);
             label77.Name = "label77";
             label77.Size = new Size(187, 20);
             label77.TabIndex = 113;
@@ -1282,7 +1319,7 @@
             // label78
             // 
             label78.AutoSize = true;
-            label78.Location = new Point(402, 331);
+            label78.Location = new Point(391, 331);
             label78.Name = "label78";
             label78.Size = new Size(190, 20);
             label78.TabIndex = 114;
@@ -1291,7 +1328,7 @@
             // label79
             // 
             label79.AutoSize = true;
-            label79.Location = new Point(382, 353);
+            label79.Location = new Point(371, 353);
             label79.Name = "label79";
             label79.Size = new Size(77, 20);
             label79.TabIndex = 115;
@@ -1300,7 +1337,7 @@
             // label80
             // 
             label80.AutoSize = true;
-            label80.Location = new Point(402, 373);
+            label80.Location = new Point(391, 373);
             label80.Name = "label80";
             label80.Size = new Size(169, 20);
             label80.TabIndex = 116;
@@ -1309,7 +1346,7 @@
             // label81
             // 
             label81.AutoSize = true;
-            label81.Location = new Point(402, 393);
+            label81.Location = new Point(391, 393);
             label81.Name = "label81";
             label81.Size = new Size(172, 20);
             label81.TabIndex = 117;
@@ -1318,7 +1355,7 @@
             // label82
             // 
             label82.AutoSize = true;
-            label82.Location = new Point(402, 413);
+            label82.Location = new Point(391, 413);
             label82.Name = "label82";
             label82.Size = new Size(160, 20);
             label82.TabIndex = 118;
@@ -1327,7 +1364,7 @@
             // label83
             // 
             label83.AutoSize = true;
-            label83.Location = new Point(402, 433);
+            label83.Location = new Point(391, 433);
             label83.Name = "label83";
             label83.Size = new Size(163, 20);
             label83.TabIndex = 119;
@@ -1336,7 +1373,7 @@
             // label84
             // 
             label84.AutoSize = true;
-            label84.Location = new Point(402, 453);
+            label84.Location = new Point(391, 453);
             label84.Name = "label84";
             label84.Size = new Size(170, 20);
             label84.TabIndex = 120;
@@ -1345,7 +1382,7 @@
             // label85
             // 
             label85.AutoSize = true;
-            label85.Location = new Point(402, 473);
+            label85.Location = new Point(391, 473);
             label85.Name = "label85";
             label85.Size = new Size(173, 20);
             label85.TabIndex = 121;
@@ -1354,7 +1391,7 @@
             // label86
             // 
             label86.AutoSize = true;
-            label86.Location = new Point(382, 493);
+            label86.Location = new Point(371, 493);
             label86.Name = "label86";
             label86.Size = new Size(98, 20);
             label86.TabIndex = 122;
@@ -1363,7 +1400,7 @@
             // label87
             // 
             label87.AutoSize = true;
-            label87.Location = new Point(402, 513);
+            label87.Location = new Point(391, 513);
             label87.Name = "label87";
             label87.Size = new Size(182, 20);
             label87.TabIndex = 123;
@@ -1372,7 +1409,7 @@
             // label88
             // 
             label88.AutoSize = true;
-            label88.Location = new Point(402, 533);
+            label88.Location = new Point(391, 533);
             label88.Name = "label88";
             label88.Size = new Size(185, 20);
             label88.TabIndex = 124;
@@ -1381,7 +1418,7 @@
             // label89
             // 
             label89.AutoSize = true;
-            label89.Location = new Point(402, 553);
+            label89.Location = new Point(391, 553);
             label89.Name = "label89";
             label89.Size = new Size(188, 20);
             label89.TabIndex = 125;
@@ -1390,7 +1427,7 @@
             // label90
             // 
             label90.AutoSize = true;
-            label90.Location = new Point(402, 573);
+            label90.Location = new Point(391, 573);
             label90.Name = "label90";
             label90.Size = new Size(204, 20);
             label90.TabIndex = 126;
@@ -1399,7 +1436,7 @@
             // label91
             // 
             label91.AutoSize = true;
-            label91.Location = new Point(402, 593);
+            label91.Location = new Point(391, 593);
             label91.Name = "label91";
             label91.Size = new Size(207, 20);
             label91.TabIndex = 127;
@@ -1408,7 +1445,7 @@
             // label92
             // 
             label92.AutoSize = true;
-            label92.Location = new Point(402, 613);
+            label92.Location = new Point(391, 613);
             label92.Name = "label92";
             label92.Size = new Size(210, 20);
             label92.TabIndex = 128;
@@ -1417,7 +1454,7 @@
             // label93
             // 
             label93.AutoSize = true;
-            label93.Location = new Point(402, 633);
+            label93.Location = new Point(391, 633);
             label93.Name = "label93";
             label93.Size = new Size(173, 20);
             label93.TabIndex = 129;
@@ -1426,7 +1463,7 @@
             // label94
             // 
             label94.AutoSize = true;
-            label94.Location = new Point(402, 653);
+            label94.Location = new Point(391, 653);
             label94.Name = "label94";
             label94.Size = new Size(176, 20);
             label94.TabIndex = 130;
@@ -1435,7 +1472,7 @@
             // label95
             // 
             label95.AutoSize = true;
-            label95.Location = new Point(402, 673);
+            label95.Location = new Point(391, 673);
             label95.Name = "label95";
             label95.Size = new Size(179, 20);
             label95.TabIndex = 131;
@@ -1444,7 +1481,7 @@
             // label96
             // 
             label96.AutoSize = true;
-            label96.Location = new Point(402, 693);
+            label96.Location = new Point(391, 693);
             label96.Name = "label96";
             label96.Size = new Size(183, 20);
             label96.TabIndex = 132;
@@ -1453,7 +1490,7 @@
             // label97
             // 
             label97.AutoSize = true;
-            label97.Location = new Point(402, 713);
+            label97.Location = new Point(391, 713);
             label97.Name = "label97";
             label97.Size = new Size(186, 20);
             label97.TabIndex = 133;
@@ -1462,7 +1499,7 @@
             // label98
             // 
             label98.AutoSize = true;
-            label98.Location = new Point(402, 733);
+            label98.Location = new Point(391, 733);
             label98.Name = "label98";
             label98.Size = new Size(189, 20);
             label98.TabIndex = 134;
@@ -1471,7 +1508,7 @@
             // label99
             // 
             label99.AutoSize = true;
-            label99.Location = new Point(402, 753);
+            label99.Location = new Point(391, 753);
             label99.Name = "label99";
             label99.Size = new Size(205, 20);
             label99.TabIndex = 135;
@@ -1480,7 +1517,7 @@
             // label100
             // 
             label100.AutoSize = true;
-            label100.Location = new Point(402, 773);
+            label100.Location = new Point(391, 773);
             label100.Name = "label100";
             label100.Size = new Size(208, 20);
             label100.TabIndex = 136;
@@ -1489,7 +1526,7 @@
             // label101
             // 
             label101.AutoSize = true;
-            label101.Location = new Point(402, 793);
+            label101.Location = new Point(391, 793);
             label101.Name = "label101";
             label101.Size = new Size(211, 20);
             label101.TabIndex = 137;
@@ -1498,7 +1535,7 @@
             // label102
             // 
             label102.AutoSize = true;
-            label102.Location = new Point(402, 813);
+            label102.Location = new Point(391, 813);
             label102.Name = "label102";
             label102.Size = new Size(174, 20);
             label102.TabIndex = 138;
@@ -1507,7 +1544,7 @@
             // label103
             // 
             label103.AutoSize = true;
-            label103.Location = new Point(402, 833);
+            label103.Location = new Point(391, 833);
             label103.Name = "label103";
             label103.Size = new Size(177, 20);
             label103.TabIndex = 139;
@@ -1516,7 +1553,7 @@
             // label104
             // 
             label104.AutoSize = true;
-            label104.Location = new Point(402, 853);
+            label104.Location = new Point(391, 853);
             label104.Name = "label104";
             label104.Size = new Size(180, 20);
             label104.TabIndex = 140;
@@ -1525,7 +1562,7 @@
             // label105
             // 
             label105.AutoSize = true;
-            label105.Location = new Point(743, 29);
+            label105.Location = new Point(725, 29);
             label105.Name = "label105";
             label105.Size = new Size(53, 20);
             label105.TabIndex = 141;
@@ -1534,7 +1571,7 @@
             // label106
             // 
             label106.AutoSize = true;
-            label106.Location = new Point(763, 49);
+            label106.Location = new Point(745, 49);
             label106.Name = "label106";
             label106.Size = new Size(226, 20);
             label106.TabIndex = 142;
@@ -1543,7 +1580,7 @@
             // label107
             // 
             label107.AutoSize = true;
-            label107.Location = new Point(763, 69);
+            label107.Location = new Point(745, 69);
             label107.Name = "label107";
             label107.Size = new Size(229, 20);
             label107.TabIndex = 143;
@@ -1552,7 +1589,7 @@
             // label108
             // 
             label108.AutoSize = true;
-            label108.Location = new Point(763, 89);
+            label108.Location = new Point(745, 89);
             label108.Name = "label108";
             label108.Size = new Size(232, 20);
             label108.TabIndex = 144;
@@ -1561,7 +1598,7 @@
             // label109
             // 
             label109.AutoSize = true;
-            label109.Location = new Point(763, 108);
+            label109.Location = new Point(745, 108);
             label109.Name = "label109";
             label109.Size = new Size(211, 20);
             label109.TabIndex = 145;
@@ -1570,7 +1607,7 @@
             // label110
             // 
             label110.AutoSize = true;
-            label110.Location = new Point(763, 128);
+            label110.Location = new Point(745, 128);
             label110.Name = "label110";
             label110.Size = new Size(214, 20);
             label110.TabIndex = 146;
@@ -1579,7 +1616,7 @@
             // label111
             // 
             label111.AutoSize = true;
-            label111.Location = new Point(763, 149);
+            label111.Location = new Point(745, 149);
             label111.Name = "label111";
             label111.Size = new Size(217, 20);
             label111.TabIndex = 147;
@@ -1588,7 +1625,7 @@
             // label112
             // 
             label112.AutoSize = true;
-            label112.Location = new Point(763, 169);
+            label112.Location = new Point(745, 169);
             label112.Name = "label112";
             label112.Size = new Size(233, 20);
             label112.TabIndex = 148;
@@ -1597,7 +1634,7 @@
             // label113
             // 
             label113.AutoSize = true;
-            label113.Location = new Point(763, 189);
+            label113.Location = new Point(745, 189);
             label113.Name = "label113";
             label113.Size = new Size(236, 20);
             label113.TabIndex = 149;
@@ -1606,7 +1643,7 @@
             // label114
             // 
             label114.AutoSize = true;
-            label114.Location = new Point(763, 209);
+            label114.Location = new Point(745, 209);
             label114.Name = "label114";
             label114.Size = new Size(239, 20);
             label114.TabIndex = 150;
@@ -1615,7 +1652,7 @@
             // label115
             // 
             label115.AutoSize = true;
-            label115.Location = new Point(763, 230);
+            label115.Location = new Point(745, 230);
             label115.Name = "label115";
             label115.Size = new Size(202, 20);
             label115.TabIndex = 151;
@@ -1624,7 +1661,7 @@
             // label116
             // 
             label116.AutoSize = true;
-            label116.Location = new Point(763, 250);
+            label116.Location = new Point(745, 250);
             label116.Name = "label116";
             label116.Size = new Size(205, 20);
             label116.TabIndex = 152;
@@ -1633,7 +1670,7 @@
             // label117
             // 
             label117.AutoSize = true;
-            label117.Location = new Point(763, 270);
+            label117.Location = new Point(745, 270);
             label117.Name = "label117";
             label117.Size = new Size(208, 20);
             label117.TabIndex = 153;
@@ -1642,7 +1679,7 @@
             // label118
             // 
             label118.AutoSize = true;
-            label118.Location = new Point(763, 290);
+            label118.Location = new Point(745, 290);
             label118.Name = "label118";
             label118.Size = new Size(217, 20);
             label118.TabIndex = 154;
@@ -1651,7 +1688,7 @@
             // label119
             // 
             label119.AutoSize = true;
-            label119.Location = new Point(763, 310);
+            label119.Location = new Point(745, 310);
             label119.Name = "label119";
             label119.Size = new Size(220, 20);
             label119.TabIndex = 155;
@@ -1660,7 +1697,7 @@
             // label120
             // 
             label120.AutoSize = true;
-            label120.Location = new Point(763, 331);
+            label120.Location = new Point(745, 331);
             label120.Name = "label120";
             label120.Size = new Size(223, 20);
             label120.TabIndex = 156;
@@ -1669,7 +1706,7 @@
             // label121
             // 
             label121.AutoSize = true;
-            label121.Location = new Point(763, 353);
+            label121.Location = new Point(745, 353);
             label121.Name = "label121";
             label121.Size = new Size(202, 20);
             label121.TabIndex = 157;
@@ -1678,7 +1715,7 @@
             // label122
             // 
             label122.AutoSize = true;
-            label122.Location = new Point(763, 373);
+            label122.Location = new Point(745, 373);
             label122.Name = "label122";
             label122.Size = new Size(205, 20);
             label122.TabIndex = 158;
@@ -1687,7 +1724,7 @@
             // label123
             // 
             label123.AutoSize = true;
-            label123.Location = new Point(763, 393);
+            label123.Location = new Point(745, 393);
             label123.Name = "label123";
             label123.Size = new Size(208, 20);
             label123.TabIndex = 159;
@@ -1696,7 +1733,7 @@
             // label124
             // 
             label124.AutoSize = true;
-            label124.Location = new Point(763, 413);
+            label124.Location = new Point(745, 413);
             label124.Name = "label124";
             label124.Size = new Size(224, 20);
             label124.TabIndex = 160;
@@ -1705,7 +1742,7 @@
             // label125
             // 
             label125.AutoSize = true;
-            label125.Location = new Point(763, 433);
+            label125.Location = new Point(745, 433);
             label125.Name = "label125";
             label125.Size = new Size(227, 20);
             label125.TabIndex = 161;
@@ -1714,7 +1751,7 @@
             // label126
             // 
             label126.AutoSize = true;
-            label126.Location = new Point(763, 453);
+            label126.Location = new Point(745, 453);
             label126.Name = "label126";
             label126.Size = new Size(230, 20);
             label126.TabIndex = 162;
@@ -1723,7 +1760,7 @@
             // label127
             // 
             label127.AutoSize = true;
-            label127.Location = new Point(763, 473);
+            label127.Location = new Point(745, 473);
             label127.Name = "label127";
             label127.Size = new Size(193, 20);
             label127.TabIndex = 163;
@@ -1732,7 +1769,7 @@
             // label128
             // 
             label128.AutoSize = true;
-            label128.Location = new Point(763, 493);
+            label128.Location = new Point(745, 493);
             label128.Name = "label128";
             label128.Size = new Size(196, 20);
             label128.TabIndex = 164;
@@ -1741,7 +1778,7 @@
             // label129
             // 
             label129.AutoSize = true;
-            label129.Location = new Point(763, 513);
+            label129.Location = new Point(745, 513);
             label129.Name = "label129";
             label129.Size = new Size(199, 20);
             label129.TabIndex = 165;
@@ -1750,7 +1787,7 @@
             // label130
             // 
             label130.AutoSize = true;
-            label130.Location = new Point(763, 533);
+            label130.Location = new Point(745, 533);
             label130.Name = "label130";
             label130.Size = new Size(227, 20);
             label130.TabIndex = 166;
@@ -1759,7 +1796,7 @@
             // label131
             // 
             label131.AutoSize = true;
-            label131.Location = new Point(763, 553);
+            label131.Location = new Point(745, 553);
             label131.Name = "label131";
             label131.Size = new Size(230, 20);
             label131.TabIndex = 167;
@@ -1768,7 +1805,7 @@
             // label132
             // 
             label132.AutoSize = true;
-            label132.Location = new Point(763, 573);
+            label132.Location = new Point(745, 573);
             label132.Name = "label132";
             label132.Size = new Size(233, 20);
             label132.TabIndex = 168;
@@ -1777,7 +1814,7 @@
             // label133
             // 
             label133.AutoSize = true;
-            label133.Location = new Point(763, 593);
+            label133.Location = new Point(745, 593);
             label133.Name = "label133";
             label133.Size = new Size(212, 20);
             label133.TabIndex = 169;
@@ -1786,7 +1823,7 @@
             // label134
             // 
             label134.AutoSize = true;
-            label134.Location = new Point(763, 613);
+            label134.Location = new Point(745, 613);
             label134.Name = "label134";
             label134.Size = new Size(215, 20);
             label134.TabIndex = 170;
@@ -1795,7 +1832,7 @@
             // label135
             // 
             label135.AutoSize = true;
-            label135.Location = new Point(763, 633);
+            label135.Location = new Point(745, 633);
             label135.Name = "label135";
             label135.Size = new Size(218, 20);
             label135.TabIndex = 171;
@@ -1804,7 +1841,7 @@
             // label136
             // 
             label136.AutoSize = true;
-            label136.Location = new Point(763, 653);
+            label136.Location = new Point(745, 653);
             label136.Name = "label136";
             label136.Size = new Size(234, 20);
             label136.TabIndex = 172;
@@ -1813,7 +1850,7 @@
             // label137
             // 
             label137.AutoSize = true;
-            label137.Location = new Point(763, 673);
+            label137.Location = new Point(745, 673);
             label137.Name = "label137";
             label137.Size = new Size(237, 20);
             label137.TabIndex = 173;
@@ -1822,7 +1859,7 @@
             // label138
             // 
             label138.AutoSize = true;
-            label138.Location = new Point(763, 693);
+            label138.Location = new Point(745, 693);
             label138.Name = "label138";
             label138.Size = new Size(240, 20);
             label138.TabIndex = 174;
@@ -1831,7 +1868,7 @@
             // label139
             // 
             label139.AutoSize = true;
-            label139.Location = new Point(763, 713);
+            label139.Location = new Point(745, 713);
             label139.Name = "label139";
             label139.Size = new Size(203, 20);
             label139.TabIndex = 175;
@@ -1840,7 +1877,7 @@
             // label140
             // 
             label140.AutoSize = true;
-            label140.Location = new Point(763, 733);
+            label140.Location = new Point(745, 733);
             label140.Name = "label140";
             label140.Size = new Size(206, 20);
             label140.TabIndex = 176;
@@ -1849,7 +1886,7 @@
             // label141
             // 
             label141.AutoSize = true;
-            label141.Location = new Point(763, 753);
+            label141.Location = new Point(745, 753);
             label141.Name = "label141";
             label141.Size = new Size(209, 20);
             label141.TabIndex = 177;
@@ -1858,7 +1895,7 @@
             // label142
             // 
             label142.AutoSize = true;
-            label142.Location = new Point(763, 773);
+            label142.Location = new Point(745, 773);
             label142.Name = "label142";
             label142.Size = new Size(227, 20);
             label142.TabIndex = 178;
@@ -1867,7 +1904,7 @@
             // label143
             // 
             label143.AutoSize = true;
-            label143.Location = new Point(763, 793);
+            label143.Location = new Point(745, 793);
             label143.Name = "label143";
             label143.Size = new Size(230, 20);
             label143.TabIndex = 179;
@@ -1876,7 +1913,7 @@
             // label144
             // 
             label144.AutoSize = true;
-            label144.Location = new Point(763, 813);
+            label144.Location = new Point(745, 813);
             label144.Name = "label144";
             label144.Size = new Size(233, 20);
             label144.TabIndex = 180;
@@ -1885,7 +1922,7 @@
             // label145
             // 
             label145.AutoSize = true;
-            label145.Location = new Point(763, 833);
+            label145.Location = new Point(745, 833);
             label145.Name = "label145";
             label145.Size = new Size(212, 20);
             label145.TabIndex = 181;
@@ -1894,7 +1931,7 @@
             // label146
             // 
             label146.AutoSize = true;
-            label146.Location = new Point(763, 853);
+            label146.Location = new Point(745, 853);
             label146.Name = "label146";
             label146.Size = new Size(215, 20);
             label146.TabIndex = 182;
@@ -1903,7 +1940,7 @@
             // label147
             // 
             label147.AutoSize = true;
-            label147.Location = new Point(763, 873);
+            label147.Location = new Point(745, 873);
             label147.Name = "label147";
             label147.Size = new Size(218, 20);
             label147.TabIndex = 183;
@@ -1912,7 +1949,7 @@
             // label148
             // 
             label148.AutoSize = true;
-            label148.Location = new Point(763, 893);
+            label148.Location = new Point(745, 893);
             label148.Name = "label148";
             label148.Size = new Size(234, 20);
             label148.TabIndex = 184;
@@ -1921,7 +1958,7 @@
             // label149
             // 
             label149.AutoSize = true;
-            label149.Location = new Point(763, 913);
+            label149.Location = new Point(745, 913);
             label149.Name = "label149";
             label149.Size = new Size(237, 20);
             label149.TabIndex = 185;
@@ -1930,7 +1967,7 @@
             // label150
             // 
             label150.AutoSize = true;
-            label150.Location = new Point(763, 933);
+            label150.Location = new Point(745, 933);
             label150.Name = "label150";
             label150.Size = new Size(240, 20);
             label150.TabIndex = 186;
@@ -1939,7 +1976,7 @@
             // label151
             // 
             label151.AutoSize = true;
-            label151.Location = new Point(763, 953);
+            label151.Location = new Point(745, 953);
             label151.Name = "label151";
             label151.Size = new Size(203, 20);
             label151.TabIndex = 187;
@@ -1948,7 +1985,7 @@
             // label152
             // 
             label152.AutoSize = true;
-            label152.Location = new Point(763, 973);
+            label152.Location = new Point(745, 973);
             label152.Name = "label152";
             label152.Size = new Size(206, 20);
             label152.TabIndex = 188;
@@ -1957,7 +1994,7 @@
             // label153
             // 
             label153.AutoSize = true;
-            label153.Location = new Point(763, 993);
+            label153.Location = new Point(745, 993);
             label153.Name = "label153";
             label153.Size = new Size(209, 20);
             label153.TabIndex = 189;
@@ -2047,7 +2084,7 @@
             // label_TextDefaultFontColor
             // 
             label_TextDefaultFontColor.AutoSize = true;
-            label_TextDefaultFontColor.Location = new Point(216, 373);
+            label_TextDefaultFontColor.Location = new Point(1265, 229);
             label_TextDefaultFontColor.Name = "label_TextDefaultFontColor";
             label_TextDefaultFontColor.Size = new Size(66, 20);
             label_TextDefaultFontColor.TabIndex = 199;
@@ -2056,7 +2093,7 @@
             // label_TextDefaultBackColor
             // 
             label_TextDefaultBackColor.AutoSize = true;
-            label_TextDefaultBackColor.Location = new Point(219, 393);
+            label_TextDefaultBackColor.Location = new Point(1268, 249);
             label_TextDefaultBackColor.Name = "label_TextDefaultBackColor";
             label_TextDefaultBackColor.Size = new Size(66, 20);
             label_TextDefaultBackColor.TabIndex = 200;
@@ -2065,7 +2102,7 @@
             // label_TextDefaultEdgeColor
             // 
             label_TextDefaultEdgeColor.AutoSize = true;
-            label_TextDefaultEdgeColor.Location = new Point(222, 413);
+            label_TextDefaultEdgeColor.Location = new Point(1271, 269);
             label_TextDefaultEdgeColor.Name = "label_TextDefaultEdgeColor";
             label_TextDefaultEdgeColor.Size = new Size(66, 20);
             label_TextDefaultEdgeColor.TabIndex = 201;
@@ -2074,7 +2111,7 @@
             // label_TextDisableFontColor
             // 
             label_TextDisableFontColor.AutoSize = true;
-            label_TextDisableFontColor.Location = new Point(217, 433);
+            label_TextDisableFontColor.Location = new Point(1266, 475);
             label_TextDisableFontColor.Name = "label_TextDisableFontColor";
             label_TextDisableFontColor.Size = new Size(66, 20);
             label_TextDisableFontColor.TabIndex = 202;
@@ -2083,7 +2120,7 @@
             // label_TextDisableBackColor
             // 
             label_TextDisableBackColor.AutoSize = true;
-            label_TextDisableBackColor.Location = new Point(220, 455);
+            label_TextDisableBackColor.Location = new Point(1269, 497);
             label_TextDisableBackColor.Name = "label_TextDisableBackColor";
             label_TextDisableBackColor.Size = new Size(66, 20);
             label_TextDisableBackColor.TabIndex = 203;
@@ -2092,7 +2129,7 @@
             // label_TextDisableEdgeColor
             // 
             label_TextDisableEdgeColor.AutoSize = true;
-            label_TextDisableEdgeColor.Location = new Point(223, 475);
+            label_TextDisableEdgeColor.Location = new Point(1272, 517);
             label_TextDisableEdgeColor.Name = "label_TextDisableEdgeColor";
             label_TextDisableEdgeColor.Size = new Size(66, 20);
             label_TextDisableEdgeColor.TabIndex = 204;
@@ -2101,7 +2138,7 @@
             // label_TextFocusFontColor
             // 
             label_TextFocusFontColor.AutoSize = true;
-            label_TextFocusFontColor.Location = new Point(203, 495);
+            label_TextFocusFontColor.Location = new Point(1252, 353);
             label_TextFocusFontColor.Name = "label_TextFocusFontColor";
             label_TextFocusFontColor.Size = new Size(66, 20);
             label_TextFocusFontColor.TabIndex = 205;
@@ -2110,7 +2147,7 @@
             // label_TextFocusBackColor
             // 
             label_TextFocusBackColor.AutoSize = true;
-            label_TextFocusBackColor.Location = new Point(206, 515);
+            label_TextFocusBackColor.Location = new Point(1255, 373);
             label_TextFocusBackColor.Name = "label_TextFocusBackColor";
             label_TextFocusBackColor.Size = new Size(66, 20);
             label_TextFocusBackColor.TabIndex = 206;
@@ -2119,7 +2156,7 @@
             // label_TextFocusEdgeColor
             // 
             label_TextFocusEdgeColor.AutoSize = true;
-            label_TextFocusEdgeColor.Location = new Point(209, 535);
+            label_TextFocusEdgeColor.Location = new Point(1258, 393);
             label_TextFocusEdgeColor.Name = "label_TextFocusEdgeColor";
             label_TextFocusEdgeColor.Size = new Size(66, 20);
             label_TextFocusEdgeColor.TabIndex = 207;
@@ -2128,7 +2165,7 @@
             // label_TextReadOnlyFontColor
             // 
             label_TextReadOnlyFontColor.AutoSize = true;
-            label_TextReadOnlyFontColor.Location = new Point(231, 555);
+            label_TextReadOnlyFontColor.Location = new Point(1280, 539);
             label_TextReadOnlyFontColor.Name = "label_TextReadOnlyFontColor";
             label_TextReadOnlyFontColor.Size = new Size(66, 20);
             label_TextReadOnlyFontColor.TabIndex = 208;
@@ -2137,7 +2174,7 @@
             // label_TextReadOnlyBackColor
             // 
             label_TextReadOnlyBackColor.AutoSize = true;
-            label_TextReadOnlyBackColor.Location = new Point(234, 573);
+            label_TextReadOnlyBackColor.Location = new Point(1283, 557);
             label_TextReadOnlyBackColor.Name = "label_TextReadOnlyBackColor";
             label_TextReadOnlyBackColor.Size = new Size(66, 20);
             label_TextReadOnlyBackColor.TabIndex = 209;
@@ -2146,7 +2183,7 @@
             // label_TextReadOnlyEdgeColor
             // 
             label_TextReadOnlyEdgeColor.AutoSize = true;
-            label_TextReadOnlyEdgeColor.Location = new Point(237, 593);
+            label_TextReadOnlyEdgeColor.Location = new Point(1286, 577);
             label_TextReadOnlyEdgeColor.Name = "label_TextReadOnlyEdgeColor";
             label_TextReadOnlyEdgeColor.Size = new Size(66, 20);
             label_TextReadOnlyEdgeColor.TabIndex = 210;
@@ -2155,7 +2192,7 @@
             // label_TextWaterMarkFontColor
             // 
             label_TextWaterMarkFontColor.AutoSize = true;
-            label_TextWaterMarkFontColor.Location = new Point(239, 613);
+            label_TextWaterMarkFontColor.Location = new Point(1288, 597);
             label_TextWaterMarkFontColor.Name = "label_TextWaterMarkFontColor";
             label_TextWaterMarkFontColor.Size = new Size(66, 20);
             label_TextWaterMarkFontColor.TabIndex = 211;
@@ -2164,7 +2201,7 @@
             // label_ListDefaultStandardFontColor
             // 
             label_ListDefaultStandardFontColor.AutoSize = true;
-            label_ListDefaultStandardFontColor.Location = new Point(272, 653);
+            label_ListDefaultStandardFontColor.Location = new Point(272, 374);
             label_ListDefaultStandardFontColor.Name = "label_ListDefaultStandardFontColor";
             label_ListDefaultStandardFontColor.Size = new Size(66, 20);
             label_ListDefaultStandardFontColor.TabIndex = 212;
@@ -2173,7 +2210,7 @@
             // label_ListDefaultStandardBackColor
             // 
             label_ListDefaultStandardBackColor.AutoSize = true;
-            label_ListDefaultStandardBackColor.Location = new Point(275, 673);
+            label_ListDefaultStandardBackColor.Location = new Point(275, 394);
             label_ListDefaultStandardBackColor.Name = "label_ListDefaultStandardBackColor";
             label_ListDefaultStandardBackColor.Size = new Size(66, 20);
             label_ListDefaultStandardBackColor.TabIndex = 213;
@@ -2182,7 +2219,7 @@
             // label_ListDefaultStandardEdgeColor
             // 
             label_ListDefaultStandardEdgeColor.AutoSize = true;
-            label_ListDefaultStandardEdgeColor.Location = new Point(278, 693);
+            label_ListDefaultStandardEdgeColor.Location = new Point(278, 414);
             label_ListDefaultStandardEdgeColor.Name = "label_ListDefaultStandardEdgeColor";
             label_ListDefaultStandardEdgeColor.Size = new Size(66, 20);
             label_ListDefaultStandardEdgeColor.TabIndex = 214;
@@ -2191,7 +2228,7 @@
             // label_ListDefaultFlatFontColor
             // 
             label_ListDefaultFlatFontColor.AutoSize = true;
-            label_ListDefaultFlatFontColor.Location = new Point(236, 713);
+            label_ListDefaultFlatFontColor.Location = new Point(236, 434);
             label_ListDefaultFlatFontColor.Name = "label_ListDefaultFlatFontColor";
             label_ListDefaultFlatFontColor.Size = new Size(66, 20);
             label_ListDefaultFlatFontColor.TabIndex = 215;
@@ -2200,7 +2237,7 @@
             // label_ListDefaultFlatBackColor
             // 
             label_ListDefaultFlatBackColor.AutoSize = true;
-            label_ListDefaultFlatBackColor.Location = new Point(239, 733);
+            label_ListDefaultFlatBackColor.Location = new Point(239, 454);
             label_ListDefaultFlatBackColor.Name = "label_ListDefaultFlatBackColor";
             label_ListDefaultFlatBackColor.Size = new Size(66, 20);
             label_ListDefaultFlatBackColor.TabIndex = 216;
@@ -2209,7 +2246,7 @@
             // label_ListDefaultFlatEdgeColor
             // 
             label_ListDefaultFlatEdgeColor.AutoSize = true;
-            label_ListDefaultFlatEdgeColor.Location = new Point(242, 753);
+            label_ListDefaultFlatEdgeColor.Location = new Point(242, 474);
             label_ListDefaultFlatEdgeColor.Name = "label_ListDefaultFlatEdgeColor";
             label_ListDefaultFlatEdgeColor.Size = new Size(66, 20);
             label_ListDefaultFlatEdgeColor.TabIndex = 217;
@@ -2218,7 +2255,7 @@
             // label_ListHoverStandardFontColor
             // 
             label_ListHoverStandardFontColor.AutoSize = true;
-            label_ListHoverStandardFontColor.Location = new Point(263, 773);
+            label_ListHoverStandardFontColor.Location = new Point(263, 494);
             label_ListHoverStandardFontColor.Name = "label_ListHoverStandardFontColor";
             label_ListHoverStandardFontColor.Size = new Size(66, 20);
             label_ListHoverStandardFontColor.TabIndex = 218;
@@ -2227,7 +2264,7 @@
             // label_ListHoverStandardBackColor
             // 
             label_ListHoverStandardBackColor.AutoSize = true;
-            label_ListHoverStandardBackColor.Location = new Point(266, 793);
+            label_ListHoverStandardBackColor.Location = new Point(266, 514);
             label_ListHoverStandardBackColor.Name = "label_ListHoverStandardBackColor";
             label_ListHoverStandardBackColor.Size = new Size(66, 20);
             label_ListHoverStandardBackColor.TabIndex = 219;
@@ -2236,7 +2273,7 @@
             // label_ListHoverStandardEdgeColor
             // 
             label_ListHoverStandardEdgeColor.AutoSize = true;
-            label_ListHoverStandardEdgeColor.Location = new Point(269, 813);
+            label_ListHoverStandardEdgeColor.Location = new Point(269, 534);
             label_ListHoverStandardEdgeColor.Name = "label_ListHoverStandardEdgeColor";
             label_ListHoverStandardEdgeColor.Size = new Size(66, 20);
             label_ListHoverStandardEdgeColor.TabIndex = 220;
@@ -2245,7 +2282,7 @@
             // label_ListHoverFlatFontColor
             // 
             label_ListHoverFlatFontColor.AutoSize = true;
-            label_ListHoverFlatFontColor.Location = new Point(227, 833);
+            label_ListHoverFlatFontColor.Location = new Point(227, 554);
             label_ListHoverFlatFontColor.Name = "label_ListHoverFlatFontColor";
             label_ListHoverFlatFontColor.Size = new Size(66, 20);
             label_ListHoverFlatFontColor.TabIndex = 221;
@@ -2254,7 +2291,7 @@
             // label_ListHoverFlatBackColor
             // 
             label_ListHoverFlatBackColor.AutoSize = true;
-            label_ListHoverFlatBackColor.Location = new Point(230, 853);
+            label_ListHoverFlatBackColor.Location = new Point(230, 574);
             label_ListHoverFlatBackColor.Name = "label_ListHoverFlatBackColor";
             label_ListHoverFlatBackColor.Size = new Size(66, 20);
             label_ListHoverFlatBackColor.TabIndex = 222;
@@ -2263,7 +2300,7 @@
             // label_ListHoverFlatEdgeColor
             // 
             label_ListHoverFlatEdgeColor.AutoSize = true;
-            label_ListHoverFlatEdgeColor.Location = new Point(233, 873);
+            label_ListHoverFlatEdgeColor.Location = new Point(233, 594);
             label_ListHoverFlatEdgeColor.Name = "label_ListHoverFlatEdgeColor";
             label_ListHoverFlatEdgeColor.Size = new Size(66, 20);
             label_ListHoverFlatEdgeColor.TabIndex = 223;
@@ -2272,7 +2309,7 @@
             // label_ListDisableStandardFontColor
             // 
             label_ListDisableStandardFontColor.AutoSize = true;
-            label_ListDisableStandardFontColor.Location = new Point(273, 893);
+            label_ListDisableStandardFontColor.Location = new Point(273, 614);
             label_ListDisableStandardFontColor.Name = "label_ListDisableStandardFontColor";
             label_ListDisableStandardFontColor.Size = new Size(66, 20);
             label_ListDisableStandardFontColor.TabIndex = 224;
@@ -2281,7 +2318,7 @@
             // label_ListDisableStandardBackColor
             // 
             label_ListDisableStandardBackColor.AutoSize = true;
-            label_ListDisableStandardBackColor.Location = new Point(276, 913);
+            label_ListDisableStandardBackColor.Location = new Point(276, 634);
             label_ListDisableStandardBackColor.Name = "label_ListDisableStandardBackColor";
             label_ListDisableStandardBackColor.Size = new Size(66, 20);
             label_ListDisableStandardBackColor.TabIndex = 225;
@@ -2290,7 +2327,7 @@
             // label_ListDisableStandardEdgeColor
             // 
             label_ListDisableStandardEdgeColor.AutoSize = true;
-            label_ListDisableStandardEdgeColor.Location = new Point(279, 933);
+            label_ListDisableStandardEdgeColor.Location = new Point(279, 654);
             label_ListDisableStandardEdgeColor.Name = "label_ListDisableStandardEdgeColor";
             label_ListDisableStandardEdgeColor.Size = new Size(66, 20);
             label_ListDisableStandardEdgeColor.TabIndex = 226;
@@ -2299,7 +2336,7 @@
             // label_ListDisableFlatFontColor
             // 
             label_ListDisableFlatFontColor.AutoSize = true;
-            label_ListDisableFlatFontColor.Location = new Point(237, 953);
+            label_ListDisableFlatFontColor.Location = new Point(237, 674);
             label_ListDisableFlatFontColor.Name = "label_ListDisableFlatFontColor";
             label_ListDisableFlatFontColor.Size = new Size(66, 20);
             label_ListDisableFlatFontColor.TabIndex = 227;
@@ -2308,7 +2345,7 @@
             // label_ListDisableFlatBackColor
             // 
             label_ListDisableFlatBackColor.AutoSize = true;
-            label_ListDisableFlatBackColor.Location = new Point(240, 973);
+            label_ListDisableFlatBackColor.Location = new Point(240, 694);
             label_ListDisableFlatBackColor.Name = "label_ListDisableFlatBackColor";
             label_ListDisableFlatBackColor.Size = new Size(66, 20);
             label_ListDisableFlatBackColor.TabIndex = 228;
@@ -2317,7 +2354,7 @@
             // label_ListDisableFlatEdgeColor
             // 
             label_ListDisableFlatEdgeColor.AutoSize = true;
-            label_ListDisableFlatEdgeColor.Location = new Point(243, 993);
+            label_ListDisableFlatEdgeColor.Location = new Point(243, 714);
             label_ListDisableFlatEdgeColor.Name = "label_ListDisableFlatEdgeColor";
             label_ListDisableFlatEdgeColor.Size = new Size(66, 20);
             label_ListDisableFlatEdgeColor.TabIndex = 229;
@@ -2326,7 +2363,7 @@
             // label_ContextDefaultFontColor
             // 
             label_ContextDefaultFontColor.AutoSize = true;
-            label_ContextDefaultFontColor.Location = new Point(591, 49);
+            label_ContextDefaultFontColor.Location = new Point(580, 49);
             label_ContextDefaultFontColor.Name = "label_ContextDefaultFontColor";
             label_ContextDefaultFontColor.Size = new Size(66, 20);
             label_ContextDefaultFontColor.TabIndex = 230;
@@ -2335,7 +2372,7 @@
             // label_ContextDefaultBackColor
             // 
             label_ContextDefaultBackColor.AutoSize = true;
-            label_ContextDefaultBackColor.Location = new Point(594, 69);
+            label_ContextDefaultBackColor.Location = new Point(583, 69);
             label_ContextDefaultBackColor.Name = "label_ContextDefaultBackColor";
             label_ContextDefaultBackColor.Size = new Size(66, 20);
             label_ContextDefaultBackColor.TabIndex = 231;
@@ -2344,7 +2381,7 @@
             // label_ContextDefaultEdgeColor
             // 
             label_ContextDefaultEdgeColor.AutoSize = true;
-            label_ContextDefaultEdgeColor.Location = new Point(597, 89);
+            label_ContextDefaultEdgeColor.Location = new Point(586, 89);
             label_ContextDefaultEdgeColor.Name = "label_ContextDefaultEdgeColor";
             label_ContextDefaultEdgeColor.Size = new Size(66, 20);
             label_ContextDefaultEdgeColor.TabIndex = 232;
@@ -2353,7 +2390,7 @@
             // label_ContextHoverFontColor
             // 
             label_ContextHoverFontColor.AutoSize = true;
-            label_ContextHoverFontColor.Location = new Point(582, 108);
+            label_ContextHoverFontColor.Location = new Point(571, 108);
             label_ContextHoverFontColor.Name = "label_ContextHoverFontColor";
             label_ContextHoverFontColor.Size = new Size(66, 20);
             label_ContextHoverFontColor.TabIndex = 233;
@@ -2362,7 +2399,7 @@
             // label_ContextHoverBackColor
             // 
             label_ContextHoverBackColor.AutoSize = true;
-            label_ContextHoverBackColor.Location = new Point(585, 129);
+            label_ContextHoverBackColor.Location = new Point(574, 129);
             label_ContextHoverBackColor.Name = "label_ContextHoverBackColor";
             label_ContextHoverBackColor.Size = new Size(66, 20);
             label_ContextHoverBackColor.TabIndex = 234;
@@ -2371,7 +2408,7 @@
             // label_ContextHoverEdgeColor
             // 
             label_ContextHoverEdgeColor.AutoSize = true;
-            label_ContextHoverEdgeColor.Location = new Point(588, 149);
+            label_ContextHoverEdgeColor.Location = new Point(577, 149);
             label_ContextHoverEdgeColor.Name = "label_ContextHoverEdgeColor";
             label_ContextHoverEdgeColor.Size = new Size(66, 20);
             label_ContextHoverEdgeColor.TabIndex = 235;
@@ -2380,7 +2417,7 @@
             // label_ContextSelectedFontColor
             // 
             label_ContextSelectedFontColor.AutoSize = true;
-            label_ContextSelectedFontColor.Location = new Point(599, 169);
+            label_ContextSelectedFontColor.Location = new Point(588, 169);
             label_ContextSelectedFontColor.Name = "label_ContextSelectedFontColor";
             label_ContextSelectedFontColor.Size = new Size(66, 20);
             label_ContextSelectedFontColor.TabIndex = 236;
@@ -2389,7 +2426,7 @@
             // label_ContextSelectedBackColor
             // 
             label_ContextSelectedBackColor.AutoSize = true;
-            label_ContextSelectedBackColor.Location = new Point(602, 189);
+            label_ContextSelectedBackColor.Location = new Point(591, 189);
             label_ContextSelectedBackColor.Name = "label_ContextSelectedBackColor";
             label_ContextSelectedBackColor.Size = new Size(66, 20);
             label_ContextSelectedBackColor.TabIndex = 237;
@@ -2398,7 +2435,7 @@
             // label_ContextSelectedEdgeColor
             // 
             label_ContextSelectedEdgeColor.AutoSize = true;
-            label_ContextSelectedEdgeColor.Location = new Point(605, 209);
+            label_ContextSelectedEdgeColor.Location = new Point(594, 209);
             label_ContextSelectedEdgeColor.Name = "label_ContextSelectedEdgeColor";
             label_ContextSelectedEdgeColor.Size = new Size(66, 20);
             label_ContextSelectedEdgeColor.TabIndex = 238;
@@ -2407,7 +2444,7 @@
             // label_ContextSelectedHoverFontColor
             // 
             label_ContextSelectedHoverFontColor.AutoSize = true;
-            label_ContextSelectedHoverFontColor.Location = new Point(639, 229);
+            label_ContextSelectedHoverFontColor.Location = new Point(628, 229);
             label_ContextSelectedHoverFontColor.Name = "label_ContextSelectedHoverFontColor";
             label_ContextSelectedHoverFontColor.Size = new Size(66, 20);
             label_ContextSelectedHoverFontColor.TabIndex = 239;
@@ -2416,7 +2453,7 @@
             // label_ContextSelectedHoverBackColor
             // 
             label_ContextSelectedHoverBackColor.AutoSize = true;
-            label_ContextSelectedHoverBackColor.Location = new Point(642, 250);
+            label_ContextSelectedHoverBackColor.Location = new Point(631, 250);
             label_ContextSelectedHoverBackColor.Name = "label_ContextSelectedHoverBackColor";
             label_ContextSelectedHoverBackColor.Size = new Size(66, 20);
             label_ContextSelectedHoverBackColor.TabIndex = 240;
@@ -2425,7 +2462,7 @@
             // label_ContextSelectedHoverEdgeColor
             // 
             label_ContextSelectedHoverEdgeColor.AutoSize = true;
-            label_ContextSelectedHoverEdgeColor.Location = new Point(645, 270);
+            label_ContextSelectedHoverEdgeColor.Location = new Point(634, 270);
             label_ContextSelectedHoverEdgeColor.Name = "label_ContextSelectedHoverEdgeColor";
             label_ContextSelectedHoverEdgeColor.Size = new Size(66, 20);
             label_ContextSelectedHoverEdgeColor.TabIndex = 241;
@@ -2434,7 +2471,7 @@
             // label_ContextDisableFontColor
             // 
             label_ContextDisableFontColor.AutoSize = true;
-            label_ContextDisableFontColor.Location = new Point(592, 290);
+            label_ContextDisableFontColor.Location = new Point(581, 290);
             label_ContextDisableFontColor.Name = "label_ContextDisableFontColor";
             label_ContextDisableFontColor.Size = new Size(66, 20);
             label_ContextDisableFontColor.TabIndex = 242;
@@ -2443,7 +2480,7 @@
             // label_ContextDisableBackColor
             // 
             label_ContextDisableBackColor.AutoSize = true;
-            label_ContextDisableBackColor.Location = new Point(595, 310);
+            label_ContextDisableBackColor.Location = new Point(584, 310);
             label_ContextDisableBackColor.Name = "label_ContextDisableBackColor";
             label_ContextDisableBackColor.Size = new Size(66, 20);
             label_ContextDisableBackColor.TabIndex = 243;
@@ -2452,7 +2489,7 @@
             // label_ContextDisableEdgeColor
             // 
             label_ContextDisableEdgeColor.AutoSize = true;
-            label_ContextDisableEdgeColor.Location = new Point(598, 331);
+            label_ContextDisableEdgeColor.Location = new Point(587, 331);
             label_ContextDisableEdgeColor.Name = "label_ContextDisableEdgeColor";
             label_ContextDisableEdgeColor.Size = new Size(66, 20);
             label_ContextDisableEdgeColor.TabIndex = 244;
@@ -2461,7 +2498,7 @@
             // label_MenuDefaultFontColor
             // 
             label_MenuDefaultFontColor.AutoSize = true;
-            label_MenuDefaultFontColor.Location = new Point(577, 373);
+            label_MenuDefaultFontColor.Location = new Point(566, 373);
             label_MenuDefaultFontColor.Name = "label_MenuDefaultFontColor";
             label_MenuDefaultFontColor.Size = new Size(66, 20);
             label_MenuDefaultFontColor.TabIndex = 245;
@@ -2470,7 +2507,7 @@
             // label_MenuDefaultBackColor
             // 
             label_MenuDefaultBackColor.AutoSize = true;
-            label_MenuDefaultBackColor.Location = new Point(580, 393);
+            label_MenuDefaultBackColor.Location = new Point(569, 393);
             label_MenuDefaultBackColor.Name = "label_MenuDefaultBackColor";
             label_MenuDefaultBackColor.Size = new Size(66, 20);
             label_MenuDefaultBackColor.TabIndex = 246;
@@ -2479,7 +2516,7 @@
             // label_MenuHoverFontColor
             // 
             label_MenuHoverFontColor.AutoSize = true;
-            label_MenuHoverFontColor.Location = new Point(568, 413);
+            label_MenuHoverFontColor.Location = new Point(557, 413);
             label_MenuHoverFontColor.Name = "label_MenuHoverFontColor";
             label_MenuHoverFontColor.Size = new Size(66, 20);
             label_MenuHoverFontColor.TabIndex = 247;
@@ -2488,7 +2525,7 @@
             // label_MenuHoverBackColor
             // 
             label_MenuHoverBackColor.AutoSize = true;
-            label_MenuHoverBackColor.Location = new Point(571, 433);
+            label_MenuHoverBackColor.Location = new Point(560, 433);
             label_MenuHoverBackColor.Name = "label_MenuHoverBackColor";
             label_MenuHoverBackColor.Size = new Size(66, 20);
             label_MenuHoverBackColor.TabIndex = 248;
@@ -2497,7 +2534,7 @@
             // label_MenuDisableFontColor
             // 
             label_MenuDisableFontColor.AutoSize = true;
-            label_MenuDisableFontColor.Location = new Point(578, 455);
+            label_MenuDisableFontColor.Location = new Point(567, 455);
             label_MenuDisableFontColor.Name = "label_MenuDisableFontColor";
             label_MenuDisableFontColor.Size = new Size(66, 20);
             label_MenuDisableFontColor.TabIndex = 249;
@@ -2506,7 +2543,7 @@
             // label_MenuDisableBackColor
             // 
             label_MenuDisableBackColor.AutoSize = true;
-            label_MenuDisableBackColor.Location = new Point(581, 475);
+            label_MenuDisableBackColor.Location = new Point(570, 475);
             label_MenuDisableBackColor.Name = "label_MenuDisableBackColor";
             label_MenuDisableBackColor.Size = new Size(66, 20);
             label_MenuDisableBackColor.TabIndex = 250;
@@ -2515,7 +2552,7 @@
             // label_ToggleOnTonalFontColor
             // 
             label_ToggleOnTonalFontColor.AutoSize = true;
-            label_ToggleOnTonalFontColor.Location = new Point(590, 515);
+            label_ToggleOnTonalFontColor.Location = new Point(579, 515);
             label_ToggleOnTonalFontColor.Name = "label_ToggleOnTonalFontColor";
             label_ToggleOnTonalFontColor.Size = new Size(66, 20);
             label_ToggleOnTonalFontColor.TabIndex = 251;
@@ -2524,7 +2561,7 @@
             // label_ToggleOnTonalBackColor
             // 
             label_ToggleOnTonalBackColor.AutoSize = true;
-            label_ToggleOnTonalBackColor.Location = new Point(593, 535);
+            label_ToggleOnTonalBackColor.Location = new Point(582, 535);
             label_ToggleOnTonalBackColor.Name = "label_ToggleOnTonalBackColor";
             label_ToggleOnTonalBackColor.Size = new Size(66, 20);
             label_ToggleOnTonalBackColor.TabIndex = 252;
@@ -2533,7 +2570,7 @@
             // label_ToggleOnTonalEdgeColor
             // 
             label_ToggleOnTonalEdgeColor.AutoSize = true;
-            label_ToggleOnTonalEdgeColor.Location = new Point(596, 555);
+            label_ToggleOnTonalEdgeColor.Location = new Point(585, 555);
             label_ToggleOnTonalEdgeColor.Name = "label_ToggleOnTonalEdgeColor";
             label_ToggleOnTonalEdgeColor.Size = new Size(66, 20);
             label_ToggleOnTonalEdgeColor.TabIndex = 253;
@@ -2542,7 +2579,7 @@
             // label_ToggleOnOutlinedFontColor
             // 
             label_ToggleOnOutlinedFontColor.AutoSize = true;
-            label_ToggleOnOutlinedFontColor.Location = new Point(612, 575);
+            label_ToggleOnOutlinedFontColor.Location = new Point(601, 575);
             label_ToggleOnOutlinedFontColor.Name = "label_ToggleOnOutlinedFontColor";
             label_ToggleOnOutlinedFontColor.Size = new Size(66, 20);
             label_ToggleOnOutlinedFontColor.TabIndex = 254;
@@ -2551,7 +2588,7 @@
             // label_ToggleOnOutlinedBackColor
             // 
             label_ToggleOnOutlinedBackColor.AutoSize = true;
-            label_ToggleOnOutlinedBackColor.Location = new Point(615, 595);
+            label_ToggleOnOutlinedBackColor.Location = new Point(604, 595);
             label_ToggleOnOutlinedBackColor.Name = "label_ToggleOnOutlinedBackColor";
             label_ToggleOnOutlinedBackColor.Size = new Size(66, 20);
             label_ToggleOnOutlinedBackColor.TabIndex = 255;
@@ -2560,7 +2597,7 @@
             // label_ToggleOnOutlinedEdgeColor
             // 
             label_ToggleOnOutlinedEdgeColor.AutoSize = true;
-            label_ToggleOnOutlinedEdgeColor.Location = new Point(618, 615);
+            label_ToggleOnOutlinedEdgeColor.Location = new Point(607, 615);
             label_ToggleOnOutlinedEdgeColor.Name = "label_ToggleOnOutlinedEdgeColor";
             label_ToggleOnOutlinedEdgeColor.Size = new Size(66, 20);
             label_ToggleOnOutlinedEdgeColor.TabIndex = 256;
@@ -2569,7 +2606,7 @@
             // label_ToggleOnTextFontColor
             // 
             label_ToggleOnTextFontColor.AutoSize = true;
-            label_ToggleOnTextFontColor.Location = new Point(581, 635);
+            label_ToggleOnTextFontColor.Location = new Point(570, 635);
             label_ToggleOnTextFontColor.Name = "label_ToggleOnTextFontColor";
             label_ToggleOnTextFontColor.Size = new Size(66, 20);
             label_ToggleOnTextFontColor.TabIndex = 257;
@@ -2578,7 +2615,7 @@
             // label_ToggleOnTextBackColor
             // 
             label_ToggleOnTextBackColor.AutoSize = true;
-            label_ToggleOnTextBackColor.Location = new Point(584, 655);
+            label_ToggleOnTextBackColor.Location = new Point(573, 655);
             label_ToggleOnTextBackColor.Name = "label_ToggleOnTextBackColor";
             label_ToggleOnTextBackColor.Size = new Size(66, 20);
             label_ToggleOnTextBackColor.TabIndex = 258;
@@ -2587,7 +2624,7 @@
             // label_ToggleOnTextEdgeColor
             // 
             label_ToggleOnTextEdgeColor.AutoSize = true;
-            label_ToggleOnTextEdgeColor.Location = new Point(587, 675);
+            label_ToggleOnTextEdgeColor.Location = new Point(576, 675);
             label_ToggleOnTextEdgeColor.Name = "label_ToggleOnTextEdgeColor";
             label_ToggleOnTextEdgeColor.Size = new Size(66, 20);
             label_ToggleOnTextEdgeColor.TabIndex = 259;
@@ -2596,7 +2633,7 @@
             // label_ToggleOffTonalFontColor
             // 
             label_ToggleOffTonalFontColor.AutoSize = true;
-            label_ToggleOffTonalFontColor.Location = new Point(591, 695);
+            label_ToggleOffTonalFontColor.Location = new Point(580, 695);
             label_ToggleOffTonalFontColor.Name = "label_ToggleOffTonalFontColor";
             label_ToggleOffTonalFontColor.Size = new Size(66, 20);
             label_ToggleOffTonalFontColor.TabIndex = 260;
@@ -2605,7 +2642,7 @@
             // label_ToggleOffTonalBackColor
             // 
             label_ToggleOffTonalBackColor.AutoSize = true;
-            label_ToggleOffTonalBackColor.Location = new Point(594, 715);
+            label_ToggleOffTonalBackColor.Location = new Point(583, 715);
             label_ToggleOffTonalBackColor.Name = "label_ToggleOffTonalBackColor";
             label_ToggleOffTonalBackColor.Size = new Size(66, 20);
             label_ToggleOffTonalBackColor.TabIndex = 261;
@@ -2614,7 +2651,7 @@
             // label_ToggleOffTonalEdgeColor
             // 
             label_ToggleOffTonalEdgeColor.AutoSize = true;
-            label_ToggleOffTonalEdgeColor.Location = new Point(597, 735);
+            label_ToggleOffTonalEdgeColor.Location = new Point(586, 735);
             label_ToggleOffTonalEdgeColor.Name = "label_ToggleOffTonalEdgeColor";
             label_ToggleOffTonalEdgeColor.Size = new Size(66, 20);
             label_ToggleOffTonalEdgeColor.TabIndex = 262;
@@ -2623,7 +2660,7 @@
             // label_ToggleOffOutlinedFontColor
             // 
             label_ToggleOffOutlinedFontColor.AutoSize = true;
-            label_ToggleOffOutlinedFontColor.Location = new Point(613, 753);
+            label_ToggleOffOutlinedFontColor.Location = new Point(602, 753);
             label_ToggleOffOutlinedFontColor.Name = "label_ToggleOffOutlinedFontColor";
             label_ToggleOffOutlinedFontColor.Size = new Size(66, 20);
             label_ToggleOffOutlinedFontColor.TabIndex = 263;
@@ -2632,7 +2669,7 @@
             // label_ToggleOffOutlinedBackColor
             // 
             label_ToggleOffOutlinedBackColor.AutoSize = true;
-            label_ToggleOffOutlinedBackColor.Location = new Point(616, 773);
+            label_ToggleOffOutlinedBackColor.Location = new Point(605, 773);
             label_ToggleOffOutlinedBackColor.Name = "label_ToggleOffOutlinedBackColor";
             label_ToggleOffOutlinedBackColor.Size = new Size(66, 20);
             label_ToggleOffOutlinedBackColor.TabIndex = 264;
@@ -2641,7 +2678,7 @@
             // label_ToggleOffOutlinedEdgeColor
             // 
             label_ToggleOffOutlinedEdgeColor.AutoSize = true;
-            label_ToggleOffOutlinedEdgeColor.Location = new Point(619, 793);
+            label_ToggleOffOutlinedEdgeColor.Location = new Point(608, 793);
             label_ToggleOffOutlinedEdgeColor.Name = "label_ToggleOffOutlinedEdgeColor";
             label_ToggleOffOutlinedEdgeColor.Size = new Size(66, 20);
             label_ToggleOffOutlinedEdgeColor.TabIndex = 265;
@@ -2650,7 +2687,7 @@
             // label_ToggleOffTextFontColor
             // 
             label_ToggleOffTextFontColor.AutoSize = true;
-            label_ToggleOffTextFontColor.Location = new Point(582, 813);
+            label_ToggleOffTextFontColor.Location = new Point(571, 813);
             label_ToggleOffTextFontColor.Name = "label_ToggleOffTextFontColor";
             label_ToggleOffTextFontColor.Size = new Size(66, 20);
             label_ToggleOffTextFontColor.TabIndex = 266;
@@ -2659,7 +2696,7 @@
             // label_ToggleOffTextBackColor
             // 
             label_ToggleOffTextBackColor.AutoSize = true;
-            label_ToggleOffTextBackColor.Location = new Point(585, 833);
+            label_ToggleOffTextBackColor.Location = new Point(574, 833);
             label_ToggleOffTextBackColor.Name = "label_ToggleOffTextBackColor";
             label_ToggleOffTextBackColor.Size = new Size(66, 20);
             label_ToggleOffTextBackColor.TabIndex = 267;
@@ -2668,7 +2705,7 @@
             // label_ToggleOffTextEdgeColor
             // 
             label_ToggleOffTextEdgeColor.AutoSize = true;
-            label_ToggleOffTextEdgeColor.Location = new Point(588, 853);
+            label_ToggleOffTextEdgeColor.Location = new Point(577, 853);
             label_ToggleOffTextEdgeColor.Name = "label_ToggleOffTextEdgeColor";
             label_ToggleOffTextEdgeColor.Size = new Size(66, 20);
             label_ToggleOffTextEdgeColor.TabIndex = 268;
@@ -2677,7 +2714,7 @@
             // label_ButtonDefaultPrimaryFontColor
             // 
             label_ButtonDefaultPrimaryFontColor.AutoSize = true;
-            label_ButtonDefaultPrimaryFontColor.Location = new Point(995, 49);
+            label_ButtonDefaultPrimaryFontColor.Location = new Point(977, 49);
             label_ButtonDefaultPrimaryFontColor.Name = "label_ButtonDefaultPrimaryFontColor";
             label_ButtonDefaultPrimaryFontColor.Size = new Size(66, 20);
             label_ButtonDefaultPrimaryFontColor.TabIndex = 269;
@@ -2686,7 +2723,7 @@
             // label_ButtonDefaultPrimaryBackColor
             // 
             label_ButtonDefaultPrimaryBackColor.AutoSize = true;
-            label_ButtonDefaultPrimaryBackColor.Location = new Point(998, 69);
+            label_ButtonDefaultPrimaryBackColor.Location = new Point(980, 69);
             label_ButtonDefaultPrimaryBackColor.Name = "label_ButtonDefaultPrimaryBackColor";
             label_ButtonDefaultPrimaryBackColor.Size = new Size(66, 20);
             label_ButtonDefaultPrimaryBackColor.TabIndex = 270;
@@ -2695,7 +2732,7 @@
             // label_ButtonDefaultPrimaryEdgeColor
             // 
             label_ButtonDefaultPrimaryEdgeColor.AutoSize = true;
-            label_ButtonDefaultPrimaryEdgeColor.Location = new Point(1001, 89);
+            label_ButtonDefaultPrimaryEdgeColor.Location = new Point(983, 89);
             label_ButtonDefaultPrimaryEdgeColor.Name = "label_ButtonDefaultPrimaryEdgeColor";
             label_ButtonDefaultPrimaryEdgeColor.Size = new Size(66, 20);
             label_ButtonDefaultPrimaryEdgeColor.TabIndex = 271;
@@ -2704,7 +2741,7 @@
             // label_ButtonDefaultTonalFontColor
             // 
             label_ButtonDefaultTonalFontColor.AutoSize = true;
-            label_ButtonDefaultTonalFontColor.Location = new Point(980, 108);
+            label_ButtonDefaultTonalFontColor.Location = new Point(962, 108);
             label_ButtonDefaultTonalFontColor.Name = "label_ButtonDefaultTonalFontColor";
             label_ButtonDefaultTonalFontColor.Size = new Size(66, 20);
             label_ButtonDefaultTonalFontColor.TabIndex = 272;
@@ -2713,7 +2750,7 @@
             // label_ButtonDefaultTonalBackColor
             // 
             label_ButtonDefaultTonalBackColor.AutoSize = true;
-            label_ButtonDefaultTonalBackColor.Location = new Point(983, 128);
+            label_ButtonDefaultTonalBackColor.Location = new Point(965, 128);
             label_ButtonDefaultTonalBackColor.Name = "label_ButtonDefaultTonalBackColor";
             label_ButtonDefaultTonalBackColor.Size = new Size(66, 20);
             label_ButtonDefaultTonalBackColor.TabIndex = 273;
@@ -2722,7 +2759,7 @@
             // label_ButtonDefaultTonalEdgeColor
             // 
             label_ButtonDefaultTonalEdgeColor.AutoSize = true;
-            label_ButtonDefaultTonalEdgeColor.Location = new Point(986, 149);
+            label_ButtonDefaultTonalEdgeColor.Location = new Point(968, 149);
             label_ButtonDefaultTonalEdgeColor.Name = "label_ButtonDefaultTonalEdgeColor";
             label_ButtonDefaultTonalEdgeColor.Size = new Size(66, 20);
             label_ButtonDefaultTonalEdgeColor.TabIndex = 274;
@@ -2731,7 +2768,7 @@
             // label_ButtonDefaultOutlinedFontColor
             // 
             label_ButtonDefaultOutlinedFontColor.AutoSize = true;
-            label_ButtonDefaultOutlinedFontColor.Location = new Point(1002, 169);
+            label_ButtonDefaultOutlinedFontColor.Location = new Point(984, 169);
             label_ButtonDefaultOutlinedFontColor.Name = "label_ButtonDefaultOutlinedFontColor";
             label_ButtonDefaultOutlinedFontColor.Size = new Size(66, 20);
             label_ButtonDefaultOutlinedFontColor.TabIndex = 275;
@@ -2740,7 +2777,7 @@
             // label_ButtonDefaultOutlinedBackColor
             // 
             label_ButtonDefaultOutlinedBackColor.AutoSize = true;
-            label_ButtonDefaultOutlinedBackColor.Location = new Point(1005, 189);
+            label_ButtonDefaultOutlinedBackColor.Location = new Point(987, 189);
             label_ButtonDefaultOutlinedBackColor.Name = "label_ButtonDefaultOutlinedBackColor";
             label_ButtonDefaultOutlinedBackColor.Size = new Size(66, 20);
             label_ButtonDefaultOutlinedBackColor.TabIndex = 276;
@@ -2749,7 +2786,7 @@
             // label_ButtonDefaultOutlinedEdgeColor
             // 
             label_ButtonDefaultOutlinedEdgeColor.AutoSize = true;
-            label_ButtonDefaultOutlinedEdgeColor.Location = new Point(1008, 209);
+            label_ButtonDefaultOutlinedEdgeColor.Location = new Point(990, 209);
             label_ButtonDefaultOutlinedEdgeColor.Name = "label_ButtonDefaultOutlinedEdgeColor";
             label_ButtonDefaultOutlinedEdgeColor.Size = new Size(66, 20);
             label_ButtonDefaultOutlinedEdgeColor.TabIndex = 277;
@@ -2758,7 +2795,7 @@
             // label_ButtonDefaultTextFontColor
             // 
             label_ButtonDefaultTextFontColor.AutoSize = true;
-            label_ButtonDefaultTextFontColor.Location = new Point(971, 230);
+            label_ButtonDefaultTextFontColor.Location = new Point(953, 230);
             label_ButtonDefaultTextFontColor.Name = "label_ButtonDefaultTextFontColor";
             label_ButtonDefaultTextFontColor.Size = new Size(66, 20);
             label_ButtonDefaultTextFontColor.TabIndex = 278;
@@ -2767,7 +2804,7 @@
             // label_ButtonDefaultTextBackColor
             // 
             label_ButtonDefaultTextBackColor.AutoSize = true;
-            label_ButtonDefaultTextBackColor.Location = new Point(974, 253);
+            label_ButtonDefaultTextBackColor.Location = new Point(956, 253);
             label_ButtonDefaultTextBackColor.Name = "label_ButtonDefaultTextBackColor";
             label_ButtonDefaultTextBackColor.Size = new Size(66, 20);
             label_ButtonDefaultTextBackColor.TabIndex = 279;
@@ -2776,7 +2813,7 @@
             // label_ButtonDefaultTextEdgeColor
             // 
             label_ButtonDefaultTextEdgeColor.AutoSize = true;
-            label_ButtonDefaultTextEdgeColor.Location = new Point(977, 273);
+            label_ButtonDefaultTextEdgeColor.Location = new Point(959, 273);
             label_ButtonDefaultTextEdgeColor.Name = "label_ButtonDefaultTextEdgeColor";
             label_ButtonDefaultTextEdgeColor.Size = new Size(66, 20);
             label_ButtonDefaultTextEdgeColor.TabIndex = 280;
@@ -2785,7 +2822,7 @@
             // label_ButtonHoverPrimaryFontColor
             // 
             label_ButtonHoverPrimaryFontColor.AutoSize = true;
-            label_ButtonHoverPrimaryFontColor.Location = new Point(986, 293);
+            label_ButtonHoverPrimaryFontColor.Location = new Point(968, 293);
             label_ButtonHoverPrimaryFontColor.Name = "label_ButtonHoverPrimaryFontColor";
             label_ButtonHoverPrimaryFontColor.Size = new Size(66, 20);
             label_ButtonHoverPrimaryFontColor.TabIndex = 281;
@@ -2794,7 +2831,7 @@
             // label_ButtonHoverPrimaryBackColor
             // 
             label_ButtonHoverPrimaryBackColor.AutoSize = true;
-            label_ButtonHoverPrimaryBackColor.Location = new Point(989, 314);
+            label_ButtonHoverPrimaryBackColor.Location = new Point(971, 314);
             label_ButtonHoverPrimaryBackColor.Name = "label_ButtonHoverPrimaryBackColor";
             label_ButtonHoverPrimaryBackColor.Size = new Size(66, 20);
             label_ButtonHoverPrimaryBackColor.TabIndex = 282;
@@ -2803,7 +2840,7 @@
             // label_ButtonHoverPrimaryEdgeColor
             // 
             label_ButtonHoverPrimaryEdgeColor.AutoSize = true;
-            label_ButtonHoverPrimaryEdgeColor.Location = new Point(992, 334);
+            label_ButtonHoverPrimaryEdgeColor.Location = new Point(974, 334);
             label_ButtonHoverPrimaryEdgeColor.Name = "label_ButtonHoverPrimaryEdgeColor";
             label_ButtonHoverPrimaryEdgeColor.Size = new Size(66, 20);
             label_ButtonHoverPrimaryEdgeColor.TabIndex = 283;
@@ -2812,7 +2849,7 @@
             // label_ButtonHoverTonalFontColor
             // 
             label_ButtonHoverTonalFontColor.AutoSize = true;
-            label_ButtonHoverTonalFontColor.Location = new Point(971, 354);
+            label_ButtonHoverTonalFontColor.Location = new Point(953, 354);
             label_ButtonHoverTonalFontColor.Name = "label_ButtonHoverTonalFontColor";
             label_ButtonHoverTonalFontColor.Size = new Size(66, 20);
             label_ButtonHoverTonalFontColor.TabIndex = 284;
@@ -2821,7 +2858,7 @@
             // label_ButtonHoverTonalBackColor
             // 
             label_ButtonHoverTonalBackColor.AutoSize = true;
-            label_ButtonHoverTonalBackColor.Location = new Point(974, 374);
+            label_ButtonHoverTonalBackColor.Location = new Point(956, 374);
             label_ButtonHoverTonalBackColor.Name = "label_ButtonHoverTonalBackColor";
             label_ButtonHoverTonalBackColor.Size = new Size(66, 20);
             label_ButtonHoverTonalBackColor.TabIndex = 285;
@@ -2830,7 +2867,7 @@
             // label_ButtonHoverTonalEdgeColor
             // 
             label_ButtonHoverTonalEdgeColor.AutoSize = true;
-            label_ButtonHoverTonalEdgeColor.Location = new Point(977, 393);
+            label_ButtonHoverTonalEdgeColor.Location = new Point(959, 393);
             label_ButtonHoverTonalEdgeColor.Name = "label_ButtonHoverTonalEdgeColor";
             label_ButtonHoverTonalEdgeColor.Size = new Size(66, 20);
             label_ButtonHoverTonalEdgeColor.TabIndex = 286;
@@ -2839,7 +2876,7 @@
             // label_ButtonHoverOutlinedFontColor
             // 
             label_ButtonHoverOutlinedFontColor.AutoSize = true;
-            label_ButtonHoverOutlinedFontColor.Location = new Point(993, 413);
+            label_ButtonHoverOutlinedFontColor.Location = new Point(975, 413);
             label_ButtonHoverOutlinedFontColor.Name = "label_ButtonHoverOutlinedFontColor";
             label_ButtonHoverOutlinedFontColor.Size = new Size(66, 20);
             label_ButtonHoverOutlinedFontColor.TabIndex = 287;
@@ -2848,7 +2885,7 @@
             // label_ButtonHoverOutlinedBackColor
             // 
             label_ButtonHoverOutlinedBackColor.AutoSize = true;
-            label_ButtonHoverOutlinedBackColor.Location = new Point(996, 433);
+            label_ButtonHoverOutlinedBackColor.Location = new Point(978, 433);
             label_ButtonHoverOutlinedBackColor.Name = "label_ButtonHoverOutlinedBackColor";
             label_ButtonHoverOutlinedBackColor.Size = new Size(66, 20);
             label_ButtonHoverOutlinedBackColor.TabIndex = 288;
@@ -2857,7 +2894,7 @@
             // label_ButtonHoverOutlinedEdgeColor
             // 
             label_ButtonHoverOutlinedEdgeColor.AutoSize = true;
-            label_ButtonHoverOutlinedEdgeColor.Location = new Point(999, 453);
+            label_ButtonHoverOutlinedEdgeColor.Location = new Point(981, 453);
             label_ButtonHoverOutlinedEdgeColor.Name = "label_ButtonHoverOutlinedEdgeColor";
             label_ButtonHoverOutlinedEdgeColor.Size = new Size(66, 20);
             label_ButtonHoverOutlinedEdgeColor.TabIndex = 289;
@@ -2866,7 +2903,7 @@
             // label_ButtonHoverTextFontColor
             // 
             label_ButtonHoverTextFontColor.AutoSize = true;
-            label_ButtonHoverTextFontColor.Location = new Point(962, 473);
+            label_ButtonHoverTextFontColor.Location = new Point(944, 473);
             label_ButtonHoverTextFontColor.Name = "label_ButtonHoverTextFontColor";
             label_ButtonHoverTextFontColor.Size = new Size(66, 20);
             label_ButtonHoverTextFontColor.TabIndex = 290;
@@ -2875,7 +2912,7 @@
             // label_ButtonHoverTextBackColor
             // 
             label_ButtonHoverTextBackColor.AutoSize = true;
-            label_ButtonHoverTextBackColor.Location = new Point(965, 493);
+            label_ButtonHoverTextBackColor.Location = new Point(947, 493);
             label_ButtonHoverTextBackColor.Name = "label_ButtonHoverTextBackColor";
             label_ButtonHoverTextBackColor.Size = new Size(66, 20);
             label_ButtonHoverTextBackColor.TabIndex = 291;
@@ -2884,7 +2921,7 @@
             // label_ButtonHoverTextEdgeColor
             // 
             label_ButtonHoverTextEdgeColor.AutoSize = true;
-            label_ButtonHoverTextEdgeColor.Location = new Point(971, 513);
+            label_ButtonHoverTextEdgeColor.Location = new Point(953, 513);
             label_ButtonHoverTextEdgeColor.Name = "label_ButtonHoverTextEdgeColor";
             label_ButtonHoverTextEdgeColor.Size = new Size(66, 20);
             label_ButtonHoverTextEdgeColor.TabIndex = 292;
@@ -2893,7 +2930,7 @@
             // label_ButtonPressedPrimaryFontColor
             // 
             label_ButtonPressedPrimaryFontColor.AutoSize = true;
-            label_ButtonPressedPrimaryFontColor.Location = new Point(996, 535);
+            label_ButtonPressedPrimaryFontColor.Location = new Point(978, 535);
             label_ButtonPressedPrimaryFontColor.Name = "label_ButtonPressedPrimaryFontColor";
             label_ButtonPressedPrimaryFontColor.Size = new Size(66, 20);
             label_ButtonPressedPrimaryFontColor.TabIndex = 293;
@@ -2902,7 +2939,7 @@
             // label_ButtonPressedPrimaryBackColor
             // 
             label_ButtonPressedPrimaryBackColor.AutoSize = true;
-            label_ButtonPressedPrimaryBackColor.Location = new Point(999, 553);
+            label_ButtonPressedPrimaryBackColor.Location = new Point(981, 553);
             label_ButtonPressedPrimaryBackColor.Name = "label_ButtonPressedPrimaryBackColor";
             label_ButtonPressedPrimaryBackColor.Size = new Size(66, 20);
             label_ButtonPressedPrimaryBackColor.TabIndex = 294;
@@ -2911,7 +2948,7 @@
             // label_ButtonPressedPrimaryEdgeColor
             // 
             label_ButtonPressedPrimaryEdgeColor.AutoSize = true;
-            label_ButtonPressedPrimaryEdgeColor.Location = new Point(1002, 573);
+            label_ButtonPressedPrimaryEdgeColor.Location = new Point(984, 573);
             label_ButtonPressedPrimaryEdgeColor.Name = "label_ButtonPressedPrimaryEdgeColor";
             label_ButtonPressedPrimaryEdgeColor.Size = new Size(66, 20);
             label_ButtonPressedPrimaryEdgeColor.TabIndex = 295;
@@ -2920,7 +2957,7 @@
             // label_ButtonPressedTonalFontColor
             // 
             label_ButtonPressedTonalFontColor.AutoSize = true;
-            label_ButtonPressedTonalFontColor.Location = new Point(981, 595);
+            label_ButtonPressedTonalFontColor.Location = new Point(963, 595);
             label_ButtonPressedTonalFontColor.Name = "label_ButtonPressedTonalFontColor";
             label_ButtonPressedTonalFontColor.Size = new Size(66, 20);
             label_ButtonPressedTonalFontColor.TabIndex = 296;
@@ -2929,7 +2966,7 @@
             // label_ButtonPressedTonalBackColor
             // 
             label_ButtonPressedTonalBackColor.AutoSize = true;
-            label_ButtonPressedTonalBackColor.Location = new Point(984, 615);
+            label_ButtonPressedTonalBackColor.Location = new Point(966, 615);
             label_ButtonPressedTonalBackColor.Name = "label_ButtonPressedTonalBackColor";
             label_ButtonPressedTonalBackColor.Size = new Size(66, 20);
             label_ButtonPressedTonalBackColor.TabIndex = 297;
@@ -2938,7 +2975,7 @@
             // label_ButtonPressedTonalEdgeColor
             // 
             label_ButtonPressedTonalEdgeColor.AutoSize = true;
-            label_ButtonPressedTonalEdgeColor.Location = new Point(987, 635);
+            label_ButtonPressedTonalEdgeColor.Location = new Point(969, 635);
             label_ButtonPressedTonalEdgeColor.Name = "label_ButtonPressedTonalEdgeColor";
             label_ButtonPressedTonalEdgeColor.Size = new Size(66, 20);
             label_ButtonPressedTonalEdgeColor.TabIndex = 298;
@@ -2947,7 +2984,7 @@
             // label_ButtonPressedOutlinedFontColor
             // 
             label_ButtonPressedOutlinedFontColor.AutoSize = true;
-            label_ButtonPressedOutlinedFontColor.Location = new Point(1003, 655);
+            label_ButtonPressedOutlinedFontColor.Location = new Point(985, 655);
             label_ButtonPressedOutlinedFontColor.Name = "label_ButtonPressedOutlinedFontColor";
             label_ButtonPressedOutlinedFontColor.Size = new Size(66, 20);
             label_ButtonPressedOutlinedFontColor.TabIndex = 299;
@@ -2956,7 +2993,7 @@
             // label_ButtonPressedOutlinedBackColor
             // 
             label_ButtonPressedOutlinedBackColor.AutoSize = true;
-            label_ButtonPressedOutlinedBackColor.Location = new Point(1006, 675);
+            label_ButtonPressedOutlinedBackColor.Location = new Point(988, 675);
             label_ButtonPressedOutlinedBackColor.Name = "label_ButtonPressedOutlinedBackColor";
             label_ButtonPressedOutlinedBackColor.Size = new Size(66, 20);
             label_ButtonPressedOutlinedBackColor.TabIndex = 300;
@@ -2965,7 +3002,7 @@
             // label_ButtonPressedOutlinedEdgeColor
             // 
             label_ButtonPressedOutlinedEdgeColor.AutoSize = true;
-            label_ButtonPressedOutlinedEdgeColor.Location = new Point(1009, 695);
+            label_ButtonPressedOutlinedEdgeColor.Location = new Point(991, 695);
             label_ButtonPressedOutlinedEdgeColor.Name = "label_ButtonPressedOutlinedEdgeColor";
             label_ButtonPressedOutlinedEdgeColor.Size = new Size(66, 20);
             label_ButtonPressedOutlinedEdgeColor.TabIndex = 301;
@@ -2974,7 +3011,7 @@
             // label_ButtonPressedTextFontColor
             // 
             label_ButtonPressedTextFontColor.AutoSize = true;
-            label_ButtonPressedTextFontColor.Location = new Point(972, 715);
+            label_ButtonPressedTextFontColor.Location = new Point(954, 715);
             label_ButtonPressedTextFontColor.Name = "label_ButtonPressedTextFontColor";
             label_ButtonPressedTextFontColor.Size = new Size(66, 20);
             label_ButtonPressedTextFontColor.TabIndex = 302;
@@ -2983,7 +3020,7 @@
             // label_ButtonPressedTextBackColor
             // 
             label_ButtonPressedTextBackColor.AutoSize = true;
-            label_ButtonPressedTextBackColor.Location = new Point(975, 735);
+            label_ButtonPressedTextBackColor.Location = new Point(957, 735);
             label_ButtonPressedTextBackColor.Name = "label_ButtonPressedTextBackColor";
             label_ButtonPressedTextBackColor.Size = new Size(66, 20);
             label_ButtonPressedTextBackColor.TabIndex = 303;
@@ -2992,7 +3029,7 @@
             // label_ButtonPressedTextEdgeColor
             // 
             label_ButtonPressedTextEdgeColor.AutoSize = true;
-            label_ButtonPressedTextEdgeColor.Location = new Point(978, 753);
+            label_ButtonPressedTextEdgeColor.Location = new Point(960, 753);
             label_ButtonPressedTextEdgeColor.Name = "label_ButtonPressedTextEdgeColor";
             label_ButtonPressedTextEdgeColor.Size = new Size(66, 20);
             label_ButtonPressedTextEdgeColor.TabIndex = 304;
@@ -3001,7 +3038,7 @@
             // label_ButtonDisablePrimaryFontColor
             // 
             label_ButtonDisablePrimaryFontColor.AutoSize = true;
-            label_ButtonDisablePrimaryFontColor.Location = new Point(996, 773);
+            label_ButtonDisablePrimaryFontColor.Location = new Point(978, 773);
             label_ButtonDisablePrimaryFontColor.Name = "label_ButtonDisablePrimaryFontColor";
             label_ButtonDisablePrimaryFontColor.Size = new Size(66, 20);
             label_ButtonDisablePrimaryFontColor.TabIndex = 305;
@@ -3010,7 +3047,7 @@
             // label_ButtonDisablePrimaryBackColor
             // 
             label_ButtonDisablePrimaryBackColor.AutoSize = true;
-            label_ButtonDisablePrimaryBackColor.Location = new Point(999, 793);
+            label_ButtonDisablePrimaryBackColor.Location = new Point(981, 793);
             label_ButtonDisablePrimaryBackColor.Name = "label_ButtonDisablePrimaryBackColor";
             label_ButtonDisablePrimaryBackColor.Size = new Size(66, 20);
             label_ButtonDisablePrimaryBackColor.TabIndex = 306;
@@ -3019,7 +3056,7 @@
             // label_ButtonDisablePrimaryEdgeColor
             // 
             label_ButtonDisablePrimaryEdgeColor.AutoSize = true;
-            label_ButtonDisablePrimaryEdgeColor.Location = new Point(1002, 813);
+            label_ButtonDisablePrimaryEdgeColor.Location = new Point(984, 813);
             label_ButtonDisablePrimaryEdgeColor.Name = "label_ButtonDisablePrimaryEdgeColor";
             label_ButtonDisablePrimaryEdgeColor.Size = new Size(66, 20);
             label_ButtonDisablePrimaryEdgeColor.TabIndex = 307;
@@ -3028,7 +3065,7 @@
             // label_ButtonDisableTonalFontColor
             // 
             label_ButtonDisableTonalFontColor.AutoSize = true;
-            label_ButtonDisableTonalFontColor.Location = new Point(981, 833);
+            label_ButtonDisableTonalFontColor.Location = new Point(963, 833);
             label_ButtonDisableTonalFontColor.Name = "label_ButtonDisableTonalFontColor";
             label_ButtonDisableTonalFontColor.Size = new Size(66, 20);
             label_ButtonDisableTonalFontColor.TabIndex = 308;
@@ -3037,7 +3074,7 @@
             // label_ButtonDisableTonalBackColor
             // 
             label_ButtonDisableTonalBackColor.AutoSize = true;
-            label_ButtonDisableTonalBackColor.Location = new Point(984, 853);
+            label_ButtonDisableTonalBackColor.Location = new Point(966, 853);
             label_ButtonDisableTonalBackColor.Name = "label_ButtonDisableTonalBackColor";
             label_ButtonDisableTonalBackColor.Size = new Size(66, 20);
             label_ButtonDisableTonalBackColor.TabIndex = 309;
@@ -3046,7 +3083,7 @@
             // label_ButtonDisableTonalEdgeColor
             // 
             label_ButtonDisableTonalEdgeColor.AutoSize = true;
-            label_ButtonDisableTonalEdgeColor.Location = new Point(987, 873);
+            label_ButtonDisableTonalEdgeColor.Location = new Point(969, 873);
             label_ButtonDisableTonalEdgeColor.Name = "label_ButtonDisableTonalEdgeColor";
             label_ButtonDisableTonalEdgeColor.Size = new Size(66, 20);
             label_ButtonDisableTonalEdgeColor.TabIndex = 310;
@@ -3055,7 +3092,7 @@
             // label_ButtonDisableOutlinedFontColor
             // 
             label_ButtonDisableOutlinedFontColor.AutoSize = true;
-            label_ButtonDisableOutlinedFontColor.Location = new Point(1003, 893);
+            label_ButtonDisableOutlinedFontColor.Location = new Point(985, 893);
             label_ButtonDisableOutlinedFontColor.Name = "label_ButtonDisableOutlinedFontColor";
             label_ButtonDisableOutlinedFontColor.Size = new Size(66, 20);
             label_ButtonDisableOutlinedFontColor.TabIndex = 311;
@@ -3064,7 +3101,7 @@
             // label_ButtonDisableOutlinedBackColor
             // 
             label_ButtonDisableOutlinedBackColor.AutoSize = true;
-            label_ButtonDisableOutlinedBackColor.Location = new Point(1006, 913);
+            label_ButtonDisableOutlinedBackColor.Location = new Point(988, 913);
             label_ButtonDisableOutlinedBackColor.Name = "label_ButtonDisableOutlinedBackColor";
             label_ButtonDisableOutlinedBackColor.Size = new Size(66, 20);
             label_ButtonDisableOutlinedBackColor.TabIndex = 312;
@@ -3073,7 +3110,7 @@
             // label_ButtonDisableOutlinedEdgeColor
             // 
             label_ButtonDisableOutlinedEdgeColor.AutoSize = true;
-            label_ButtonDisableOutlinedEdgeColor.Location = new Point(1009, 933);
+            label_ButtonDisableOutlinedEdgeColor.Location = new Point(991, 933);
             label_ButtonDisableOutlinedEdgeColor.Name = "label_ButtonDisableOutlinedEdgeColor";
             label_ButtonDisableOutlinedEdgeColor.Size = new Size(66, 20);
             label_ButtonDisableOutlinedEdgeColor.TabIndex = 313;
@@ -3082,7 +3119,7 @@
             // label_ButtonDisableTextFontColor
             // 
             label_ButtonDisableTextFontColor.AutoSize = true;
-            label_ButtonDisableTextFontColor.Location = new Point(972, 953);
+            label_ButtonDisableTextFontColor.Location = new Point(954, 953);
             label_ButtonDisableTextFontColor.Name = "label_ButtonDisableTextFontColor";
             label_ButtonDisableTextFontColor.Size = new Size(66, 20);
             label_ButtonDisableTextFontColor.TabIndex = 314;
@@ -3091,7 +3128,7 @@
             // label_ButtonDisableTextBackColor
             // 
             label_ButtonDisableTextBackColor.AutoSize = true;
-            label_ButtonDisableTextBackColor.Location = new Point(975, 973);
+            label_ButtonDisableTextBackColor.Location = new Point(957, 973);
             label_ButtonDisableTextBackColor.Name = "label_ButtonDisableTextBackColor";
             label_ButtonDisableTextBackColor.Size = new Size(66, 20);
             label_ButtonDisableTextBackColor.TabIndex = 315;
@@ -3100,7 +3137,7 @@
             // label_ButtonDisableTextEdgeColor
             // 
             label_ButtonDisableTextEdgeColor.AutoSize = true;
-            label_ButtonDisableTextEdgeColor.Location = new Point(978, 993);
+            label_ButtonDisableTextEdgeColor.Location = new Point(960, 993);
             label_ButtonDisableTextEdgeColor.Name = "label_ButtonDisableTextEdgeColor";
             label_ButtonDisableTextEdgeColor.Size = new Size(66, 20);
             label_ButtonDisableTextEdgeColor.TabIndex = 316;
@@ -3109,7 +3146,7 @@
             // label277
             // 
             label277.AutoSize = true;
-            label277.Location = new Point(1099, 29);
+            label277.Location = new Point(1081, 29);
             label277.Name = "label277";
             label277.Size = new Size(68, 20);
             label277.TabIndex = 317;
@@ -3118,7 +3155,7 @@
             // label278
             // 
             label278.AutoSize = true;
-            label278.Location = new Point(1119, 49);
+            label278.Location = new Point(1101, 49);
             label278.Name = "label278";
             label278.Size = new Size(191, 20);
             label278.TabIndex = 318;
@@ -3127,7 +3164,7 @@
             // label279
             // 
             label279.AutoSize = true;
-            label279.Location = new Point(1119, 69);
+            label279.Location = new Point(1101, 69);
             label279.Name = "label279";
             label279.Size = new Size(194, 20);
             label279.TabIndex = 319;
@@ -3136,7 +3173,7 @@
             // label280
             // 
             label280.AutoSize = true;
-            label280.Location = new Point(1119, 89);
+            label280.Location = new Point(1101, 89);
             label280.Name = "label280";
             label280.Size = new Size(220, 20);
             label280.TabIndex = 320;
@@ -3145,7 +3182,7 @@
             // label281
             // 
             label281.AutoSize = true;
-            label281.Location = new Point(1119, 108);
+            label281.Location = new Point(1101, 108);
             label281.Name = "label281";
             label281.Size = new Size(223, 20);
             label281.TabIndex = 321;
@@ -3154,7 +3191,7 @@
             // label282
             // 
             label282.AutoSize = true;
-            label282.Location = new Point(1119, 129);
+            label282.Location = new Point(1101, 129);
             label282.Name = "label282";
             label282.Size = new Size(239, 20);
             label282.TabIndex = 322;
@@ -3163,7 +3200,7 @@
             // label_CalendarDefaultFontColor
             // 
             label_CalendarDefaultFontColor.AutoSize = true;
-            label_CalendarDefaultFontColor.Location = new Point(1316, 49);
+            label_CalendarDefaultFontColor.Location = new Point(1298, 49);
             label_CalendarDefaultFontColor.Name = "label_CalendarDefaultFontColor";
             label_CalendarDefaultFontColor.Size = new Size(66, 20);
             label_CalendarDefaultFontColor.TabIndex = 323;
@@ -3172,7 +3209,7 @@
             // label_CalendarDefaultBackColor
             // 
             label_CalendarDefaultBackColor.AutoSize = true;
-            label_CalendarDefaultBackColor.Location = new Point(1319, 69);
+            label_CalendarDefaultBackColor.Location = new Point(1301, 69);
             label_CalendarDefaultBackColor.Name = "label_CalendarDefaultBackColor";
             label_CalendarDefaultBackColor.Size = new Size(66, 20);
             label_CalendarDefaultBackColor.TabIndex = 324;
@@ -3181,7 +3218,7 @@
             // label_CalendarDefaultTitleFontColor
             // 
             label_CalendarDefaultTitleFontColor.AutoSize = true;
-            label_CalendarDefaultTitleFontColor.Location = new Point(1345, 89);
+            label_CalendarDefaultTitleFontColor.Location = new Point(1327, 89);
             label_CalendarDefaultTitleFontColor.Name = "label_CalendarDefaultTitleFontColor";
             label_CalendarDefaultTitleFontColor.Size = new Size(66, 20);
             label_CalendarDefaultTitleFontColor.TabIndex = 325;
@@ -3190,7 +3227,7 @@
             // label_CalendarDefaultTitleBackColor
             // 
             label_CalendarDefaultTitleBackColor.AutoSize = true;
-            label_CalendarDefaultTitleBackColor.Location = new Point(1348, 109);
+            label_CalendarDefaultTitleBackColor.Location = new Point(1330, 109);
             label_CalendarDefaultTitleBackColor.Name = "label_CalendarDefaultTitleBackColor";
             label_CalendarDefaultTitleBackColor.Size = new Size(66, 20);
             label_CalendarDefaultTitleBackColor.TabIndex = 326;
@@ -3199,7 +3236,7 @@
             // label_CalendarDefaultTrailingFontColor
             // 
             label_CalendarDefaultTrailingFontColor.AutoSize = true;
-            label_CalendarDefaultTrailingFontColor.Location = new Point(1364, 129);
+            label_CalendarDefaultTrailingFontColor.Location = new Point(1346, 129);
             label_CalendarDefaultTrailingFontColor.Name = "label_CalendarDefaultTrailingFontColor";
             label_CalendarDefaultTrailingFontColor.Size = new Size(66, 20);
             label_CalendarDefaultTrailingFontColor.TabIndex = 327;
@@ -3208,7 +3245,7 @@
             // label288
             // 
             label288.AutoSize = true;
-            label288.Location = new Point(1099, 149);
+            label288.Location = new Point(1081, 149);
             label288.Name = "label288";
             label288.Size = new Size(87, 20);
             label288.TabIndex = 328;
@@ -3217,7 +3254,7 @@
             // label289
             // 
             label289.AutoSize = true;
-            label289.Location = new Point(1119, 169);
+            label289.Location = new Point(1101, 169);
             label289.Name = "label289";
             label289.Size = new Size(188, 20);
             label289.TabIndex = 329;
@@ -3226,7 +3263,7 @@
             // label290
             // 
             label290.AutoSize = true;
-            label290.Location = new Point(1119, 189);
+            label290.Location = new Point(1101, 189);
             label290.Name = "label290";
             label290.Size = new Size(191, 20);
             label290.TabIndex = 330;
@@ -3235,7 +3272,7 @@
             // label_ProgressDefaultFontColor
             // 
             label_ProgressDefaultFontColor.AutoSize = true;
-            label_ProgressDefaultFontColor.Location = new Point(1313, 169);
+            label_ProgressDefaultFontColor.Location = new Point(1295, 169);
             label_ProgressDefaultFontColor.Name = "label_ProgressDefaultFontColor";
             label_ProgressDefaultFontColor.Size = new Size(66, 20);
             label_ProgressDefaultFontColor.TabIndex = 331;
@@ -3244,17 +3281,387 @@
             // label_ProgressDefaultBackColor
             // 
             label_ProgressDefaultBackColor.AutoSize = true;
-            label_ProgressDefaultBackColor.Location = new Point(1316, 189);
+            label_ProgressDefaultBackColor.Location = new Point(1298, 189);
             label_ProgressDefaultBackColor.Name = "label_ProgressDefaultBackColor";
             label_ProgressDefaultBackColor.Size = new Size(66, 20);
             label_ProgressDefaultBackColor.TabIndex = 332;
             label_ProgressDefaultBackColor.Text = "#000000";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(1101, 289);
+            label5.Name = "label5";
+            label5.Size = new Size(149, 20);
+            label5.TabIndex = 333;
+            label5.Text = "TextHoverFontColor=";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(1101, 310);
+            label6.Name = "label6";
+            label6.Size = new Size(152, 20);
+            label6.TabIndex = 334;
+            label6.Text = "TextHoverBackColor=";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(1101, 331);
+            label7.Name = "label7";
+            label7.Size = new Size(155, 20);
+            label7.TabIndex = 335;
+            label7.Text = "TextHoverEdgeColor=";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(1101, 453);
+            label8.Name = "label8";
+            label8.Size = new Size(149, 20);
+            label8.TabIndex = 338;
+            label8.Text = "TextInputEdgeColor=";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(1101, 433);
+            label9.Name = "label9";
+            label9.Size = new Size(146, 20);
+            label9.TabIndex = 337;
+            label9.Text = "TextInputBackColor=";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(1101, 413);
+            label14.Name = "label14";
+            label14.Size = new Size(143, 20);
+            label14.TabIndex = 336;
+            label14.Text = "TextInputFontColor=";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(1089, 622);
+            label16.Name = "label16";
+            label16.Size = new Size(83, 20);
+            label16.TabIndex = 339;
+            label16.Text = "ComboBox";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(1101, 744);
+            label18.Name = "label18";
+            label18.Size = new Size(178, 20);
+            label18.TabIndex = 348;
+            label18.Text = "ComboHoverEdgeColor=";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(1101, 723);
+            label21.Name = "label21";
+            label21.Size = new Size(175, 20);
+            label21.TabIndex = 347;
+            label21.Text = "ComboHoverBackColor=";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(1101, 702);
+            label23.Name = "label23";
+            label23.Size = new Size(172, 20);
+            label23.TabIndex = 346;
+            label23.Text = "ComboHoverFontColor=";
+            // 
+            // label154
+            // 
+            label154.AutoSize = true;
+            label154.Location = new Point(1101, 804);
+            label154.Name = "label154";
+            label154.Size = new Size(174, 20);
+            label154.TabIndex = 345;
+            label154.Text = "ComboFocusEdgeColor=";
+            // 
+            // label155
+            // 
+            label155.AutoSize = true;
+            label155.Location = new Point(1101, 784);
+            label155.Name = "label155";
+            label155.Size = new Size(171, 20);
+            label155.TabIndex = 344;
+            label155.Text = "ComboFocusBackColor=";
+            // 
+            // label156
+            // 
+            label156.AutoSize = true;
+            label156.Location = new Point(1101, 764);
+            label156.Name = "label156";
+            label156.Size = new Size(168, 20);
+            label156.TabIndex = 343;
+            label156.Text = "ComboFocusFontColor=";
+            // 
+            // label157
+            // 
+            label157.AutoSize = true;
+            label157.Location = new Point(1101, 682);
+            label157.Name = "label157";
+            label157.Size = new Size(187, 20);
+            label157.TabIndex = 342;
+            label157.Text = "ComboDefaultEdgeColor=";
+            // 
+            // label158
+            // 
+            label158.AutoSize = true;
+            label158.Location = new Point(1101, 662);
+            label158.Name = "label158";
+            label158.Size = new Size(184, 20);
+            label158.TabIndex = 341;
+            label158.Text = "ComboDefaultBackColor=";
+            // 
+            // label159
+            // 
+            label159.AutoSize = true;
+            label159.Location = new Point(1101, 642);
+            label159.Name = "label159";
+            label159.Size = new Size(181, 20);
+            label159.TabIndex = 340;
+            label159.Text = "ComboDefaultFontColor=";
+            // 
+            // label160
+            // 
+            label160.AutoSize = true;
+            label160.Location = new Point(1101, 864);
+            label160.Name = "label160";
+            label160.Size = new Size(188, 20);
+            label160.TabIndex = 351;
+            label160.Text = "ComboDisableEdgeColor=";
+            // 
+            // label161
+            // 
+            label161.AutoSize = true;
+            label161.Location = new Point(1101, 844);
+            label161.Name = "label161";
+            label161.Size = new Size(185, 20);
+            label161.TabIndex = 350;
+            label161.Text = "ComboDisableBackColor=";
+            // 
+            // label162
+            // 
+            label162.AutoSize = true;
+            label162.Location = new Point(1101, 824);
+            label162.Name = "label162";
+            label162.Size = new Size(182, 20);
+            label162.TabIndex = 349;
+            label162.Text = "ComboDisableFontColor=";
+            // 
+            // label_TextHoverFontColor
+            // 
+            label_TextHoverFontColor.AutoSize = true;
+            label_TextHoverFontColor.Location = new Point(1256, 289);
+            label_TextHoverFontColor.Name = "label_TextHoverFontColor";
+            label_TextHoverFontColor.Size = new Size(66, 20);
+            label_TextHoverFontColor.TabIndex = 352;
+            label_TextHoverFontColor.Text = "#000000";
+            // 
+            // label_TextHoverBackColor
+            // 
+            label_TextHoverBackColor.AutoSize = true;
+            label_TextHoverBackColor.Location = new Point(1259, 310);
+            label_TextHoverBackColor.Name = "label_TextHoverBackColor";
+            label_TextHoverBackColor.Size = new Size(66, 20);
+            label_TextHoverBackColor.TabIndex = 353;
+            label_TextHoverBackColor.Text = "#000000";
+            // 
+            // label_TextHoverEdgeColor
+            // 
+            label_TextHoverEdgeColor.AutoSize = true;
+            label_TextHoverEdgeColor.Location = new Point(1262, 331);
+            label_TextHoverEdgeColor.Name = "label_TextHoverEdgeColor";
+            label_TextHoverEdgeColor.Size = new Size(66, 20);
+            label_TextHoverEdgeColor.TabIndex = 354;
+            label_TextHoverEdgeColor.Text = "#000000";
+            // 
+            // label_TextInputFontColor
+            // 
+            label_TextInputFontColor.AutoSize = true;
+            label_TextInputFontColor.Location = new Point(1250, 414);
+            label_TextInputFontColor.Name = "label_TextInputFontColor";
+            label_TextInputFontColor.Size = new Size(66, 20);
+            label_TextInputFontColor.TabIndex = 355;
+            label_TextInputFontColor.Text = "#000000";
+            // 
+            // label_TextInputBackColor
+            // 
+            label_TextInputBackColor.AutoSize = true;
+            label_TextInputBackColor.Location = new Point(1253, 434);
+            label_TextInputBackColor.Name = "label_TextInputBackColor";
+            label_TextInputBackColor.Size = new Size(66, 20);
+            label_TextInputBackColor.TabIndex = 356;
+            label_TextInputBackColor.Text = "#000000";
+            // 
+            // label_TextInputEdgeColor
+            // 
+            label_TextInputEdgeColor.AutoSize = true;
+            label_TextInputEdgeColor.Location = new Point(1256, 455);
+            label_TextInputEdgeColor.Name = "label_TextInputEdgeColor";
+            label_TextInputEdgeColor.Size = new Size(66, 20);
+            label_TextInputEdgeColor.TabIndex = 357;
+            label_TextInputEdgeColor.Text = "#000000";
+            // 
+            // label_ComboDefaultFontColor
+            // 
+            label_ComboDefaultFontColor.AutoSize = true;
+            label_ComboDefaultFontColor.Location = new Point(1288, 642);
+            label_ComboDefaultFontColor.Name = "label_ComboDefaultFontColor";
+            label_ComboDefaultFontColor.Size = new Size(66, 20);
+            label_ComboDefaultFontColor.TabIndex = 358;
+            label_ComboDefaultFontColor.Text = "#000000";
+            // 
+            // label_ComboDefaultBackColor
+            // 
+            label_ComboDefaultBackColor.AutoSize = true;
+            label_ComboDefaultBackColor.Location = new Point(1291, 662);
+            label_ComboDefaultBackColor.Name = "label_ComboDefaultBackColor";
+            label_ComboDefaultBackColor.Size = new Size(66, 20);
+            label_ComboDefaultBackColor.TabIndex = 359;
+            label_ComboDefaultBackColor.Text = "#000000";
+            // 
+            // label_ComboDefaultEdgeColor
+            // 
+            label_ComboDefaultEdgeColor.AutoSize = true;
+            label_ComboDefaultEdgeColor.Location = new Point(1294, 682);
+            label_ComboDefaultEdgeColor.Name = "label_ComboDefaultEdgeColor";
+            label_ComboDefaultEdgeColor.Size = new Size(66, 20);
+            label_ComboDefaultEdgeColor.TabIndex = 360;
+            label_ComboDefaultEdgeColor.Text = "#000000";
+            // 
+            // label_ComboHoverFontColor
+            // 
+            label_ComboHoverFontColor.AutoSize = true;
+            label_ComboHoverFontColor.Location = new Point(1279, 702);
+            label_ComboHoverFontColor.Name = "label_ComboHoverFontColor";
+            label_ComboHoverFontColor.Size = new Size(66, 20);
+            label_ComboHoverFontColor.TabIndex = 361;
+            label_ComboHoverFontColor.Text = "#000000";
+            // 
+            // label_ComboHoverBackColor
+            // 
+            label_ComboHoverBackColor.AutoSize = true;
+            label_ComboHoverBackColor.Location = new Point(1282, 723);
+            label_ComboHoverBackColor.Name = "label_ComboHoverBackColor";
+            label_ComboHoverBackColor.Size = new Size(66, 20);
+            label_ComboHoverBackColor.TabIndex = 362;
+            label_ComboHoverBackColor.Text = "#000000";
+            // 
+            // label_ComboHoverEdgeColor
+            // 
+            label_ComboHoverEdgeColor.AutoSize = true;
+            label_ComboHoverEdgeColor.Location = new Point(1285, 744);
+            label_ComboHoverEdgeColor.Name = "label_ComboHoverEdgeColor";
+            label_ComboHoverEdgeColor.Size = new Size(66, 20);
+            label_ComboHoverEdgeColor.TabIndex = 363;
+            label_ComboHoverEdgeColor.Text = "#000000";
+            // 
+            // label_ComboFocusFontColor
+            // 
+            label_ComboFocusFontColor.AutoSize = true;
+            label_ComboFocusFontColor.Location = new Point(1275, 764);
+            label_ComboFocusFontColor.Name = "label_ComboFocusFontColor";
+            label_ComboFocusFontColor.Size = new Size(66, 20);
+            label_ComboFocusFontColor.TabIndex = 364;
+            label_ComboFocusFontColor.Text = "#000000";
+            // 
+            // label_ComboFocusBackColor
+            // 
+            label_ComboFocusBackColor.AutoSize = true;
+            label_ComboFocusBackColor.Location = new Point(1278, 784);
+            label_ComboFocusBackColor.Name = "label_ComboFocusBackColor";
+            label_ComboFocusBackColor.Size = new Size(66, 20);
+            label_ComboFocusBackColor.TabIndex = 365;
+            label_ComboFocusBackColor.Text = "#000000";
+            // 
+            // label_ComboFocusEdgeColor
+            // 
+            label_ComboFocusEdgeColor.AutoSize = true;
+            label_ComboFocusEdgeColor.Location = new Point(1281, 804);
+            label_ComboFocusEdgeColor.Name = "label_ComboFocusEdgeColor";
+            label_ComboFocusEdgeColor.Size = new Size(66, 20);
+            label_ComboFocusEdgeColor.TabIndex = 366;
+            label_ComboFocusEdgeColor.Text = "#000000";
+            // 
+            // label_ComboDisableFontColor
+            // 
+            label_ComboDisableFontColor.AutoSize = true;
+            label_ComboDisableFontColor.Location = new Point(1289, 823);
+            label_ComboDisableFontColor.Name = "label_ComboDisableFontColor";
+            label_ComboDisableFontColor.Size = new Size(66, 20);
+            label_ComboDisableFontColor.TabIndex = 367;
+            label_ComboDisableFontColor.Text = "#000000";
+            // 
+            // label_ComboDisableBackColor
+            // 
+            label_ComboDisableBackColor.AutoSize = true;
+            label_ComboDisableBackColor.Location = new Point(1292, 844);
+            label_ComboDisableBackColor.Name = "label_ComboDisableBackColor";
+            label_ComboDisableBackColor.Size = new Size(66, 20);
+            label_ComboDisableBackColor.TabIndex = 368;
+            label_ComboDisableBackColor.Text = "#000000";
+            // 
+            // label_ComboDisableEdgeColor
+            // 
+            label_ComboDisableEdgeColor.AutoSize = true;
+            label_ComboDisableEdgeColor.Location = new Point(1295, 864);
+            label_ComboDisableEdgeColor.Name = "label_ComboDisableEdgeColor";
+            label_ComboDisableEdgeColor.Size = new Size(66, 20);
+            label_ComboDisableEdgeColor.TabIndex = 369;
+            label_ComboDisableEdgeColor.Text = "#000000";
             // 
             // Form_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(label_ComboDisableEdgeColor);
+            Controls.Add(label_ComboDisableBackColor);
+            Controls.Add(label_ComboDisableFontColor);
+            Controls.Add(label_ComboFocusEdgeColor);
+            Controls.Add(label_ComboFocusBackColor);
+            Controls.Add(label_ComboFocusFontColor);
+            Controls.Add(label_ComboHoverEdgeColor);
+            Controls.Add(label_ComboHoverBackColor);
+            Controls.Add(label_ComboHoverFontColor);
+            Controls.Add(label_ComboDefaultEdgeColor);
+            Controls.Add(label_ComboDefaultBackColor);
+            Controls.Add(label_ComboDefaultFontColor);
+            Controls.Add(label_TextInputEdgeColor);
+            Controls.Add(label_TextInputBackColor);
+            Controls.Add(label_TextInputFontColor);
+            Controls.Add(label_TextHoverEdgeColor);
+            Controls.Add(label_TextHoverBackColor);
+            Controls.Add(label_TextHoverFontColor);
+            Controls.Add(label160);
+            Controls.Add(label161);
+            Controls.Add(label162);
+            Controls.Add(label18);
+            Controls.Add(label21);
+            Controls.Add(label23);
+            Controls.Add(label154);
+            Controls.Add(label155);
+            Controls.Add(label156);
+            Controls.Add(label157);
+            Controls.Add(label158);
+            Controls.Add(label159);
+            Controls.Add(label16);
+            Controls.Add(label8);
+            Controls.Add(label9);
+            Controls.Add(label14);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(label_ProgressDefaultBackColor);
             Controls.Add(label_ProgressDefaultFontColor);
             Controls.Add(label290);
@@ -3901,5 +4308,42 @@
         private Label label290;
         private Label label_ProgressDefaultFontColor;
         private Label label_ProgressDefaultBackColor;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label14;
+        private Label label16;
+        private Label label18;
+        private Label label21;
+        private Label label23;
+        private Label label154;
+        private Label label155;
+        private Label label156;
+        private Label label157;
+        private Label label158;
+        private Label label159;
+        private Label label160;
+        private Label label161;
+        private Label label162;
+        private Label label_TextHoverFontColor;
+        private Label label_TextHoverBackColor;
+        private Label label_TextHoverEdgeColor;
+        private Label label_TextInputFontColor;
+        private Label label_TextInputBackColor;
+        private Label label_TextInputEdgeColor;
+        private Label label_ComboDefaultFontColor;
+        private Label label_ComboDefaultBackColor;
+        private Label label_ComboDefaultEdgeColor;
+        private Label label_ComboHoverFontColor;
+        private Label label_ComboHoverBackColor;
+        private Label label_ComboHoverEdgeColor;
+        private Label label_ComboFocusFontColor;
+        private Label label_ComboFocusBackColor;
+        private Label label_ComboFocusEdgeColor;
+        private Label label_ComboDisableFontColor;
+        private Label label_ComboDisableBackColor;
+        private Label label_ComboDisableEdgeColor;
     }
 }
