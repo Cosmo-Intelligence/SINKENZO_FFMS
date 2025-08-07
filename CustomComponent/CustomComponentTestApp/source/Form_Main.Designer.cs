@@ -348,6 +348,8 @@
             label290 = new Label();
             label_ProgressDefaultFontColor = new Label();
             label_ProgressDefaultBackColor = new Label();
+            button_RdtListBox = new Button();
+            button_RdtComboBox = new Button();
             SuspendLayout();
             // 
             // label_FontColor
@@ -3250,11 +3252,32 @@
             label_ProgressDefaultBackColor.TabIndex = 332;
             label_ProgressDefaultBackColor.Text = "#000000";
             // 
+            // button_RdtListBox
+            // 
+            button_RdtListBox.Location = new Point(1646, 529);
+            button_RdtListBox.Name = "button_RdtListBox";
+            button_RdtListBox.Size = new Size(164, 29);
+            button_RdtListBox.TabIndex = 333;
+            button_RdtListBox.Text = "RdtListBox";
+            button_RdtListBox.UseVisualStyleBackColor = true;
+            // 
+            // button_RdtComboBox
+            // 
+            button_RdtComboBox.Location = new Point(1646, 564);
+            button_RdtComboBox.Name = "button_RdtComboBox";
+            button_RdtComboBox.Size = new Size(164, 29);
+            button_RdtComboBox.TabIndex = 334;
+            button_RdtComboBox.Text = "RdtComboBox";
+            button_RdtComboBox.UseVisualStyleBackColor = true;
+            button_RdtComboBox.Click += button_RdtComboBox_Click;
+            // 
             // Form_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(button_RdtComboBox);
+            Controls.Add(button_RdtListBox);
             Controls.Add(label_ProgressDefaultBackColor);
             Controls.Add(label_ProgressDefaultFontColor);
             Controls.Add(label290);
@@ -3901,5 +3924,7 @@
         private Label label290;
         private Label label_ProgressDefaultFontColor;
         private Label label_ProgressDefaultBackColor;
+        private Button button_RdtListBox;
+        private Button button_RdtComboBox;
     }
 }
