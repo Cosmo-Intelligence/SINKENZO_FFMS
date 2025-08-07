@@ -49,16 +49,36 @@ namespace RADISTA.UIComponent.CustomControl
         private static string mTextDefaultFontColor = Constants.TEXT_DEFAULT_FONT_COLOR;
         private static string mTextDefaultBackColor = Constants.TEXT_DEFAULT_BACK_COLOR;
         private static string mTextDefaultEdgeColor = Constants.TEXT_DEFAULT_EDGE_COLOR;
-        private static string mTextDisableFontColor = Constants.TEXT_DISABLE_FONT_COLOR;
-        private static string mTextDisableBackColor = Constants.TEXT_DISABLE_BACK_COLOR;
-        private static string mTextDisableEdgeColor = Constants.TEXT_DISABLE_EDGE_COLOR;
+        private static string mTextHoverFontColor = Constants.TEXT_HOVER_FONT_COLOR;
+        private static string mTextHoverBackColor = Constants.TEXT_HOVER_BACK_COLOR;
+        private static string mTextHoverEdgeColor = Constants.TEXT_HOVER_EDGE_COLOR;
         private static string mTextFocusFontColor = Constants.TEXT_FOCUS_FONT_COLOR;
         private static string mTextFocusBackColor = Constants.TEXT_FOCUS_BACK_COLOR;
         private static string mTextFocusEdgeColor = Constants.TEXT_FOCUS_EDGE_COLOR;
+        private static string mTextInputFontColor = Constants.TEXT_INPUT_FONT_COLOR;
+        private static string mTextInputBackColor = Constants.TEXT_INPUT_BACK_COLOR;
+        private static string mTextInputEdgeColor = Constants.TEXT_INPUT_EDGE_COLOR;
+        private static string mTextDisableFontColor = Constants.TEXT_DISABLE_FONT_COLOR;
+        private static string mTextDisableBackColor = Constants.TEXT_DISABLE_BACK_COLOR;
+        private static string mTextDisableEdgeColor = Constants.TEXT_DISABLE_EDGE_COLOR;
         private static string mTextReadOnlyFontColor = Constants.TEXT_READ_ONLY_FONT_COLOR;
         private static string mTextReadOnlyBackColor = Constants.TEXT_READ_ONLY_BACK_COLOR;
         private static string mTextReadOnlyEdgeColor = Constants.TEXT_READ_ONLY_EDGE_COLOR;
         private static string mTextWaterMarkFontColor = Constants.TEXT_WATER_MARK_FONT_COLOR;
+        #endregion
+        #region "ComboBox"
+        private static string mComboDefaultFontColor = Constants.COMBO_DEFAULT_FONT_COLOR;
+        private static string mComboDefaultBackColor = Constants.COMBO_DEFAULT_BACK_COLOR;
+        private static string mComboDefaultEdgeColor = Constants.COMBO_DEFAULT_EDGE_COLOR;
+        private static string mComboHoverFontColor = Constants.COMBO_HOVER_FONT_COLOR;
+        private static string mComboHoverBackColor = Constants.COMBO_HOVER_BACK_COLOR;
+        private static string mComboHoverEdgeColor = Constants.COMBO_HOVER_EDGE_COLOR;
+        private static string mComboFocusFontColor = Constants.COMBO_FOCUS_FONT_COLOR;
+        private static string mComboFocusBackColor = Constants.COMBO_FOCUS_BACK_COLOR;
+        private static string mComboFocusEdgeColor = Constants.COMBO_FOCUS_EDGE_COLOR;
+        private static string mComboDisableFontColor = Constants.COMBO_DISABLE_FONT_COLOR;
+        private static string mComboDisableBackColor = Constants.COMBO_DISABLE_BACK_COLOR;
+        private static string mComboDisableEdgeColor = Constants.COMBO_DISABLE_EDGE_COLOR;
         #endregion
         #region "ListView, ListBox"
         private static string mListDefaultStandardFontColor = Constants.LIST_DEFAULT_STANDARD_FONT_COLOR;
@@ -408,7 +428,7 @@ namespace RADISTA.UIComponent.CustomControl
         }
         #endregion
 
-        #region"TextBox, ComboBox"
+        #region"TextBox"
         /// <summary>
         /// TextDefaultFontColorを返す
         /// </summary>
@@ -437,30 +457,30 @@ namespace RADISTA.UIComponent.CustomControl
         }
 
         /// <summary>
-        /// TextDisableFontColorを返す
+        /// TextHoverFontColorを返す
         /// </summary>
         /// <returns>FontColorの16進カラーコード</returns>
-        public static string GetTextDisableFontColor()
+        public static string GetTextHoverFontColor()
         {
-            return mTextDisableFontColor;
+            return mTextHoverFontColor;
         }
 
         /// <summary>
-        /// TextDisableBackColorを返す
+        /// TextHoverBackColorを返す
         /// </summary>
         /// <returns>FontColorの16進カラーコード</returns>
-        public static string GetTextDisableBackColor()
+        public static string GetTextHoverBackColor()
         {
-            return mTextDisableBackColor;
+            return mTextHoverBackColor;
         }
 
         /// <summary>
-        /// TextDisableEdgeColorを返す
+        /// TextHoverEdgeColorを返す
         /// </summary>
         /// <returns>FontColorの16進カラーコード</returns>
-        public static string GetTextDisableEdgeColor()
+        public static string GetTextHoverEdgeColor()
         {
-            return mTextDisableEdgeColor;
+            return mTextHoverEdgeColor;
         }
 
         /// <summary>
@@ -488,6 +508,60 @@ namespace RADISTA.UIComponent.CustomControl
         public static string GetTextFocusEdgeColor()
         {
             return mTextFocusEdgeColor;
+        }
+
+        /// <summary>
+        /// TextInputFontColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetTextInputFontColor()
+        {
+            return mTextInputFontColor;
+        }
+
+        /// <summary>
+        /// TextInputBackColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetTextInputBackColor()
+        {
+            return mTextInputBackColor;
+        }
+
+        /// <summary>
+        /// TextInputEdgeColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetTextInputEdgeColor()
+        {
+            return mTextInputEdgeColor;
+        }
+
+        /// <summary>
+        /// TextDisableFontColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetTextDisableFontColor()
+        {
+            return mTextDisableFontColor;
+        }
+
+        /// <summary>
+        /// TextDisableBackColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetTextDisableBackColor()
+        {
+            return mTextDisableBackColor;
+        }
+
+        /// <summary>
+        /// TextDisableEdgeColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetTextDisableEdgeColor()
+        {
+            return mTextDisableEdgeColor;
         }
 
         /// <summary>
@@ -526,6 +600,116 @@ namespace RADISTA.UIComponent.CustomControl
             return mTextWaterMarkFontColor;
         }
         #endregion
+
+        #region "ComboBox"
+        /// <summary>
+        /// ComboDefaultFontColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboDefaultFontColor()
+        {
+            return mComboDefaultFontColor;
+        }
+
+        /// <summary>
+        /// ComboDefaultBackColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboDefaultBackColor()
+        {
+            return mComboDefaultBackColor;
+        }
+
+        /// <summary>
+        /// ComboDefaultEdgeColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboDefaultEdgeColor()
+        {
+            return mComboDefaultEdgeColor;
+        }
+
+        /// <summary>
+        /// ComboHoverFontColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboHoverFontColor()
+        {
+            return mComboHoverFontColor;
+        }
+
+        /// <summary>
+        /// ComboHoverBackColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboHoverBackColor()
+        {
+            return mComboHoverBackColor;
+        }
+
+        /// <summary>
+        /// ComboHoverEdgeColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboHoverEdgeColor()
+        {
+            return mComboHoverEdgeColor;
+        }
+
+        /// <summary>
+        /// ComboFocusFontColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboFocusFontColor()
+        {
+            return mComboFocusFontColor;
+        }
+
+        /// <summary>
+        /// ComboFocusBackColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboFocusBackColor()
+        {
+            return mComboFocusBackColor;
+        }
+
+        /// <summary>
+        /// ComboFocusEdgeColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboFocusEdgeColor()
+        {
+            return mComboFocusEdgeColor;
+        }
+
+        /// <summary>
+        /// ComboDisableFontColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboDisableFontColor()
+        {
+            return mComboDisableFontColor;
+        }
+
+        /// <summary>
+        /// ComboDisableBackColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboDisableBackColor()
+        {
+            return mComboDisableBackColor;
+        }
+
+        /// <summary>
+        /// ComboDisableEdgeColorを返す
+        /// </summary>
+        /// <returns>FontColorの16進カラーコード</returns>
+        public static string GetComboDisableEdgeColor()
+        {
+            return mComboDisableEdgeColor;
+        }
+        #endregion"
 
         #region"ListView, ListBox"
         /// <summary>
@@ -1647,20 +1831,40 @@ namespace RADISTA.UIComponent.CustomControl
                     { "LabelDefaultBackColor", value => SetColorValue(value, v => mLabelDefaultBackColor = v, "LabelDefaultBackColor setting is wrong") },
                     { "LabelDefaultEdgeColor", value => SetColorValue(value, v => mLabelDefaultEdgeColor = v, "LabelDefaultEdgeColor setting is wrong") },
                     #endregion
-                    #region "TextBox, ComboBox"
+                    #region "TextBox"
                     { "TextDefaultFontColor", value => SetColorValue(value, v => mTextDefaultFontColor = v, "TextDefaultFontColor setting is wrong") },
                     { "TextDefaultBackColor", value => SetColorValue(value, v => mTextDefaultBackColor = v, "TextDefaultBackColor setting is wrong") },
                     { "TextDefaultEdgeColor", value => SetColorValue(value, v => mTextDefaultEdgeColor = v, "TextDefaultEdgeColor setting is wrong") },
-                    { "TextDisableFontColor", value => SetColorValue(value, v => mTextDisableFontColor = v, "TextDisableFontColor setting is wrong") },
-                    { "TextDisableBackColor", value => SetColorValue(value, v => mTextDisableBackColor = v, "TextDisableBackColor setting is wrong") },
-                    { "TextDisableEdgeColor", value => SetColorValue(value, v => mTextDisableEdgeColor = v, "TextDisableEdgeColor setting is wrong") },
+                    { "TextHoverFontColor", value => SetColorValue(value, v => mTextHoverFontColor = v, "TextHoverFontColor setting is wrong") },
+                    { "TextHoverBackColor", value => SetColorValue(value, v => mTextHoverBackColor = v, "TextHoverBackColor setting is wrong") },
+                    { "TextHoverEdgeColor", value => SetColorValue(value, v => mTextHoverEdgeColor = v, "TextHoverEdgeColor setting is wrong") },
                     { "TextFocusFontColor", value => SetColorValue(value, v => mTextFocusFontColor = v, "TextFocusFontColor setting is wrong") },
                     { "TextFocusBackColor", value => SetColorValue(value, v => mTextFocusBackColor = v, "TextFocusBackColor setting is wrong") },
                     { "TextFocusEdgeColor", value => SetColorValue(value, v => mTextFocusEdgeColor = v, "TextFocusEdgeColor setting is wrong") },
+                    { "TextInputFontColor", value => SetColorValue(value, v => mTextInputFontColor = v, "TextInputFontColor setting is wrong") },
+                    { "TextInputBackColor", value => SetColorValue(value, v => mTextInputBackColor = v, "TextInputBackColor setting is wrong") },
+                    { "TextInputEdgeColor", value => SetColorValue(value, v => mTextInputEdgeColor = v, "TextInputEdgeColor setting is wrong") },
+                    { "TextDisableFontColor", value => SetColorValue(value, v => mTextDisableFontColor = v, "TextDisableFontColor setting is wrong") },
+                    { "TextDisableBackColor", value => SetColorValue(value, v => mTextDisableBackColor = v, "TextDisableBackColor setting is wrong") },
+                    { "TextDisableEdgeColor", value => SetColorValue(value, v => mTextDisableEdgeColor = v, "TextDisableEdgeColor setting is wrong") },
                     { "TextReadOnlyFontColor", value => SetColorValue(value, v => mTextReadOnlyFontColor = v, "TextReadOnlyFontColor setting is wrong") },
                     { "TextReadOnlyBackColor", value => SetColorValue(value, v => mTextReadOnlyBackColor = v, "LabelDTextReadOnlyBackColorefaultFontColor setting is wrong") },
                     { "TextReadOnlyEdgeColor", value => SetColorValue(value, v => mTextReadOnlyEdgeColor = v, "TextReadOnlyEdgeColor setting is wrong") },
                     { "TextWaterMarkFontColor", value => SetColorValue(value, v => mTextWaterMarkFontColor = v, "TextWaterMarkFontColor setting is wrong") },
+                    #endregion
+                    #region "ComboBox"
+                    { "ComboDefaultFontColor", value => SetColorValue(value, v => mComboDefaultFontColor = v, "ComboDefaultFontColor setting is wrong") },
+                    { "ComboDefaultBackColor", value => SetColorValue(value, v => mComboDefaultBackColor = v, "ComboDefaultBackColor setting is wrong") },
+                    { "ComboDefaultEdgeColor", value => SetColorValue(value, v => mComboDefaultEdgeColor = v, "ComboDefaultEdgeColor setting is wrong") },
+                    { "ComboHoverFontColor", value => SetColorValue(value, v => mComboHoverFontColor = v, "ComboHoverFontColor setting is wrong") },
+                    { "ComboHoverBackColor", value => SetColorValue(value, v => mComboHoverBackColor = v, "ComboHoverBackColor setting is wrong") },
+                    { "ComboHoverEdgeColor", value => SetColorValue(value, v => mComboHoverEdgeColor = v, "ComboHoverEdgeColor setting is wrong") },
+                    { "ComboFocusFontColor", value => SetColorValue(value, v => mComboFocusFontColor = v, "ComboFocusFontColor setting is wrong") },
+                    { "ComboFocusBackColor", value => SetColorValue(value, v => mComboFocusBackColor = v, "ComboFocusBackColor setting is wrong") },
+                    { "ComboFocusEdgeColor", value => SetColorValue(value, v => mComboFocusEdgeColor = v, "ComboFocusEdgeColor setting is wrong") },
+                    { "ComboDisableFontColor", value => SetColorValue(value, v => mComboDisableFontColor = v, "ComboDisableFontColor setting is wrong") },
+                    { "ComboDisableBackColor", value => SetColorValue(value, v => mComboDisableBackColor = v, "ComboDisableBackColor setting is wrong") },
+                    { "ComboDisableEdgeColor", value => SetColorValue(value, v => mComboDisableEdgeColor = v, "ComboDisableEdgeColor setting is wrong") },
                     #endregion
                     #region "ListView, ListBox"
                     { "ListDefaultStandardFontColor", value => SetColorValue(value, v => mListDefaultStandardFontColor = v, "ListDefaultStandardFontColor setting is wrong") },

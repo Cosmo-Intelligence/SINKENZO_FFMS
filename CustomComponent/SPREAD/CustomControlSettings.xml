@@ -18,25 +18,50 @@
     <setting key="LabelDefaultFontColor" value="#C4C4C4" />
     <setting key="LabelDefaultBackColor" value="#262626" />
     <setting key="LabelDefaultEdgeColor" value="#464646" />
-    <!-- TextBox, ComboBox -->
+    <!-- TextBox -->
     <!-- Default -->
-    <setting key="TextDefaultFontColor" value="#C4C4C4" />
+    <setting key="TextDefaultFontColor" value="#5A5A5A" />
     <setting key="TextDefaultBackColor" value="#191919" />
-    <setting key="TextDefaultEdgeColor" value="#4F4F4F" />
-    <!-- Disable -->
-    <setting key="TextDisableFontColor" value="#555555" />
-    <setting key="TextDisableBackColor" value="#222222" />
-    <setting key="TextDisableEdgeColor" value="#3E3E3E" />
+    <setting key="TextDefaultEdgeColor" value="#3E3E3E" />
+    <!-- Hover -->
+    <setting key="TextHoverFontColor" value="#C4C4C4" />
+    <setting key="TextHoverBackColor" value="#191919" />
+    <setting key="TextHoverEdgeColor" value="#4F4F4F" />
     <!-- Focus -->
     <setting key="TextFocusFontColor" value="#C4C4C4" />
     <setting key="TextFocusBackColor" value="#191919" />
     <setting key="TextFocusEdgeColor" value="#439977" />
+    <!-- Input -->
+    <setting key="TextInputFontColor" value="#C4C4C4" />
+    <setting key="TextInputBackColor" value="#191919" />
+    <setting key="TextInputEdgeColor" value="#3E3E3E" />
+    <!-- Disable -->
+    <setting key="TextDisableFontColor" value="#555555" />
+    <setting key="TextDisableBackColor" value="#222222" />
+    <setting key="TextDisableEdgeColor" value="#2D2D2D" />
     <!-- ReadOnly -->
     <setting key="TextReadOnlyFontColor" value="#C4C4C4" />
     <setting key="TextReadOnlyBackColor" value="#232323" />
     <setting key="TextReadOnlyEdgeColor" value="#232323" />
     <!-- WaterMark -->
     <setting key="TextWaterMarkFontColor" value="#5A5A5A" />
+    <!-- ComboBox -->
+    <!-- Default -->
+    <setting key="ComboDefaultFontColor" value="#C4C4C4" />
+    <setting key="ComboDefaultBackColor" value="#191919" />
+    <setting key="ComboDefaultEdgeColor" value="#464646" />
+    <!-- Hover -->
+    <setting key="ComboHoverFontColor" value="#C4C4C4" />
+    <setting key="ComboHoverBackColor" value="#191919" />
+    <setting key="ComboHoverEdgeColor" value="#5A5A5A" />
+    <!-- Focus -->
+    <setting key="ComboFocusFontColor" value="#C4C4C4" />
+    <setting key="ComboFocusBackColor" value="#191919" />
+    <setting key="ComboFocusEdgeColor" value="#439977" />
+    <!-- Disable -->
+    <setting key="ComboDisableFontColor" value="#555555" />
+    <setting key="ComboDisableBackColor" value="#222222" />
+    <setting key="ComboDisableEdgeColor" value="#303030" />
     <!-- ListView, ListBox -->
     <!-- Default_Standard -->
     <setting key="ListDefaultStandardFontColor" value="#C4C4C4" />
@@ -194,7 +219,7 @@
     <!-- Default -->
     <setting key="ProgressDefaultFontColor" value="#397B61" />
     <setting key="ProgressDefaultBackColor" value="#1B1B1B" />
-
+    
     <!-- TODO：以下のうち不要なものは消す -->
     <setting key="BackColor" value="#393939" />
     <setting key="InactiveColor" value="#323232" />
