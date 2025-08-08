@@ -8,8 +8,6 @@ using System.Drawing.Drawing2D;
 
 using RADISTA.UIComponent.CustomControl;
 
-using static RADISTA.UIComponent.CustomControl.RdtButton;
-
 namespace RADISTA.SPREAD.CustomControl
 {
     /// <summary>
@@ -158,11 +156,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.BorderColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.BorderColor = value;
             }
         }
@@ -190,11 +184,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.HoverBorderColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.HoverBorderColor = value;
             }
         }
@@ -208,11 +198,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.FontColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.FontColor = value;
             }
         }
@@ -226,11 +212,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.DisableForeColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.DisableForeColor = value;
             }
         }
@@ -244,11 +226,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.DisableBackColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.DisableBackColor = value;
             }
         }
@@ -262,11 +240,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.FlatBackColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.FlatBackColor = value;
             }
         }
@@ -290,11 +264,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.CellBackColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.CellBackColor = value;
             }
         }
@@ -308,11 +278,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.AlternateColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.AlternateColor = value;
             }
         }
@@ -326,11 +292,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mDropDownList.HoverBackColor;
             set
             {
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
-
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mDropDownList.HoverBackColor = value;
             }
         }
@@ -400,11 +362,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mButton.OuterBorderColor;
             set
             {
-                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mButton.OuterBorderColor = value;
             }
         }
@@ -432,11 +390,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mButton.InnerBorderColor;
             set
             {
-                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mButton.InnerBorderColor = value;
             }
         }
@@ -464,11 +418,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mButton.MouseHoverColor;
             set
             {
-                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mButton.MouseHoverColor = value;
             }
         }
@@ -482,11 +432,7 @@ namespace RADISTA.SPREAD.CustomControl
             get => this.mButton.MouseClickColor;
             set
             {
-                // デザイナのプロパティで入力ミスがあった場合は直接エラーメッセージを出す
-                if (!ComponentCommon.IsColorCode(value))
-                {
-                    throw new ArgumentException(Constants.ERROR_COLOR_CODE);
-                }
+                // エラー判定はコンポーネント側のプロパティで実施
                 this.mButton.MouseClickColor = value;
             }
         }
@@ -495,7 +441,7 @@ namespace RADISTA.SPREAD.CustomControl
         /// テキストの均等割り付け
         /// </summary>
         [Category(BUTTON_DISPLAY)]
-        public TextJustifyT TextJustify
+        public RdtButton.TextJustifyT TextJustify
         {
             get => this.mButton.TextJustify;
             set => this.mButton.TextJustify = value;
@@ -505,7 +451,7 @@ namespace RADISTA.SPREAD.CustomControl
         /// ボタンテキストの向き
         /// </summary>
         [Category(BUTTON_DISPLAY)]
-        public TextOrientationT TextOrientation
+        public RdtButton.TextOrientationT TextOrientation
         {
             get => this.mButton.TextOrientation;
             set => this.mButton.TextOrientation = value;
@@ -738,72 +684,6 @@ namespace RADISTA.SPREAD.CustomControl
             this.mDropDownList.Visible = false;
             this.mIsDropped = false;
             this.Height = this.mButton.Height;
-        }
-
-        /// <summary>
-        /// ボーダーの描画範囲を取得する
-        /// </summary>
-        /// <param name="rect">コントロールのRectangle</param>
-        /// <param name="ltRadius">LeftTopRadius</param>
-        /// <param name="rtRadius">RightTopRadius</param>
-        /// <param name="lbRadius">LeftBottomRadius</param>
-        /// <param name="rbRadius">RightBottomRadius</param>
-        /// <returns>描画範囲</returns>
-        private GraphicsPath GetRoundRectanglePath(Rectangle rect, int ltRadius, int rtRadius, int lbRadius, int rbRadius)
-        {
-            GraphicsPath path = new GraphicsPath();
-
-            // スタート位置
-            if (ltRadius > 0)
-            {
-                path.AddArc(rect.X, rect.Y, ltRadius * 2, ltRadius * 2, 180, 90);
-            }
-            else
-            {
-                path.AddLine(new Point(rect.X, rect.Y), new Point(rect.X + 1, rect.Y)); // 1px直線
-            }
-
-            if (rtRadius > 0)
-            {
-                path.AddLine(new Point(rect.X + ltRadius, rect.Y), new Point(rect.Right - rtRadius, rect.Y));
-                path.AddArc(rect.Right - (rtRadius * 2), rect.Y, rtRadius * 2, rtRadius * 2, 270, 90);
-            }
-            else
-            {
-                path.AddLine(new Point(rect.X + ltRadius, rect.Y), new Point(rect.Right, rect.Y));
-            }
-
-            if (rbRadius > 0)
-            {
-                path.AddLine(new Point(rect.Right, rect.Y + rtRadius), new Point(rect.Right, rect.Bottom - rbRadius));
-                path.AddArc(rect.Right - (rbRadius * 2), rect.Bottom - (rbRadius * 2), rbRadius * 2, rbRadius * 2, 0, 90);
-            }
-            else
-            {
-                path.AddLine(new Point(rect.Right, rect.Y), new Point(rect.Right, rect.Bottom));
-            }
-
-            if (lbRadius > 0)
-            {
-                path.AddLine(new Point(rect.Right - rbRadius, rect.Bottom), new Point(rect.X + lbRadius, rect.Bottom));
-                path.AddArc(rect.X, rect.Bottom - (lbRadius * 2), lbRadius * 2, lbRadius * 2, 90, 90);
-            }
-            else
-            {
-                path.AddLine(new Point(rect.Right, rect.Bottom), new Point(rect.X, rect.Bottom));
-            }
-
-            if (ltRadius > 0)
-            {
-                path.AddLine(new Point(rect.X, rect.Bottom - lbRadius), new Point(rect.X, rect.Y + ltRadius));
-            }
-            else
-            {
-                path.AddLine(new Point(rect.X, rect.Bottom), new Point(rect.X, rect.Y));
-            }
-
-            path.CloseFigure();
-            return path;
         }
 
         #endregion
