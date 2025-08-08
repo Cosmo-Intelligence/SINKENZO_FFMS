@@ -1,4 +1,4 @@
-﻿namespace SPREAD.CustomControl
+﻿namespace RADISTA.SPREAD.CustomControl
 {
     partial class RdtListBox
     {
