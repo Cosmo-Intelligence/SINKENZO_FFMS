@@ -8,6 +8,7 @@ using System.Drawing.Drawing2D;
 
 using FarPoint.Win;
 using FarPoint.Win.Spread;
+using FarPoint.Win.Spread.CellType;
 
 namespace RADISTA.SPREAD.CustomControl
 {
@@ -555,6 +556,73 @@ namespace RADISTA.SPREAD.CustomControl
             return this.mFpSpread.Font;
         }
 
+        /// <summary>
+        /// アイテムからインデックスを取得する
+        /// </summary>
+        /// <param name="value">アイテム</param>
+        /// <returns>インデックス</returns>
+        public int GetIndexFromItem(string value)
+        {
+            int ret = -1;
+            for (int i = 0; i < this.mSheet.RowCount; i++)
+            {
+                if (this.mSheet.Cells[i, 0].Text.Equals(value))
+                {
+                    return i;
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// シートモデルを取得する
+        /// </summary>
+        /// <returns>インデックス</returns>
+        public FarPoint.Win.Spread.Model.DefaultSheetSelectionModel? GetSheetSelectionMode()
+        {
+            return this.mSheet.Models.Selection as FarPoint.Win.Spread.Model.DefaultSheetSelectionModel;
+        }
+
+        /// <summary>
+        /// 垂直スクロールバーポリシーを設定する
+        /// </summary>
+        /// <param name="policy">ポリシー</param>
+        public void SetVerticalScrollBarShow(ScrollBarPolicy policy)
+        {
+            this.mFpSpread.VerticalScrollBarPolicy = policy;
+        }
+
+        /// <summary>
+        /// 列幅を設定する
+        /// </summary>
+        /// <param name="colummn">列</param>
+        /// <param name="width">幅</param>
+        public void SetColumnsWidth(int colummn, int width)
+        {
+            this.mSheet.Columns[colummn].Width = width;
+        }
+
+        /// <summary>
+        /// テキスト位置を設定する
+        /// </summary>
+        /// <param name="colummn">列</param>
+        /// <param name="horizontal">水平位置</param>
+        /// <param name="vertical">垂直位置</param>
+        public void SetColumnsTextPosition(int colummn, CellHorizontalAlignment horizontal, CellVerticalAlignment vertical)
+        {
+            this.mSheet.Columns[colummn].HorizontalAlignment = horizontal;
+            this.mSheet.Columns[colummn].VerticalAlignment = vertical;
+        }
+
+        /// <summary>
+        /// セルタイプを設定する
+        /// </summary>
+        /// <param name="colummn">列</param>
+        /// <param name="cellType">セルタイプ</param>
+        public void SetColumnsCellType(int colummn, TextCellType cellType)
+        {
+            this.mSheet.Columns[colummn].CellType = cellType;
+        }
         #endregion
 
         #region "プロテクテッドメソッド"
