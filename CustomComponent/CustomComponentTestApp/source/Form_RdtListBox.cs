@@ -1,5 +1,5 @@
-﻿using RADISTA.UIComponent.CustomControl;
-using SPREAD.CustomControl;
+﻿using RADISTA.SPREAD.CustomControl;
+using RADISTA.UIComponent.CustomControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
