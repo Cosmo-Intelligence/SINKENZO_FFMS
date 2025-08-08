@@ -5,15 +5,21 @@
 //-----------------------------------------------------------------------
 using System.ComponentModel;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 
 using FarPoint.Win;
 using FarPoint.Win.Spread;
 
-using RADISTA.SPREAD.CustomControl;
-
-namespace SPREAD.CustomControl
+namespace RADISTA.SPREAD.CustomControl
 {
+    /// <summary>
+    /// RdtListBox クラス
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// (Rev.)        (Date)      (ID / NAME)                     (Comment)
+    /// V1.00.00    : 2025.08.08    : 株式会社コスモ・インテリジェンス / 上原尚也   : original
+    ///
+    /// </remarks>
     public partial class RdtListBox : UserControl
     {
         #region "列挙型"
@@ -612,16 +618,6 @@ namespace SPREAD.CustomControl
             int fontSize = ComponentCommon.GetFontSize();
             this.mSheet.DefaultStyle.Font = new Font(fontType, fontSize);
 
-            // 選択イベント
-            this.mFpSpread.SelectionChanged += (s, e) =>
-            {
-                int selectedRow = this.mSheet.ActiveRowIndex;
-                if (selectedRow >= 0 && selectedRow < this.mSheet.RowCount)
-                {
-                    string selectedItem = this.mSheet.Cells[selectedRow, 0].Text;
-                }
-            };
-
             // 全領域のポインタを矢印に変更する
             foreach (CursorType type in Enum.GetValues(typeof(CursorType)))
             {
@@ -684,7 +680,7 @@ namespace SPREAD.CustomControl
             {
                 string borderColor = this.Enabled ? this.mBorderColor : this.mDisableBackColor;
                 using (Pen pen = new Pen(ColorTranslator.FromHtml(borderColor), this.mBorderThick))
-                using (GraphicsPath borderPath = this.GetRoundRectanglePath(borderRect, this.LeftTopCornerRadius, this.mRightTopCornerRadius, this.mLeftBottomCornerRadius, this.mRightBottomCornerRadius))
+                using (GraphicsPath borderPath = this.GetRoundRectanglePath(borderRect, this.mLeftTopCornerRadius, this.mRightTopCornerRadius, this.mLeftBottomCornerRadius, this.mRightBottomCornerRadius))
                 {
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
@@ -720,6 +716,7 @@ namespace SPREAD.CustomControl
         {
             if (this.mFpSpread != null)
             {
+                this.mFpSpread.SelectionChanged -= this.FpSpread_SelectionChanged;
                 this.mFpSpread.Paint -= this.FpSpread_Paint;
                 this.mFpSpread.MouseMove -= this.FpSpread_MouseMove;
                 this.mFpSpread.MouseLeave -= this.FpSpread_MouseLeave;
@@ -737,6 +734,7 @@ namespace SPREAD.CustomControl
         {
             this.DetachEvents();
 
+            this.mFpSpread.SelectionChanged += this.FpSpread_SelectionChanged;
             this.mFpSpread.Paint += this.FpSpread_Paint;
             this.mFpSpread.MouseMove += this.FpSpread_MouseMove;
             this.mFpSpread.MouseLeave += this.FpSpread_MouseLeave;
@@ -744,6 +742,15 @@ namespace SPREAD.CustomControl
             this.mFpSpread.HorizontalScrollBar.Scroll += this.ScrollBar_Scroll;
             this.mFpSpread.VerticalScrollBar.Scroll += this.ScrollBar_Scroll;
             this.EnabledChanged += this.RdtListBox_EnabledChanged;
+        }
+
+        private void FpSpread_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int selectedRow = this.mSheet.ActiveRowIndex;
+            if (selectedRow >= 0 && selectedRow < this.mSheet.RowCount)
+            {
+                string selectedItem = this.mSheet.Cells[selectedRow, 0].Text;
+            }
         }
 
         /// <summary>
@@ -952,3 +959,4 @@ namespace SPREAD.CustomControl
         #endregion
     }
 }
+//---<<END OF FILE>>-----------------------------------------------------
