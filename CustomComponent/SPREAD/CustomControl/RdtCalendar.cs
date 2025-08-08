@@ -3,13 +3,10 @@
 // Copyright (C) 2025 FUJIFILM Medical Solutions Corporation.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using FarPoint.Win.Spread;
+using FarPoint.Win.Spread.CellType;
 
 using log4net;
 
@@ -26,12 +23,56 @@ namespace RADISTA.SPREAD.CustomControl
     /// </remarks>
     public partial class RdtCalendar : MonthCalendar
     {
+        #region "定数"
+        private const int WM_PAINT = 0x000F;
+        private const int WM_LBUTTONDOWN = 0x0201;
+        private const string YEAR_MONTH_LIST = "年月組み合わせリスト";
+        private const string START_MONDAY = "月曜始まり";
+        #endregion
+
         #region "クラス変数"
         private static readonly ILog mLog = LogManager.GetLogger(typeof(RdtCalendar));
-        private Control? mParentControl;
         private Panel mYearMonthPanel = new Panel();
-        private ListBox mYearList = new ListBox();
-        private ListBox mMonthList = new ListBox();
+        private RdtListBox mYearList = new RdtListBox();
+        private RdtListBox mMonthList = new RdtListBox();
+        private bool mIsDisplayYearMonthList = false;
+        private bool mIsStartMonday = false;
+        #endregion
+
+        #region "プロパティ"
+        /// <summary>
+        /// 年月組み合わせリスト
+        /// </summary>
+        [Category(YEAR_MONTH_LIST)]
+        public bool IsDisplayYearMonthList
+        {
+            get => this.mIsDisplayYearMonthList;
+            set
+            {
+                this.mIsDisplayYearMonthList = value;
+            }
+        }
+
+        /// <summary>
+        /// 月曜始まり
+        /// </summary>
+        [Category(START_MONDAY)]
+        public bool IsStartMonday
+        {
+            get => this.mIsStartMonday;
+            set
+            {
+                this.mIsStartMonday = value;
+                if (this.mIsStartMonday)
+                {
+                    this.FirstDayOfWeek = Day.Monday;
+                }
+                else
+                {
+                    this.FirstDayOfWeek = Day.Default;
+                }
+            }
+        }
         #endregion
 
         #region "パブリックメソッド"
@@ -41,6 +82,8 @@ namespace RADISTA.SPREAD.CustomControl
         public RdtCalendar()
         {
             this.InitializeComponent();
+
+            this.InitializeCustomSetting();
         }
 
         /// <summary>
@@ -52,6 +95,8 @@ namespace RADISTA.SPREAD.CustomControl
             container.Add(this);
 
             this.InitializeComponent();
+
+            this.InitializeCustomSetting();
         }
         #endregion
 
@@ -68,10 +113,6 @@ namespace RADISTA.SPREAD.CustomControl
                 return;
             }
 
-            this.InitializeYearMonthPanel();
-
-            this.mParentControl = this.Parent;
-
             this.DateSelected -= this.DateSelectedHandler;
             this.DateSelected += this.DateSelectedHandler;
         }
@@ -83,46 +124,96 @@ namespace RADISTA.SPREAD.CustomControl
         protected override void WndProc(ref Message m)
         {
             // 左クリック
-            const int WM_LBUTTONDOWN = 0x0201;
-
             if (m.Msg == WM_LBUTTONDOWN)
             {
-                int y = (short)((m.LParam.ToInt32() >> 16) & 0xFFFF);
-
-                if (y < this.Font.Height * 2)
+                if (this.mIsDisplayYearMonthList)
                 {
-                    if (!this.mYearMonthPanel.Visible)
+                    int y = (short)((m.LParam.ToInt32() >> 16) & 0xFFFF);
+
+                    if (y < this.Font.Height * 2)
                     {
-                        this.ShowYearMonthPanel();
+                        if (!this.mYearMonthPanel.Visible)
+                        {
+                            this.ShowYearMonthPanel();
+                        }
+                        else
+                        {
+                            this.mYearMonthPanel.Visible = false;
+                        }
+                        return;
                     }
-                    else
-                    {
-                        this.mYearMonthPanel.Visible = false;
-                    }
-                    return;
                 }
             }
 
             base.WndProc(ref m);
+
+            // 描画
+            if (m.Msg == WM_PAINT)
+            {
+                IntPtr hdc = NativeMethods.GetWindowDC(this.Handle);
+                using (Graphics g = Graphics.FromHdc(hdc))
+                {
+                    // 左矢印を隠す
+                    g.FillRectangle(new SolidBrush(ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleBackColor())), new Rectangle(5, 10, 35, 25));
+
+                    // 右矢印を隠す（適切なサイズ調整が必要）
+                    g.FillRectangle(new SolidBrush(ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleBackColor())), new Rectangle(this.Width - 40, 10, 35, 25));
+
+                    if (!this.mIsDisplayYearMonthList)
+                    {
+                        // 左側に自作の▶（左向きは ◀ ）を描画
+                        using (Font arrowFont = new Font(ComponentCommon.GetFontType(), ComponentCommon.GetFontSize(), FontStyle.Bold))
+
+                        using (Brush arrowBrush = new SolidBrush(ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleFontColor())))
+                        {
+                            g.DrawString("◀", arrowFont, arrowBrush, 4, 9);
+                            g.DrawString("▶", arrowFont, arrowBrush, this.Width - 30, 9);
+                        }
+                    }
+                }
+                NativeMethods.ReleaseDC(this.Handle, hdc);
+            }
         }
 
         /// <summary>
-        /// OnHandleCreated
+        /// OnParentChanged
         /// </summary>
         /// <param name="e">イベント</param>
-        protected override void OnHandleCreated(EventArgs e)
+        protected override void OnParentChanged(EventArgs e)
         {
-            base.OnHandleCreated(e);
+            base.OnParentChanged(e);
 
-            if (this.mParentControl != null)
+            if (this.Parent != null)
             {
-                this.mParentControl.MouseDown -= this.ParentControl_MouseDown;
-                this.mParentControl.MouseDown += this.ParentControl_MouseDown;
+                this.Parent.MouseDown -= this.ParentControl_MouseDown;
+                this.Parent.MouseDown += this.ParentControl_MouseDown;
+
+                if (this.mIsDisplayYearMonthList && !this.Parent.Controls.Contains(this.mYearMonthPanel))
+                {
+                    this.InitializeYearMonthPanel();
+                }
             }
         }
         #endregion
 
         #region "プライベートメソッド"
+        /// <summary>
+        /// 初期化処理
+        /// </summary>
+        private void InitializeCustomSetting()
+        {
+            // クラシックスタイルを使用
+            NativeMethods.SetWindowTheme(this.Handle, string.Empty, string.Empty);
+
+            // デフォルト設定
+            this.Size = new Size(250, 200);
+            this.ForeColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultFontColor());
+            this.BackColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultBackColor());
+            this.TitleForeColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleFontColor());
+            this.TitleBackColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTitleBackColor());
+            this.TrailingForeColor = ColorTranslator.FromHtml(ComponentCommon.GetCalendarDefaultTrailingFontColor());
+        }
+
         /// <summary>
         /// Dispose
         /// </summary>
@@ -130,12 +221,17 @@ namespace RADISTA.SPREAD.CustomControl
         {
             // イベント削除
             this.DateSelected -= this.DateSelectedHandler;
-            // 親コントロールのイベントを削除する
-            if (this.mParentControl != null)
+            if (this.mIsDisplayYearMonthList)
             {
-                this.mParentControl.MouseDown -= this.ParentControl_MouseDown;
+                this.mMonthList.SelectionChanged -= this.MonthSelectionChanged;
+            }
+            // 親コントロールのイベントを削除する
+            if (this.Parent != null)
+            {
+                this.Parent.MouseDown -= this.ParentControl_MouseDown;
             }
         }
+
         /// <summary>
         /// 年月パネルの初期化
         /// </summary>
@@ -143,7 +239,7 @@ namespace RADISTA.SPREAD.CustomControl
         {
             // パネルの初期設定
             this.mYearMonthPanel.Size = new Size(this.Width, this.Height - (this.Font.Height * 2));
-            this.mYearMonthPanel.BackColor = Color.Black;
+            this.mYearMonthPanel.BackColor = ColorTranslator.FromHtml(ComponentCommon.GetListDefaultStandardBackColor());
             this.mYearMonthPanel.BorderStyle = BorderStyle.FixedSingle;
             this.mYearMonthPanel.Visible = false;
 
@@ -151,27 +247,18 @@ namespace RADISTA.SPREAD.CustomControl
             this.mYearList.Dock = DockStyle.Fill;
             this.mMonthList.Dock = DockStyle.Fill;
 
-            for (int y = this.SelectionStart.Year - 5; y <= this.SelectionStart.Year + 5; y++)
+            for (int year = this.SelectionStart.Year - 5; year <= this.SelectionStart.Year + 5; year++)
             {
-                this.mYearList.Items.Add(y);
+                this.mYearList.AddItem(year.ToString());
             }
 
-            for (int m = 1; m <= 12; m++)
+            for (int month = 1; month <= 12; month++)
             {
-                this.mMonthList.Items.Add(m);
+                this.mMonthList.AddItem(month.ToString());
             }
 
-            this.mMonthList.SelectedIndexChanged += (s, e) =>
-            {
-                if (this.mYearList.SelectedItem is int year && this.mMonthList.SelectedItem is int month)
-                {
-                    var newDate = new DateTime(year, month, 1);
-                    this.SetDate(newDate);
-                    this.SelectionStart = newDate;
-                    this.SelectionEnd = newDate;
-                    this.mYearMonthPanel.Visible = false;
-                }
-            };
+            this.mMonthList.SelectionChanged -= this.MonthSelectionChanged;
+            this.mMonthList.SelectionChanged += this.MonthSelectionChanged;
 
             TableLayoutPanel table = new TableLayoutPanel
             {
@@ -179,7 +266,7 @@ namespace RADISTA.SPREAD.CustomControl
                 ColumnCount = 2,
                 Dock = DockStyle.Fill,
                 Padding = new Padding(5),
-                BackColor = Color.Gray,
+                BackColor = ColorTranslator.FromHtml(ComponentCommon.GetBackColor()),
             };
 
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -190,7 +277,30 @@ namespace RADISTA.SPREAD.CustomControl
             table.Controls.Add(this.mMonthList, 1, 0);
 
             this.mYearMonthPanel.Controls.Add(table);
-            this.mParentControl?.Controls.Add(this.mYearMonthPanel);
+            this.Parent?.Controls.Add(this.mYearMonthPanel);
+
+            // リストの設定
+            // リストの角設定
+            this.mYearList.LeftTopCornerRadius = 0;
+            this.mYearList.LeftBottomCornerRadius = 0;
+            this.mYearList.RightTopCornerRadius = 0;
+            this.mYearList.RightBottomCornerRadius = 0;
+            this.mMonthList.LeftTopCornerRadius = 0;
+            this.mMonthList.LeftBottomCornerRadius = 0;
+            this.mMonthList.RightTopCornerRadius = 0;
+            this.mMonthList.RightBottomCornerRadius = 0;
+            // 垂直スクロールバー非表示
+            this.mYearList.SetVerticalScrollBarShow(ScrollBarPolicy.Never);
+            this.mMonthList.SetVerticalScrollBarShow(ScrollBarPolicy.Never);
+            // リストの幅設定
+            this.mYearList.SetColumnsWidth(0, this.mYearList.Size.Width);
+            this.mMonthList.SetColumnsWidth(0, this.mYearList.Size.Width);
+            // テキスト位置の設定
+            this.mYearList.SetColumnsTextPosition(0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            this.mMonthList.SetColumnsTextPosition(0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            // セルタイプの設定
+            this.mYearList.SetColumnsCellType(0, new TextCellType());
+            this.mMonthList.SetColumnsCellType(0, new TextCellType());
         }
 
         /// <summary>
@@ -198,16 +308,24 @@ namespace RADISTA.SPREAD.CustomControl
         /// </summary>
         private void ShowYearMonthPanel()
         {
-            if (this.mParentControl != null)
+            if (this.Parent != null)
             {
-                int year = this.SelectionStart.Year;
-                int month = this.SelectionStart.Month;
+                int yearIdx = this.mYearList.GetIndexFromItem(this.SelectionStart.Year.ToString());
+                this.mYearList.SelectedIndex = yearIdx;
+                // 選択モデルにも設定
+                var yearSel = this.mYearList.GetSheetSelectionMode();
+                yearSel?.SetSelection(yearIdx, 0, 1, 1);
+                this.mYearList.Refresh();
 
-                this.mYearList.SelectedItem = year;
-                this.mMonthList.SelectedItem = month;
+                int monthIdx = this.mMonthList.GetIndexFromItem(this.SelectionStart.Month.ToString());
+                this.mMonthList.SelectedIndex = yearIdx;
+                // 選択モデルにも設定
+                var monthSel = this.mMonthList.GetSheetSelectionMode();
+                monthSel?.SetSelection(monthIdx, 0, 1, 1);
+                this.mMonthList.Refresh();
 
                 Point screenLoc = this.PointToScreen(new Point(0, this.Font.Height * 2));
-                Point parentLoc = this.mParentControl.PointToClient(screenLoc);
+                Point parentLoc = this.Parent.PointToClient(screenLoc);
                 this.mYearMonthPanel.Location = parentLoc;
                 this.mYearMonthPanel.Visible = true;
                 this.mYearMonthPanel.BringToFront();
@@ -221,9 +339,9 @@ namespace RADISTA.SPREAD.CustomControl
         /// <param name="e">イベント</param>
         private void ParentControl_MouseDown(object? sender, MouseEventArgs e)
         {
-            if (this.mParentControl != null)
+            if (this.Parent != null)
             {
-                Point mousePos = this.mParentControl.PointToClient(Control.MousePosition);
+                Point mousePos = this.Parent.PointToClient(Control.MousePosition);
 
                 // カレンダー以外のクリック時はカレンダーを非表示
                 if (!this.Bounds.Contains(mousePos))
@@ -231,12 +349,28 @@ namespace RADISTA.SPREAD.CustomControl
                     this.Visible = false;
 
                     // 年月パネルが表示している場合は同時に非表示
-                    if (this.mYearMonthPanel.Visible && !this.mYearMonthPanel.Bounds.Contains(mousePos))
+                    if (this.mIsDisplayYearMonthList && this.mYearMonthPanel.Visible && !this.mYearMonthPanel.Bounds.Contains(mousePos))
                     {
                         this.mYearMonthPanel.Visible = false;
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 月リストの選択変更時のイベント
+        /// </summary>
+        /// <param name="sender">オブジェクト</param>
+        /// <param name="e">イベント</param>
+        private void MonthSelectionChanged(object? sender, EventArgs e)
+        {
+            int year = int.Parse(this.mYearList.SelectedItem);
+            int month = int.Parse(this.mMonthList.SelectedItem);
+            var newDate = new DateTime(year, month, 1);
+            this.SetDate(newDate);
+            this.SelectionStart = newDate;
+            this.SelectionEnd = newDate;
+            this.mYearMonthPanel.Visible = false;
         }
 
         /// <summary>
