@@ -236,7 +236,8 @@ namespace RADISTA.CustomComponentTestApp
 
         private void button_RdtListButton_Click(object sender, EventArgs e)
         {
-
+            Form_RdtListButton form = new Form_RdtListButton();
+            form.Show();
         }
 
         private void button_RdtTextBox_Click(object sender, EventArgs e)
