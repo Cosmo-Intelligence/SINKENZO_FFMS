@@ -415,5 +415,11 @@ namespace RADISTA.CustomComponentTestApp
             Form_RdtListBox form = new Form_RdtListBox();
             form.Show();
         }
+
+        private void button_RdtComboBox_Click(object sender, EventArgs e)
+        {
+            Form_RdtComboBox form = new Form_RdtComboBox();
+            form.Show();
+        }
     }
 }
