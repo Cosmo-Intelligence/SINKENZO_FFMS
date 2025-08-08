@@ -42,20 +42,40 @@ namespace RADISTA.CustomComponentTestApp
             label_LabelDefaultBackColor.Text = ComponentCommon.GetLabelDefaultBackColor();
             label_LabelDefaultEdgeColor.Text = ComponentCommon.GetLabelDefaultEdgeColor();
             #endregion
-            #region TextBox, ComboBox
+            #region TextBox
             label_TextDefaultFontColor.Text = ComponentCommon.GetTextDefaultFontColor();
             label_TextDefaultBackColor.Text = ComponentCommon.GetTextDefaultBackColor();
             label_TextDefaultEdgeColor.Text = ComponentCommon.GetTextDefaultEdgeColor();
-            label_TextDisableFontColor.Text = ComponentCommon.GetTextDisableFontColor();
-            label_TextDisableBackColor.Text = ComponentCommon.GetTextDisableBackColor();
-            label_TextDisableEdgeColor.Text = ComponentCommon.GetTextDisableEdgeColor();
+            label_TextHoverFontColor.Text = ComponentCommon.GetTextHoverFontColor();
+            label_TextHoverBackColor.Text = ComponentCommon.GetTextHoverBackColor();
+            label_TextHoverEdgeColor.Text = ComponentCommon.GetTextHoverEdgeColor();
             label_TextFocusFontColor.Text = ComponentCommon.GetTextFocusFontColor();
             label_TextFocusBackColor.Text = ComponentCommon.GetTextFocusBackColor();
             label_TextFocusEdgeColor.Text = ComponentCommon.GetTextFocusEdgeColor();
+            label_TextInputFontColor.Text = ComponentCommon.GetTextInputFontColor();
+            label_TextInputBackColor.Text = ComponentCommon.GetTextInputBackColor();
+            label_TextInputEdgeColor.Text = ComponentCommon.GetTextInputEdgeColor();
+            label_TextDisableFontColor.Text = ComponentCommon.GetTextDisableFontColor();
+            label_TextDisableBackColor.Text = ComponentCommon.GetTextDisableBackColor();
+            label_TextDisableEdgeColor.Text = ComponentCommon.GetTextDisableEdgeColor();
             label_TextReadOnlyFontColor.Text = ComponentCommon.GetTextReadOnlyFontColor();
             label_TextReadOnlyBackColor.Text = ComponentCommon.GetTextReadOnlyBackColor();
             label_TextReadOnlyEdgeColor.Text = ComponentCommon.GetTextReadOnlyEdgeColor();
             label_TextWaterMarkFontColor.Text = ComponentCommon.GetTextWaterMarkFontColor();
+            #endregion
+            #region ComboBox
+            label_ComboDefaultFontColor.Text = ComponentCommon.GetComboDefaultFontColor();
+            label_ComboDefaultBackColor.Text = ComponentCommon.GetComboDefaultBackColor();
+            label_ComboDefaultEdgeColor.Text = ComponentCommon.GetComboDefaultEdgeColor();
+            label_ComboHoverFontColor.Text = ComponentCommon.GetComboHoverFontColor();
+            label_ComboHoverBackColor.Text = ComponentCommon.GetComboHoverBackColor();
+            label_ComboHoverEdgeColor.Text = ComponentCommon.GetComboHoverEdgeColor();
+            label_ComboFocusFontColor.Text = ComponentCommon.GetComboFocusFontColor();
+            label_ComboFocusBackColor.Text = ComponentCommon.GetComboFocusBackColor();
+            label_ComboFocusEdgeColor.Text = ComponentCommon.GetComboFocusEdgeColor();
+            label_ComboDisableFontColor.Text = ComponentCommon.GetComboDisableFontColor();
+            label_ComboDisableBackColor.Text = ComponentCommon.GetComboDisableBackColor();
+            label_ComboDisableEdgeColor.Text = ComponentCommon.GetComboDisableEdgeColor();
             #endregion
             #region ListView, ListBox
             label_ListDefaultStandardFontColor.Text = ComponentCommon.GetListDefaultStandardFontColor();
@@ -394,6 +414,12 @@ namespace RADISTA.CustomComponentTestApp
         private void button_RdtListBox_Click(object sender, EventArgs e)
         {
             Form_RdtListBox form = new Form_RdtListBox();
+            form.Show();
+        }
+
+        private void button_RdtComboBox_Click(object sender, EventArgs e)
+        {
+            Form_RdtComboBox form = new Form_RdtComboBox();
             form.Show();
         }
     }

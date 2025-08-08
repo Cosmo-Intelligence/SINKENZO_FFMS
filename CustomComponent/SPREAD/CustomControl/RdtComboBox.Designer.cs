@@ -1,6 +1,6 @@
 ﻿namespace RADISTA.SPREAD.CustomControl
 {
-    partial class RdtListBox
+    partial class RdtComboBox
     {
         /// <summary> 
         /// 必要なデザイナー変数です。
@@ -15,7 +15,7 @@
         {
             if (disposing && (components != null))
             {
-                this.DisposeCustomComponent();
+                this.DisposeCustomSetting();
                 components.Dispose();
             }
             base.Dispose(disposing);
