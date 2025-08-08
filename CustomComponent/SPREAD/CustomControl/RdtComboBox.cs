@@ -6,10 +6,17 @@
 using System.ComponentModel;
 using System.Drawing.Drawing2D;
 
-using SPREAD.CustomControl;
-
 namespace RADISTA.SPREAD.CustomControl
 {
+    /// <summary>
+    /// RdtComboBox
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// (Rev.)        (Date)      (ID / NAME)                     (Comment)
+    /// V1.00.00    : 2025.08.08    : 株式会社コスモ・インテリジェンス / 上原尚也   : original
+    ///
+    /// </remarks>
     public partial class RdtComboBox : UserControl
     {
         #region "列挙型"
@@ -62,7 +69,7 @@ namespace RADISTA.SPREAD.CustomControl
         private const int LABEL_ARROW_WIDTH = 30;
         #endregion
 
-        #region "メンバ変数"
+        #region "クラス変数"
 
         //ComboBoxのパーツ
         private bool mIsDropped = false;
@@ -588,7 +595,6 @@ namespace RADISTA.SPREAD.CustomControl
                 Font = font,
                 BackColor = Color.FromArgb(255, 50, 255),
             };
-            this.mLabelText.Click += (s, e) => this.ToggleDropDown();
             this.mPanelTop.Controls.Add(this.mLabelText);
 
             // 右端の矢印
@@ -603,7 +609,6 @@ namespace RADISTA.SPREAD.CustomControl
                 Font = font,
                 BackColor = Color.FromArgb(45, 45, 255),
             };
-            this.mLabelArrow.Click += (s, e) => this.ToggleDropDown();
             this.mPanelTop.Controls.Add(this.mLabelArrow);
             // ドロップダウン（SpreadListBox）
             this.mDropDownList = new RdtListBox
@@ -638,7 +643,7 @@ namespace RADISTA.SPREAD.CustomControl
         /// <summary>
         /// トグルの表示非表示の処理
         /// </summary>
-        private void ToggleDropDown()
+        private void ToggleDropDown(object? sender, EventArgs e)
         {
             this.mIsDropped = !this.mIsDropped;
 
@@ -725,6 +730,8 @@ namespace RADISTA.SPREAD.CustomControl
         /// </summary>
         private void DetachEvent()
         {
+            this.mLabelText.Click -= this.ToggleDropDown;
+            this.mLabelArrow.Click -= this.ToggleDropDown;
             this.SizeChanged -= this.RdtComboBox_SizeChanged;
             this.EnabledChanged -= this.RdtComboBox_EnabledChanged;
             this.mPanelTop.Paint -= this.Panel_Paint;
@@ -740,6 +747,8 @@ namespace RADISTA.SPREAD.CustomControl
         {
             this.DetachEvent();
 
+            this.mLabelText.Click += this.ToggleDropDown;
+            this.mLabelArrow.Click += this.ToggleDropDown;
             this.SizeChanged += this.RdtComboBox_SizeChanged;
             this.EnabledChanged += this.RdtComboBox_EnabledChanged;
             this.mPanelTop.Paint += this.Panel_Paint;
@@ -967,3 +976,4 @@ namespace RADISTA.SPREAD.CustomControl
         #endregion
     }
 }
+//---<<END OF FILE>>-----------------------------------------------------
